@@ -1,0 +1,796 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+$theme-colors: (
+  "primary": #1B3355,
+  "secondary": #E9B71E,
+	"dark": #3B3B3B,
+  "mediumdark": #9a9a9a,
+  "medium": #DBDBDB,
+	"light": #F7F7F7,
+  "lightest": #fbfbfb,
+  "confirm": #28a745,
+  "warning": #dc3545,
+  "confirmfade": rgba(40,167,69,.1),
+  "warningfade": rgba(220,53,69,.1),
+	"primaryfade": rgba(27,51,85,.1),
+  "secondarydark": #7e661e,
+  "darkfade": rgba(59,59,59,.1)
+);
+
+$enable-gradients: true;
+$enable-responsive-font-sizes: true;
+
+
+// IMPORTANT FOR THIS TO GO AFTER CUSTOMIZATIONS
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+// REDECLARE CUSTOM COLORS FOR CSS USE
+$primary: #1B3355;
+$secondary: #E9B71E;
+$dark: #3B3B3B;
+$mediumdark: #9a9a9a;
+$medium: #DBDBDB;
+$light: #F7F7F7;
+$lightest: #fbfbfb;
+$confirm: #28a745;
+$warning: #dc3545;
+$confirmfade: rgba(40,167,69,.1);
+$warningfade: rgba(220,53,69,.1);
+$primaryfade: rgba(27,51,85,.1);
+$secondarydark: #7e661e;
+$darkfade: rgba(59,59,59,.1);
+
+// MIXINS
+
+// GLOBAL
+
+html, div, p, h1, h2, h4, h5, button {
+  	font-family: 'Montserrat' !important;
+    font-weight: 300 !important;
+    -webkit-font-smoothing: antialiased;
+}
+p {
+  text-align: justify;
+}
+.pointer {
+  cursor: pointer;
+}
+.not-allowed {
+  cursor: not-allowed !important;
+}
+.hand {
+  cursor: grab !important;
+}
+.underline {
+  text-decoration: underline !important;
+}
+
+// TEMP!!
+.alert-info hr {
+  border-top-color: $info !important;
+}
+
+// CHANGES SELECTION COLOR
+::-moz-selection { /* for Firefox */
+  color: $light;
+  background: $primary;
+}
+::selection {
+  color: $light;
+  background: $primary;
+}
+
+
+
+
+// BUTTONS
+//
+//
+
+.btn {
+	font-weight: 500;
+}
+.btn:focus {
+  box-shadow: none !important;
+}
+.btn-stand:active {
+  background-color: rgba($primary, 1) !important;
+  color: white !important;
+}
+.btn-stand-feedback:active {
+  background-color: rgba($secondary, 1) !important;
+  color: white !important;
+}
+.btn-stand-feedback:hover {
+  background-color: rgba($secondary, .2);
+}
+.btn-conf:active {
+  background-color: rgba($confirm, 1) !important;
+  color: white !important;
+}
+.btn-warn:active {
+  background-color: rgba($warning, 1) !important;
+  color: white !important;
+}
+.btn-pressed {
+  font-weight: 300;
+  pointer-events: none;
+}
+.btn-func:hover {
+  box-shadow: inset 0 0 0 2px $medium !important;
+}
+.btn-func:active {
+  background-color: rgba($darkfade, 1) !important;
+  color: white !important;
+}
+.btn-func-high:hover {
+  box-shadow: inset 0 0 0 2px rgba($secondary, .3) !important;
+}
+.btn-func-high:active { //active must be declared after hover
+  background-color: $secondary !important;
+  color: white !important;
+  box-shadow: inset 0 0 0 2px white !important;
+}
+.btn-func-pressed {
+  background-color: rgba($darkfade, 1) !important;
+  color: white !important;
+  box-shadow: inset 0 0 0 2px $medium !important;
+  cursor: default !important;
+}
+.btn-func-pressed:focus{
+  box-shadow: inset 0 0 0 2px $medium !important;
+}
+.btn-func-high-pressed {
+  background-color: $secondary !important;
+  color: white !important;
+  box-shadow: inset 0 0 0 2px white !important;
+  cursor: default !important;
+}
+.btn-func-high-pressed:focus{
+  box-shadow: inset 0 0 0 2px white !important;
+}
+.rounded-max {
+  border-radius: .75em; //custom rounding value for buttons
+}
+.spinner-grow-sm {
+  margin-bottom: 1px; //detailed positioning fix
+}
+
+// FORMS
+//
+//
+
+.list-group-item {
+  border: 0px solid black;
+  background: unset !important;
+}
+
+// ICONS
+//
+//
+
+.badge {
+  outline: none;
+  font-weight: inherit;
+}
+.icon-hover:hover {
+    font-weight: 900;
+}
+.icon-hover:active {
+    opacity: .8;
+}
+.info {
+  outline: none;
+}
+a.info:hover {
+  color: $dark !important;
+}
+.popover {
+  box-shadow: 0 0rem 2rem rgba(0, 0, 0, 0.15);
+  max-width: 250px;
+  margin: 1.5em 1em 1.5em 1em !important; //sets popover position
+}
+.popover-header {
+  background-color: unset;
+  text-align: center;
+  padding: .75em 1em;
+}
+.popover-body {
+  text-align: center !important;
+  padding: .75em 1.5em .75em 1.5em;
+}
+.bs-tooltip-top {
+  margin-bottom: .5em !important;
+}
+.tooltip-inner {
+  background-color: $dark;
+  color: white;
+}
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before {
+  border-top-color: $dark;
+}
+.tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before, .tooltip.bs-tooltip-right .arrow::before {
+  border-right-color: $dark;
+}
+.tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: $dark;
+}
+.tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before, .tooltip.bs-tooltip-left .arrow::before {
+  border-left-color: $dark;
+}
+
+// IMAGES
+.modal-dialog {
+    display: table;
+}
+.center-cropped {
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.center-cropped img {
+  min-height: 100%;
+  min-width: 100%; //
+  /* IE 8 */
+  filter: alpha(opacity=0);
+  /* modern browsers */
+  opacity: 0;
+}
+
+// INPUT FIELDS
+//
+//
+
+input, textarea, select {
+  font-family: 'Montserrat';
+  font-weight: 500 !important;
+  box-shadow: unset !important;
+}
+.custom-control-label {
+    font-family: 'Montserrat', sans-serif;
+}
+.form-control:focus {
+  border-color: $dark !important;
+  box-shadow: 0px 1px 0px 0px $dark !important;
+}
+.form-control:disabled {
+  background-color: $light !important;
+  color: $medium !important;
+}
+.placeholder-dim::placeholder {
+  color: $medium !important;
+}
+.form-control {
+  border-radius: 0rem !important;
+  color: $dark;
+}
+.form-control::placeholder {
+  color: $medium !important;
+}
+.form-control.is-valid {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='check' class='svg-inline--fa fa-check fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2328a745' d='M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 98% calc(.375em + .1875rem) !important;
+}
+.form-control.is-invalid {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23dc3545' d='M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm-207.691 96h63.382c6.884 0 12.357 5.78 11.982 12.654l-7.418 136c-.347 6.364-5.609 11.346-11.982 11.346h-48.546c-6.373 0-11.635-4.982-11.982-11.346l-7.418-136c-.375-6.874 5.098-12.654 11.982-12.654zM224 398c-25.405 0-46-20.595-46-46s20.595-46 46-46 46 20.595 46 46-20.595 46-46 46z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 98% calc(.375em + .1875rem) !important;
+}
+select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: 97%; //sets position of custom open arrows
+    background-repeat: no-repeat;
+    padding-right: 1.5em;
+    color: $dark !important;
+}
+.close-icon { //red "clear" button for search field
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+}
+.search-box:not(:valid) ~ .close-icon {
+	display: none; //hides "clear" button
+}
+.input-group-prepend {
+  position: absolute; //positions magnifying glass icon
+  z-index: 5;
+}
+.input-group-text {
+  display: inline-block;
+  background-color: unset;
+  border: none;
+  margin-top: .1em; //detailed position fix for magnifying glass
+}
+small {
+  font-weight: 300;
+}
+.p1-5 {
+  padding-top: .15em;
+}
+.search-box[type=text]:focus {
+  border: 1px solid $secondary !important;
+  box-shadow: 0px 0px 0px 0px $secondary !important;
+}
+.custom-select {
+  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-light.svg");
+  background-position: 97% 50% !important;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: 20px 20px;
+}
+.custom-select-hover:hover {
+  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-solid.svg");
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: 20px 20px;
+}
+
+.hero-image {
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.custom-select-hover:active {
+  opacity: .8;
+}
+.custom-select-disabled {
+  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-disabled.svg") no-repeat right 1rem center/20px 20px;
+}
+option {
+  font-weight: 300;
+}
+select:not(:disabled) option:not(:disabled):not(:checked):hover {
+  opacity: .7;
+}
+.options {
+  margin-left: 1em;
+}
+ option:checked {
+  background-color: $dark !important;
+}
+.editor {
+  font-size: 1rem;
+}
+
+
+// ROW ELEMENT STYLES
+//
+//
+
+.card {
+  font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+  display: inline-block !important;
+}
+.card-hover:hover {
+  box-shadow: 0px 0px 0px 1px $medium inset;
+  color: black !important;
+}
+.card-hover:hover div {
+  color: black !important;
+}
+.columns-1 {
+    column-count: 1;
+}
+.icon-top{
+  margin-top: .1rem;
+}
+.highlighted {
+    box-shadow:0px 0px 0px 1px #E9B71E inset;
+}
+.checkbox-size {
+  font-size: 1.5em; //custom sizing required for icon
+}
+.toggle-size {
+  font-size: 1.65em; //custom sizing required for icon
+}
+.item-text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.custom-border {
+  box-shadow: 0px 4px 0px 0px $dark !important;
+}
+.custom-switch {
+  padding: 0 !important;
+  padding-left: 2rem !important;
+}
+.custom-control-label::before {
+  top: 0 !important;
+  width: 2.5rem !important;
+  height: 1.5rem !important;
+  background-color: unset !important;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.custom-switch .custom-control-label::after {
+  transition: transform .4s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.custom-switch .custom-control-label::before {
+  border-radius: 1rem !important;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none !important; //remove shadow on toggle click
+}
+.custom-control-input ~ .custom-control-label::before {
+  border-color: $dark !important;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  background: $dark !important;
+  border-color: $dark !important;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: $dark !important; //custom toggle border color
+}
+.custom-control-input-disabled ~ .custom-control-label::before {
+  border-color: $medium !important;
+}
+.custom-control-input-disabled:checked ~ .custom-control-label::before {
+  background: $medium !important;
+  border-color: $medium !important;
+}
+.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: $medium !important; //custom toggle border color
+}
+.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
+  background: $dark !important;
+  border-color: $dark !important;
+}
+.custom-switch .custom-control-label::after {
+  background-color: $dark !important;
+  left: calc(-2.25rem + 6px) !important;
+  width: calc(1.25rem - 4px) !important;
+  height: calc(1.25rem - 4px) !important;
+  top: .25rem !important;
+}
+.custom-switch .custom-control-label-disabled::after {
+  background-color: $medium !important;
+  left: calc(-2.25rem + 6px) !important;
+  width: calc(1.25rem - 4px) !important;
+  height: calc(1.25rem - 4px) !important;
+  top: .25rem !important;
+}
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: white !important;
+}
+
+.custom-checkbox .custom-control-label::before {
+  width: 1.4rem !important;
+  height: 1.4rem !important;
+  top: .05rem!important;
+}
+.custom-checkbox .custom-control-label::after {
+  top: -.15rem !important;
+  left: -1.7rem !important;
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+}
+.custom-radio .custom-control-label::before{
+  width: 1.45rem !important;
+  height: 1.45rem !important;
+  top: .1rem !important;
+}
+.custom-radio .custom-control-label::after{
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  top: 0rem!important;
+  left: -1.6rem !important;
+  position: relative !important;
+}
+label {
+  margin-bottom: 0 !important;
+}
+#chevron {
+  display: none;
+}
+.icon {
+  transition: all 0.5s 0s;
+  transform: rotate(-90deg) translate(2px);
+  cursor: pointer;
+}
+#chevron:checked + .icon {
+  transform: rotate(0deg) translate(0px);
+}
+#expand {
+  transition: background-color .3s linear; //sets anim time for 'expanding'
+}
+.tog-header {
+  background-color: $dark !important;
+  color: $light !important;
+  font-weight: 300;
+}
+.tog-header i {
+  color: $light !important;
+}
+.mt-n2-5 {
+  margin-top: -.3rem !important;
+}
+[type="button"] {
+  -webkit-appearance: unset;
+}
+.sub-hr {
+  border-color: $dark;
+}
+.underline-dotted {
+  text-decoration-style: dotted;
+}
+.clickable:active {
+  box-shadow: 0px 0px 0px 1px $dark inset;
+  background-color: rgba($medium,.7) !important;
+}
+
+//NAVIGATION MENUS
+//
+//
+.nav {
+  background-color: $lightest;
+}
+.nav-height {
+  min-height: 100vh;
+}
+.nav-pills .nav-link{
+  border-radius: unset;
+}
+.nav-pills .nav-link.active {
+  border-right: 4px solid $primary;
+  background-color: unset;
+  font-weight: 700;
+  background: white;
+  margin-right: -.3em;
+}
+.nav-pills .nav-link.active:hover {
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 1;
+  background-color: white;
+}
+.nav-pills .nav-link:hover  {
+  opacity: .6;
+  background: $gray-100;
+}
+.mt-6 {
+  margin-top: 5em;
+}
+.nav-break {
+  border-top: 1px solid rgba($primary, .7);
+}
+.package-title {
+  font-weight: 700;
+}
+.dropdown-menu {
+   position: relative !important;
+   will-change: unset !important;
+   transform: unset !important;
+   background-color: unset !important;
+   border: unset !important;
+   text-transform: uppercase !important;
+
+}
+.dropdown-item {
+   font-weight: 300 !important;
+}
+.nav-pills .show > .nav-link {
+  background-color: white;
+  font-weight: 700;
+  border-right: 4px solid $primary;
+  opacity: 1;
+  margin-right: -.3em;
+}
+.dropdown-item:hover {
+  background-color: unset !important;
+  background-image: unset !important;
+}
+.dropdown-item:active {
+  background-image: unset !important;
+  background-color: unset !important;
+}
+.dropdown-item:focus {
+  text-decoration: underline;
+  background-image: unset !important;
+  background-color: unset !important;
+}
+.dropdown-item-active {
+  text-decoration: underline !important;
+  color: #19692c!important;
+}
+
+
+/* STYLEGUIDIST STYLE OVERRIDES */
+// USED ONLY TO STYLE THE GUIDE, THESE REQUIRE '!important' TO BUILD STYLEGUIDIST CORRECTLY
+//
+//
+
+// SET SIDEBAR TITLE + SPACING
+
+.rsg--logo-34 {
+  text-align: right !important;
+  color: white !important;
+}
+.rsg--logo-5 {
+  margin-bottom: 2em !important;
+  padding: 1em 30px 2em 30px !important;
+}
+
+//SET SIDEBAR WIDTH / MARGIN
+.rsg--sidebar-4 {
+  width: 250px !important;
+  padding: 10px !important;
+  background-color: $dark !important;
+}
+.rsg--content-3 {
+  margin: 20px 50px 20px 50px !important;
+  max-width: unset !important;
+  padding: unset !important;
+}
+.rsg--hasSidebar-2 {
+  padding-left: 250px !important;
+}
+
+//SEARCH BOX VISIBILITY
+.rsg--search-37 {
+  display: none !important;
+}
+
+// REMOVE OUTLINE FROM FULL SCREEN AND "VIEW CODE" BUTTONS
+button.rsg--button-48:active {
+	outline: none !important;
+}
+button.rsg--button-48:focus {
+	outline: none !important;
+	color: #767676 !important;
+}
+a.rsg--button-27:active {
+	outline: none !important;
+}
+a.rsg--button-27:focus {
+	outline: none !important;
+	color: #767676 !important;
+}
+a.rsg--button-21:active {
+	outline: none !important;
+}
+a.rsg--button-21:focus {
+	outline: none !important;
+	color: #767676 !important;
+}
+
+// SIDE BAR LINK STYLES
+.rsg--list-39 {
+  font-weight: 300 !important;
+  margin-top: 1em !important;
+}
+.rsg--sidebar-4 .rsg--link-33 {
+  color: $medium !important;
+}
+.rsg--sidebar-4 .rsg--link-33:hover {
+  color: white !important;
+}
+
+// UNSET ALL ANCHOR/LINK HOVER COLORING
+a:hover {
+  color: unset;
+}
+
+// REMOVE DOTTED BORDER ON CLICK
+button {
+  	outline: none !important;
+}
+
+// SUB HEADERS STYLING
+.rsg--heading2-16 {
+  background: none !important;
+  color: #333 !important;
+  padding: .25em .5em 0em 0em !important;
+  margin-top: .5em !important;
+}
+.rsg--heading2-16:hover {
+  color: #333 !important;
+}
+.rsg--header-24 {
+  border-bottom: 3px #333 solid !important;
+}
+.rsg--sectionName-12:hover {
+    text-decoration: none !important;
+    color: $gray-600 !important;
+}
+#section-, #section--1 {
+  display: none !important;
+}
+
+// REMOVE "VIEW CODE" FULL SCREEN BUTTON
+.rsg--toolbar-37 {
+	display: none;
+}
+.rsg--toolbar-11 {
+  display: none;
+}
+
+// REPOSITION FULL SCREEN BUTTON
+.rsg--toolbar-11 {
+	margin-left: .7em;
+	margin-top: .7em;
+}
+
+// INDENTING
+.rsg--root-25 {
+  margin-left: 1em !important;
+  margin-top: 2em !important;
+  padding: 0em 3em 1em 3em !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.rsg--root-23 {
+  padding-left: 1em !important;
+}
+.rsg--docs-30 {
+  margin-bottom: 1.5em !important;
+  margin-left: .2em !important;
+}
+.rsg--para-24 {
+  padding-right: 3em !important;
+}
+
+//VIEW CODE BUTTON
+.rsg--button-39 {
+  opacity: .35 !important;
+}
+.rsg--button-39:hover {
+  opacity: 1 !important;
+  color: $dark !important;
+}
+.rsg--button-39:focus {
+  opacity: 1 !important;
+  color: $dark !important;
+}
+.rsg--isActive-40 {
+  border-bottom-color: $dark !important;
+}
+
+// REMOVE BREADCRUMB PATH
+.rsg--pathline-31 {
+	display: none !important;
+}
+
+// REMOVE FOOTER
+.rsg--footer-6 {
+	display: none !important;
+}
+
+// BOTTOM HR
+.rsg--preview-35 {
+  padding: 16px 0px !important;
+  border: unset !important;
+  border-top: 1px #e8e8e8 solid !important;
+}
+
+//REMOVE INVISIBLE TAB BAR
+.rsg--tabs-27 {
+  display: none !important;
+}
+
+//SIDE BAR FONT WEIGHT
+.rsg--heading-14 {
+  font-weight: 300 !important;
+}
+.rsg--active {
+  font-weight: 900 !important;
+}
+
+//VERSION NUMBER ALIGN
+.rsg--version-35 {
+  text-align: right !important;
+}
+
+.rsg--list-39 a {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 0 !important;
+  margin-right: 2em !important;
+}
