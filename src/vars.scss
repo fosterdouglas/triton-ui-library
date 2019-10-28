@@ -1,0 +1,35 @@
+$theme-colors: (
+  "primary": #1B3355,
+  "secondary": #E9B71E,
+	"dark": #3B3B3B,
+  "mediumdark": #9a9a9a,
+  "medium": #DBDBDB,
+	"light": #F7F7F7,
+  "lightest": #fbfbfb,
+  "confirm": #28a745,
+  "warning": #dc3545,
+  "confirmfade": rgba(40,167,69,.1),
+  "warningfade": rgba(220,53,69,.1),
+	"primaryfade": rgba(27,51,85,.1),
+  "secondarydark": #7e661e,
+  "darkfade": rgba(59,59,59,.1)
+);
+
+$enable-gradients: true;
+$enable-responsive-font-sizes: true;
+
+// REDECLARE CUSTOM COLORS FOR CSS USE
+$primary: #1B3355;
+$secondary: #E9B71E;
+$dark: #3B3B3B;
+$mediumdark: #9a9a9a;
+$medium: #DBDBDB;
+$light: #F7F7F7;
+$lightest: #fbfbfb;
+$confirm: #28a745;
+$warning: #dc3545;
+$confirmfade: rgba(40,167,69,.1);
+$warningfade: rgba(220,53,69,.1);
+$primaryfade: rgba(27,51,85,.1);
+$secondarydark: #7e661e;
+$darkfade: rgba(59,59,59,.1);

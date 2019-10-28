@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   require: [
     'babel-polyfill',
-    path.join(__dirname, 'src/styles.scss')
+    path.join(__dirname, 'src/main.js')
   ],
   	template: {
 	    	head: {
@@ -11,9 +11,9 @@ module.exports = {
 						{src: 'https://code.jquery.com/jquery-3.4.1.js'},
 						{src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'},
 						{src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.js'},
-						{src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'},
 						{src: 'src/js/menuspy.js'},
-						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'}
+						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'},
+
 					],
 				  links: [
 						{
@@ -37,20 +37,6 @@ module.exports = {
       base: '"Montserrat", sans-serif'
     }
   },
-
-  	sections: [
-		{name: 'Introduction', content: ''},
-		{name: '––––––––'},
-		{name: 'Buttons', content: 'src/components/Buttons.vue'},
-    {name: 'Navigation Menus', components: ''},
-		{name: 'Overlays', components: ''},
-    {name: 'Typography', components: ''},
-		{name: '––––––––'},
-		{name: 'Examples', components: ''}
-	],
-
-
-
     // set your styleguidist configuration here
     title: 'Triton UI Component Library',
 
@@ -65,10 +51,78 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.1',
+    version: 'v0.3',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'build',
     assetsDir: 'src/assets',
-    minimize: false
+    minimize: false,
+
+  	sections: [
+		{name: 'Introduction', sections: [
+      {components: 'src/components/Introduction/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: '––––––––', sections: [
+      {components: ''}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Buttons', sections: [
+      {components: 'src/components/Buttons/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Forms', sections: [
+      {components: 'src/components/Forms/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Icons', sections: [
+      {components: 'src/components/Icons/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Images', sections: [
+      {components: 'src/components/Images/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Input Fields', sections: [
+      {components: 'src/components/InputFields/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Pop Overs', sections: [
+      {components: 'src/components/PopOvers/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Row Components', sections: [
+      {components: 'src/components/RowComponents/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Side Nav', sections: [
+      {components: 'src/components/SideNav/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: '––––––––', sections: [
+      {components: ''}
+      ],
+      sectionDepth: 0
+    }
+	]
 }

@@ -1,5 +1,3 @@
-@import '../node_modules/bootstrap/scss/bootstrap';
-
 $theme-colors: (
   "primary": #1B3355,
   "secondary": #E9B71E,
@@ -20,11 +18,6 @@ $theme-colors: (
 $enable-gradients: true;
 $enable-responsive-font-sizes: true;
 
-
-// IMPORTANT FOR THIS TO GO AFTER CUSTOMIZATIONS
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
-
-
 // REDECLARE CUSTOM COLORS FOR CSS USE
 $primary: #1B3355;
 $secondary: #E9B71E;
@@ -41,7 +34,11 @@ $primaryfade: rgba(27,51,85,.1);
 $secondarydark: #7e661e;
 $darkfade: rgba(59,59,59,.1);
 
-// MIXINS
+// IMPORTS
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import '../node_modules/bootstrap-vue/src/index.scss';
 
 // GLOBAL
 
@@ -87,13 +84,42 @@ p {
 // BUTTONS
 //
 //
-
 .btn {
 	font-weight: 500;
+  @extend .rounded-0;
+  @extend .shadow-sm;
+  @extend .m-2;
+  @extend .pt-2;
+  @extend .pr-3;
+  @extend .pb-2;
+  @extend .pl-3;
 }
 .btn:focus {
   box-shadow: none !important;
 }
+
+.btn-standard {
+  @extend .text-primary;
+  @extend .border-primary;
+}
+
+.btn-pressed {
+  pointer-events: none;
+  @extend .bg-primary;
+  @extend .border-primary;
+  @extend .text-white;
+}
+
+.btn-disabled {
+  @extend .text-muted;
+  @extend .not-allowed;
+}
+
+.btn-icon {
+  @extend .ml-2;
+}
+
+
 .btn-stand:active {
   background-color: rgba($primary, 1) !important;
   color: white !important;
@@ -113,10 +139,7 @@ p {
   background-color: rgba($warning, 1) !important;
   color: white !important;
 }
-.btn-pressed {
-  font-weight: 300;
-  pointer-events: none;
-}
+
 .btn-func:hover {
   box-shadow: inset 0 0 0 2px $medium !important;
 }
@@ -610,19 +633,18 @@ label {
 
 // SET SIDEBAR TITLE + SPACING
 
-.rsg--logo-34 {
+[class^=rsg--logo-] {
   text-align: right !important;
   color: white !important;
 }
 .rsg--logo-5 {
-  margin-bottom: 2em !important;
-  padding: 1em 30px 2em 30px !important;
+  padding: 1em 30px 1em 30px !important;
+  border-bottom: unset !important;
 }
 
 //SET SIDEBAR WIDTH / MARGIN
 .rsg--sidebar-4 {
   width: 250px !important;
-  padding: 10px !important;
   background-color: $dark !important;
 }
 .rsg--content-3 {
@@ -635,48 +657,27 @@ label {
 }
 
 //SEARCH BOX VISIBILITY
-.rsg--search-37 {
+[class^=rsg--search-] {
   display: none !important;
 }
 
-// REMOVE OUTLINE FROM FULL SCREEN AND "VIEW CODE" BUTTONS
-button.rsg--button-48:active {
-	outline: none !important;
-}
-button.rsg--button-48:focus {
-	outline: none !important;
-	color: #767676 !important;
-}
-a.rsg--button-27:active {
-	outline: none !important;
-}
-a.rsg--button-27:focus {
-	outline: none !important;
-	color: #767676 !important;
-}
-a.rsg--button-21:active {
-	outline: none !important;
-}
-a.rsg--button-21:focus {
-	outline: none !important;
-	color: #767676 !important;
-}
 
 // SIDE BAR LINK STYLES
-.rsg--list-39 {
+[class^=rsg--list-] {
   font-weight: 300 !important;
   margin-top: 1em !important;
 }
-.rsg--sidebar-4 .rsg--link-33 {
+.rsg--sidebar-4 [class^=rsg--link-] {
   color: $medium !important;
 }
-.rsg--sidebar-4 .rsg--link-33:hover {
+.rsg--sidebar-4 [class^=rsg--link-]:hover {
   color: white !important;
+  padding-right: 2.2em !important;
 }
 
 // UNSET ALL ANCHOR/LINK HOVER COLORING
 a:hover {
-  color: unset;
+  color: unset !important;
 }
 
 // REMOVE DOTTED BORDER ON CLICK
@@ -694,103 +695,94 @@ button {
 .rsg--heading2-16:hover {
   color: #333 !important;
 }
-.rsg--header-24 {
-  border-bottom: 3px #333 solid !important;
-}
 .rsg--sectionName-12:hover {
     text-decoration: none !important;
     color: $gray-600 !important;
 }
-#section-, #section--1 {
-  display: none !important;
-}
 
 // REMOVE "VIEW CODE" FULL SCREEN BUTTON
-.rsg--toolbar-37 {
-	display: none;
-}
-.rsg--toolbar-11 {
-  display: none;
-}
-
-// REPOSITION FULL SCREEN BUTTON
-.rsg--toolbar-11 {
-	margin-left: .7em;
-	margin-top: .7em;
+.rsg--button-21  {
+	display: none !important;
 }
 
 // INDENTING
-.rsg--root-25 {
-  margin-left: 1em !important;
-  margin-top: 2em !important;
-  padding: 0em 3em 1em 3em !important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}
 .rsg--root-23 {
   padding-left: 1em !important;
 }
-.rsg--docs-30 {
-  margin-bottom: 1.5em !important;
-  margin-left: .2em !important;
+
+//ADJUST HEADER H3 SIZE/WEIGHT
+[class^=rsg--spacing-] h3, [class^=rsg--spacing-] h3 p {
+  font-weight: 500 !important;
+  font-size: 1.75rem !important;
 }
-.rsg--para-24 {
-  padding-right: 3em !important;
+
+//DISABLES CLICKING SIDE MENU DIVIDERS
+a[href*="/#/%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93"] {
+  pointer-events: none !important;
 }
 
 //VIEW CODE BUTTON
-.rsg--button-39 {
-  opacity: .35 !important;
+div[class^=rsg--controls-] [class^=rsg--button-] {
+  opacity: .7 !important;
+  margin-left: 1em !important;
 }
-.rsg--button-39:hover {
-  opacity: 1 !important;
+.CodeMirror {
+  margin-left: 1em !important;
+}
+
+button[name*=rsg-code-editor] {
   color: $dark !important;
-}
-.rsg--button-39:focus {
-  opacity: 1 !important;
-  color: $dark !important;
-}
-.rsg--isActive-40 {
   border-bottom-color: $dark !important;
 }
 
-// REMOVE BREADCRUMB PATH
-.rsg--pathline-31 {
-	display: none !important;
+button[name*=rsg-code-editor]:hover,
+button[name*=rsg-code-editor]:focus,
+button[name*=rsg-code-editor]:active {
+  color: $dark !important;
+  opacity: 1 !important;
 }
 
 // REMOVE FOOTER
-.rsg--footer-6 {
+[class^=rsg--footer-] {
 	display: none !important;
 }
 
-// BOTTOM HR
-.rsg--preview-35 {
-  padding: 16px 0px !important;
+// BORDER STYLING
+div[class^=rsg--preview-] {
   border: unset !important;
-  border-top: 1px #e8e8e8 solid !important;
+  margin: .5em 0em 1em 1em !important;
+  padding: 2em !important;
+  box-shadow: 0 0.1rem .5rem rgba(0, 0, 0, 0.1) !important;
 }
 
-//REMOVE INVISIBLE TAB BAR
-.rsg--tabs-27 {
+//REMOVE SUB HEADER
+[class^=rsg--header-] {
   display: none !important;
 }
 
-//SIDE BAR FONT WEIGHT
-.rsg--heading-14 {
-  font-weight: 300 !important;
-}
-.rsg--active {
-  font-weight: 900 !important;
-}
-
 //VERSION NUMBER ALIGN
-.rsg--version-35 {
+[class^=rsg--version-] {
   text-align: right !important;
 }
 
-.rsg--list-39 a {
+//ALIGN SIDE BAR ITEMS
+[class^=rsg--list-] a {
   display: block !important;
   text-align: right !important;
   padding-left: 0 !important;
-  margin-right: 2em !important;
+  padding-right: 2em !important;
+}
+
+[class^=rsg--list-] {
+  padding-left: 0 !important;
+}
+
+[class^=rsg--item-] {
+  margin: 0 !important;
+  padding: .3em 0em .3em 0em !important;
+}
+
+// ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
+.rsg--isSelected-51, .rsg--isSelected-43 {
+  background-color: rgba($mediumdark, .2) !important;
 }
