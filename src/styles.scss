@@ -53,7 +53,7 @@ p {
 .pointer {
   cursor: pointer;
 }
-.not-allowed {
+.cursorDisabled {
   cursor: not-allowed !important;
 }
 .hand {
@@ -81,12 +81,11 @@ p {
 
 
 
-// BUTTONS
+// // // // // // // // // // // BUTTONS // // // // // // // // // // //
 //
 //
-.btn {
-	font-weight: 500;
-  @extend .rounded-0;
+// // GENERAL // // // // // // // // // // //
+.btnNavigation {
   @extend .shadow-sm;
   @extend .m-2;
   @extend .pt-2;
@@ -94,36 +93,166 @@ p {
   @extend .pb-2;
   @extend .pl-3;
 }
-.btn:focus {
+
+.btnNavigation:focus {
   box-shadow: none !important;
 }
 
-.btn-standard {
+.btnFunction {
+  @extend .shadow-sm;
+  @extend .m-2;
+  @extend .pr-3;
+  @extend .pl-3;
+}
+
+.btnFunction:focus {
+  box-shadow: none !important;
+}
+
+.btnDisabled {
+  @extend .text-muted;
+}
+
+.btnIconRight {
+  @extend .ml-2;
+  @extend .align-middle;
+}
+
+.btnIconLeft {
+  @extend .mr-2;
+  @extend .align-middle;
+}
+
+// // 001 NAVIGATION STANDARD // // // // // // // // // // //
+.btnStandard {
+  @extend .rounded-0;
   @extend .text-primary;
   @extend .border-primary;
 }
 
-.btn-pressed {
+.btnStandard:active {
+  background-color: rgba($primary, 1) !important;
+  @extend .text-white;
+}
+
+.btnStandardPressed {
   pointer-events: none;
+  @extend .rounded-0;
   @extend .bg-primary;
   @extend .border-primary;
   @extend .text-white;
 }
 
-.btn-disabled {
-  @extend .text-muted;
-  @extend .not-allowed;
+// // 002 NAVIGATION CONFIRM // // // // // // // // // // //
+.btnConfirm {
+  @extend .rounded-0;
+  @extend .text-confirm;
+  @extend .border-confirm;
 }
 
-.btn-icon {
-  @extend .ml-2;
+.btnConfirm:active {
+  background-color: rgba($confirm, 1) !important;
+  @extend .text-white;
 }
 
-
-.btn-stand:active {
-  background-color: rgba($primary, 1) !important;
-  color: white !important;
+.btnConfirmPressed {
+  pointer-events: none;
+  @extend .rounded-0;
+  @extend .bg-confirm;
+  @extend .border-confirm;
+  @extend .text-white;
 }
+
+// // 003 NAVIGATION WARN // // // // // // // // // // //
+.btnWarning {
+  @extend .rounded-0;
+  @extend .text-warning;
+  @extend .border-warning;
+}
+
+.btnWarning:active {
+  background-color: rgba($warning, 1) !important;
+  @extend .text-white;
+}
+
+.btnWarningPressed {
+  pointer-events: none;
+  @extend .rounded-0;
+  @extend .bg-warning;
+  @extend .border-warning;
+  @extend .text-white;
+}
+
+// // 004 NAVIGATION FEEDBACK // // // // // // // // // // //
+.btnFeedback {
+  @extend .rounded-0;
+  @extend .text-secondary;
+  @extend .border-secondary;
+}
+
+.btnFeedback:hover {
+  background-color: rgba($secondary, .12);
+}
+
+.btnFeedback:active {
+  background-color: rgba($secondary, 1) !important;
+  @extend .text-white;
+}
+
+// // 005 FUNCTION STANDARD // // // // // // // // // // //
+.btnFunctionStandard {
+  @extend .roundedMax;
+  @extend .text-dark;
+  @extend .border-dark;
+}
+
+.btnFunctionStandard:hover {
+  box-shadow: inset 0 0 0 2px $medium !important;
+  background-color: unset !important;
+}
+
+.btnFunctionStandard:active {
+  background-color: rgba($darkfade, 1) !important;
+  @extend .text-white;
+}
+
+.btnFunctionPressed {
+  pointer-events: none;
+  @extend .roundedMax;
+  @extend .bg-dark;
+  @extend .border-dark;
+  @extend .text-white;
+}
+
+// // 005 FUNCTION HIGHLIGHTED // // // // // // // // // // //
+.btnFunctionHighlighted {
+  @extend .roundedMax;
+  @extend .text-secondary;
+  @extend .border-secondary;
+}
+
+.btnFunctionHighlighted:hover {
+  box-shadow: inset 0 0 0 2px rgba($secondary, .3) !important;
+  background-color: unset !important;
+}
+
+.btnFunctionHighlighted:active {
+  background-color: rgba($secondary, 1) !important;
+  box-shadow: inset 0 0 0 2px white !important;
+  @extend .text-white;
+}
+
+.btnFunctionHighlightedPressed {
+  pointer-events: none;
+  @extend .roundedMax;
+  @extend .bg-secondary;
+  @extend .border-secondary;
+  @extend .text-white;
+}
+
+// // // // // // // // // // // // // // // // // // // // // // // // //
+
+
 .btn-stand-feedback:active {
   background-color: rgba($secondary, 1) !important;
   color: white !important;
@@ -131,10 +260,7 @@ p {
 .btn-stand-feedback:hover {
   background-color: rgba($secondary, .2);
 }
-.btn-conf:active {
-  background-color: rgba($confirm, 1) !important;
-  color: white !important;
-}
+
 .btn-warn:active {
   background-color: rgba($warning, 1) !important;
   color: white !important;
@@ -173,7 +299,7 @@ p {
 .btn-func-high-pressed:focus{
   box-shadow: inset 0 0 0 2px white !important;
 }
-.rounded-max {
+.roundedMax {
   border-radius: .75em; //custom rounding value for buttons
 }
 .spinner-grow-sm {

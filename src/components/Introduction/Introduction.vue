@@ -30,7 +30,7 @@
   <h3>Libraries and Dependencies</h3>
   <div class="pr-4 pl-4 text-justify">
     <p>
-      All components are built with <a class="text-info underline" href="https://vuejs.org/" target="_blank">Vue.js</a>, using Bootstrap, some custom CSS, and a small amount of Javascript/jQuery (primarily to illustrate specific interaction examples). A few components use additional libraries.
+      All components are built with <a class="text-info underline" href="https://vuejs.org/" target="_blank">Vue.js</a>, using <a class="text-info underline" href="https://bootstrap-vue.js.org/" target="_blank">BootstrapVue</a>, some custom CSS, and a small amount of Javascript/jQuery (primarily to illustrate specific interaction examples). A few components use additional libraries.
     </p>
     <p>
       <a class="text-info underline" href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank">Bootstrap 4.3</a><br/>
@@ -67,7 +67,7 @@
   <div class="pr-4 pl-4 text-justify">
   <p>
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.2</strong> - last updated on October 24 2019.<br/><br/>
+    <strong class="text-dark">v0.3</strong> - last updated on October 27 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>
