@@ -16,6 +16,7 @@
         <b-li class="alertListItem">- Clean/combine CSS classes on feedback text</b-li>
         <b-li class="alertListItem">- Swap out loading animation element to use Bootstrap-Vue</b-li>
         <b-li class="alertListItem">- Address outstanding WCAG accessibility items</b-li>
+        <b-li class="alertListItem">- Add "this.blur();" to buttons</b-li>
       </b-ul>
   </b-alert>
 
@@ -33,6 +34,7 @@
       :pressed="false"
       variant="outline-primaryfade"
       class="btnNavigation btnStandard"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i></i>

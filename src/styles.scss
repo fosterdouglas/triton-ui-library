@@ -89,6 +89,14 @@ p {
 //
 //
 // // GENERAL // // // // // // // // // // //
+.btn {
+  transition: color .35s ease-out, background-color .35s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+
+.btn:active {
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+
 .btnNavigation {
   @extend .shadow-sm;
   @extend .m-2;
@@ -98,19 +106,20 @@ p {
   @extend .pl-3;
 }
 
-.btn:focus, .btnNavigation:focus {
-  box-shadow: none !important;
+button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
+  outline: 5px auto inherit; //retains WCAG standard for screen readers
 }
+
+button:focus:active, .btn:focus:active, .btnNavigation:focus:active, .btnFunction:focus:active {
+  outline: none; //prevents visual outline on click
+}
+
 
 .btnFunction {
   @extend .shadow-sm;
   @extend .m-2;
   @extend .pr-3;
   @extend .pl-3;
-}
-
-.btnFunction:focus {
-  box-shadow: none !important;
 }
 
 .btnDisabled {
@@ -302,6 +311,7 @@ p {
 }
 
 .customAlert {
+  @extend .mt-3;
   @extend .m-2;
   @extend .mb-5;
   @extend .pt-3;
@@ -814,7 +824,7 @@ a:hover {
 }
 
 // REMOVE DOTTED BORDER ON CLICK
-button {
+[class^=rsg--button-] {
   	outline: none !important;
 }
 

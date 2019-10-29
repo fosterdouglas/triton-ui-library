@@ -1,5 +1,5 @@
 <docs>
-  
+
 <h3>Timed Alert</h3>
 <p>Used when a particular fuction has a timeout limit.</p>
 
@@ -7,10 +7,20 @@
 <template>
   <div>
 
+    <b-button
+      @click="showAlert"
+      variant="outline-secondary"
+      class="btnFunction btnFunctionHighlighted"
+      >
+      Test Timed Alert
+      <i></i>
+    </b-button>
+
     <b-alert
       :show="dismissCountDown"
       fade
       variant="secondary"
+      class="customAlert"
       @dismissed="dismissCountDown=0"
       @dismiss-count-down="countDownChanged"
     >
@@ -23,14 +33,7 @@
       ></b-progress>
     </b-alert>
 
-    <b-button
-      @click="showAlert"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionStandard"
-      >
-      Test Timed Alert
-      <i></i>
-    </b-button>
+
 
   </div>
 </template>
