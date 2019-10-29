@@ -54,7 +54,7 @@ module.exports = {
     version: 'v0.3',
     pagePerSection: true,
     usageMode: 'expand',
-    styleguideDir: 'build',
+    styleguideDir: 'triton-ui-component-library',
     assetsDir: 'src/assets',
     minimize: false,
 

@@ -11,7 +11,7 @@
     <h5 class="alert-heading">Under construction!</h5>
     <hr/>
     <p>Many components below are <span class="font-weight-bolder">missing or are actively under construction, </span>
-    and this page has <span class="font-weight-bolder">not yet been cross-browser or platform tested.</span> Look for this icon <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i> to the right of components that are notably incomplete. If you find any inconsistencies, please Slack or Email Foster. Thank you for your patience!
+    and this page has <span class="font-weight-bolder">not yet been cross-browser or platform tested.</span> Look for this icon <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i> next to components that are notably incomplete. If you find any inconsistencies, please Slack or Email Foster. Thank you for your patience!
 
 
 
@@ -68,8 +68,8 @@
   <p>
     This tool is currently in development.<br/>
     <strong class="text-dark">v0.3</strong> - last updated on October 27 2019.<br/><br/>
-    <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library" target="_blank">Github Development Repo</a><br/>
-    <a class="text-info underline" href="" target="_blank">Github Pages Deployment Repo</a><br/>
+    <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
+    <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>
 
   </div>
