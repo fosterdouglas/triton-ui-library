@@ -4,32 +4,40 @@
 <p>These appear at the top or bottom of a form page after it's been submitted, either successfully or when returned with errors.
 
 ```js
-<div class="row">
+<template>
 
-  <div class="alert alert-success fade show m-4 w-100 p-4 mt-1" role="alert">
-    <button class="pointer close-icon float-right" type="button" data-dismiss="alert" aria-label="Close">
-      <i class="fal fa-lg fa-window-close text-success align-middle pointer icon-hover"></i>
-    </button>
-    <h5 class="alert-heading">Success!</h5>
-    <hr/>
-    <p class="mb-0">This alert will show up at the top of a successfully loaded page following a form.</p>
+  <div>
+    <b-alert fade show dismissible variant="confirm" class="customAlert alertConfirm">
+      <h5>{{ AlertConfirmTitle }}</h5>
+      <hr/>
+      <p class="mb-0">This alert will show up at the top of a successfully loaded page following a form.</p>
+    </b-alert>
+
+    <b-alert fade show dismissible variant="warning" class="customAlert alertWarning">
+      <h5>{{ AlertWarningTitle }}</h5>
+      <hr/>
+      <p class="mb-0">This alert will show up beneath the form submit button in the case that an error with a text field has occured. It may contain details of the error:</p>
+          <b-ul>
+            <b-li class="alertListItem">Something went wrong.</b-li>
+            <b-li class="alertListItem">Also, another thing went wrong.</b-li>
+            <b-li class="alertListItem">Oops this one, too.</b-li>
+          </b-ul>
+    </b-alert>
   </div>
 
-  <div class="alert alert-warning fade show m-4 w-100 p-4 mt-1" role="alert">
-    <button class="pointer close-icon float-right" type="button" data-dismiss="alert" aria-label="Close">
-      <i class="fal fa-lg fa-window-close text-warning align-middle pointer icon-hover"></i>
-    </button>
-    <h5 class="alert-heading">Warning!</h5>
-    <hr/>
-    <p class="mb-0">This alert will show up beneath the form submit button in the case that an error with a text field has occured. It may contain details of the error:</p>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item font-weight-bolder">Something went wrong.</li>
-      <li class="list-group-item font-weight-bolder">Also, another thing went wrong.</li>
-      <li class="list-group-item font-weight-bolder">Oops this one, too.</li>
-    </ul>
-  </div>
+</template>
 
-</div>
+<script>
+  export default {
+    data() {
+      return {
+        AlertConfirmTitle: 'Success!',
+        AlertWarningTitle: 'Warning',
+      }
+    }
+  }
+</script>
+
 ```
 
 <h3>Text Field</h3>
@@ -73,5 +81,6 @@
 
 </div>
 ```
+
 
 </docs>

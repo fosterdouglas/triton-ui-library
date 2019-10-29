@@ -1,22 +1,18 @@
 <docs>
 
 ```jsx noeditor
+<div>
 
-<div id="section-introduction">
-<div class="row mb=1">
-  <div class="alert alert-info fade show ml-5 mr-5 mt-3 mb-5 w-100 pl-5 pr-5 pt-4 pb-4" role="alert">
-    <button class="pointer close-icon float-right" type="button" data-dismiss="alert" aria-label="Close">
-      <i class="fal fa-lg fa-window-close text-info align-middle pointer icon-hover"></i>
-    </button>
-    <h5 class="alert-heading">Under construction!</h5>
+  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <h5 class="alert-heading">Under construction!
+      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+    </h5>
     <hr/>
-    <p>Many components below are <span class="font-weight-bolder">missing or are actively under construction, </span>
+    <p class="mb-0">Many components below are <span class="font-weight-bolder">missing or are actively under construction, </span>
     and this page has <span class="font-weight-bolder">not yet been cross-browser or platform tested.</span> Look for this icon <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i> next to components that are notably incomplete. If you find any inconsistencies, please Slack or Email Foster. Thank you for your patience!
-
-
-
 	</p>
-  </div>
+  </b-alert>
+
 </div>
 
 <div class="pr-5 pl-4 pt-1">
