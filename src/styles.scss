@@ -44,7 +44,7 @@ $darkfade: rgba(59,59,59,.1);
 
 html, div, p, h1, h2, h4, h5, button {
   	font-family: 'Montserrat' !important;
-    font-weight: 300 !important;
+    font-weight: 500 !important;
     -webkit-font-smoothing: antialiased;
 }
 p {
@@ -797,7 +797,7 @@ label {
 
 // SIDE BAR LINK STYLES
 [class^=rsg--list-] {
-  font-weight: 300 !important;
+  font-weight: 500 !important;
   margin-top: 1em !important;
 }
 .rsg--sidebar-4 [class^=rsg--link-] {
