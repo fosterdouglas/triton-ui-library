@@ -317,6 +317,10 @@ p {
   @extend .list-group-item;
 }
 
+.alert .progress {
+  background-color: white;
+}
+
 // // // // // // // // // // // // // // // // // // // // // // // // //
 
 
@@ -767,7 +771,7 @@ label {
   color: white !important;
 }
 .rsg--logo-5 {
-  padding: 1em 30px 1em 30px !important;
+  padding: 2em 30px 1em 30px !important;
   border-bottom: unset !important;
 }
 

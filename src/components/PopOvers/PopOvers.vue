@@ -1,5 +1,22 @@
 <docs>
 
+```jsx noeditor
+
+<div>
+
+  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <h5 class="alert-heading">Page Task List
+      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+    </h5>
+    <hr/>
+      <b-ul>
+        <b-li class="alertListItem">- Fix DELETE/ADD buttons to properly dismiss popover</b-li>
+      </b-ul>
+  </b-alert>
+
+</div>
+```
+
 <h3>Decision Confirmation</h3>
 <p></p>
 

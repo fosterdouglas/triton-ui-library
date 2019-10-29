@@ -1,0 +1,59 @@
+<docs>
+  
+<h3>Timed Alert</h3>
+<p>Used when a particular fuction has a timeout limit.</p>
+
+```js
+<template>
+  <div>
+
+    <b-alert
+      :show="dismissCountDown"
+      fade
+      variant="secondary"
+      @dismissed="dismissCountDown=0"
+      @dismiss-count-down="countDownChanged"
+    >
+      <p>{{ TimedTitle }}{{ dismissCountDown }}</p>
+      <b-progress
+        variant="secondary"
+        :max="dismissSecs"
+        :value="dismissCountDown"
+        height="4px"
+      ></b-progress>
+    </b-alert>
+
+    <b-button
+      @click="showAlert"
+      variant="outline-darkfade"
+      class="btnFunction btnFunctionStandard"
+      >
+      Test Timed Alert
+      <i></i>
+    </b-button>
+
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        dismissSecs: 30,
+        dismissCountDown: 0,
+        TimedTitle: 'This alert will complete in '
+      }
+    },
+    methods: {
+      countDownChanged(dismissCountDown) {
+        this.dismissCountDown = dismissCountDown
+      },
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs
+      }
+    }
+  }
+</script>
+```
+
+</docs>

@@ -1,43 +1,22 @@
 <docs>
 
-<h3>Alerts</h3>
-<p>These appear at the top or bottom of a form page after it's been submitted, either successfully or when returned with errors.
+```jsx noeditor
 
-```js
-<template>
+<div>
 
-  <div>
-    <b-alert fade show dismissible variant="confirm" class="customAlert alertConfirm">
-      <h5>{{ AlertConfirmTitle }}</h5>
-      <hr/>
-      <p class="mb-0">This alert will show up at the top of a successfully loaded page following a form.</p>
-    </b-alert>
+  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <h5 class="alert-heading">Page Task List
+      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+    </h5>
+    <hr/>
+      <b-ul>
+        <b-li class="alertListItem">- Distribute components into separate files</b-li>
+        <b-li class="alertListItem">- Remove/solve form field "underline"</b-li>
+        <b-li class="alertListItem">- Add additional form field types</b-li>
+      </b-ul>
+  </b-alert>
 
-    <b-alert fade show dismissible variant="warning" class="customAlert alertWarning">
-      <h5>{{ AlertWarningTitle }}</h5>
-      <hr/>
-      <p class="mb-0">This alert will show up beneath the form submit button in the case that an error with a text field has occured. It may contain details of the error:</p>
-          <b-ul>
-            <b-li class="alertListItem">Something went wrong.</b-li>
-            <b-li class="alertListItem">Also, another thing went wrong.</b-li>
-            <b-li class="alertListItem">Oops this one, too.</b-li>
-          </b-ul>
-    </b-alert>
-  </div>
-
-</template>
-
-<script>
-  export default {
-    data() {
-      return {
-        AlertConfirmTitle: 'Success!',
-        AlertWarningTitle: 'Warning',
-      }
-    }
-  }
-</script>
-
+</div>
 ```
 
 <h3>Text Field</h3>

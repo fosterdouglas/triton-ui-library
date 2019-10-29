@@ -1,5 +1,25 @@
 <docs>
 
+```jsx noeditor
+
+<div>
+
+  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <h5 class="alert-heading">Page Task List
+      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+    </h5>
+    <hr/>
+      <b-ul>
+        <b-li class="alertListItem">- Refactor expanding component JS and HTML (use Collapse)</b-li>
+        <b-li class="alertListItem">- Animate expanding component dropdown carat</b-li>
+        <b-li class="alertListItem">- Fix file delete button</b-li>
+        <b-li class="alertListItem">- Distribute components into separate files</b-li>
+      </b-ul>
+  </b-alert>
+
+</div>
+```
+
 <h3>Basic</h3>
 
 
@@ -109,67 +129,87 @@
 
 
 ```js
+<template>
+  <div>
+
+    <div  class="card-columns columns-1"
+      :class="showCollapse ? 'collapsed' : null"
+      :aria-expanded="showCollapse ? 'true' : 'false'"
+      aria-controls="collapse"
+      @click="showCollapse = !showCollapse"
+    >
+
+        <div id="expand" role="button" class="card card-hover bg-light text-dark rounded-0 border-0 pl-2 pt-2 pb-2 mt-1 mb-0">
+
+            <div class="col-1 mr-4 mr-sm-3 mr-md-0 mr-lg-n2 d-inline-flex">
+              <div class="text-center mx-auto">
+                <i class="fal fa-horizontal-rule text-dark align-middle"></i>
+              </div>
+            </div>
+
+            <div class="col d-inline item-text">
+            This item can be clicked to expand or collapse!
+              <div class="mr-sm-5 mr-lg-4 d-inline float-right">
+                <i class="far fa-chevron-down text-dark align-middle icon toggle-down"></i>
+              </div>
+            </div>
+
+        </div>
+
+  </div>
+
+    <b-collapse id="collapse" v-model="showCollapse" class="mt-2">
+
+      <div class="border border-dark rounded-0 mt-n3">
+        <div class="row ml-0 mr-4 mt-3 mb-0">
+          <div class="col-1 ml-1"></div>
+          <div class="col-auto small mt-1">Sub-Header</div>
+          <hr class="col sub-hr" />
+        </div>
+
+        <div class="row ml-0 mr-0">
+          <div class="col-1 ml-1"></div>
+          <div class="col pr-4 pt-1 pb-4">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </div>
+
+    </b-collapse>
+  </div>
+</template>
+
+<script>
 $(function() {
   $('#expand').click(function(){
-      if($('#expand').hasClass("collapsed"))
-       {
-         $('#expand').removeClass("tog-header"),
-         $('#expand').addClass("card-hover"),
-         $('#expand .item-text').attr('style', 'font-weight: unset !important')
-       } else
-       {
-         $('#expand').addClass("tog-header"),
-         $('#expand').removeClass("card-hover"),
-         $('#expand .item-text').attr('style', 'font-weight: 700 !important')
-       }
-  });
+      if($('#collapse').hasClass("collapse"))
+        {
+          $('#expand').addClass("tog-header"),
+          $('#expand').removeClass("card-hover"),
+          $('#expand .item-text').attr('style', 'font-weight: 700 !important')
+        }
+      })
 });
 
+$(function() {
+  $('#expand').click(function(){
+      if($('#collapse').hasClass("show"))
+        {
+          $('#expand').removeClass("tog-header"),
+          $('#expand').addClass("card-hover"),
+          $('#expand .item-text').attr('style', 'font-weight: unset !important')
+        }
+      })
+});
 
-
-<div class="card-columns columns-1">
-
-
-  <label id="expand" class="card card-hover bg-light text-dark rounded-0 border-0 pl-2 pt-2 pb-2 mt-1 mb-0" type="button" data-toggle="collapse" data-target="#expandMe" aria-expanded="false" aria-controls="expandMe">
-
-      <div class="col-1 mr-4 mr-sm-3 mr-md-0 mr-lg-n2 d-inline-flex">
-        <div class="text-center mx-auto">
-          <i class="fal fa-horizontal-rule text-dark align-middle"></i>
-        </div>
-      </div>
-
-
-      <div class="col d-inline item-text">
-      This item can be clicked to expand or collapse!
-        <div class="mr-sm-5 mr-lg-4 d-inline float-right">
-          <input type="checkbox" id="chevron" />
-          <i class="far fa-chevron-down text-dark align-middle icon toggle-down"></i>
-        </div>
-      </div>
-
-  </label>
-
-
-<div class="collapse" id="expandMe">
-  <div class="border border-dark rounded-0 mt-n2-5">
-    <div class="row ml-0 mr-4 mt-3 mb-0">
-      <div class="col-1 ml-1"></div>
-      <div class="col-auto small mt-1">Sub-Header</div>
-      <hr class="col sub-hr" />
-    </div>
-
-    <div class="row ml-0 mr-0">
-      <div class="col-1 ml-1"></div>
-      <div class="col pr-4 pt-1 pb-4">
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
-
+  export default {
+    data() {
+      return {
+        showCollapse: false
+      }
+    }
+  }
+</script>
 ```
 
 <h3>File</h3>

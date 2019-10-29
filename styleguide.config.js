@@ -71,6 +71,18 @@ module.exports = {
       sectionDepth: 0
     },
 
+    {name: 'Alerts', sections: [
+      {components: 'src/components/Alerts/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Breadcrumb', sections: [
+      {components: 'src/components/Breadcrumb/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
 		{name: 'Buttons', sections: [
       {components: 'src/components/Buttons/*.vue'}
       ],
@@ -101,8 +113,14 @@ module.exports = {
       sectionDepth: 0
     },
 
-    {name: 'Pop Overs', sections: [
-      {components: 'src/components/PopOvers/*.vue'}
+    {name: 'Lightbox', sections: [
+      {components: 'src/components/Lightbox/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+    {name: 'Popovers', sections: [
+      {components: 'src/components/Popovers/*.vue'}
       ],
       sectionDepth: 0
     },
