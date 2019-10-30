@@ -12,7 +12,7 @@
       <b-ul>
         <b-li class="alertListItem">- Distribute components into separate files</b-li>
         <b-li class="alertListItem">- Change icon for "Edit"</b-li>
-        <b-li class="alertListItem">- Change icon for "Edit"</b-li>
+        <b-li class="alertListItem">- Add missing icons</b-li>
       </b-ul>
   </b-alert>
 

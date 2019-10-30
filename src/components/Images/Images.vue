@@ -42,42 +42,4 @@
 
 ```
 
-
-<h3>Inline Modal
-<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
-</h3>
-
-
-```js
-
-
-<button type="button" class="btn btn-outline-light border-dark shadow-sm p-3 text-center" data-toggle="modal" data-target="#exampleModalCenter">
-  <img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
-</button>
-
-
-{/* Modal code declared inside of "Modal" component example above */}
-
-
-```
-
-
-<h3>Thumbnail Modal
-<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
-</h3>
-
-
-```js
-
-<button type="button" class="btn btn-outline-light border-dark shadow-sm p-3 text-center" data-toggle="modal" data-target="#exampleModalCenter">
-  <div class="center-cropped" style={{backgroundImage: "url(" + "http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" + ")"}}>
-    <img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
-  </div>
-</button>
-
-
-{/* Modal code declared inside of "Modal" component example above */}
-
-```
-
 </docs>
