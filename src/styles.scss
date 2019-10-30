@@ -89,14 +89,6 @@ p {
 //
 //
 // // GENERAL // // // // // // // // // // //
-.btn {
-  transition: color .35s ease-out, background-color .35s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-}
-
-.btn:active {
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-}
-
 .btnNavigation {
   @extend .shadow-sm;
   @extend .m-2;
@@ -106,14 +98,27 @@ p {
   @extend .pl-3;
 }
 
-button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
-  outline: 5px auto inherit; //retains WCAG standard for screen readers
-}
-
-button:focus:active, .btn:focus:active, .btnNavigation:focus:active, .btnFunction:focus:active {
+.btnNavigation:focus:active {
   outline: none; //prevents visual outline on click
+  box-shadow: inset 0 0 0 0px white !important;
 }
 
+.btnFunction:focus:active {
+  outline: none; //prevents visual outline on click
+  box-shadow: inset 0 0 0 2px white !important;
+}
+
+button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
+   box-shadow: 0 0 0 4px $medium !important; //retains WCAG standard for screen readers
+}
+
+.btn {
+  transition: color .35s ease-out, background-color .35s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
+
+.btn:active {
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+}
 
 .btnFunction {
   @extend .shadow-sm;
@@ -255,7 +260,6 @@ button:focus:active, .btn:focus:active, .btnNavigation:focus:active, .btnFunctio
 
 .btnFunctionHighlighted:active {
   background-color: rgba($secondary, 1) !important;
-  box-shadow: inset 0 0 0 2px white !important;
   @extend .text-white;
 }
 
@@ -789,7 +793,12 @@ label {
 .rsg--sidebar-4 {
   width: 250px !important;
   background-color: $dark !important;
+  background-image: url("assets/triton-logo-sm.svg") !important;
+  background-repeat: no-repeat !important;
+  background-size: 18% !important;
+  background-position: 84% 96% !important;
 }
+
 .rsg--content-3 {
   margin: 20px 50px 20px 50px !important;
   max-width: unset !important;
@@ -876,6 +885,8 @@ div[class^=rsg--controls-] [class^=rsg--button-] {
 button[name*=rsg-code-editor] {
   color: $dark !important;
   border-bottom-color: $dark !important;
+  padding: .5em !important;
+  margin-left: 1.1em !important;
 }
 
 button[name*=rsg-code-editor]:hover,
@@ -883,6 +894,7 @@ button[name*=rsg-code-editor]:focus,
 button[name*=rsg-code-editor]:active {
   color: $dark !important;
   opacity: 1 !important;
+  padding: .5em !important;
 }
 
 // REMOVE FOOTER

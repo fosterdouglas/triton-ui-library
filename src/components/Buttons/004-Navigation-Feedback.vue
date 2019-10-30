@@ -15,6 +15,7 @@
         variant="outline-secondary"
         id="changesBtn"
         class="btnNavigation btnFeedback"
+        onclick="this.blur();"
         >
         {{ NavButtonCaption }}
         <i></i>

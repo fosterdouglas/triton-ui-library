@@ -37,7 +37,7 @@
       <a class="text-info underline" href="https://fonts.google.com/" target="_blank">Google Fonts</a>
     </p>
     <p>
-    This website uses the documentation tool
+    This website is built and maintained with the documentation tool
     <a class="text-info underline" href="https://vue-styleguidist.github.io/" target="_blank">Vue Styleguidist</a>.
     </p>
   </div>
@@ -45,7 +45,7 @@
   <h3>Responsive Design</h3>
   <div class="pr-4 pl-4 text-justify">
   <p>
-  The Triton UI Component Library is <b>not</b> currently designed and tested for mobile or tablet use. Many of these components are inherently responsive, but full compatibility testing is currently a secondary priority.
+  The Triton UI Component Library is <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is currently a secondary priority.
   </p>
   </div>
 
@@ -59,11 +59,25 @@
   </p>
   </div>
 
+  <h3>WCAG Compliance</h3>
+  <div class="pr-4 pl-4 text-justify">
+  <p>
+  Details coming soon.
+  <br/>
+  <br/>
+  <b-img src="https://www.w3.org/WAI/WCAG21/wcag2.1A-blue-v.png" fluid class="w-25 d-flex"></b-img>
+  <br/>
+  </p>
+  <p>
+
+  </p>
+  </div>
+
   <h3>Versions & Github</h3>
   <div class="pr-4 pl-4 text-justify">
   <p>
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.3</strong> - last updated on October 27 2019.<br/><br/>
+    <strong class="text-dark">v0.3.6</strong> - last updated on October 30 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

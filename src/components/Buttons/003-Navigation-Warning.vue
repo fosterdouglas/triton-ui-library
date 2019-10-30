@@ -6,11 +6,12 @@
 ```js
 <template>
   <div>
-    
+
     <b-button
       :pressed="false"
       variant="outline-primaryfade"
       class="btnNavigation btnWarning"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i></i>
@@ -20,6 +21,7 @@
       :pressed="false"
       variant="outline-warningfade"
       class="btnNavigation btnWarning"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i class="far fa-ban btnIconRight"></i>
@@ -29,6 +31,7 @@
       :pressed="true"
       variant="outline-warningfade"
       class="btnNavigation btnWarningPressed"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
     </b-button>

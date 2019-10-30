@@ -14,9 +14,9 @@
         <b-li class="alertListItem">- Rename uses of "Function" to "App Function"</b-li>
         <b-li class="alertListItem">- Adjust CSS of NavButtonIcon / FuncButtonIcon to be reusable/dynamic</b-li>
         <b-li class="alertListItem">- Clean/combine CSS classes on feedback text</b-li>
-        <b-li class="alertListItem">- Swap out loading animation element to use Bootstrap-Vue</b-li>
+        <b-li class="alertListItem">- <del>Swap out loading animation element to use Bootstrap-Vue</del> <i class="fas fa-check"></i></b-li>
         <b-li class="alertListItem">- Address outstanding WCAG accessibility items</b-li>
-        <b-li class="alertListItem">- Add "this.blur();" to buttons</b-li>
+        <b-li class="alertListItem">- <del>Add "this.blur();" to buttons</del> <i class="fas fa-check"></i></b-li>
       </b-ul>
   </b-alert>
 
@@ -44,6 +44,7 @@
       :pressed="false"
       variant="outline-primaryfade"
       class="btnNavigation btnStandard"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i class="far fa-arrow-right btnIconRight"></i>
@@ -53,6 +54,7 @@
       :pressed="true"
       variant="outline-primaryfade"
       class="btnNavigation btnStandardPressed"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
     </b-button>
@@ -61,6 +63,7 @@
       :pressed="null"
       variant="outline-primaryfade"
       class="btnNavigation btnDisabled cursorDisabled"
+      onclick="this.blur();"
       disabled
       >
       {{ NavButtonCaption }}

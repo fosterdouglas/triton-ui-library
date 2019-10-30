@@ -11,6 +11,7 @@
       :pressed="false"
       variant="outline-secondary"
       class="btnFunction btnFunctionHighlighted"
+      onclick="this.blur();"
       >
       {{ FuncButtonCaption }}
       <i></i>
@@ -20,6 +21,7 @@
       :pressed="false"
       variant="outline-secondary"
       class="btnFunction btnFunctionHighlighted"
+      onclick="this.blur();"
       >
       <i class="fal fa-file-alt fa-lg btnIconLeft"></i>
       {{ FuncButtonCaption }}
@@ -29,6 +31,7 @@
       :pressed="true"
       variant="outline-secondary"
       class="btnFunction btnFunctionHighlightedPressed"
+      onclick="this.blur();"
       >
       {{ FuncButtonCaption }}
     </b-button>
@@ -37,8 +40,9 @@
       :pressed="true"
       variant="outline-secondary"
       class="btnFunction btnFunctionHighlightedPressed"
+      onclick="this.blur();"
       >
-      <span class="spinner-grow spinner-grow-sm btnIconLeft" role="status" aria-hidden="true"></span>
+      <b-spinner small type="grow" label="Spinning" class="btnIconLeft mb-1"></b-spinner>
       {{ FuncButtonCaption }}
     </b-button>
 

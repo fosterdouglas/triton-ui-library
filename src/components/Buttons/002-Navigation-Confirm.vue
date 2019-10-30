@@ -6,11 +6,12 @@
 ```js
 <template>
   <div>
-    
+
     <b-button
       :pressed="false"
       variant="outline-confirmfade"
       class="btnNavigation btnConfirm"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i></i>
@@ -20,6 +21,7 @@
       :pressed="false"
       variant="outline-confirmfade"
       class="btnNavigation btnConfirm"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
       <i class="far fa-check btnIconRight"></i></b-button>
@@ -29,6 +31,7 @@
       :pressed="true"
       variant="outline-confirmfade"
       class="btnNavigation btnConfirmPressed"
+      onclick="this.blur();"
       >
       {{ NavButtonCaption }}
     </b-button>

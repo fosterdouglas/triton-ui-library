@@ -11,6 +11,7 @@
     <hr/>
       <b-ul>
         <b-li class="alertListItem">- Fix DELETE/ADD buttons to properly dismiss popover</b-li>
+        <b-li class="alertListItem">- BROKEN: not functioning after build, only locally</b-li>
       </b-ul>
   </b-alert>
 
@@ -28,7 +29,7 @@
   <div class="col-3"></div>
 
   <div class="col-1">
-    <button id="popover-delete" class="btn badge cursorDefault">
+    <b-button id="popover-delete" class="btn badge cursorDefault">
       <i class="fal fa-lg fa-window-close icon-hover text-warning info"></i>
     </button>
 

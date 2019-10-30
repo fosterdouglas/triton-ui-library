@@ -11,6 +11,7 @@
       @click="showAlert"
       variant="outline-secondary"
       class="btnFunction btnFunctionHighlighted"
+      onclick="this.blur();"
       >
       Test Timed Alert
       <i></i>
