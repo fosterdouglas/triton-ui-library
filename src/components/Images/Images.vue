@@ -24,7 +24,7 @@
 ```js
 
 <div class="p-3 d-inline-flex">
-  <img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
+  <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
 </div>
 
 ```
@@ -36,7 +36,7 @@
 
 <div class="btn border-dark p-3 text-center">
   <div class="center-cropped" style="backgroundImage: url(http://sandcastle.co/cdn/ebydesign/triton/hello-world.png)">
-    <img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
+    <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
   </div>
 </div>
 

@@ -19,7 +19,7 @@
 </div>
 ```
 
-<h3>Primary Breadcrumb</h3>
+<h3>Primary</h3>
 <p></p>
 
 ```js
@@ -33,15 +33,15 @@
       return {
         items: [
           {
-            text: 'Admin',
+            text: 'Sample Agency',
             href: '#'
           },
           {
-            text: 'Manage',
+            text: 'Sample Client',
             href: '#'
           },
           {
-            text: 'Library',
+            text: 'Current Client or User',
             active: true
           }
         ]

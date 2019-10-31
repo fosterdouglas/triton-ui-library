@@ -214,7 +214,12 @@ $(function () {
 </div>
 ```
 
-<h3>Text Field - Editor</h3>
+<h3>Text Field - Editor
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>
+<span class="text-info">This feature is in development and needs confirmation on use case.</span>
+</p>
 
 ```js
 <div class="col-6">

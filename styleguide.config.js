@@ -1,5 +1,8 @@
 const path = require('path')
 module.exports = {
+  editorConfig: {
+    readOnly: 'nocursor'
+  },
   require: [
     'babel-polyfill',
     path.join(__dirname, 'src/main.js')
@@ -51,7 +54,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.3.8',
+    version: 'v0.4.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -67,24 +70,6 @@ module.exports = {
 
     {name: '––––––––', sections: [
       {components: ''}
-      ],
-      sectionDepth: 0
-    },
-
-    {name: 'Alerts', sections: [
-      {components: 'src/components/Alerts/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-		{name: 'Breadcrumb', sections: [
-      {components: 'src/components/Breadcrumb/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-		{name: 'Buttons', sections: [
-      {components: 'src/components/Buttons/*.vue'}
       ],
       sectionDepth: 0
     },
@@ -113,32 +98,58 @@ module.exports = {
       sectionDepth: 0
     },
 
-    {name: 'Lightbox', sections: [
-      {components: 'src/components/Lightbox/*.vue'}
-      ],
-      sectionDepth: 0
+    {name: 'Navigation', sections: [
+
+      {name: 'Buttons', sections: [
+          {components: 'src/components/Navigation/Buttons/*.vue'}
+        ],
+      },
+
+      {name: 'Breadcrumb', sections: [
+          {components: 'src/components/Navigation/Breadcrumb/*.vue'}
+        ],
+      },
+
+      {name: 'Pagination', sections: [
+          {components: 'src/components/Navigation/Pagination/*.vue'}
+        ],
+      },
+
+      {name: 'Side Bar', sections: [
+          {components: 'src/components/Navigation/SideBar/*.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
     },
 
-    {name: 'Popovers', sections: [
-      {components: 'src/components/Popovers/*.vue'}
-      ],
-      sectionDepth: 0
+    {name: 'Overlays', sections: [
+
+      {name: 'Alerts', sections: [
+          {components: 'src/components/Overlays/Alerts/*.vue'}
+        ],
+      },
+
+      {name: 'Lightbox', sections: [
+        {components: 'src/components/Overlays/Lightbox/*.vue'}
+        ],
+      },
+
+      {name: 'Popovers', sections: [
+        {components: 'src/components/Overlays/Popovers/*.vue'}
+        ],
+      },
+
+      {name: 'Toasts', sections: [
+          {components: 'src/components/Overlays/Toasts/*.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
     },
 
     {name: 'Row Components', sections: [
       {components: 'src/components/RowComponents/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-    {name: 'Side Nav', sections: [
-      {components: 'src/components/SideNav/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-    {name: '––––––––', sections: [
-      {components: ''}
       ],
       sectionDepth: 0
     }
