@@ -14,6 +14,7 @@
         <b-li class="alertListItem">- Animate expanding component dropdown carat</b-li>
         <b-li class="alertListItem">- Fix file delete button</b-li>
         <b-li class="alertListItem">- Distribute components into separate files</b-li>
+        <b-li class="alertListItem">- Adjust all components for recent text size change</b-li>
       </b-ul>
   </b-alert>
 
@@ -24,88 +25,253 @@
 
 
 ```js
-<div class="card-columns columns-1">
+<template>
+  <div>
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
-    <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-      <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-        <div class="text-center mx-auto">
-          <i class="fal fa-horizontal-rule align-middle"></i>
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
         </div>
-      </div>
-      <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline-flex text-dark item-text">
-        Here is the first example of a basic unit
-      </div>
-      <div class="col-1">
-      </div>
-    </div>
 
-</div>
+        <div class="rowItemText">
+          <p>Here is an example of the basic row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>And here is a second example of a basic row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
 ```
 
 <h3>Boolean</h3>
 
 
 ```js
-<div class="card-columns columns-1">
+<template>
+  <div>
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
-  <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-    <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-      <div class="custom-control custom-checkbox text-center mx-auto">
-        <input type="checkbox" class="custom-control-input" id="customCheck1" />
-        <label class="custom-control-label pointer" for="customCheck1"></label>
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-checkbox">
+            <input id="customCheck1" class="custom-control-input" type="checkbox"/>
+            <label class="custom-control-label cursorPointer" for="customCheck1"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">Use the checkbox to set something as true or false.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
       </div>
-    </div>
-    <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline-flex text-dark item-text">
-      And here is a true/false checkbox! Click me to test it out.
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
 
-</div>
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-checkbox">
+            <input id="customCheck2" class="custom-control-input" type="checkbox"/>
+            <label class="custom-control-label cursorPointer" for="customCheck2"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">Use the checkbox to set something as true or false.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+  </div>
+</template>
 ```
 
 <h3>Clickable</h3>
 
 
 ```js
-<div class="card-columns columns-1">
+<template>
+  <div>
+    <b-button
+      block
+      class="rowItem rowClickable cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
-    <div class="card card-hover clickable bg-light rounded-0 border-0 p-2 mt-1 mb-0 pointer">
-      <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-        <div class="text-center mx-auto">
-            <i class="fal fa-lg fa-cog text-dark align-middle pointer icon-hover"></i>
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconSettings iconHover"></i>
         </div>
-      </div>
-      <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline-flex text-dark item-text">
-        Clicking this element will generally lead to a seperate page or view
-      </div>
-      <div class="col-1">
-      </div>
-    </div>
 
-</div>
+        <div class="rowItemText">
+          <p>Here is an example of the basic row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowClickable cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconSettings iconHover"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>And here is a second example of a basic row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
 ```
 
 <h3>Enable/Disable</h3>
 
 
 ```js
+<template>
+  <div>
+
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" />
+            <label class="custom-control-label cursorPointer" for="customSwitch1"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p>The toggle allows a given parameter to be enabled or disabled.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowItemBase cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch2" />
+            <label class="custom-control-label cursorPointer" for="customSwitch2"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p>Sometimes the toggle itself is disabled entirely, as a result of other settings.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
+
 <div class="card-columns columns-1">
 
-  <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-    <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-1 d-inline-flex">
-      <div class="custom-control custom-switch text-center mx-auto">
-        <input type="checkbox" class="custom-control-input" id="customSwitch1" />
-        <label class="custom-control-label pointer" for="customSwitch1"></label>
-      </div>
-    </div>
-    <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-0 d-inline-flex text-dark item-text">
-      The toggle allows a given parameter to be enabled or disabled.
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
 
   <div class="card bg-light rounded-0 border-0 p-2 mt-1 mb-0 not-allowed">
     <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-1 d-inline-flex">
@@ -125,57 +291,79 @@
 </div>
 ```
 
-<h3>Expanding</h3>
+<h3>Expanding
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 
 
 ```js
 <template>
   <div>
 
-    <div  class="card-columns columns-1"
+    <b-button
+      block
+      class="rowItem rowExpandable"
+      variant="none"
       :class="showCollapse ? 'collapsed' : null"
       :aria-expanded="showCollapse ? 'true' : 'false'"
       aria-controls="collapse"
       @click="showCollapse = !showCollapse"
+      onclick="this.blur();"
     >
 
-        <div id="expand" role="button" class="card card-hover bg-light text-dark rounded-0 border-0 pl-2 pt-2 pb-2 mt-1 mb-0">
 
-            <div class="col-1 mr-4 mr-sm-3 mr-md-0 mr-lg-n2 d-inline-flex">
-              <div class="text-center mx-auto">
-                <i class="fal fa-horizontal-rule text-dark align-middle"></i>
-              </div>
-            </div>
+      <div class="rowItemContent">
 
-            <div class="col d-inline item-text">
-            This item can be clicked to expand or collapse!
-              <div class="mr-sm-5 mr-lg-4 d-inline float-right">
-                <i class="far fa-chevron-down text-dark align-middle icon toggle-down"></i>
-              </div>
-            </div>
-
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
         </div>
 
-  </div>
-
-    <b-collapse id="collapse" v-model="showCollapse" class="mt-2">
-
-      <div class="border border-dark rounded-0 mt-n3">
-        <div class="row ml-0 mr-4 mt-3 mb-0">
-          <div class="col-1 ml-1"></div>
-          <div class="col-auto small mt-1">Sub-Header</div>
-          <hr class="col sub-hr" />
+        <div class="rowItemText">
+          <p>Click this to expand the row.</p>
         </div>
 
-        <div class="row ml-0 mr-0">
-          <div class="col-1 ml-1"></div>
-          <div class="col pr-4 pt-1 pb-4">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
+        <div class="rowItemSuffix">
+          <i class="iconChevronClosed"></i>
         </div>
+
+
       </div>
 
-    </b-collapse>
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowExpandable"
+      variant="none"
+      :class="showCollapse ? 'collapsed' : null"
+      :aria-expanded="showCollapse ? 'true' : 'false'"
+      aria-controls="collapse"
+      @click="showCollapse = !showCollapse"
+      onclick="this.blur();"
+    >
+
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Click this to expand the row.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+          <i class="iconChevronClosed"></i>
+        </div>
+
+
+      </div>
+
+    </b-button>
+
+
+
   </div>
 </template>
 
@@ -243,7 +431,7 @@ $(function () {
 
           <a tabindex="0" id="popover" class="info pointer text-medium" data-toggle="popover" data-html="true" data-placement="top" data-trigger="focus" data-content='<div id="delete-btn" role="button" class="btn btn-outline-warningfade btn-warn shadow-sm text-danger border-danger rounded-0 m-2 pl-3 pr-3 pt-2 pb-2 pointer">DELETE<i class="far fa-ban ml-2"></i></div>'>
 
-              <i class="fal fa-lg fa-window-close icon-hover text-warning mt-1"></i>
+              <i class="fal fa-lg fa-window-close iconHover text-warning mt-1"></i>
 
           </a>
         </div>
@@ -371,4 +559,6 @@ $( function() {
 
 </div>
 ```
+
+<p><small class="text-mediumdark float-right mb-4">Page updated: November 4, 2019</small></p>
 </docs>

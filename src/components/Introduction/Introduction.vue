@@ -8,7 +8,7 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-    <p class="mb-0">Many components below are <span class="font-weight-bolder">missing or are actively under construction, </span>
+    <p class="mb-0">Many components in this library are <span class="font-weight-bolder">missing or are actively under construction, </span>
     and this page has <span class="font-weight-bolder">not yet been cross-browser or platform tested.</span> Look for this icon <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i> next to components that are notably incomplete. If you find any inconsistencies, please Slack or Email Foster. Thank you for your patience!
 	</p>
   </b-alert>
@@ -49,7 +49,7 @@
   </p>
   </div>
 
-  <h3>Design and Interaction System</h3>
+  <h3>Design System</h3>
   <div class="pr-4 pl-4 text-justify">
   <p>
   This design system is based on the consistent use of open <i title="Under construction!" class="p-1 fal fa-sm fa-heart text-info align-middle"></i> and closed <i title="Under construction!" class="p-1 fas fa-sm fa-heart text-info align-middle"></i> styles. In every case, elements that have an open stroked style are interactive in some manner. Elements that are closed indicate a currently-hovering state, an actively selected item, or in some cases a disabled element.
@@ -77,7 +77,7 @@
   <div class="pr-4 pl-4 text-justify">
   <p>
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.3.6</strong> - last updated on October 30 2019.<br/><br/>
+    <strong class="text-dark">v0.4.1</strong> - last updated on November 4th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

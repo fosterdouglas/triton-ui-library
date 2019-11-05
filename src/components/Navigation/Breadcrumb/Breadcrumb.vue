@@ -11,8 +11,8 @@
     <hr/>
       <b-ul>
         <b-li class="alertListItem">- Add additional variations</b-li>
-        <b-li class="alertListItem">- Distribute components into separate files</b-li>
-        <b-li class="alertListItem">- Style properly</b-li>
+        <b-li class="alertListItem">- Distribute components into separate files and rename</b-li>
+        <b-li class="alertListItem">- <del>Style properly</del> <i class="fas fa-check"></i</b-li>
       </b-ul>
   </b-alert>
 

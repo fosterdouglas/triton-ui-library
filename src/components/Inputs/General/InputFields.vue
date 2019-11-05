@@ -171,7 +171,7 @@ $(function () {
 
    <input type="text" name="focus" required class="search-box form-control border-dark d-inline w-75 rounded-lg shadow-sm mr-2 align-middle pl-5" placeholder="Search for Users, Clients, or Agents . . ." />
 
-		<button class="badge pointer close-icon ml-n5" type="reset"><i class="fal fa-lg fa-window-close text-warning icon-hover"></i></button>
+		<button class="badge pointer close-icon ml-n5" type="reset"><i class="fal fa-lg fa-window-close text-warning iconHover"></i></button>
 
 	</form>
 

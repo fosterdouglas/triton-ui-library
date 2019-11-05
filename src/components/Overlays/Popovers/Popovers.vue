@@ -25,10 +25,10 @@
 
 ```js
 <template>
-  <b-div class="row" style="margin-top:155px;">
-    <b-div class="col-2"></b-div>
+  <div class="row" style="margin-top:155px;">
+    <div class="col-2"></div>
 
-    <b-div class="col-1">
+    <div class="col-1">
         <b-button
           id="PopoverDeleteBtn"
           :pressed="true"
@@ -36,7 +36,7 @@
           class="badge cursorDefault"
           @click="showDelete = !showDelete"
          >
-          <i class="fal fa-lg fa-window-close icon-hover text-warning"></i>
+          <i class="fal fa-lg fa-window-close iconHover text-warning"></i>
         </b-button>
 
       <b-popover
@@ -57,12 +57,12 @@
             <i class="far fa-ban btnIconRight"></i>
           </b-button>
       </b-popover>
-    </b-div>
+    </div>
 
 
-    <b-div class="col-3"></b-div>
+    <div class="col-3"></div>
 
-    <b-div class="col-1">
+    <div class="col-1">
         <b-button
           id="PopoverAddBtn"
           :pressed="true"
@@ -70,7 +70,7 @@
           class="badge cursorDefault"
           @click="showAdd = !showAdd"
          >
-          <i class="fal fa-lg fa-check-square icon-hover text-confirm"></i>
+          <i class="fal fa-lg fa-check-square iconHover text-confirm"></i>
         </b-button>
 
       <b-popover
@@ -91,9 +91,9 @@
             <i class="far fa-check btnIconRight"></i>
           </b-button>
       </b-popover>
-    </b-div>
+    </div>
 
-  </b-div>
+  </div>
 
 </template>
 
@@ -116,9 +116,9 @@
 
 ```js
 <template>
-  <b-div class="row" >
+  <div class="row" >
 
-    <b-div class="col-1">
+    <div class="col-1">
         <b-button
           id="PopoverHover"
           :pressed="false"
@@ -126,7 +126,7 @@
           class="badge cursorDefault"
           @hover="showHover = !showHover"
          >
-          <i class="fal fa-lg fa-question-square icon-hover text-info"></i>
+          <i class="fal fa-lg fa-question-square iconHover text-info"></i>
         </b-button>
 
       <b-popover
@@ -137,9 +137,9 @@
        >
         Here is some content.
       </b-popover>
-    </b-div>
+    </div>
 
-  </b-div>
+  </div>
 
 </template>
 

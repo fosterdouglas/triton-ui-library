@@ -1,3 +1,10 @@
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           BOOTSTRAP                            //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
 $theme-colors: (
   "primary": #1B3355,
   "secondary": #E9B71E,
@@ -15,8 +22,19 @@ $theme-colors: (
   "darkfade": rgba(59,59,59,.1)
 );
 
+// BOOTSTRAP VARIABLE CHANGES
 $enable-gradients: true;
 $enable-responsive-font-sizes: true;
+$font-size-base: .9rem; //reduces entire app font size!
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    6: ($spacer * 4), //additional spacer variables (eg, mt-6, mt-7)
+    7: ($spacer * 5)
+  ),
+  $spacers
+);
 
 // REDECLARE CUSTOM COLORS FOR CSS USE
 $primary: #1B3355;
@@ -40,21 +58,36 @@ $darkfade: rgba(59,59,59,.1);
 // IMPORT BOOTSTRAP-VUE
 @import '../node_modules/bootstrap-vue/src/index.scss';
 
-// GLOBAL
+// IMPORT FONT AWESOME
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-pro/webfonts';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/light.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss';
+@import '../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss';
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           GLOBAL                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 
 html, div, p, h1, h2, h4, h5, button {
-  	font-family: 'Montserrat' !important;
-    font-weight: 500 !important;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat' !important;
+  font-weight: 500 !important;
+  -webkit-font-smoothing: antialiased;
 }
+
 p {
   text-align: justify;
 }
+
+//CURSOR TYPES
 .cursorDefault {
   cursor: default !important;
 }
 .cursorPointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .cursorHand {
   cursor: grab !important;
@@ -63,31 +96,23 @@ p {
   cursor: not-allowed !important;
 }
 
-.underline {
-  text-decoration: underline !important;
-}
-
-// TEMP!!
-.alert-info hr {
-  border-top-color: $info !important;
-}
-
 // CHANGES SELECTION COLOR
 ::-moz-selection { /* for Firefox */
   color: $light;
-  background: $primary;
+  background: $secondary;
 }
 ::selection {
   color: $light;
-  background: $primary;
+  background: $secondary;
 }
 
 
 
-// // // // // // // // // // // ALERTS // // // // // // // // // // //
-//
-//
-// // COMPONENT - FORM ALERTS // // // // // // // // // // //
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           ALERTS                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .alert-dismissible .close {
  visibility: hidden;
  font-size: 1.4rem;
@@ -100,23 +125,25 @@ p {
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
   content: "\f410";
-
-  @extend .align-middle; //update this
+  @extend .align-middle;
   @extend .cursorPointer;
-  @extend .icon-hover; //update this
+  @extend .iconHover;
   @extend .mt-1;
 }
 
+//CUSTOM CLOSE BUTTON
 .alertConfirm.alert-dismissible .close::after {
-  color: $success;
+  @extend .text-success;
 }
 
+//CUSTOM CLOSE BUTTON
 .alertWarning.alert-dismissible .close::after {
-  color: $warning;
+  @extend .text-warning;
 }
 
+//CUSTOM CLOSE BUTTON
 .alertInfo.alert-dismissible .close::after {
-  color: $info;
+  @extend .text-info;
 }
 
 .close:not(:disabled):not(.disabled):hover {
@@ -141,16 +168,16 @@ p {
 }
 
 .alert .progress {
-  background-color: white;
+  @extend .bg-white;
 }
 
-// // // // // // // // // // // // // // // // // // // // // // // // //
 
 
-// // // // // // // // // // // BREADCRUMB // // // // // // // // // // //
-//
-//
-// // GENERAL // // // // // // // // // // //
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           BREADCRUMB                           //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .breadcrumb {
   @extend .bg-transparent;
   @extend .border-bottom;
@@ -164,7 +191,7 @@ p {
 
 .breadcrumb-item a:hover {
   @extend .text-decoration-none;
-  color: $dark !important;
+  color: $dark !important; //color override
 }
 
 .breadcrumb-item.active {
@@ -176,14 +203,12 @@ p {
 }
 
 
-// // // // // // // // // // // // // // // // // // // // // // // // //
 
-
-
-// // // // // // // // // // // BUTTONS // // // // // // // // // // //
-//
-//
-// // GENERAL // // // // // // // // // // //
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           BUTTONS                              //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .btnNavigation {
   @extend .shadow-sm;
   @extend .m-2;
@@ -203,23 +228,22 @@ p {
   box-shadow: inset 0 0 0 2px white !important;
 }
 
-button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
+button:focus, .btnNavigation:focus, .btnFunction:focus {
    box-shadow: 0 0 0 4px $medium !important; //retains WCAG standard for screen readers
 }
 
-.btn {
+.btnNavigation {
   transition: color .35s ease-out, background-color .35s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.btn:active {
+.btnNavigation:active {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 .btnFunction {
-  @extend .shadow-sm;
   @extend .m-2;
-  @extend .pr-3;
-  @extend .pl-3;
+  @extend .pr-4;
+  @extend .pl-4;
 }
 
 .btnDisabled {
@@ -236,11 +260,11 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .align-middle;
 }
 
-.roundedMax {
-  border-radius: .75em; //custom rounding value for buttons
+.borderRadiusMax {
+  border-radius: 2em;
 }
 
-// // COMPONENT - NAVIGATION STANDARD // // // // // // // // // // //
+// // NAVIGATION STANDARD // // // // // // // // // // //
 .btnStandard {
   @extend .rounded-0;
   @extend .text-primary;
@@ -248,7 +272,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
 }
 
 .btnStandard:active {
-  background-color: rgba($primary, 1) !important;
+  background-color: rgba($primary, 1) !important; //required for correct opacity
   @extend .text-white;
 }
 
@@ -260,7 +284,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-white;
 }
 
-// // COMPONENT - NAVIGATION CONFIRM // // // // // // // // // // //
+// // NAVIGATION CONFIRM // // // // // // // // // // //
 .btnConfirm {
   @extend .rounded-0;
   @extend .text-confirm;
@@ -268,7 +292,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
 }
 
 .btnConfirm:active {
-  background-color: rgba($confirm, 1) !important;
+  background-color: rgba($confirm, 1) !important; //required for correct opacity
   @extend .text-white;
 }
 
@@ -280,7 +304,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-white;
 }
 
-// // COMPONENT - NAVIGATION WARN // // // // // // // // // // //
+// // NAVIGATION WARN // // // // // // // // // // //
 .btnWarning {
   @extend .rounded-0;
   @extend .text-warning;
@@ -288,7 +312,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
 }
 
 .btnWarning:active {
-  background-color: rgba($warning, 1) !important;
+  background-color: rgba($warning, 1) !important; //required for correct opacity
   @extend .text-white;
 }
 
@@ -300,7 +324,7 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-white;
 }
 
-// // COMPONENT - NAVIGATION FEEDBACK // // // // // // // // // // //
+// // NAVIGATION FEEDBACK // // // // // // // // // // //
 .btnFeedback {
   @extend .rounded-0;
   @extend .text-secondary;
@@ -316,9 +340,9 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-white;
 }
 
-// // COMPONENT - FUNCTION STANDARD // // // // // // // // // // //
+// // FUNCTION STANDARD // // // // // // // // // // //
 .btnFunctionStandard {
-  @extend .roundedMax;
+  @extend .borderRadiusMax;
   @extend .text-dark;
   @extend .border-dark;
 }
@@ -329,21 +353,21 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
 }
 
 .btnFunctionStandard:active {
-  background-color: rgba($darkfade, 1) !important;
+  background-color: rgba($darkfade, 1) !important; //required for correct opacity
   @extend .text-white;
 }
 
 .btnFunctionPressed {
   pointer-events: none;
-  @extend .roundedMax;
+  @extend .borderRadiusMax;
   @extend .bg-dark;
   @extend .border-dark;
   @extend .text-white;
 }
 
-// // 005 FUNCTION HIGHLIGHTED // // // // // // // // // // //
+// // FUNCTION HIGHLIGHTED // // // // // // // // // // //
 .btnFunctionHighlighted {
-  @extend .roundedMax;
+  @extend .borderRadiusMax;
   @extend .text-secondary;
   @extend .border-secondary;
 }
@@ -354,37 +378,191 @@ button:focus, .btn:focus, .btnNavigation:focus, .btnFunction:focus {
 }
 
 .btnFunctionHighlighted:active {
-  background-color: rgba($secondary, 1) !important;
+  background-color: rgba($secondary, 1) !important; //required for correct opacity
   @extend .text-white;
 }
 
 .btnFunctionHighlightedPressed {
   pointer-events: none;
-  @extend .roundedMax;
+  @extend .borderRadiusMax;
   @extend .bg-secondary;
   @extend .border-secondary;
   @extend .text-white;
 }
 
-// // // // // // // // // // // // // // // // // // // // // // // // //
 
 
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           ICONS                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 
+//ADD - SINGLE
+.iconAddSingle {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-user-cog;
+  @extend .p-1;
+  @extend .text-dark;
+}
 
+//ADD - MULTIPLE
+.iconAddMultiple {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-users-cog;
+  @extend .p-1;
+  @extend .text-dark;
+}
 
+//CHEVRON CLOSED
+.iconChevronClosed {
+  @extend .fal;
+  @extend .fa-chevron-right;
+  @extend .p-1;
+  @extend .text-dark;
+}
 
+//CHEVRON OPEN
+.iconChevronOpen {
+  @extend .fal;
+  @extend .fa-chevron-down;
+  @extend .p-1;
+  @extend .text-dark;
+}
 
-// ICONS
-//
-//
+//CLOSE
+.iconClose {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-window-close;
+  @extend .p-1;
+}
+
+//CONFIRM
+.iconConfirm {
+  @extend .far;
+  @extend .fa-lg;
+  @extend .fa-check;
+  @extend .p-1;
+  @extend .text-confirm;
+}
+
+//COPY
+.iconCopy {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-clone;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//DASH
+.iconDash {
+  @extend .align-middle;
+  @extend .fal;
+  @extend .fa-horizontal-rule;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//DELETE
+.iconDelete {
+  @extend .fal;
+  @extend .fa-window-close;
+  @extend .p-1;
+  @extend .text-warning;
+}
+
+//EDIT
+.iconEdit {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-money-check-edit;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//EDITED
+.iconEdited {
+  @extend .fas;
+  @extend .fa-pencil-alt;
+  @extend .p-1;
+  @extend .text-secondary;
+}
+
+//INFORMATION
+.iconInformation {
+
+}
+
+//INPUT SELECT
+.iconInputSelect {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-sort;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//SEARCH
+.iconSearch {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-search;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//SETTINGS
+.iconSettings {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-cog;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//SHADOW
+.iconShadow {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-user-secret;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//USER
+.iconUser {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-user;
+  @extend .p-1;
+  @extend .text-dark;
+}
+
+//WARN
+.iconWarning {
+  @extend .fas;
+  @extend .fa-lg;
+  @extend .fa-exclamation-square;
+  @extend .p-1;
+  @extend .text-warning;
+}
+
 
 .badge {
   outline: none;
   font-weight: inherit;
 }
-.icon-hover:hover {
+
+.iconHover:hover {
     font-weight: 900;
 }
+
+
+
 .info {
   outline: none;
 }
@@ -426,7 +604,12 @@ a.info:hover {
   border-left-color: $dark;
 }
 
-// IMAGES
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                          IMAGES                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .modal-dialog {
     display: table;
 }
@@ -446,10 +629,12 @@ a.info:hover {
   opacity: 0;
 }
 
-// INPUT FIELDS
-//
-//
 
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                            FORMS                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 input, textarea, select {
   font-family: 'Montserrat';
   font-weight: 500 !important;
@@ -535,7 +720,6 @@ small {
   background-origin: border-box;
   background-size: 20px 20px;
 }
-
 .hero-image {
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
@@ -565,13 +749,17 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-size: 1rem;
 }
 
-// LIGHTBOX
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                         LIGHTBOX                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .modal-content {
-  border-radius: 0;
+  @extend .rounded-0;
 }
 
 .modal-footer {
-  display: inline-block;
+  @extend .d-inline-block;
 }
 
 .modal-header .close {
@@ -586,17 +774,100 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
   content: "\f410";
-
   @extend .align-middle; //update this
   @extend .cursorPointer;
-  @extend .icon-hover; //update this
+  @extend .iconHover; //update this
   @extend .mt-1;
 }
 
 
-// ROW ELEMENT STYLES
-//
-//
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                            ROW                                 //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.rowItem {
+  @extend .mt-1;
+  @extend .mb-0;
+  @extend .rounded-0;
+  @extend .text-dark;
+  @extend .bg-light;
+  @extend .d-inline-block;
+  @extend .text-left;
+  height: 34px !important; //standard height for all row items
+  transition: border-color 0s ease-in-out;
+}
+
+.rowItemContent {
+  @extend .align-text-top; //add a display inline or inline block here?
+  @extend .row;
+  @extend .pl-4;
+  @extend .pr-0;
+  height: 20px;
+}
+
+.rowItemPrefix {
+  @extend .d-inline;
+  @extend .align-middle;
+  @extend .col-1;
+  @extend .pr-0;
+  @extend .pl-0;
+  max-width: 7% !important;
+  height: 20px;
+}
+
+.rowItemText {
+  @extend .d-inline;
+  @extend .col-10;
+  @extend .pl-1;
+  @extend .text-left;
+  height: 20px;
+}
+
+.rowItemSuffix {
+  @extend .text-right;
+  @extend .d-inline;
+  @extend .col-1;
+  @extend .pr-0;
+  height: 20px;
+}
+
+button.rowExpandable:hover, button.rowExpandable:focus:active  {
+  @extend .cursorPointer;
+}
+
+button.rowItemBase:hover, button.rowItemBase:focus:active {
+  box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
+  background-color: $light !important;
+}
+
+.rowItemBase:focus:active {
+  outline: none; //prevents visual outline on click
+  box-shadow: inset 0 0 0 0px white !important;
+}
+
+button.rowItem:focus {
+  background-color: $light !important;
+}
+
+button.rowItemBase:focus {
+   box-shadow: 0 0 0 4.5px $medium !important; //retains WCAG standard for screen readers
+   background-color: $light !important;
+}
+
+button.rowClickable:active:focus {
+   box-shadow: 0px 0px 0px 1px $dark inset !important;
+   background-color: rgba($medium,.4) !important;
+}
+
+button.rowClickable:hover {
+   box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
+   background-color: $light !important;
+}
+
+
+
+//update or remove most of the following
 
 .card {
   font-family: 'Montserrat', sans-serif;
@@ -625,28 +896,41 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 .toggle-size {
   font-size: 1.65em; //custom sizing required for icon
 }
+
 .item-text {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+
 .custom-border {
   box-shadow: 0px 4px 0px 0px $dark !important;
 }
-.custom-switch {
-  padding: 0 !important;
-  padding-left: 2rem !important;
-}
+
 .custom-control-label::before {
-  top: 0 !important;
-  width: 2.5rem !important;
-  height: 1.5rem !important;
+  top: 0rem !important;
+  width: 2.2rem !important;
+  height: 1.3rem !important;
+  left: -1.4rem;
   background-color: unset !important;
+
   transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
+
+.custom-switch .custom-control-label::after,
+.custom-switch .custom-control-label-disabled::after {
+  @extend .border;
+  @extend .border-dark;
+  background-color: unset;
+  left: calc(-2.3rem + 6px) !important;
+  width: calc(1rem - 3px) !important;
+  height: calc(1rem - 3px) !important;
+  top: .2rem !important;
+}
+
 .custom-switch .custom-control-label::after {
-  transition: transform .4s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: transform .2s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 .custom-switch .custom-control-label::before {
   border-radius: 1rem !important;
@@ -654,59 +938,51 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: none !important; //remove shadow on toggle click
 }
-.custom-control-input ~ .custom-control-label::before {
-  border-color: $dark !important;
-}
-.custom-control-input:checked ~ .custom-control-label::before {
-  background: $dark !important;
-  border-color: $dark !important;
-}
+.custom-control-input ~ .custom-control-label::before,
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: $dark !important; //custom toggle border color
-}
-.custom-control-input-disabled ~ .custom-control-label::before {
-  border-color: $medium !important;
-}
-.custom-control-input-disabled:checked ~ .custom-control-label::before {
-  background: $medium !important;
-  border-color: $medium !important;
-}
-.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: $medium !important; //custom toggle border color
-}
-.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
-  background: $dark !important;
-  border-color: $dark !important;
-}
-.custom-switch .custom-control-label::after {
-  background-color: $dark !important;
-  left: calc(-2.25rem + 6px) !important;
-  width: calc(1.25rem - 4px) !important;
-  height: calc(1.25rem - 4px) !important;
-  top: .25rem !important;
-}
-.custom-switch .custom-control-label-disabled::after {
-  background-color: $medium !important;
-  left: calc(-2.25rem + 6px) !important;
-  width: calc(1.25rem - 4px) !important;
-  height: calc(1.25rem - 4px) !important;
-  top: .25rem !important;
-}
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
-  background-color: white !important;
+  @extend .border-dark; //custom toggle border color
 }
 
+.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before,
+.custom-control-input:checked ~ .custom-control-label::before {
+  background: $dark !important;
+  @extend .border-dark;
+}
+
+.custom-control-input-disabled:checked ~ .custom-control-label::before {
+  @extend .bg-medium;
+  @extend .border-medium;
+}
+.custom-control-input-disabled ~ .custom-control-label::before,
+.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
+  @extend .border-medium; //custom toggle border color
+}
+
+.custom-switch .custom-control-label-disabled::after {
+  @extend .bg-medium;
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  @extend .bg-white;
+  @extend .border;
+  @extend .border-white;
+}
+
+//location and size of checkbox
 .custom-checkbox .custom-control-label::before {
-  width: 1.4rem !important;
-  height: 1.4rem !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
   top: .05rem!important;
 }
+
+//location and size of the checkbox checkmark
 .custom-checkbox .custom-control-label::after {
-  top: -.15rem !important;
-  left: -1.7rem !important;
-  width: 1.8rem !important;
-  height: 1.8rem !important;
+  top: -0.2rem !important;
+  left: -1.65rem !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
 }
+
 .custom-radio .custom-control-label::before{
   width: 1.45rem !important;
   height: 1.45rem !important;
@@ -748,7 +1024,7 @@ label {
   margin-top: -.3rem !important;
 }
 [type="button"] {
-  -webkit-appearance: unset;
+  -webkit-appearance: unset; //what does this do?
 }
 .sub-hr {
   border-color: $dark;
@@ -756,268 +1032,56 @@ label {
 .underline-dotted {
   text-decoration-style: dotted;
 }
-.clickable:active {
-  box-shadow: 0px 0px 0px 1px $dark inset;
-  background-color: rgba($medium,.7) !important;
+
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                          SIDE BAR                              //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.nav {
+  @extend .bg-lightest;
 }
 
-//NAVIGATION MENUS
-//
-//
-.nav {
-  background-color: $lightest;
+.navHeight {
+  min-height: 100vh; //unused currently, but for full-height side nav
 }
-.nav-height {
-  min-height: 100vh;
-}
+
 .nav-pills .nav-link{
-  border-radius: unset;
+  @extend .rounded-0;
 }
+
 .nav-pills .nav-link.active {
+  @extend .bg-white;
   border-right: 4px solid $primary;
-  background-color: unset;
   font-weight: 700;
-  background: white;
   margin-right: -.3em;
 }
+
 .nav-pills .nav-link.active:hover {
-  cursor: pointer;
+  @extend .bg-white;
+  @extend .cursorPointer;
   font-weight: 700;
   opacity: 1;
-  background-color: white;
 }
+
 .nav-pills .nav-link:hover  {
   opacity: .6;
   background: $gray-100;
 }
-.mt-6 {
-  margin-top: 5em;
-}
-.nav-break {
-  border-top: 1px solid rgba($primary, .7);
-}
-.package-title {
-  font-weight: 700;
-}
-.dropdown-menu {
-   position: relative !important;
-   will-change: unset !important;
-   transform: unset !important;
-   background-color: unset !important;
-   border: unset !important;
-   text-transform: uppercase !important;
 
-}
-.dropdown-item {
-   font-weight: 300 !important;
-}
 .nav-pills .show > .nav-link {
-  background-color: white;
+  @extend .bg-white;
   font-weight: 700;
   border-right: 4px solid $primary;
   opacity: 1;
   margin-right: -.3em;
 }
-.dropdown-item:hover {
-  background-color: unset !important;
-  background-image: unset !important;
-}
-.dropdown-item:active {
-  background-image: unset !important;
-  background-color: unset !important;
-}
-.dropdown-item:focus {
-  text-decoration: underline;
-  background-image: unset !important;
-  background-color: unset !important;
-}
-.dropdown-item-active {
-  text-decoration: underline !important;
-  color: #19692c!important;
+
+.nav-break {
+  border-top: 1px solid rgba($primary, .7);
 }
 
-
-/* STYLEGUIDIST STYLE OVERRIDES */
-// USED ONLY TO STYLE THE GUIDE, THESE REQUIRE '!important' TO BUILD STYLEGUIDIST CORRECTLY
-//
-//
-
-// SET SIDEBAR TITLE + SPACING
-
-[class^=rsg--logo-] {
-  text-align: right !important;
-  color: white !important;
-}
-.rsg--logo-5 {
-  padding: 2em 30px 1em 30px !important;
-  border-bottom: unset !important;
-}
-
-//SET SIDEBAR WIDTH / MARGIN
-.rsg--sidebar-4 {
-  width: 250px !important;
-  background-color: $dark !important;
-  background-image: url("assets/triton-logo-sm.svg") !important;
-  background-repeat: no-repeat !important;
-  background-size: 350% !important;
-  background-position: 75% 50% !important;
-}
-
-.rsg--content-3 {
-  margin: 20px 50px 20px 50px !important;
-  max-width: unset !important;
-  padding: unset !important;
-}
-.rsg--hasSidebar-2 {
-  padding-left: 250px !important;
-}
-
-//SEARCH BOX VISIBILITY
-[class^=rsg--search-] {
-  display: none !important;
-}
-
-li[class^=rsg--isChild-] a {
-  opacity: .7 !important;
-}
-
-// SIDE BAR LINK STYLES
-[class^=rsg--list-] {
-  font-weight: 500 !important;
-  margin-top: .3em !important;
-}
-.rsg--sidebar-4 [class^=rsg--link-] {
-  color: $medium !important;
-}
-.rsg--sidebar-4 [class^=rsg--link-]:hover {
-  color: white !important;
-  padding-right: 2.2em !important;
-}
-
-// UNSET ALL ANCHOR/LINK HOVER COLORING
-a:hover {
-  color: unset !important;
-}
-
-// REMOVE DOTTED BORDER ON CLICK
-[class^=rsg--button-] {
-  	outline: none !important;
-}
-
-// SUB HEADERS STYLING
-.rsg--heading2-16 {
-  background: none !important;
-  color: #333 !important;
-  padding: .25em .5em 0em 0em !important;
-  margin-top: .5em !important;
-}
-.rsg--heading2-16:hover {
-  color: #333 !important;
-}
-.rsg--sectionName-12:hover {
-    text-decoration: none !important;
-    color: $gray-600 !important;
-}
-
-// REMOVE "VIEW CODE" FULL SCREEN BUTTON
-.rsg--button-21  {
-	display: none !important;
-}
-
-// INDENTING
-.rsg--root-23 {
-  padding-left: 1em !important;
-}
-
-//ADJUST HEADER H3 SIZE/WEIGHT
-[class^=rsg--spacing-] h3, [class^=rsg--spacing-] h3 p {
-  font-weight: 500 !important;
-  font-size: 1.75rem !important;
-}
-
-//DISABLES CLICKING SIDE MENU DIVIDERS
-a[href*="/#/%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93"] {
-  pointer-events: none !important;
-}
-
-//DISABLES CLICKING MENU SUB HEADERS
-a[href="/#/Navigation"], a[href="/#/Overlays"] {
-  opacity: .5 !important;
-  text-decoration: underline !important;
-  pointer-events: none !important;
-  padding: 0 !important;
-}
-
-a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul  {
-  border-right: 3px solid rgba($medium, .5) !important;
-}
-
-
-//VIEW CODE BUTTON
-div[class^=rsg--controls-] [class^=rsg--button-] {
-  opacity: .7 !important;
-  margin-left: 1em !important;
-}
-.CodeMirror {
-  margin-left: 1em !important;
-}
-
-button[name*=rsg-code-editor] {
-  color: $dark !important;
-  border-bottom-color: $dark !important;
-  padding: .5em !important;
-  margin-left: 1.1em !important;
-}
-
-button[name*=rsg-code-editor]:hover,
-button[name*=rsg-code-editor]:focus,
-button[name*=rsg-code-editor]:active {
-  color: $dark !important;
-  opacity: 1 !important;
-  padding: .5em !important;
-}
-
-// REMOVE FOOTER
-[class^=rsg--footer-] {
-	display: none !important;
-}
-
-// BORDER STYLING
-div[class^=rsg--preview-] {
-  border: unset !important;
-  margin: .5em 0em 1em 1em !important;
-  padding: 2em !important;
-  box-shadow: 0 0.1rem .5rem rgba(0, 0, 0, 0.1) !important;
-}
-
-//REMOVE SUB HEADER
-[class^=rsg--header-] {
-  display: none !important;
-}
-
-//VERSION NUMBER ALIGN
-[class^=rsg--version-] {
-  text-align: right !important;
-}
-
-//ALIGN SIDE BAR ITEMS
-[class^=rsg--list-] a {
-  display: block !important;
-  text-align: right !important;
-  padding-left: 0 !important;
-  padding-right: 2em !important;
-}
-
-[class^=rsg--list-] {
-  padding-left: 0 !important;
-}
-
-[class^=rsg--item-] {
-  margin: 0 !important;
-  padding: .3em 0em .3em 0em !important;
-}
-
-// ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
-.rsg--isSelected-51, .rsg--isSelected-34  {
-  background-color: rgba($mediumdark, .2) !important;
-}
+//IMPORT STYLES FOR THE STYLEGUIDE
+@import 'library.scss';

@@ -1,0 +1,189 @@
+/* STYLEGUIDIST STYLE OVERRIDES */
+// USED ONLY TO STYLE THE GUIDE, THESE REQUIRE '!important' TO BUILD STYLEGUIDIST CORRECTLY
+//
+//
+
+// SET SIDEBAR TITLE + SPACING
+
+[class^=rsg--logo-] {
+  text-align: right !important;
+  color: white !important;
+}
+.rsg--logo-5 {
+  padding: 2em 30px 1em 30px !important;
+  border-bottom: unset !important;
+}
+
+//SET SIDEBAR WIDTH / MARGIN
+.rsg--sidebar-4 {
+  width: 250px !important;
+  background-color: $dark !important;
+  background-image: url("assets/triton-logo-sm.svg") !important;
+  background-repeat: no-repeat !important;
+  background-size: 350% !important;
+  background-position: 75% 50% !important;
+}
+
+.rsg--content-3 {
+  margin: 20px 50px 20px 50px !important;
+  max-width: unset !important;
+  padding: unset !important;
+}
+.rsg--hasSidebar-2 {
+  padding-left: 250px !important;
+}
+
+//SEARCH BOX VISIBILITY
+[class^=rsg--search-] {
+  display: none !important;
+}
+
+li[class^=rsg--isChild-] a {
+  opacity: .7 !important;
+}
+
+// SIDE BAR LINK STYLES
+[class^=rsg--list-] {
+  font-weight: 500 !important;
+  margin-top: .3em !important;
+}
+.rsg--sidebar-4 [class^=rsg--link-] {
+  color: $medium !important;
+}
+.rsg--sidebar-4 [class^=rsg--link-]:hover {
+  color: white !important;
+  padding-right: 2.2em !important;
+}
+
+// UNSET ALL ANCHOR/LINK HOVER COLORING
+a:hover {
+  color: unset !important;
+}
+
+// REMOVE DOTTED BORDER ON CLICK
+[class^=rsg--button-] {
+  	outline: none !important;
+}
+
+// SUB HEADERS STYLING
+.rsg--heading2-16 {
+  background: none !important;
+  color: #333 !important;
+  padding: .25em .5em 0em 0em !important;
+  margin-top: .5em !important;
+}
+.rsg--heading2-16:hover {
+  color: #333 !important;
+}
+.rsg--sectionName-12:hover {
+    text-decoration: none !important;
+    color: $gray-600 !important;
+}
+
+// REMOVE "VIEW CODE" FULL SCREEN BUTTON
+.rsg--button-21  {
+	display: none !important;
+}
+
+// INDENTING
+.rsg--root-23 {
+  padding-left: 1em !important;
+  margin-bottom: 0 !important;
+}
+
+//ADJUST HEADER H3 SIZE/WEIGHT
+[class^=rsg--spacing-] h3, [class^=rsg--spacing-] h3 p {
+  font-weight: 500 !important;
+  font-size: 1.75rem !important;
+}
+
+//DISABLES CLICKING SIDE MENU DIVIDERS
+a[href*="/#/%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93"] {
+  pointer-events: none !important;
+}
+
+//DISABLES CLICKING MENU SUB HEADERS
+a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/#/Inputs"] {
+  opacity: .5 !important;
+  text-decoration: underline !important;
+  pointer-events: none !important;
+  padding: 0 !important;
+}
+
+a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] ~ ul, a[href="/#/Inputs"] ~ ul  {
+  border-right: 3px solid rgba($medium, .5) !important;
+}
+
+
+//VIEW CODE BUTTON
+div[class^=rsg--controls-] [class^=rsg--button-] {
+  opacity: .7 !important;
+  margin-left: 1em !important;
+}
+.CodeMirror {
+  margin-left: 1em !important;
+}
+
+button[name*=rsg-code-editor] {
+  color: $dark !important;
+  border-bottom-color: $dark !important;
+  padding: .5em !important;
+  margin-left: 1.1em !important;
+}
+
+button[name*=rsg-code-editor]:hover,
+button[name*=rsg-code-editor]:focus,
+button[name*=rsg-code-editor]:active {
+  color: $dark !important;
+  opacity: 1 !important;
+  padding: .5em !important;
+}
+
+// REMOVE FOOTER
+[class^=rsg--footer-] {
+	display: none !important;
+}
+
+// BORDER STYLING
+div[class^=rsg--preview-] {
+  border: unset !important;
+  margin: .5em 0em 1em 1em !important;
+  padding: 2em !important;
+  box-shadow: 0 0.1rem .5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+//REMOVE SUB HEADER
+[class^=rsg--header-] {
+  display: none !important;
+}
+
+//VERSION NUMBER ALIGN
+[class^=rsg--version-] {
+  text-align: right !important;
+}
+
+//ALIGN SIDE BAR ITEMS
+[class^=rsg--list-] a {
+  display: block !important;
+  text-align: right !important;
+  padding-left: 0 !important;
+  padding-right: 2em !important;
+}
+
+[class^=rsg--list-] {
+  padding-left: 0 !important;
+}
+
+[class^=rsg--item-] {
+  margin: 0 !important;
+  padding: .3em 0em .3em 0em !important;
+}
+
+[class^=rsg--para-] {
+  font-size: 1rem !important;
+}
+
+// ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
+.rsg--isSelected-51, .rsg--isSelected-34, .rsg--isSelected-43, .rsg--isSelected-28  {
+  background-color: rgba($mediumdark, .2) !important;
+}

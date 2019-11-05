@@ -20,7 +20,7 @@
 ```
 
 <h3>Text Field</h3>
-<p>Used for basic form text entry.</p>
+<p>Used for basic form text entry. All form fields will use a future-released Bootstrap feature called <a href="https://getbootstrap.com/docs/4.3/examples/floating-labels/" target="_blank">Floating Labels</a>.</p>
 
 ```js
 

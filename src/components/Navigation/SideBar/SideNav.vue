@@ -200,7 +200,7 @@ $(function () {
       <a class="nav-link nav-over text-uppercase text-primary text-right pr-4 pointer">The Third Thing</a>
     </li>
   </ul>
-  <div class="col border border-medium ml-3 mr-3 mt-6"></div>
+  <div class="col border border-medium ml-3 mr-3 mt-7"></div>
 </div>
 
 <ul class="nav-item">

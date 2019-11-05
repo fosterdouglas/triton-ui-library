@@ -9,7 +9,7 @@
 
     <b-button
       :pressed="false"
-      variant="outline-primaryfade"
+      variant="outline-warningfade"
       class="btnNavigation btnWarning"
       onclick="this.blur();"
       >

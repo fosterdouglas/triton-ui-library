@@ -54,7 +54,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.4.0',
+    version: 'v0.4.1',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -74,28 +74,39 @@ module.exports = {
       sectionDepth: 0
     },
 
-    {name: 'Forms', sections: [
-      {components: 'src/components/Forms/*.vue'}
-      ],
-      sectionDepth: 0
+    {name: 'Elements', sections: [
+
+      {name: 'Icons', sections: [
+          {components: 'src/components/Elements/Icons/*.vue'}
+        ],
+      },
+
+      {name: 'Images', sections: [
+        {components: 'src/components/Elements/Images/*.vue'}
+        ],
+      },
+
+      {name: 'Rows', sections: [
+        {components: 'src/components/Elements/Rows/*.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
     },
 
-    {name: 'Icons', sections: [
-      {components: 'src/components/Icons/*.vue'}
-      ],
-      sectionDepth: 0
-    },
+    {name: 'Inputs', sections: [
 
-    {name: 'Images', sections: [
-      {components: 'src/components/Images/*.vue'}
-      ],
-      sectionDepth: 0
-    },
+      {name: 'Forms', sections: [
+          {components: 'src/components/Inputs/Forms/*.vue'}
+        ],
+      },
 
-    {name: 'Input Fields', sections: [
-      {components: 'src/components/InputFields/*.vue'}
-      ],
-      sectionDepth: 0
+      {name: 'General', sections: [
+        {components: 'src/components/Inputs/General/*.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
     },
 
     {name: 'Navigation', sections: [
@@ -146,12 +157,6 @@ module.exports = {
       }
     ],
       sectionDepth: 1
-    },
-
-    {name: 'Row Components', sections: [
-      {components: 'src/components/RowComponents/*.vue'}
-      ],
-      sectionDepth: 0
     }
 	]
 }
