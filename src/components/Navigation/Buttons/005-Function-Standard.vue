@@ -13,8 +13,9 @@
       class="btnFunction btnFunctionStandard"
       onclick="this.blur();"
       >
-      {{ FuncButtonCaption }}
-      <i></i>
+        <i></i>
+        <div class="btnText">{{ FuncButtonCaption }}</div>
+        <i></i>
     </b-button>
 
     <b-button
@@ -23,8 +24,9 @@
       class="btnFunction btnFunctionStandard"
       onclick="this.blur();"
       >
-      <i class="fal fa-file-alt fa-lg btnIconLeft"></i>
-      {{ FuncButtonCaption }}
+        <i class="iconFile btnIcon btnIconLeft"></i>
+        <div class="btnText">{{ FuncButtonCaption }}</div>
+        <i></i>
     </b-button>
 
     <b-button
@@ -33,7 +35,9 @@
       class="btnFunction btnFunctionPressed"
       onclick="this.blur();"
       >
-      {{ FuncButtonCaption }}
+        <i></i>
+        <div class="btnText">{{ FuncButtonCaption }}</div>
+        <i></i>
     </b-button>
 
     <b-button
@@ -42,8 +46,10 @@
       class="btnFunction btnFunctionPressed"
       onclick="this.blur();"
       >
-      <b-spinner small type="grow" label="Spinning" class="btnIconLeft mb-1"></b-spinner>
-      {{ FuncButtonCaption }}
+      <b-spinner small type="grow" label="Spinning" class="btnIcon btnIconLeft"></b-spinner>
+      <i></i>
+      <div class="btnText">{{ FuncButtonCaption }}</div>
+      <i></i>
     </b-button>
 
   </div>
