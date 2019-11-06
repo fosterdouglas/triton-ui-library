@@ -13,7 +13,8 @@
       class="btnNavigation btnWarning"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
       <i></i>
     </b-button>
 
@@ -23,8 +24,9 @@
       class="btnNavigation btnWarning"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
-      <i class="far fa-ban btnIconRight"></i>
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i class="iconRemove btnIcon btnIconRight"></i>
     </b-button>
 
     <b-button
@@ -33,7 +35,9 @@
       class="btnNavigation btnWarningPressed"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i></i>
     </b-button>
 
   </div>

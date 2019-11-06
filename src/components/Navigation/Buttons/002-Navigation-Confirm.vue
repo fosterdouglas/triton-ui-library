@@ -13,7 +13,8 @@
       class="btnNavigation btnConfirm"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
       <i></i>
     </b-button>
 
@@ -23,8 +24,9 @@
       class="btnNavigation btnConfirm"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
-      <i class="far fa-check btnIconRight"></i></b-button>
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i class="iconConfirm btnIcon btnIconRight"></i>
     </b-button>
 
     <b-button

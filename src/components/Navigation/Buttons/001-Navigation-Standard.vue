@@ -36,7 +36,8 @@
       class="btnNavigation btnStandard"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
       <i></i>
     </b-button>
 
@@ -46,8 +47,9 @@
       class="btnNavigation btnStandard"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
-      <i class="far fa-arrow-right btnIconRight"></i>
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i class="iconArrow btnIcon btnIconRight"></i>
     </b-button>
 
     <b-button
@@ -56,7 +58,9 @@
       class="btnNavigation btnStandardPressed"
       onclick="this.blur();"
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i></i>
     </b-button>
 
     <b-button
@@ -66,7 +70,9 @@
       onclick="this.blur();"
       disabled
       >
-      {{ NavButtonCaption }}
+      <i></i>
+      <div class="btnText">{{ NavButtonCaption }}</div>
+      <i></i>
     </b-button>
 
   </div>

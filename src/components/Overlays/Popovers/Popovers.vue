@@ -33,10 +33,10 @@
           id="PopoverDeleteBtn"
           :pressed="true"
           variant="outline"
-          class="badge cursorDefault"
+          class="badge cursorDefault text-warning"
           @click="showDelete = !showDelete"
          >
-          <i class="fal fa-lg fa-window-close iconHover text-warning"></i>
+          <i class="iconRemove iconBorder btnIcon"></i>
         </b-button>
 
       <b-popover
@@ -54,7 +54,7 @@
             @click="showDelete = !showDelete"
             >
             {{ DeleteButtonCaption }}
-            <i class="far fa-ban btnIconRight"></i>
+            <i class="iconRemove btnIcon btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>
@@ -67,10 +67,10 @@
           id="PopoverAddBtn"
           :pressed="true"
           variant="outline"
-          class="badge cursorDefault"
+          class="badge cursorDefault text-confirm"
           @click="showAdd = !showAdd"
          >
-          <i class="fal fa-lg fa-check-square iconHover text-confirm"></i>
+          <i class="iconConfirm iconBorder btnIcon"></i>
         </b-button>
 
       <b-popover
@@ -88,7 +88,7 @@
             @click="showAdd = !showAdd"
             >
             {{ AddButtonCaption }}
-            <i class="far fa-check btnIconRight"></i>
+            <i class="iconConfirm btnIcon btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>
@@ -123,10 +123,10 @@
           id="PopoverHover"
           :pressed="false"
           variant="outline"
-          class="badge cursorDefault"
+          class="cursorDefault text-dark"
           @hover="showHover = !showHover"
          >
-          <i class="fal fa-lg fa-question-square iconHover text-info"></i>
+          <i class="iconQuestion iconHover btnIcon"></i>
         </b-button>
 
       <b-popover

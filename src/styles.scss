@@ -80,6 +80,11 @@ html, div, p, h1, h2, h4, h5, button {
 
 p {
   text-align: justify;
+  margin-bottom: 0;
+}
+
+i {
+  color: $dark;
 }
 
 //CURSOR TYPES
@@ -212,10 +217,9 @@ p {
 .btnNavigation {
   @extend .shadow-sm;
   @extend .m-2;
-  @extend .pt-2;
   @extend .pr-3;
-  @extend .pb-2;
   @extend .pl-3;
+  height: 34px;
 }
 
 .btnNavigation:focus:active {
@@ -244,25 +248,37 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .m-2;
   @extend .pr-4;
   @extend .pl-4;
+  height: 34px;
 }
 
 .btnDisabled {
   @extend .text-muted;
 }
 
+.btnIcon {
+  color: inherit;
+}
+
 .btnIconRight {
   @extend .ml-2;
-  @extend .align-middle;
+  @extend .align-baseline;
 }
 
 .btnIconLeft {
   @extend .mr-2;
-  @extend .align-middle;
+  @extend .align-baseline;
+}
+
+.btnText {
+  @extend .d-inline-block;
+  @extend .align-top;
 }
 
 .borderRadiusMax {
   border-radius: 2em;
 }
+
+
 
 // // NAVIGATION STANDARD // // // // // // // // // // //
 .btnStandard {
@@ -404,7 +420,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-user-cog;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //ADD - MULTIPLE
@@ -413,23 +428,21 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-users-cog;
   @extend .p-1;
-  @extend .text-dark;
+}
+
+//ARROW
+.iconArrow {
+  @extend .far;
+  @extend .fa-arrow-right;
+  @extend .p-1;
 }
 
 //CHEVRON CLOSED
-.iconChevronClosed {
-  @extend .fal;
+.iconChevron {
+  @extend .far;
+  @extend .fa-lg;
   @extend .fa-chevron-right;
   @extend .p-1;
-  @extend .text-dark;
-}
-
-//CHEVRON OPEN
-.iconChevronOpen {
-  @extend .fal;
-  @extend .fa-chevron-down;
-  @extend .p-1;
-  @extend .text-dark;
 }
 
 //CLOSE
@@ -443,10 +456,8 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
 //CONFIRM
 .iconConfirm {
   @extend .far;
-  @extend .fa-lg;
   @extend .fa-check;
   @extend .p-1;
-  @extend .text-confirm;
 }
 
 //COPY
@@ -455,7 +466,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-clone;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //DASH
@@ -464,7 +474,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fal;
   @extend .fa-horizontal-rule;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //DELETE
@@ -481,7 +490,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-money-check-edit;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //EDITED
@@ -490,6 +498,14 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-pencil-alt;
   @extend .p-1;
   @extend .text-secondary;
+}
+
+//FILE
+.iconFile {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-folder-open;
+  @extend .p-1;
 }
 
 //INFORMATION
@@ -503,7 +519,22 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-sort;
   @extend .p-1;
-  @extend .text-dark;
+}
+
+//QUESTIO
+.iconQuestion {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-question-circle;
+  @extend .p-1;
+}
+
+//REMOVE
+.iconRemove {
+  @extend .far;
+  @extend .fa-ban;
+  @extend .p-1;
+  @extend .text-warning;
 }
 
 //SEARCH
@@ -512,7 +543,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-search;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //SETTINGS
@@ -521,7 +551,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-cog;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //SHADOW
@@ -530,7 +559,11 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-user-secret;
   @extend .p-1;
-  @extend .text-dark;
+}
+
+//SPINNER
+.spinner-grow-sm {
+  margin-top: .15rem; //fine tune spinner inline spacing
 }
 
 //USER
@@ -539,7 +572,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fa-lg;
   @extend .fa-user;
   @extend .p-1;
-  @extend .text-dark;
 }
 
 //WARN
@@ -551,10 +583,26 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-warning;
 }
 
+.iconBorder {
+  border: .5px solid;
+  color: inherit;
+  @extend .p-2;
+  @extend .rounded-sm;
+}
+
+.iconBorder:hover { //fix this to work correctly
+  box-shadow: 0px 0px 0px .5px inset !important;
+  font-weight: 900;
+}
+
+.btn.badge {
+  border: 0px solid transparent !important; // ?????
+}
 
 .badge {
   outline: none;
   font-weight: inherit;
+  padding: 0;
 }
 
 .iconHover:hover {

@@ -14,6 +14,7 @@
         <b-li class="alertListItem">- Change icon for "Edit"</b-li>
         <b-li class="alertListItem">- Add missing icons</b-li>
         <b-li class="alertListItem">- Make tooltip for "Copied" auto close</b-li>
+        <b-li class="alertListItem">- Deprecate delete icon and replace instances with Remove icon</b-li>
       </b-ul>
   </b-alert>
 
@@ -40,6 +41,34 @@
   <div>
     <i class="iconAddMultiple iconHover"></i>
     <i class="iconAddMultiple iconHover fas"></i>
+  </div>
+</template>
+```
+
+<h3>Arrow</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconArrow"></i>
+    <i class="iconArrow fa-rotate-90"></i>
+    <i class="iconArrow fa-rotate-180"></i>
+    <i class="iconArrow fa-rotate-270"></i>
+  </div>
+</template>
+```
+
+<h3>Chevron</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconChevron"></i>
+    <i class="iconChevron fa-rotate-90"></i>
+    <i class="iconChevron fa-rotate-180"></i>
+    <i class="iconChevron fa-rotate-270"></i>
   </div>
 </template>
 ```
@@ -71,8 +100,8 @@
 ```js
 <template>
   <div>
-    <i class="iconConfirm"></i>
-    <i class="iconConfirm"></i>
+    <i class="iconConfirm iconHover text-confirm"></i>
+    <i class="iconConfirm iconHover fas text-confirm"></i>
   </div>
 </template>
 ```
@@ -114,7 +143,9 @@ export default {
 
 
 <h3>Delete</h3>
-<p>Distinct in its smaller size and use from the Close icon, this functions to remove something from a list, delete an attached file, or otherwise permanently delete something.</p>
+<p>Distinct in its smaller size and use from the Close icon, this functions to remove something from a list, delete an attached file, or otherwise permanently delete something.
+<br/><span class="text-info">Deprecate this and replace all instances with the "Remove" icon.</span>
+</p>
 
 ```js
 <template>
@@ -144,7 +175,18 @@ export default {
 <template>
   <div>
     <i class="iconEdited"></i>
-    <i class="iconEdited"></i>
+  </div>
+</template>
+```
+
+<h3>File</h3>
+<p>Used to denote a system file that is or will be uploaded to the application.</p>
+
+```js
+<template>
+  <div>
+    <i class="iconFile iconHover"></i>
+    <i class="iconFile iconHover fas"></i>
   </div>
 </template>
 ```
@@ -191,13 +233,36 @@ $(function () {
 </template>
 ```
 
+<h3>Question</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconQuestion iconHover"></i>
+    <i class="iconQuestion iconHover fas"></i>
+  </div>
+</template>
+```
+
+<h3>Remove</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconRemove iconHover text-warning"></i>
+    <i class="iconRemove iconHover fas text-warning"></i>
+  </div>
+</template>
+```
+
 <h3>Search</h3>
 <p>Non-interactive, an icon used to mark search boxes</p>
 
 ```js
 <template>
   <div>
-    <i class="iconSearch"></i>
     <i class="iconSearch"></i>
   </div>
 </template>
@@ -227,6 +292,18 @@ $(function () {
 </template>
 ```
 
+<h3>Spinner</h3>
+<p>Animated icons used for representing a loading screen or item.</p>
+
+```js
+<template>
+  <div>
+    <b-spinner small class="btnIconLeft" type="grow" label="Spinning"></b-spinner>
+    <b-spinner small class="btnIconLeft" label="Spinning"></b-spinner>
+  </div>
+</template>
+```
+
 <h3>User</h3>
 <p>An icon used for functions related to a user that aren't covered by other icons.</p>
 
@@ -245,7 +322,6 @@ $(function () {
 ```js
 <template>
   <div>
-    <i class="iconWarning"></i>
     <i class="iconWarning"></i>
   </div>
 </template>

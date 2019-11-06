@@ -3,7 +3,8 @@
 <h3>Navigation - Feedback
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
-<p>A navigation button used when feedback is needed. This is particularly useful to inform a user about the status of an important action, for example is a page saves correctly or not.</p>
+<p>A navigation button used when feedback is needed. This is particularly useful to inform a user about the status of an important action, for example is a page saves correctly or not.
+<br/><span class="text-info">Deprecate the "Changes saved." and replace with a Toast popup.</span></p>
 
 ```js
 <template>
@@ -17,7 +18,8 @@
         class="btnNavigation btnFeedback"
         onclick="this.blur();"
         >
-        {{ NavButtonCaption }}
+        <i></i>
+        <div class="btnText">{{ NavButtonCaption }}</div>
         <i></i>
       </b-button>
 
