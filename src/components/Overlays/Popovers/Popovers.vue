@@ -10,8 +10,8 @@
     </h5>
     <hr/>
       <b-ul>
-        <b-li class="alertListItem">- <del>Fix DELETE/ADD buttons to properly dismiss popover</del> <i class="fas fa-check"></b-li>
-        <b-li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="fas fa-check"></b-li>
+        <b-li class="alertListItem">- <del>Fix DELETE/ADD buttons to properly dismiss popover</del> <i class="fas fa-check"></i></b-li>
+        <b-li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="fas fa-check"></i></b-li>
         <b-li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</b-li>
         <b-li class="alertListItem">- Move info tooltip from Icons page to here</b-li>
       </b-ul>

@@ -828,6 +828,12 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .mt-1;
 }
 
+.lightboxCountdown {
+  width: 20px !important;
+  @extend .d-inline-block;
+  @extend .text-center;
+}
+
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //

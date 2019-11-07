@@ -10,13 +10,13 @@
     </h5>
     <hr/>
       <b-ul>
-        <b-li class="alertListItem">- BROKEN: Update lightbox for Vue after transition</b-li>
+        <b-li class="alertListItem">- <del>BROKEN: Update lightbox for Vue after transition</del> <i class="fas fa-check"></i></b-li>
       </b-ul>
   </b-alert>
 
 </div>
 ```
-<h3>Lightbox
+<h3>Lightbox - Forced Action
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
 
@@ -34,10 +34,33 @@
       {{ FuncButtonCaption }}
     </b-button>
 
-    <b-modal v-model="modalShow">
+    <b-modal
+      @shown="showAlert"
+      v-model="modalShow"
+      :hide-header="true"
+      :no-close-on-backdrop="true"
+      :no-close-on-esc="true"
+    >
 
       <div class="modal-body text-center">
-        <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
+
+          <b-alert
+            :show="dismissCountDown"
+            variant="warning"
+            @dismissed="dismissCountDown=0"
+            @dismiss-count-down="countDownChanged"
+            class="mb-0"
+          >
+            Your session will end in <div class="lightboxCountdown">{{ dismissCountDown }}</div> seconds due to inactivity.<br/>Press below to continue or end.
+            <b-progress
+              variant="warning"
+              :max="dismissSecs"
+              :value="dismissCountDown"
+              height="4px"
+              class="mt-2"
+            ></b-progress>
+          </b-alert>
+
       </div>
 
       <template v-slot:modal-footer>
@@ -71,10 +94,20 @@
   export default {
     data() {
       return {
-        CancelButtonCaption: 'CANCEL',
-        SaveButtonCaption: 'CONFIRM',
-        FuncButtonCaption: 'Press Me!',
+        CancelButtonCaption: 'END SESSION',
+        SaveButtonCaption: 'CONTINUE',
+        FuncButtonCaption: 'Press to test',
         modalShow: false,
+        dismissSecs: 60,
+        dismissCountDown: 0
+      }
+    },
+    methods: {
+      countDownChanged(dismissCountDown) {
+        this.dismissCountDown = dismissCountDown
+      },
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs
       }
     }
   }
