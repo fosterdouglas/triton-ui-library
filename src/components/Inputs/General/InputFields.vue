@@ -13,13 +13,17 @@
         <b-li class="alertListItem">- Distribute components into separate files</b-li>
         <b-li class="alertListItem">- Add sorting function component (for inclusion/exclusion)</b-li>
         <b-li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</b-li>
+        <b-li class="alertListItem">- Fix checkbox</b-li>
+        <b-li class="alertListItem">- Remove tooltip text (broken anyway)</b-li>
       </b-ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Checkbox</h3>
+<h3>Checkbox
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 
 ```js
 $(function () {
@@ -86,7 +90,9 @@ $(function () {
 </div>
 ```
 
-<h3>Multi Select</h3>
+<h3>Multi Select
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 
 ```js
 
@@ -156,7 +162,8 @@ $(function () {
 ```
 
 
-<h3>Search Box</h3>
+<h3>Search Box
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i></h3>
 
 ```js
 

@@ -10,16 +10,84 @@
     </h5>
     <hr/>
       <b-ul>
-        <b-li class="alertListItem">- <del>BROKEN: Update lightbox for Vue after transition</del> <i class="fas fa-check"></i></b-li>
+        <b-li class="alertListItem">- <del>BROKEN: Update lightbox for Vue after transition</del> <i class="iconConfirm"></i></b-li>
+        <b-li class="alertListItem">- Distribute components into separate files</b-li>
       </b-ul>
   </b-alert>
 
 </div>
 ```
-<h3>Lightbox - Forced Action
+
+<h3>Dismissable
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
 
+
+```js
+<template>
+  <div>
+    <b-button
+      :pressed="false"
+      variant="outline-darkfade"
+      class="btnFunction btnFunctionStandard"
+      onclick="this.blur();"
+      @click="modalShow = !modalShow"
+      >
+      {{ FuncButtonCaption }}
+    </b-button>
+
+    <b-modal
+      v-model="modalShow"
+    >
+
+      <div class="modal-body text-center">
+
+      </div>
+
+      <template v-slot:modal-footer>
+
+          <b-button
+            :pressed="false"
+            variant="outline-warningfade"
+            class="btnNavigation btnWarning float-left"
+            @click="modalShow=false"
+            >
+            {{ CancelButtonCaption }}
+          </b-button>
+
+          <b-button
+            :pressed="false"
+            variant="outline-confirmfade"
+            class="btnNavigation btnConfirm float-right"
+            @click="modalShow=false"
+            >
+            {{ SaveButtonCaption }}
+          </b-button>
+
+      </template>
+
+    </b-modal>
+  </div>
+
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        CancelButtonCaption: 'CANCEL',
+        SaveButtonCaption: 'SAVE',
+        FuncButtonCaption: 'Press to test',
+        modalShow: false,
+      }
+    }
+  }
+</script>
+
+```
+
+<h3>Persistent (Forced Action)</h3>
+<p>This lightbox <u>requires</u> interaction and cannot be resolved via a standard close button nor by using the "ESC" button.
 
 ```js
 <template>
@@ -67,20 +135,20 @@
 
           <b-button
             :pressed="false"
-            variant="outline-confirmfade"
-            class="btnNavigation btnConfirm float-left"
+            variant="outline-warningfade"
+            class="btnNavigation btnWarning float-left"
             @click="modalShow=false"
             >
-            {{ SaveButtonCaption }}
+            {{ CancelButtonCaption }}
           </b-button>
 
           <b-button
             :pressed="false"
-            variant="outline-warningfade"
-            class="btnNavigation btnWarning float-right"
+            variant="outline-confirmfade"
+            class="btnNavigation btnConfirm float-right"
             @click="modalShow=false"
             >
-            {{ CancelButtonCaption }}
+            {{ SaveButtonCaption }}
           </b-button>
 
       </template>

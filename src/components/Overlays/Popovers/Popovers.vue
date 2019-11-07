@@ -14,6 +14,7 @@
         <b-li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="fas fa-check"></i></b-li>
         <b-li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</b-li>
         <b-li class="alertListItem">- Move info tooltip from Icons page to here</b-li>
+        <b-li class="alertListItem">- Distribute components into separate files</b-li>
       </b-ul>
   </b-alert>
 

@@ -73,23 +73,28 @@
 </template>
 ```
 
-<h3>Close</h3>
-<p>An icon used to close windows, modals, alerts, and dialogue boxes.</p>
+<h3>Close
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>An icon used to close windows, modals, alerts, and dialogue boxes.
+<br/><span class="text-info">Fix for proper "active" state</span>
+</p>
+
 
 ```js
 <template>
   <div>
-    <i class="iconClose iconHover text-dark"></i>
-    <i class="iconClose iconHover text-dark fas"></i>
+    <i class="iconClose close text-dark" aria-label="Close"></i>
+    <i class="iconClose close text-dark far" aria-label="Close"></i>
     <br/>
-    <i class="iconClose iconHover text-confirm"></i>
-    <i class="iconClose iconHover text-confirm fas"></i>
+    <i class="iconClose close text-confirm" aria-label="Close"></i>
+    <i class="iconClose close text-confirm far" aria-label="Close"></i>
     <br/>
-    <i class="iconClose iconHover text-warning"></i>
-    <i class="iconClose iconHover text-warning fas"></i>
+    <i class="iconClose close text-warning" aria-label="Close"></i>
+    <i class="iconClose close text-warning far" aria-label="Close"></i>
     <br/>
-    <i class="iconClose iconHover text-info"></i>
-    <i class="iconClose iconHover text-info fas"></i>
+    <i class="iconClose close text-info" aria-label="Close"></i>
+    <i class="iconClose close text-info far" aria-label="Close"></i>
   </div>
 </template>
 ```
@@ -189,36 +194,6 @@ export default {
     <i class="iconFile iconHover fas"></i>
   </div>
 </template>
-```
-
-<h3>Information
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>Click the info help icon to open a temporary popup with additional relevant information.</p>
-
-```js
-$(function () {
-  $('[data-toggle="popover"]').popover(),
-
-  $('#popover1').on('shown.bs.popover', function () {
-    $('#popover1 i').addClass('text-dark'),
-    $('#popover1 i').css('font-weight', '900')
-  })
-
-  $('#popover1').on('hidden.bs.popover', function () {
-    $('#popover1 i').removeClass('text-dark'),
-    $('#popover1 i').css('font-weight', '300')
-  })
-
-});
-
-<div class="col pl-1 justify-content-start"> <!-- classes used for library display only -->
-  <div class="d-inline">
-    <a tabindex="0" id="popover1" class="info pointer text-medium" data-toggle="popover" data-trigger="focus" title="Helpful Information" data-placement="auto" data-content="Detailed information can be found here, providing context expanding on the topic or element this icon is adjacent to.">
-      <i class="p-2 fal fa-lg fa-info-circle align-middle"></i>
-    </a>
-  </div>
-</div>
 ```
 
 <h3>Input Select</h3>

@@ -19,18 +19,21 @@
 </div>
 ```
 
-<h3>Text Field</h3>
-<p>Used for basic form text entry. All form fields will use a future-released Bootstrap feature called <a href="https://getbootstrap.com/docs/4.3/examples/floating-labels/" target="_blank">Floating Labels</a>.</p>
+<h3>Text Field
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>Used for basic form text entry. Form fields will use ":placeholder-shown" to keep labels visible during filling.</p>
 
 ```js
 
-<div class="row">
+<form class="row">
 
-  <div class="col-6 mt-1" data-toggle="tooltip" data-trigger="focus" data-placement="right" title="Text field">
-    <input class="form-control border-mediumdark rounded-0" type="text" placeholder="Text field" />
+  <div class="col-6 form-label-group">
+    <input id="textfield" class="form-control" placeholder="Text Field" type="email">
+    <label  for="textfield">Text Field</label>
   </div>
 
-</div>
+</form>
 ```
 
 <h3>Text Field - Confirm</h3>

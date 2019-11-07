@@ -111,6 +111,20 @@ i {
   background: $secondary;
 }
 
+.close {
+  float: unset;
+  text-shadow: unset;
+  opacity: unset;
+}
+
+.close:hover, .close:hover::after {
+  font-weight: 500 !important;
+}
+
+.close:active, .close:active::after {
+  opacity: .6;
+}
+
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -129,10 +143,10 @@ i {
   visibility: visible;
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
-  content: "\f410";
+  color: $dark;
+  content: "\f00d";
   @extend .align-middle;
   @extend .cursorPointer;
-  @extend .iconHover;
   @extend .mt-1;
 }
 
@@ -449,7 +463,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
 .iconClose {
   @extend .fal;
   @extend .fa-lg;
-  @extend .fa-window-close;
+  @extend .fa-times;
   @extend .p-1;
 }
 
@@ -534,7 +548,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .far;
   @extend .fa-ban;
   @extend .p-1;
-  @extend .text-warning;
 }
 
 //SEARCH
@@ -683,6 +696,68 @@ a.info:hover {
   //                            FORMS                               //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding-left: .8rem;
+  padding-top: .5rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  //left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0; /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  pointer-events: none;
+  cursor: text; /* Match the input under the label */
+  //border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: 1.25rem;
+  padding-bottom: .6rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: .6rem;
+  color: $medium
+}
+
+
+
 input, textarea, select {
   font-family: 'Montserrat';
   font-weight: 500 !important;
@@ -821,10 +896,10 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   visibility: visible;
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
-  content: "\f410";
+  color: $dark;
+  content: "\f00d";
   @extend .align-middle; //update this
   @extend .cursorPointer;
-  @extend .iconHover; //update this
   @extend .mt-1;
 }
 

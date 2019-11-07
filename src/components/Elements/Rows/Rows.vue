@@ -204,7 +204,9 @@
 </template>
 ```
 
-<h3>Enable/Disable</h3>
+<h3>Enable/Disable
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 
 
 ```js
@@ -400,7 +402,9 @@ $(function() {
 </script>
 ```
 
-<h3>File</h3>
+<h3>File
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 
 
 ```js
