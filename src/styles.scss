@@ -451,10 +451,17 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .p-1;
 }
 
-//CHEVRON CLOSED
+//CALENDAR
+.iconCalendar {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-calendar-alt;
+  @extend .p-1;
+}
+
+//CHEVRON
 .iconChevron {
   @extend .far;
-  @extend .fa-lg;
   @extend .fa-chevron-right;
   @extend .p-1;
 }
@@ -532,6 +539,15 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .fal;
   @extend .fa-lg;
   @extend .fa-sort;
+  @extend .p-1;
+}
+
+//PREVIOUS
+.iconPrevious {
+  @extend .fal;
+  @extend .fa-lg;
+  @extend .fa-share-square;
+  @extend .fa-rotate-180;
   @extend .p-1;
 }
 
@@ -919,12 +935,28 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .mt-1;
   @extend .mb-0;
   @extend .rounded-0;
-  @extend .text-dark;
-  @extend .bg-light;
   @extend .d-inline-block;
   @extend .text-left;
   height: 34px !important; //standard height for all row items
   transition: border-color 0s ease-in-out;
+}
+
+.rowStandard {
+  @extend .text-dark;
+  @extend .bg-light;
+}
+
+.rowExpandable {
+  color: $dark;
+  background-color: $light;
+}
+
+.show.collapse { //what it looks like OPEN
+  @extend .bg-dark;
+}
+
+.show:not(.collapse) .rowExpandable { //what it looks like CLOSED
+  @extend .bg-light;
 }
 
 .rowItemContent {
@@ -948,7 +980,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 .rowItemText {
   @extend .d-inline;
   @extend .col-10;
-  @extend .pl-1;
+  @extend .pl-0;
   @extend .text-left;
   height: 20px;
 }
@@ -961,25 +993,39 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   height: 20px;
 }
 
-button.rowExpandable:hover, button.rowExpandable:focus:active  {
-  @extend .cursorPointer;
+.rowDisabledText {
+  @extend .text-medium;
 }
 
-button.rowItemBase:hover, button.rowItemBase:focus:active {
-  box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
-  background-color: $light !important;
-}
-
-.rowItemBase:focus:active {
-  outline: none; //prevents visual outline on click
-  box-shadow: inset 0 0 0 0px white !important;
+.rowExpandableContent {
+  @extend .w-100;
+  @extend .rounded-0;
+  box-shadow: 0px 0px 0px .5px $dark inset !important;
+  margin-top: -2px;
+  border-top-style: solid;
+  border-top-color: $dark;
+  border-top-width: 1px;
 }
 
 button.rowItem:focus {
   background-color: $light !important;
 }
 
-button.rowItemBase:focus {
+button.rowExpandable:hover, button.rowExpandable:focus:active  {
+  @extend .cursorPointer;
+}
+
+button.rowItemHover:hover, button.rowItemHover:focus:active {
+  box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
+  background-color: $light !important;
+}
+
+.rowItemHover:focus:active {
+  outline: none; //prevents visual outline on click
+  box-shadow: inset 0 0 0 0px white !important;
+}
+
+button.rowItemHover:focus {
    box-shadow: 0 0 0 4.5px $medium !important; //retains WCAG standard for screen readers
    background-color: $light !important;
 }
@@ -994,7 +1040,9 @@ button.rowClickable:hover {
    background-color: $light !important;
 }
 
-
+button.rowDisabled:hover, button.rowDisabled:focus:active {
+  box-shadow: 0 0 0 0 $light inset !important;
+}
 
 //update or remove most of the following
 
@@ -1037,13 +1085,21 @@ button.rowClickable:hover {
   box-shadow: 0px 4px 0px 0px $dark !important;
 }
 
-.custom-control-label::before {
-  top: 0rem !important;
+.custom-switch .custom-control-label::before {
+  top: 0 !important;
   width: 2.2rem !important;
   height: 1.3rem !important;
-  left: -1.4rem;
+  left: -2.2rem !important;
   background-color: unset !important;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
 
+.custom-checkbox .custom-control-label::before {
+  top: 0 !important;
+  width: 2.2rem !important;
+  height: 1.3rem !important;
+  left: -1.4rem !important;
+  background-color: unset !important;
   transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
@@ -1055,7 +1111,7 @@ button.rowClickable:hover {
   left: calc(-2.3rem + 6px) !important;
   width: calc(1rem - 3px) !important;
   height: calc(1rem - 3px) !important;
-  top: .2rem !important;
+  top: .23rem !important;
 }
 
 .custom-switch .custom-control-label::after {
@@ -1072,7 +1128,18 @@ button.rowClickable:hover {
   @extend .border-dark; //custom toggle border color
 }
 
-.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before,
+.custom-control-input-disabled {
+  pointer-events: none;
+}
+
+.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
+  background: $light !important;
+}
+
+.custom-control-input-disabled.custom-control-input:checked ~ .custom-control-label::before {
+  background: $medium !important;
+}
+
 .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important;
   @extend .border-dark;
@@ -1088,7 +1155,8 @@ button.rowClickable:hover {
 }
 
 .custom-switch .custom-control-label-disabled::after {
-  @extend .bg-medium;
+  @extend .bg-light;
+  @extend .border-medium;
 }
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {

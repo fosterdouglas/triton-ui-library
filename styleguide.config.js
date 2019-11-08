@@ -54,7 +54,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.4.5',
+    version: 'v0.4.6',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -126,10 +126,16 @@ module.exports = {
         ],
       },
 
-      {name: 'Side Bar', sections: [
+      {name: 'Side Bar Nav', sections: [
           {components: 'src/components/Navigation/SideBar/*.vue'}
         ],
+      },
+
+      {name: 'Top Nav', sections: [
+          {components: 'src/components/Navigation/TopNav/*.vue'}
+        ],
       }
+
     ],
       sectionDepth: 1
     },

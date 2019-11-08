@@ -5,14 +5,14 @@
 <div>
 
   <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Page Task List
+    <h5 class="alert-heading">Foster's Task List
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
       <b-ul>
         <b-li class="alertListItem">- Distribute components into separate files</b-li>
         <b-li class="alertListItem">- Change icon for "Edit"</b-li>
-        <b-li class="alertListItem">- Add missing icons</b-li>
+        <b-li class="alertListItem">- Add missing icons (return, calendar)</b-li>
         <b-li class="alertListItem">- Make tooltip for "Copied" auto close</b-li>
         <b-li class="alertListItem">- Deprecate delete icon and replace instances with Remove icon</b-li>
       </b-ul>
@@ -55,6 +55,18 @@
     <i class="iconArrow fa-rotate-90"></i>
     <i class="iconArrow fa-rotate-180"></i>
     <i class="iconArrow fa-rotate-270"></i>
+  </div>
+</template>
+```
+
+<h3>Calendar</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconCalendar iconHover"></i>
+    <i class="iconCalendar iconHover fas"></i>
   </div>
 </template>
 ```
@@ -204,6 +216,18 @@ export default {
   <div>
     <i class="iconInputSelect iconHover"></i>
     <i class="iconInputSelect iconHover fas"></i>
+  </div>
+</template>
+```
+
+<h3>Previous</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+    <i class="iconPrevious iconHover"></i>
+    <i class="iconPrevious iconHover fas"></i>
   </div>
 </template>
 ```

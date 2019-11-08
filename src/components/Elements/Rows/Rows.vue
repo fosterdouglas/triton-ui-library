@@ -5,7 +5,7 @@
 <div>
 
   <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Page Task List
+    <h5 class="alert-heading">Foster's Task List
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
@@ -15,6 +15,7 @@
         <b-li class="alertListItem">- Fix file delete button</b-li>
         <b-li class="alertListItem">- Distribute components into separate files</b-li>
         <b-li class="alertListItem">- Adjust all components for recent text size change</b-li>
+        <b-li class="alertListItem">- Add additional colors to "highlighted"</b-li>
       </b-ul>
   </b-alert>
 
@@ -29,7 +30,7 @@
   <div>
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -54,7 +55,7 @@
 
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -89,7 +90,7 @@
   <div>
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -116,7 +117,7 @@
 
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -152,7 +153,7 @@
   <div>
     <b-button
       block
-      class="rowItem rowClickable cursorDefault"
+      class="rowItem rowStandard rowClickable cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -177,7 +178,7 @@
 
     <b-button
       block
-      class="rowItem rowClickable cursorDefault"
+      class="rowItem rowStandard rowClickable cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -204,9 +205,7 @@
 </template>
 ```
 
-<h3>Enable/Disable
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
+<h3>Enable/Disable</h3>
 
 
 ```js
@@ -215,7 +214,7 @@
 
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -243,7 +242,7 @@
 
     <b-button
       block
-      class="rowItem rowItemBase cursorDefault"
+      class="rowItem rowStandard rowItemHover rowDisabled cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -252,12 +251,12 @@
 
         <div class="rowItemPrefix">
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="customSwitch2" />
-            <label class="custom-control-label cursorPointer" for="customSwitch2"></label>
+            <input checked disabled type="checkbox" class="custom-control-input custom-control-input-disabled" id="customSwitch2" />
+            <label class="custom-control-label custom-control-label-disabled cursorDisabled" for="customSwitch2"></label>
           </div>
         </div>
 
-        <div class="rowItemText">
+        <div class="rowItemText rowDisabledText">
           <p>Sometimes the toggle itself is disabled entirely, as a result of other settings.</p>
         </div>
 
@@ -271,26 +270,6 @@
 
   </div>
 </template>
-
-<div class="card-columns columns-1">
-
-
-  <div class="card bg-light rounded-0 border-0 p-2 mt-1 mb-0 not-allowed">
-    <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-1 d-inline-flex">
-      <div class="custom-control custom-switch text-center mx-auto">
-        <input disabled type="checkbox" class="custom-control-input custom-control-input-disabled" id="customSwitch2"/>
-        <label class="custom-control-label custom-control-label-disabled not-allowed" for="customSwitch2"></label>
-      </div>
-    </div>
-    <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-0 d-inline-flex text-medium item-text">
-      Sometimes a toggle is disabled entirely, as a result of other settings.
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
-
-
-</div>
 ```
 
 <h3>Expanding
@@ -301,106 +280,106 @@
 ```js
 <template>
   <div>
+    <div>
+      <b-button
+        block
+        class="rowItem rowExpandable rowItemHover rowExpandable cursorDefault"
+        variant="none"
+        v-b-toggle.collapse-1
+        onclick="this.blur();"
+      >
 
-    <b-button
-      block
-      class="rowItem rowExpandable"
-      variant="none"
-      :class="showCollapse ? 'collapsed' : null"
-      :aria-expanded="showCollapse ? 'true' : 'false'"
-      aria-controls="collapse"
-      @click="showCollapse = !showCollapse"
-      onclick="this.blur();"
-    >
+        <div class="rowItemContent">
 
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
 
-      <div class="rowItemContent">
+          <div class="rowItemText">
+            <p>Here is an example of the basic row element.</p>
+          </div>
 
-        <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+          <div class="rowItemSuffix">
+            <i class="iconChevron"></i>
+          </div>
+
         </div>
 
-        <div class="rowItemText">
-          <p>Click this to expand the row.</p>
+      </b-button>
+
+      <b-collapse id="collapse-1">
+        <b-card class="rowExpandableContent"> test </b-card>
+      </b-collapse>
+
+    </div>
+
+
+    <div>
+      <b-button
+        block
+        class="rowItem rowExpandable rowItemHover rowExpandable cursorDefault"
+        variant="none"
+        v-b-toggle.collapse-2
+        onclick="this.blur();"
+      >
+
+        <div class="rowItemContent">
+
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
+
+          <div class="rowItemText">
+            <p>And here is a second example of a basic row element.</p>
+          </div>
+
+          <div class="rowItemSuffix">
+            <i class="iconChevron"></i>
+          </div>
+
         </div>
 
-        <div class="rowItemSuffix">
-          <i class="iconChevronClosed"></i>
-        </div>
+      </b-button>
 
+      <b-collapse visible id="collapse-2">
+        <b-card class="rowExpandableContent"> test </b-card>
+      </b-collapse>
 
-      </div>
-
-    </b-button>
-
-    <b-button
-      block
-      class="rowItem rowExpandable"
-      variant="none"
-      :class="showCollapse ? 'collapsed' : null"
-      :aria-expanded="showCollapse ? 'true' : 'false'"
-      aria-controls="collapse"
-      @click="showCollapse = !showCollapse"
-      onclick="this.blur();"
-    >
-
-
-      <div class="rowItemContent">
-
-        <div class="rowItemPrefix">
-          <i class="iconDash"></i>
-        </div>
-
-        <div class="rowItemText">
-          <p>Click this to expand the row.</p>
-        </div>
-
-        <div class="rowItemSuffix">
-          <i class="iconChevronClosed"></i>
-        </div>
-
-
-      </div>
-
-    </b-button>
-
-
+    </div>
 
   </div>
 </template>
 
 <script>
-$(function() {
-  $('#expand').click(function(){
-      if($('#collapse').hasClass("collapse"))
-        {
-          $('#expand').addClass("tog-header"),
-          $('#expand').removeClass("card-hover"),
-          $('#expand .item-text').attr('style', 'font-weight: 700 !important')
-        }
-      })
-});
-
-$(function() {
-  $('#expand').click(function(){
-      if($('#collapse').hasClass("show"))
-        {
-          $('#expand').removeClass("tog-header"),
-          $('#expand').addClass("card-hover"),
-          $('#expand .item-text').attr('style', 'font-weight: unset !important')
-        }
-      })
-});
-
   export default {
+    mounted() {
+    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
+
+    })
+  },
     data() {
       return {
-        showCollapse: false
+        showCollapse1: false,
+        showCollapse2: true
       }
     }
   }
 </script>
 ```
+
+<h3>Expanding - Accordian
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+
+
+```js
+<template>
+  <div>
+
+  </div>
+</template>
+```
+
 
 <h3>File
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
@@ -408,16 +387,6 @@ $(function() {
 
 
 ```js
-$(function () {
-  $('[data-toggle="popover"]').popover()
-
- $('#popover').on('shown.bs.popover', function () {
-     $('#delete-btn').click(function(){
-       $('[data-toggle="popover"]').popover('hide'),
-       $('div').remove('#row')
-     })
-  })
-});
 
 <div class="card-columns columns-1">
 

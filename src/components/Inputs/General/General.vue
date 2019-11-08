@@ -5,7 +5,7 @@
 <div>
 
   <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Page Task List
+    <h5 class="alert-heading">Foster's Task List
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
@@ -26,20 +26,26 @@
 </h3>
 
 ```js
-$(function () {
-  $('#customCheck6').prop('checked', true)
-});
-
+<template>
 <div class="justify-content-start mt-1"> <!-- classes used for library display only -->
-  <div class="d-inline custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customCheck3" />
-    <label class="p-2 custom-control-label vert-align pointer" for="customCheck3"></label>
+  <div class="custom-control custom-checkbox">
+    <input id="customCheck1" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck1"></label>
   </div>
-  <div class="d-inline custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customCheck6" />
-    <label class="p-2 custom-control-label vert-align pointer" for="customCheck6"></label>
+  <div class="custom-control custom-checkbox">
+    <input id="customCheck2" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck2"></label>
   </div>
 </div>
+</template>
+
+<script>
+$(function () {
+  $('#customCheck2').prop('checked', true)
+});
+  export default {
+}
+</script>
 ```
 
 <h3>Filtering</h3>
