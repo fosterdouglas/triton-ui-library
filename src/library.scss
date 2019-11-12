@@ -3,9 +3,12 @@
 //
 //
 
+
+div.styleguidistOnlyStyles > i {
+  @extend .fa-lg;
+}
+
 // SET SIDEBAR TITLE + SPACING
-
-
 [class^=rsg--logo-] {
   text-align: right !important;
   color: white !important;
@@ -104,14 +107,14 @@ a[href*="/#/%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%8
 }
 
 //DISABLES CLICKING MENU SUB HEADERS
-a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/#/Inputs"] {
+a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/#/Inputs"], a[href="/#/Buttons"] {
   opacity: .5 !important;
   text-decoration: underline !important;
   pointer-events: none !important;
   padding: 0 !important;
 }
 
-a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] ~ ul, a[href="/#/Inputs"] ~ ul  {
+a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] ~ ul, a[href="/#/Inputs"] ~ ul, a[href="/#/Buttons"] ~ ul  {
   border-right: 3px solid rgba($medium, .5) !important;
 }
 

@@ -9,21 +9,21 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- Rename uses of "Nav" to "App Nav"</b-li>
-        <b-li class="alertListItem">- Rename uses of "Function" to "App Function"</b-li>
-        <b-li class="alertListItem">- Adjust CSS of NavButtonIcon / FuncButtonIcon to be reusable/dynamic</b-li>
-        <b-li class="alertListItem">- Clean/combine CSS classes on feedback text</b-li>
-        <b-li class="alertListItem">- <del>Swap out loading animation element to use Bootstrap-Vue</del> <i class="fas fa-check"></i></b-li>
-        <b-li class="alertListItem">- Address outstanding WCAG accessibility items</b-li>
-        <b-li class="alertListItem">- <del>Add "this.blur();" to buttons</del> <i class="fas fa-check"></i></b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- Rename uses of "Nav" to "App Nav"</li>
+        <li class="alertListItem">- Rename uses of "Function" to "App Function"</li>
+        <li class="alertListItem">- Adjust CSS of NavButtonIcon / FuncButtonIcon to be reusable/dynamic</li>
+        <li class="alertListItem">- Clean/combine CSS classes on feedback text</li>
+        <li class="alertListItem">- <del>Swap out loading animation element to use Bootstrap-Vue</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Address outstanding WCAG accessibility items</li>
+        <li class="alertListItem">- <del>Add "this.blur();" to buttons</del> <i class="iconConfirm"></i></li>
+      </ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Navigation - Standard</h3>
+<h3>Standard</h3>
 <p>The primary button used for application navigation.
 
 ```js
@@ -49,7 +49,7 @@
       >
       <i></i>
       <div class="btnText">{{ NavButtonCaption }}</div>
-      <i class="iconArrow btnIcon btnIconRight"></i>
+      <i class="iconArrow btnIconRight"></i>
     </b-button>
 
     <b-button

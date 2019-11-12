@@ -20,7 +20,8 @@
     "bootstrap-vue": "^2.0.4",
     "core-js": "^3.3.2",
     "jquery": "^3.4.1",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-cookies": "^1.5.13"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",

@@ -14,16 +14,10 @@ module.exports = {
 						{src: 'https://code.jquery.com/jquery-3.4.1.js'},
 						{src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'},
 						{src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.js'},
-						{src: 'src/js/menuspy.js'},
 						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'},
 
 					],
 				  links: [
-						{
-							rel: 'preload',
-		          href: 'http://sandcastle.co/cdn/ebydesign/triton/sort-solid.svg',
-							as: 'image'
-						},
 						{
 							rel: 'stylesheet',
 		          href: 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap'
@@ -74,6 +68,21 @@ module.exports = {
       sectionDepth: 0
     },
 
+    {name: 'Buttons', sections: [
+
+      {name: 'App Navigation', sections: [
+          {components: 'src/components/Buttons/AppNavigation/*.vue'}
+        ],
+      },
+
+      {name: 'Functional', sections: [
+        {components: 'src/components/Buttons/Functional/*.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
+    },
+
     {name: 'Elements', sections: [
 
       {name: 'Icons', sections: [
@@ -110,11 +119,6 @@ module.exports = {
     },
 
     {name: 'Navigation', sections: [
-
-      {name: 'Buttons', sections: [
-          {components: 'src/components/Navigation/Buttons/*.vue'}
-        ],
-      },
 
       {name: 'Breadcrumb', sections: [
           {components: 'src/components/Navigation/Breadcrumb/*.vue'}

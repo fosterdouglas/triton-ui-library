@@ -1,6 +1,6 @@
 <docs>
 
-<h3>Dismissable Alerts</h3>
+<h3>Dismissable</h3>
 <p>These will typically appear at the top or bottom of a form page after it's been submitted, either successfully or when returned with errors.</p>
 
 ```js
@@ -17,11 +17,11 @@
       <h5>{{ AlertWarningTitle }}</h5>
       <hr/>
       <p class="mb-0">This alert will show up beneath the form submit button in the case that an error with a text field has occured. It may contain details of the error:</p>
-          <b-ul>
-            <b-li class="alertListItem">Something went wrong.</b-li>
-            <b-li class="alertListItem">Also, another thing went wrong.</b-li>
-            <b-li class="alertListItem">Oops this one, too.</b-li>
-          </b-ul>
+          <ul>
+            <li class="alertListItem">Something went wrong.</li>
+            <li class="alertListItem">Also, another thing went wrong.</li>
+            <li class="alertListItem">Oops this one, too.</li>
+          </ul>
     </b-alert>
   </div>
 

@@ -236,6 +236,10 @@ i {
   height: 34px;
 }
 
+.btnSmall {
+  @extend .mx-1;
+}
+
 .btnNavigation:focus:active {
   outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 0px white !important;
@@ -270,22 +274,22 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   height: 34px;
 }
 
+.btnFunction i {
+  @extend .fa-lg;
+}
+
 .btnDisabled {
   @extend .text-muted;
 }
 
-.btnIcon { // REMOVE THIS CLASS?
-  color: inherit;
-}
-
 .btnIconRight {
   @extend .ml-2;
-  @extend .align-baseline;
+  margin-top: -1px !important;
 }
 
 .btnIconLeft {
   @extend .mr-2;
-  @extend .align-baseline;
+  margin-top: -1px !important;
 }
 
 .btnText {
@@ -297,20 +301,31 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   border-radius: 2em;
 }
 
-.btn-outline-warningfade:active i.iconBorderSm, .btn-outline-warningfade:active i.iconBorder {
+.btn-outline-warningfade:active i.iconBorder,
+.btn-outline-warningfade:active i.iconBorderMini,
+.btn-outline-warningfade:active i.iconBorderStd
+{
   background-color: rgba($warning, 1) !important; //required for correct opacity
-  box-shadow: 0px 0px 0px .5px $warning !important;
-  border: 0px solid;
+  box-shadow: 0px 0px 0px 1px inset $warning !important;
   @extend .text-white;
 }
 
-.btn-outline-confirmfade:active i.iconBorderSm, .btn-outline-confirmfade:active i.iconBorder {
+.btn-outline-confirmfade:active i.iconBorder,
+.btn-outline-confirmfade:active i.iconBorderMini,
+.btn-outline-confirmfade:active i.iconBorderStd {
   background-color: rgba($confirm, 1) !important; //required for correct opacity
-  box-shadow: 0px 0px 0px .5px $confirm !important;
-  border: 0px solid;
+  box-shadow: 0px 0px 0px 1px inset $confirm !important;
   @extend .text-white;
 }
 
+
+.btn-outline-primaryfade:active i.iconBorder,
+.btn-outline-primaryfade:active i.iconBorderMini,
+.btn-outline-primaryfade:active i.iconBorderStd, {
+  background-color: rgba($primary, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px 1px inset $primary !important;
+  @extend .text-white;
+}
 
 
 // // NAVIGATION STANDARD // // // // // // // // // // //
@@ -443,11 +458,11 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   border: 0px solid transparent !important; // ?????
 }
 
-.btnSmall { //CLASS USED TO OVERRIDE STANDARD BTN STYLES FOR SMALL BUTTONS, RENAME??
+.btnSmall { //CLASS USED TO OVERRIDE STANDARD BTN STYLES FOR SMALL BUTTONS
   outline: none;
   font-weight: inherit;
   padding: 0;
-  top: -2px !important;
+  margin-top: -4px !important; //aligns button vertically
   font-size: 75%; //pulled from .badge standard class
 }
 
@@ -462,17 +477,17 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 //ADD - SINGLE
 .iconAddSingle {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-user-cog;
   @extend .p-1;
+  color: inherit;
 }
 
 //ADD - MULTIPLE
 .iconAddMultiple {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-users-cog;
   @extend .p-1;
+  color: inherit;
 }
 
 //ARROW
@@ -480,29 +495,32 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .far;
   @extend .fa-arrow-right;
   @extend .p-1;
+  color: inherit;
 }
 
 //CALENDAR
 .iconCalendar {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-calendar-alt;
   @extend .p-1;
+  color: inherit;
 }
 
 //CHEVRON
 .iconChevron {
-  @extend .far;
+  @extend .fal;
   @extend .fa-chevron-right;
   @extend .p-1;
+  font-size: 100% !important;
+  color: inherit;
 }
 
 //CLOSE
 .iconClose {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-times;
   @extend .p-1;
+  color: inherit;
 }
 
 //CONFIRM
@@ -510,22 +528,24 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .far;
   @extend .fa-check;
   @extend .p-1;
+  color: inherit;
 }
 
 //COPY
 .iconCopy {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-clone;
   @extend .p-1;
+  color: inherit;
 }
 
 //DASH
 .iconDash {
-  @extend .align-middle;
   @extend .fal;
   @extend .fa-horizontal-rule;
+  @extend .align-middle;
   @extend .p-1;
+  color: inherit;
 }
 
 //DELETE
@@ -533,15 +553,15 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .fal;
   @extend .fa-window-close;
   @extend .p-1;
-  @extend .text-warning;
+  color: inherit;
 }
 
 //EDIT
 .iconEdit {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-money-check-edit;
   @extend .p-1;
+  color: inherit;
 }
 
 //EDITED
@@ -549,15 +569,23 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .fas;
   @extend .fa-pencil-alt;
   @extend .p-1;
-  @extend .text-secondary;
+  color: inherit;
 }
 
 //FILE
 .iconFile {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-folder-open;
   @extend .p-1;
+  color: inherit;
+}
+
+//GRABBABLE
+.iconGrab {
+  @extend .fal;
+  @extend .fa-grip-lines-vertical;
+  @extend .p-1;
+  color: inherit;
 }
 
 //INFORMATION
@@ -568,26 +596,26 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 //INPUT SELECT
 .iconInputSelect {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-sort;
   @extend .p-1;
+  color: inherit;
 }
 
 //PREVIOUS
 .iconPrevious {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-share-square;
   @extend .fa-rotate-180;
   @extend .p-1;
+  color: inherit;
 }
 
 //QUESTIO
 .iconQuestion {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-question-circle;
   @extend .p-1;
+  color: inherit;
 }
 
 //REMOVE
@@ -595,65 +623,74 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .far;
   @extend .fa-ban;
   @extend .p-1;
+  color: inherit;
 }
 
 //SEARCH
 .iconSearch {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-search;
   @extend .p-1;
+  color: inherit;
 }
 
 //SETTINGS
 .iconSettings {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-cog;
   @extend .p-1;
+  color: inherit;
 }
 
 //SHADOW
 .iconShadow {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-user-secret;
   @extend .p-1;
+  color: inherit;
 }
 
 //SPINNER
 .spinner-grow-sm {
-  margin-top: .15rem; //fine tune spinner inline spacing
+  margin-top: 2px !important; //fine tune spinner inline spacing
+  vertical-align: baseline !important;
 }
 
 //USER
 .iconUser {
   @extend .fal;
-  @extend .fa-lg;
   @extend .fa-user;
   @extend .p-1;
+  color: inherit;
 }
 
 //WARN
 .iconWarning {
   @extend .fas;
-  @extend .fa-lg;
   @extend .fa-exclamation-square;
   @extend .p-1;
-  @extend .text-warning;
+  color: inherit;
 }
 
 .iconBorder {
-  border: .5px solid;
+  border: 1px solid;
   color: inherit;
   @extend .p-2;
   @extend .rounded-sm;
 }
 
-.iconBorderSm {
-  border: .5px solid;
+.iconBorderMini {
+  border: 1px solid;
   color: inherit;
   @extend .rounded-sm;
+}
+
+.iconBorderStd {
+  border: 1px solid;
+  color: inherit;
+  @extend .p-2;
+  @extend .rounded-sm;
+  @extend .fa-lg;
 }
 
 
@@ -980,13 +1017,19 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   background-color: $light;
 }
 
-.show.collapse { //what it looks like OPEN
-  @extend .bg-dark;
+.rowHighlightSecondary {
+  box-shadow:0px 0px 0px 1px $secondary inset;
 }
 
-.show:not(.collapse) .rowExpandable { //what it looks like CLOSED
-  @extend .bg-light;
+.rowHighlightConfirm {
+  box-shadow:0px 0px 0px 1px $confirm inset;
 }
+
+.rowHighlightWarning {
+  box-shadow:0px 0px 0px 1px $warning inset;
+}
+
+
 
 .rowItemContent {
   @extend .align-text-top; //add a display inline or inline block here?
@@ -1026,18 +1069,40 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .text-medium;
 }
 
+.rowItemPrefix i, .rowItemSuffix i {
+  @extend .fa-lg;
+}
+
 .rowExpandableContent {
   @extend .w-100;
   @extend .rounded-0;
-  box-shadow: 0px 0px 0px .5px $dark inset !important;
   margin-top: -2px;
   border-top-style: solid;
   border-top-color: $dark;
   border-top-width: 1px;
 }
 
-.uploadedFileText i {
-  @extend .fa-sm;
+.card {
+  @extend .w-100;
+  @extend .rounded-0;
+  margin-top: -2px;
+}
+
+.card-body {
+  width: 93%;
+  @extend .float-right;
+}
+
+.rowDepth1  {
+
+}
+
+.show.collapse { //what it looks like OPEN?
+
+}
+
+.show:not(.collapse) .rowExpandable { //what it looks like CLOSED?
+
 }
 
 button.rowItem:focus {
@@ -1077,6 +1142,16 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   box-shadow: 0 0 0 0 $light inset !important;
 }
 
+.ui-state-highlight { //sets visual placeholder when dragging a "moveable" row
+  background-color: rgba($secondary, 0);
+  width: 100%;
+  height: 34px !important;
+  @extend .mt-1;
+  @extend .mb-0;
+  @extend .d-inline-block;
+  @extend .text-left;
+}
+
 //update or remove most of the following
 
 .card {
@@ -1097,9 +1172,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 .icon-top{
   margin-top: .1rem;
 }
-.highlighted {
-    box-shadow:0px 0px 0px 1px #E9B71E inset;
-}
+
 .checkbox-size {
   font-size: 1.5em; //custom sizing required for icon
 }

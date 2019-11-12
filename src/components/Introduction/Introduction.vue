@@ -77,7 +77,7 @@
   <div class="pr-4 pl-4 text-justify">
   <p class="mb-3">
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.4.6</strong> - last updated on November 7th 2019.<br/><br/>
+    <strong class="text-dark">v0.4.9</strong> - last updated on November 11th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

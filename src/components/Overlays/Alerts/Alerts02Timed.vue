@@ -1,6 +1,6 @@
 <docs>
 
-<h3>Timed Alert</h3>
+<h3>Timed</h3>
 <p>Used when a particular fuction has a timeout limit.</p>
 
 ```js

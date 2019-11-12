@@ -1,6 +1,6 @@
 <docs>
 
-<h3>Navigation - Feedback
+<h3>Feedback
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
 <p>A navigation button used when feedback is needed. This is particularly useful to inform a user about the status of an important action, for example is a page saves correctly or not.

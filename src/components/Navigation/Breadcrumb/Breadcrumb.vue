@@ -9,11 +9,11 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- Add additional variations</b-li>
-        <b-li class="alertListItem">- Distribute components into separate files and rename</b-li>
-        <b-li class="alertListItem">- <del>Style properly</del> <i class="fas fa-check"></i</b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- Add additional variations</li>
+        <li class="alertListItem">- Distribute components into separate files and rename</li>
+        <li class="alertListItem">- <del>Style properly</del> <i class="iconConfirm"></i></li>
+      </ul>
   </b-alert>
 
 </div>

@@ -9,13 +9,13 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- Distribute components into separate files</b-li>
-        <b-li class="alertListItem">- Change icon for "Edit"</b-li>
-        <b-li class="alertListItem">- Add missing icons (return, calendar)</b-li>
-        <b-li class="alertListItem">- Make tooltip for "Copied" auto close</b-li>
-        <b-li class="alertListItem">- Deprecate delete icon and replace instances with Remove icon</b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- Distribute components into separate files</li>
+        <li class="alertListItem">- Change icon for "Edit"</li>
+        <li class="alertListItem">- Add missing icons (return, calendar)</li>
+        <li class="alertListItem">- Make tooltip for "Copied" auto close</li>
+        <li class="alertListItem">- Deprecate delete icon and replace instances with Remove icon</li>
+      </ul>
   </b-alert>
 
 </div>
@@ -26,9 +26,9 @@
 
 ```js
 <template>
-  <div>
-    <i class="iconAddSingle iconHover"></i>
-    <i class="iconAddSingle iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconAddSingle iconHover text-dark"></i>
+    <i class="iconAddSingle iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -38,9 +38,9 @@
 
 ```js
 <template>
-  <div>
-    <i class="iconAddMultiple iconHover"></i>
-    <i class="iconAddMultiple iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconAddMultiple iconHover text-dark"></i>
+    <i class="iconAddMultiple iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -50,11 +50,11 @@
 
 ```js
 <template>
-  <div>
+  <div class="styleguidistOnlyStyles">
     <i class="iconArrow"></i>
-    <i class="iconArrow fa-rotate-90"></i>
-    <i class="iconArrow fa-rotate-180"></i>
-    <i class="iconArrow fa-rotate-270"></i>
+    <i class="iconArrow text-dark fa-rotate-90"></i>
+    <i class="iconArrow text-dark fa-rotate-180"></i>
+    <i class="iconArrow text-dark fa-rotate-270"></i>
   </div>
 </template>
 ```
@@ -64,9 +64,9 @@
 
 ```js
 <template>
-  <div>
-    <i class="iconCalendar iconHover"></i>
-    <i class="iconCalendar iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconCalendar text-dark iconHover"></i>
+    <i class="iconCalendar text-dark iconHover fas"></i>
   </div>
 </template>
 ```
@@ -76,11 +76,11 @@
 
 ```js
 <template>
-  <div>
-    <i class="iconChevron"></i>
-    <i class="iconChevron fa-rotate-90"></i>
-    <i class="iconChevron fa-rotate-180"></i>
-    <i class="iconChevron fa-rotate-270"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconChevron text-dark "></i>
+    <i class="iconChevron text-dark fa-rotate-90"></i>
+    <i class="iconChevron text-dark fa-rotate-180"></i>
+    <i class="iconChevron text-dark fa-rotate-270"></i>
   </div>
 </template>
 ```
@@ -95,7 +95,7 @@
 
 ```js
 <template>
-  <div>
+  <div class="styleguidistOnlyStyles">
     <i class="iconClose close text-dark" aria-label="Close"></i>
     <i class="iconClose close text-dark far" aria-label="Close"></i>
     <br/>
@@ -116,9 +116,9 @@
 
 ```js
 <template>
-  <div>
+  <div class="styleguidistOnlyStyles">
     <i class="iconConfirm iconHover text-confirm"></i>
-    <i class="iconConfirm iconHover fas text-confirm"></i>
+    <i class="iconConfirm iconHover text-confirm fas"></i>
   </div>
 </template>
 ```
@@ -130,9 +130,9 @@
 
 ```js
 <template>
-  <div>
+  <div class="styleguidistOnlyStyles">
     <i id="copied" class="iconCopy iconHover"></i>
-    <i class="iconCopy iconHover fas"></i>
+    <i class="iconCopy iconHover text-dark fas"></i>
     <b-tooltip target="copied" title="Copied" triggers="click"></b-tooltip>
   </div>
 </template>
@@ -152,23 +152,8 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconDash"></i>
-  </div>
-</template>
-```
-
-
-<h3>Delete</h3>
-<p>Distinct in its smaller size and use from the Close icon, this functions to remove something from a list, delete an attached file, or otherwise permanently delete something.
-<br/><span class="text-info">Deprecate this and replace all instances with the "Remove" icon.</span>
-</p>
-
-```js
-<template>
-  <div>
-    <i class="iconDelete iconHover"></i>
-    <i class="iconDelete iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconDash text-dark"></i>
   </div>
 </template>
 ```
@@ -178,9 +163,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconEdit iconHover"></i>
-    <i class="iconEdit iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconEdit iconHover text-dark"></i>
+    <i class="iconEdit iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -190,8 +175,8 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconEdited"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconEdited text-secondary"></i>
   </div>
 </template>
 ```
@@ -201,9 +186,20 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconFile iconHover"></i>
-    <i class="iconFile iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconFile iconHover text-dark"></i>
+    <i class="iconFile iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
+<h3>Grabbable</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconGrab text-dark"></i>
   </div>
 </template>
 ```
@@ -213,9 +209,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconInputSelect iconHover"></i>
-    <i class="iconInputSelect iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconInputSelect iconHover text-dark"></i>
+    <i class="iconInputSelect iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -225,9 +221,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconPrevious iconHover"></i>
-    <i class="iconPrevious iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconPrevious iconHover text-dark"></i>
+    <i class="iconPrevious iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -237,9 +233,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconQuestion iconHover"></i>
-    <i class="iconQuestion iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconQuestion iconHover text-dark"></i>
+    <i class="iconQuestion iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -249,9 +245,9 @@ export default {
 
 ```js
 <template>
-  <div>
+  <div class="styleguidistOnlyStyles">
     <i class="iconRemove iconHover text-warning"></i>
-    <i class="iconRemove iconHover fas text-warning"></i>
+    <i class="iconRemove iconHover text-warning fas"></i>
   </div>
 </template>
 ```
@@ -261,8 +257,8 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconSearch"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconSearch text-dark"></i>
   </div>
 </template>
 ```
@@ -272,9 +268,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconSettings iconHover"></i>
-    <i class="iconSettings iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconSettings iconHover text-dark"></i>
+    <i class="iconSettings iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -284,9 +280,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconShadow iconHover"></i>
-    <i class="iconShadow iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconShadow iconHover text-dark"></i>
+    <i class="iconShadow iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -296,9 +292,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <b-spinner small class="btnIconLeft" type="grow" label="Spinning"></b-spinner>
-    <b-spinner small class="btnIconLeft" label="Spinning"></b-spinner>
+  <div class="styleguidistOnlyStyles">
+    <b-spinner small class="btnIconLeft text-dark" type="grow" label="Spinning"></b-spinner>
+    <b-spinner small class="btnIconLeft text-dark" label="Spinning"></b-spinner>
   </div>
 </template>
 ```
@@ -308,9 +304,9 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconUser iconHover"></i>
-    <i class="iconUser iconHover fas"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconUser iconHover text-dark"></i>
+    <i class="iconUser iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -320,8 +316,8 @@ export default {
 
 ```js
 <template>
-  <div>
-    <i class="iconWarning"></i>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconWarning text-warning"></i>
   </div>
 </template>
 ```

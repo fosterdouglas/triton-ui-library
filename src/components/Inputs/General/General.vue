@@ -9,13 +9,13 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- Distribute components into separate files</b-li>
-        <b-li class="alertListItem">- Add sorting function component (for inclusion/exclusion)</b-li>
-        <b-li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</b-li>
-        <b-li class="alertListItem">- Fix checkbox</b-li>
-        <b-li class="alertListItem">- Remove tooltip text (broken anyway)</b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- Distribute components into separate files</li>
+        <li class="alertListItem">- Add sorting function component (for inclusion/exclusion)</li>
+        <li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</li>
+        <li class="alertListItem">- Fix checkbox</li>
+        <li class="alertListItem">- Remove tooltip text (broken anyway)</li>
+      </ul>
   </b-alert>
 
 </div>

@@ -1,7 +1,7 @@
 <docs>
 
-<h3>Function - Standard</h3>
-<p>The primary button for all of the applications functions. As an example, use this for uploading files, adding users, or assigning new packages. Any low-level functions that the user needs to do to utilize the platform's purpose.</p>
+<h3>Highlighted</h3>
+<p>This special variation of the function button is used for unique actions, or to stand out amongst a group of other function buttons.</p>
 
 ```js
 <template>
@@ -9,8 +9,8 @@
 
     <b-button
       :pressed="false"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionStandard"
+      variant="outline-secondary"
+      class="btnFunction btnFunctionHighlighted"
       onclick="this.blur();"
       >
         <i></i>
@@ -20,19 +20,19 @@
 
     <b-button
       :pressed="false"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionStandard"
+      variant="outline-secondary"
+      class="btnFunction btnFunctionHighlighted"
       onclick="this.blur();"
       >
-        <i class="iconFile btnIcon btnIconLeft"></i>
+        <i class="iconFile btnIconLeft"></i>
         <div class="btnText">{{ FuncButtonCaption }}</div>
         <i></i>
     </b-button>
 
     <b-button
       :pressed="true"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionPressed"
+      variant="outline-secondary"
+      class="btnFunction btnFunctionHighlightedPressed"
       onclick="this.blur();"
       >
         <i></i>
@@ -42,12 +42,11 @@
 
     <b-button
       :pressed="true"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionPressed"
+      variant="outline-secondary"
+      class="btnFunction btnFunctionHighlightedPressed"
       onclick="this.blur();"
       >
-      <b-spinner small type="grow" label="Spinning" class="btnIcon btnIconLeft"></b-spinner>
-      <i></i>
+      <b-spinner small type="grow" label="Spinning" class="btnIconLeft"></b-spinner>
       <div class="btnText">{{ FuncButtonCaption }}</div>
       <i></i>
     </b-button>

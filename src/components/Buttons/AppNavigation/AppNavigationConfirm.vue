@@ -1,7 +1,7 @@
 <docs>
 
-<h3>Navigation - Warning</h3>
-<p>Generally, this variation should only be used to warn the user that the action will be permanent (as in deleting something), or that it will cancel an operation which will result in the loss of inputed data.</p>
+<h3>Confirm</h3>
+<p>A special-case colored navigation button, used when it's crucial to indicate the action will submit or activate something important.
 
 ```js
 <template>
@@ -9,8 +9,8 @@
 
     <b-button
       :pressed="false"
-      variant="outline-warningfade"
-      class="btnNavigation btnWarning"
+      variant="outline-confirmfade"
+      class="btnNavigation btnConfirm"
       onclick="this.blur();"
       >
       <i></i>
@@ -20,24 +20,22 @@
 
     <b-button
       :pressed="false"
-      variant="outline-warningfade"
-      class="btnNavigation btnWarning"
+      variant="outline-confirmfade"
+      class="btnNavigation btnConfirm"
       onclick="this.blur();"
       >
       <i></i>
       <div class="btnText">{{ NavButtonCaption }}</div>
-      <i class="iconRemove btnIcon btnIconRight"></i>
+      <i class="iconConfirm btnIconRight"></i>
     </b-button>
 
     <b-button
       :pressed="true"
-      variant="outline-warningfade"
-      class="btnNavigation btnWarningPressed"
+      variant="outline-confirmfade"
+      class="btnNavigation btnConfirmPressed"
       onclick="this.blur();"
       >
-      <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
-      <i></i>
+      {{ NavButtonCaption }}
     </b-button>
 
   </div>

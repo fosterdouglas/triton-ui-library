@@ -9,13 +9,13 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- <del>Fix DELETE/ADD buttons to properly dismiss popover</del> <i class="fas fa-check"></i></b-li>
-        <b-li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="fas fa-check"></i></b-li>
-        <b-li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</b-li>
-        <b-li class="alertListItem">- Move info tooltip from Icons page to here</b-li>
-        <b-li class="alertListItem">- Distribute components into separate files</b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- <del>Fix DELETE/ADD buttons to properly dismiss popover</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</li>
+        <li class="alertListItem">- Move info tooltip from Icons page to here</li>
+        <li class="alertListItem">- Distribute components into separate files</li>
+      </ul>
   </b-alert>
 
 </div>
@@ -37,7 +37,7 @@
           class="btnSmall cursorDefault text-warning"
           @click="showDelete = !showDelete"
          >
-          <i class="iconRemove iconBorder btnIcon"></i>
+          <i class="iconRemove iconBorder  "></i>
         </b-button>
 
       <b-popover
@@ -55,7 +55,7 @@
             @click="showDelete = !showDelete"
             >
             {{ DeleteButtonCaption }}
-            <i class="iconRemove btnIcon btnIconRight"></i>
+            <i class="iconRemove   btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>
@@ -71,7 +71,7 @@
           class="btnSmall cursorDefault text-confirm"
           @click="showAdd = !showAdd"
          >
-          <i class="iconConfirm iconBorder btnIcon"></i>
+          <i class="iconConfirm iconBorder  "></i>
         </b-button>
 
       <b-popover
@@ -89,7 +89,7 @@
             @click="showAdd = !showAdd"
             >
             {{ AddButtonCaption }}
-            <i class="iconConfirm btnIcon btnIconRight"></i>
+            <i class="iconConfirm   btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>
@@ -127,7 +127,7 @@
           class="cursorDefault text-dark"
           @hover="showHover = !showHover"
          >
-          <i class="iconQuestion iconHover btnIcon"></i>
+          <i class="iconQuestion iconHover  "></i>
         </b-button>
 
       <b-popover
