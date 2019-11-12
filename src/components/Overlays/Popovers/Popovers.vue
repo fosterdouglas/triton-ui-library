@@ -26,15 +26,15 @@
 
 ```js
 <template>
-  <div class="row" style="margin-top:155px;">
+  <div class="row" style="margin-top:145px;">
     <div class="col-2"></div>
 
     <div class="col-1">
         <b-button
           id="PopoverDeleteBtn"
-          :pressed="true"
-          variant="outline"
-          class="badge cursorDefault text-warning"
+          :pressed="false"
+          variant="outline-warningfade"
+          class="btnSmall cursorDefault text-warning"
           @click="showDelete = !showDelete"
          >
           <i class="iconRemove iconBorder btnIcon"></i>
@@ -66,9 +66,9 @@
     <div class="col-1">
         <b-button
           id="PopoverAddBtn"
-          :pressed="true"
-          variant="outline"
-          class="badge cursorDefault text-confirm"
+          :pressed="false"
+          variant="outline-confirmfade"
+          class="btnSmall cursorDefault text-confirm"
           @click="showAdd = !showAdd"
          >
           <i class="iconConfirm iconBorder btnIcon"></i>

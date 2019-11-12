@@ -273,8 +273,11 @@
 ```
 
 <h3>Expanding
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
+<p>
+<span class="text-info">Javascript to be added for restyling on "open" state.</span>
+</p>
 
 
 ```js
@@ -352,11 +355,6 @@
 
 <script>
   export default {
-    mounted() {
-    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
-
-    })
-  },
     data() {
       return {
         showCollapse1: false,
@@ -367,10 +365,10 @@
 </script>
 ```
 
+
 <h3>Expanding - Accordian
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-
 
 ```js
 <template>
@@ -380,44 +378,6 @@
 </template>
 ```
 
-
-<h3>File
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-
-
-```js
-
-<div class="card-columns columns-1">
-
-    <div id="row" class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-      <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-        <div class="text-center mx-auto">
-          <i class="fal fa-horizontal-rule align-middle"></i>
-        </div>
-      </div>
-      <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline text-dark item-text">
-        <i class="fal fa-sm fa-file-alt text-dark ml-1 mr-2 d-inline align-bottom"></i>
-        <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
-
-        <div id="row-file" class="badge btn pointer ml-1 d-inline" type="button">
-
-          <a tabindex="0" id="popover" class="info pointer text-medium" data-toggle="popover" data-html="true" data-placement="top" data-trigger="focus" data-content='<div id="delete-btn" role="button" class="btn btn-outline-warningfade btn-warn shadow-sm text-danger border-danger rounded-0 m-2 pl-3 pr-3 pt-2 pb-2 pointer">DELETE<i class="far fa-ban ml-2"></i></div>'>
-
-              <i class="fal fa-lg fa-window-close iconHover text-warning mt-1"></i>
-
-          </a>
-        </div>
-
-      </div>
-      <div class="col-1">
-      </div>
-    </div>
-
-
-
-</div>
-```
 
 
 <h3>Highlighted</h3>
@@ -531,6 +491,50 @@ $( function() {
   </div>
 
 </div>
+```
+
+<h3>Uploaded File
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+
+
+```js
+<template>
+  <div>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <div class="uploadedFileText">
+            <i class="iconFile"></i>
+            <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
+            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall badge cursorDefault text-warning ml-1">
+              <i class="iconRemove iconBorderSm btnIcon"></i>
+            </b-button>
+          </div>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
 ```
 
 <p><small class="text-mediumdark float-right mb-4">Page updated: November 4, 2019</small></p>

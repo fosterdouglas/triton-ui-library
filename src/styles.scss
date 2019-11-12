@@ -237,16 +237,21 @@ i {
 }
 
 .btnNavigation:focus:active {
-  outline: none; //prevents visual outline on click
+  outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 0px white !important;
 }
 
 .btnFunction:focus:active {
-  outline: none; //prevents visual outline on click
+  outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 2px white !important;
 }
 
-button:focus, .btnNavigation:focus, .btnFunction:focus {
+.btnSmall:focus:active {
+  outline: none; //prevents default visual outline on click
+  box-shadow: inset 0 0 0 0px white !important;
+}
+
+button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
    box-shadow: 0 0 0 4px $medium !important; //retains WCAG standard for screen readers
 }
 
@@ -269,7 +274,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .text-muted;
 }
 
-.btnIcon {
+.btnIcon { // REMOVE THIS CLASS?
   color: inherit;
 }
 
@@ -290,6 +295,20 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
 
 .borderRadiusMax {
   border-radius: 2em;
+}
+
+.btn-outline-warningfade:active i.iconBorderSm, .btn-outline-warningfade:active i.iconBorder {
+  background-color: rgba($warning, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px .5px $warning !important;
+  border: 0px solid;
+  @extend .text-white;
+}
+
+.btn-outline-confirmfade:active i.iconBorderSm, .btn-outline-confirmfade:active i.iconBorder {
+  background-color: rgba($confirm, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px .5px $confirm !important;
+  border: 0px solid;
+  @extend .text-white;
 }
 
 
@@ -418,6 +437,18 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .bg-secondary;
   @extend .border-secondary;
   @extend .text-white;
+}
+
+.btn.btnSmall {
+  border: 0px solid transparent !important; // ?????
+}
+
+.btnSmall { //CLASS USED TO OVERRIDE STANDARD BTN STYLES FOR SMALL BUTTONS, RENAME??
+  outline: none;
+  font-weight: inherit;
+  padding: 0;
+  top: -2px !important;
+  font-size: 75%; //pulled from .badge standard class
 }
 
 
@@ -619,20 +650,18 @@ button:focus, .btnNavigation:focus, .btnFunction:focus {
   @extend .rounded-sm;
 }
 
-.iconBorder:hover { //fix this to work correctly
-  box-shadow: 0px 0px 0px .5px inset !important;
-  font-weight: 900;
+.iconBorderSm {
+  border: .5px solid;
+  color: inherit;
+  @extend .rounded-sm;
 }
 
-.btn.badge {
-  border: 0px solid transparent !important; // ?????
+
+button[class|=btn-outline] { //??????
+  background-color: unset;
 }
 
-.badge {
-  outline: none;
-  font-weight: inherit;
-  padding: 0;
-}
+
 
 .iconHover:hover {
     font-weight: 900;
@@ -1007,6 +1036,10 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   border-top-width: 1px;
 }
 
+.uploadedFileText i {
+  @extend .fa-sm;
+}
+
 button.rowItem:focus {
   background-color: $light !important;
 }
@@ -1083,6 +1116,10 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 
 .custom-border {
   box-shadow: 0px 4px 0px 0px $dark !important;
+}
+
+.custom-control-label::after {
+  vertical-align: middle !important;
 }
 
 .custom-switch .custom-control-label::before {
@@ -1174,10 +1211,10 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 
 //location and size of the checkbox checkmark
 .custom-checkbox .custom-control-label::after {
-  top: -0.2rem !important;
-  left: -1.65rem !important;
-  width: 1.6rem !important;
-  height: 1.6rem !important;
+  top: -0.1em !important;
+  left: -1.55rem !important;
+  width: 1.6em !important;
+  height: 1.6em !important;
 }
 
 .custom-radio .custom-control-label::before{

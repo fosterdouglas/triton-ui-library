@@ -28,11 +28,11 @@
 ```js
 <template>
 <div class="justify-content-start mt-1"> <!-- classes used for library display only -->
-  <div class="custom-control custom-checkbox">
+  <div class="custom-control custom-checkbox d-inline">
     <input id="customCheck1" class="custom-control-input" type="checkbox"/>
     <label class="custom-control-label cursorPointer" for="customCheck1"></label>
   </div>
-  <div class="custom-control custom-checkbox">
+  <div class="custom-control custom-checkbox d-inline">
     <input id="customCheck2" class="custom-control-input" type="checkbox"/>
     <label class="custom-control-label cursorPointer" for="customCheck2"></label>
   </div>
@@ -184,7 +184,7 @@ $(function () {
 
    <input type="text" name="focus" required class="search-box form-control border-dark d-inline w-75 rounded-lg shadow-sm mr-2 align-middle pl-5" placeholder="Search for Users, Clients, or Agents . . ." />
 
-		<button class="badge pointer close-icon ml-n5" type="reset"><i class="fal fa-lg fa-window-close text-warning iconHover"></i></button>
+		<button class="btnSmall pointer close-icon ml-n5" type="reset"><i class="fal fa-lg fa-window-close text-warning iconHover"></i></button>
 
 	</form>
 
