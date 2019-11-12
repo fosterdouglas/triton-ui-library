@@ -9,20 +9,21 @@
       <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
     </h5>
     <hr/>
-      <b-ul>
-        <b-li class="alertListItem">- Refactor expanding component JS and HTML (use Collapse)</b-li>
-        <b-li class="alertListItem">- Animate expanding component dropdown carat</b-li>
-        <b-li class="alertListItem">- Fix file delete button</b-li>
-        <b-li class="alertListItem">- Distribute components into separate files</b-li>
-        <b-li class="alertListItem">- Adjust all components for recent text size change</b-li>
-        <b-li class="alertListItem">- Add additional colors to "highlighted"</b-li>
-      </b-ul>
+      <ul>
+        <li class="alertListItem">- <del>Refactor expanding component JS and HTML (use Collapse)</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Animate expanding component dropdown carat</li>
+        <li class="alertListItem">- <del>Fix file delete button</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Distribute components into separate files</li>
+        <li class="alertListItem">- Adjust all components for recent text size change</li>
+        <li class="alertListItem">- <del>Add additional colors to "highlighted"</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Convert checkbox, switch, radio to BUTTONS for WCAG selection highlight.</li>
+      </ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Basic</h3>
+<h3>Standard</h3>
 
 
 ```js
@@ -42,7 +43,7 @@
         </div>
 
         <div class="rowItemText">
-          <p>Here is an example of the basic row element.</p>
+          <p>Here is an example of the standard row element.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -67,7 +68,7 @@
         </div>
 
         <div class="rowItemText">
-          <p>And here is a second example of a basic row element.</p>
+          <p>The app will utilize these for information and organization.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -105,7 +106,7 @@
         </div>
 
         <div class="rowItemText">
-          <p class="mb-0">Use the checkbox to set something as true or false.</p>
+          <p class="mb-0">The checkbox can be used to set something as true or false.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -132,7 +133,7 @@
         </div>
 
         <div class="rowItemText">
-          <p class="mb-0">Use the checkbox to set something as true or false.</p>
+          <p class="mb-0">Think of it as a Yes or No answer to the accompanying text.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -165,7 +166,7 @@
         </div>
 
         <div class="rowItemText">
-          <p>Here is an example of the basic row element.</p>
+          <p>Sometimes row elements need to be clickable.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -190,7 +191,7 @@
         </div>
 
         <div class="rowItemText">
-          <p>And here is a second example of a basic row element.</p>
+          <p>Typically, clicking on this will lead to a different page or view.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -282,11 +283,43 @@
 
 ```js
 <template>
+
   <div>
-    <div>
+
       <b-button
         block
-        class="rowItem rowExpandable rowItemHover rowExpandable cursorDefault"
+        class="rowItem rowExpandable rowItemHover cursorDefault"
+        variant="none"
+        v-b-toggle.collapse-0
+        onclick="this.blur();"
+      >
+
+        <div class="rowItemContent">
+
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
+
+          <div class="rowItemText">
+            <p>A common iteration of the row element is the expanding type.</p>
+          </div>
+
+          <div class="rowItemSuffix">
+            <i class="iconChevron"></i>
+          </div>
+
+        </div>
+
+      </b-button>
+
+      <b-collapse id="collapse-0">
+        <b-card class="rowExpandableContent">Information!</b-card>
+      </b-collapse>
+
+
+      <b-button
+        block
+        class="rowItem rowExpandable rowItemHover cursorDefault"
         variant="none"
         v-b-toggle.collapse-1
         onclick="this.blur();"
@@ -299,7 +332,7 @@
           </div>
 
           <div class="rowItemText">
-            <p>Here is an example of the basic row element.</p>
+            <p>Click me to expand or collapse a linked group of data.</p>
           </div>
 
           <div class="rowItemSuffix">
@@ -311,16 +344,13 @@
       </b-button>
 
       <b-collapse id="collapse-1">
-        <b-card class="rowExpandableContent"> test </b-card>
+        <b-card class="rowExpandableContent">Information!</b-card>
       </b-collapse>
 
-    </div>
 
-
-    <div>
       <b-button
         block
-        class="rowItem rowExpandable rowItemHover rowExpandable cursorDefault"
+        class="rowItem rowExpandable rowItemHover cursorDefault"
         variant="none"
         v-b-toggle.collapse-2
         onclick="this.blur();"
@@ -333,7 +363,7 @@
           </div>
 
           <div class="rowItemText">
-            <p>And here is a second example of a basic row element.</p>
+            <p>This is used to store and organize large amounts of information.</p>
           </div>
 
           <div class="rowItemSuffix">
@@ -345,7 +375,39 @@
       </b-button>
 
       <b-collapse visible id="collapse-2">
-        <b-card class="rowExpandableContent"> test </b-card>
+            <b-card class="rowExpandableContent">
+              <b-button
+                block
+                class="rowItem rowExpandable rowItemHover cursorDefault"
+                variant="none"
+                v-b-toggle.collapse-2-inner
+                onclick="this.blur();"
+              >
+
+                <div class="rowItemContent">
+
+                  <div class="rowItemPrefix">
+                    <i class="iconDash"></i>
+                  </div>
+
+                  <div class="rowItemText">
+                    <p>These can also be nested!</p>
+                  </div>
+
+                  <div class="rowItemSuffix">
+                    <i class="iconChevron"></i>
+                  </div>
+
+                </div>
+
+              </b-button>
+
+              <b-collapse id="collapse-2-inner" class="">
+                <b-card class="rowExpandableContent">Look! Even more information!</b-card>
+              </b-collapse>
+
+            </b-card>
+
       </b-collapse>
 
     </div>
@@ -384,118 +446,286 @@
 <p>The highlighted element can be used for an item that's particularly important or needs focus. It also has additional margin spacing on the top and bottom to set it apart. </p>
 
 ```js
-<div class="card-columns columns-1">
+<template>
+  <div>
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover rowHighlightSecondary cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
-    <div class="card card-hover bg-light highlighted rounded-0 border-0 p-2 mt-2 mb-2">
-      <div class="col-1 mr-3 mr-sm-3 mr-md-1 mr-lg-1 d-inline-flex">
-        <div class="text-center mx-auto">
-          <i class="fal fa-horizontal-rule text-dark align-middle"></i>
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
         </div>
-      </div>
-      <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-0 d-inline-flex text-dark item-text">
-        A highlighted item stands out against others
-      </div>
-      <div class="col-1">
-      </div>
-    </div>
 
-</div>
+        <div class="rowItemText">
+          <p>This one is highlighted in yellow to give additional focus or importance.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover rowHighlightConfirm cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>A green highlight could be used to confirm a correct or valid option.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover rowHighlightWarning cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>While a red highlight might indicate an error.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
 ```
 
 <h3>Moveable
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
-<p>This component function uses the jQuery UI library <a class="text-info underline" href="https://api.jqueryui.com/sortable/" target="_blank">Sortable Widget</a>.<br>
-(tooltip problem, bootstrap must be loaded AFTER jQuery UI)
+<p>This component function uses the jQuery UI library <a class="text-info underline" href="https://api.jqueryui.com/sortable/" target="_blank">Sortable Widget</a>.
+  For it to function properly, the parent container (typically a DIV) must have the ID "sortable" on it.
 </p>
 
 ```js
-$( function() {
+<template>
+  <div id="sortable">
+
+      <b-button
+        block
+        class="rowItem rowStandard rowItemHover cursorDefault"
+        variant="none"
+        onclick="this.blur();"
+      >
+
+        <div class="rowItemContent">
+
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
+
+          <div class="rowItemText">
+            <p>Click on me and drag me to another position in this list!</p>
+          </div>
+
+          <div class="rowItemSuffix">
+            <i class="iconGrab"></i>
+          </div>
+
+        </div>
+
+      </b-button>
+
+      <b-button
+        block
+        class="rowItem rowStandard rowItemHover cursorDefault"
+        variant="none"
+        onclick="this.blur();"
+      >
+
+        <div class="rowItemContent">
+
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
+
+          <div class="rowItemText">
+            <p>A list that can be organized, wow.</p>
+          </div>
+
+          <div class="rowItemSuffix">
+            <i class="iconGrab"></i>
+          </div>
+
+        </div>
+
+      </b-button>
+
+      <b-button
+        block
+        class="rowItem rowStandard rowItemHover cursorDefault"
+        variant="none"
+        onclick="this.blur();"
+      >
+
+        <div class="rowItemContent">
+
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
+
+          <div class="rowItemText">
+            <p>This function is useful in a variety of applications.</p>
+          </div>
+
+          <div class="rowItemSuffix">
+            <i class="iconGrab"></i>
+          </div>
+
+        </div>
+
+      </b-button>
+
+  </div>
+</template>
+<script>
+$(function() {
   $( "#sortable" ).sortable({
-    opacity: .7
+    cancel: '', //need this to function with b-button
+    opacity: .7,
+    placeholder: 'ui-state-highlight' //custom style for placeholder while dragging
   });
   $( "#sortable" ).disableSelection();
 });
 
-<div id="sortable" class="card-columns columns-1">
-
-    <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-      <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-        <div class="text-center mx-auto">
-          <i class="fal fa-horizontal-rule align-middle"></i>
-        </div>
-      </div>
-      <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline text-dark item-text">
-        Drag me to move me
-
-        <div class="hand close-icon d-inline float-right mr-0"><i class="fal fa-lg fa-grip-lines-vertical text-dark mt-1"></i></div>
-
-      </div>
-      <div class="col-1">
-      </div>
-    </div>
-
-        <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-          <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-0 d-inline-flex">
-            <div class="text-center mx-auto">
-              <i class="fal fa-horizontal-rule align-middle"></i>
-            </div>
-          </div>
-          <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-1 d-inline text-dark item-text">
-            Another element that can be rearranged
-
-            <div class="hand close-icon d-inline float-right mr-0"><i class="fal fa-lg fa-grip-lines-vertical text-dark mt-1"></i></div>
-
-          </div>
-          <div class="col-1">
-          </div>
-        </div>
-
-</div>
+export default {
+}
+</script>
 ```
 
 
-<h3>Radio
-<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
-</h3>
+<h3>Radio</h3>
+<p>[Needs desciption...]</p>
 
 ```js
-<div class="card-columns columns-1">
+<template>
+  <div>
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
-  <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-    <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-1 pl-4 d-inline-flex">
-      <div class="custom-control custom-radio text-center mx-auto">
-        <input type="radio" name="radio" class="custom-control-input" id="customCheck4" />
-        <label class="custom-control-label pointer" for="customCheck4"></label>
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-radio">
+            <input id="customRadio1" class="custom-control-input" type="radio" name="radio"/>
+            <label class="custom-control-label cursorPointer" for="customRadio1"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">A radio group is used to require a single selection from multiple options.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
       </div>
-    </div>
-    <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-0 d-inline text-dark item-text">
-      Select a single option out of many choices
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
 
-  <div class="card card-hover bg-light rounded-0 border-0 p-2 mt-1 mb-0">
-    <div class="col-1 mr-4 mr-sm-3 mr-md-1 mr-lg-1 pl-4 d-inline-flex">
-      <div class="custom-control custom-radio text-center mx-auto">
-        <input type="radio" name="radio" class="custom-control-input" id="customCheck5" />
-        <label class="custom-control-label pointer" for="customCheck5"></label>
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-radio">
+            <input id="customRadio2" class="custom-control-input" type="radio" name="radio"/>
+            <label class="custom-control-label cursorPointer" for="customRadio2"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">You only get to choose one...</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
       </div>
-    </div>
-    <div class="col-10 pl-3 pl-sm-3 pl-md-3 pl-lg-0 d-inline-flex text-dark item-text sibling-label">
-      Select a single option out of many choices
-    </div>
-    <div class="col-1">
-    </div>
-  </div>
 
-</div>
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-radio">
+            <input id="customRadio3" class="custom-control-input" type="radio" name="radio"/>
+            <label class="custom-control-label cursorPointer" for="customRadio3"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">So make a decision!</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
+  </div>
+</template>
 ```
 
 <h3>Uploaded File
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
 </h3>
+<p>[Needs desciption...]</p>
 
 
 ```js
@@ -519,8 +749,8 @@ $( function() {
           <div class="uploadedFileText">
             <i class="iconFile"></i>
             <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
-            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall badge cursorDefault text-warning ml-1">
-              <i class="iconRemove iconBorderSm btnIcon"></i>
+            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+              <i class="iconRemove iconBorderMini"></i>
             </b-button>
           </div>
         </div>
@@ -536,6 +766,4 @@ $( function() {
   </div>
 </template>
 ```
-
-<p><small class="text-mediumdark float-right mb-4">Page updated: November 4, 2019</small></p>
 </docs>

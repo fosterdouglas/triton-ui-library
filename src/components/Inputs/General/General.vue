@@ -21,9 +21,8 @@
 </div>
 ```
 
-<h3>Checkbox
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
+<h3>Checkbox</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 <template>
@@ -48,7 +47,10 @@ $(function () {
 </script>
 ```
 
-<h3>Filtering</h3>
+<h3>Filtering
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 
@@ -99,6 +101,7 @@ $(function () {
 <h3>Multi Select
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
+<p>[Needs desciption...]</p>
 
 ```js
 
@@ -132,6 +135,7 @@ $(function () {
 <h3>Multi Select - Drop Down
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
+<p>[Needs desciption...]</p>
 
 ```js
 //ENABLE ALL TOOLTIPS FOR PAGE
@@ -169,7 +173,9 @@ $(function () {
 
 
 <h3>Search Box
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i></h3>
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 
@@ -194,6 +200,7 @@ $(function () {
 ```
 
 <h3>Text Field</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 
@@ -210,6 +217,7 @@ $(function () {
 ```
 
 <h3>Text Field - Area</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 <div class="row">
@@ -245,6 +253,7 @@ $(function () {
 ```
 
 <h3>Toggle</h3>
+<p>[Needs desciption...]</p>
 
 ```js
 var toolbarOptions = ['bold', 'italic', 'underline', 'code-block', { 'size': ['small', false, 'large', 'huge'] }];

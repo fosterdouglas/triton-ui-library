@@ -144,8 +144,22 @@ button[name*=rsg-code-editor]:active {
 }
 
 // REMOVE FOOTER
-[class^=rsg--footer-] {
-	display: none !important;
+[class^=rsg--footer-] p, [class^=rsg--footer-] a {
+	font-size: 100% !important;
+  text-decoration: none !important;
+  color: rgba($mediumdark,.6) !important;
+  @extend .float-right;
+  visibility: hidden !important;
+  margin-bottom: 0px !important;
+  margin-top: 2rem !important;
+
+}
+
+[class^=rsg--footer-] p::before {
+  @extend .float-right;
+  content: "Guide last updated: November 12th, 2019" !important;
+  visibility: visible !important;
+  margin-bottom: 0px !important;
 }
 
 // BORDER STYLING
