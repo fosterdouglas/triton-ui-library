@@ -2,6 +2,7 @@
 
 <h3>Confirm</h3>
 <p>A special-case colored navigation button, used when it's crucial to indicate the action will submit or activate something important.
+</p>
 
 ```js
 <template>

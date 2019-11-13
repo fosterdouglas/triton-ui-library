@@ -95,6 +95,10 @@ a:hover {
   margin-bottom: 0 !important;
 }
 
+.rsg--root-44 {
+  @extend .pb-5;
+}
+
 //ADJUST HEADER H3 SIZE/WEIGHT
 [class^=rsg--spacing-] h3, [class^=rsg--spacing-] h3 p {
   font-weight: 500 !important;
@@ -155,12 +159,7 @@ button[name*=rsg-code-editor]:active {
 
 }
 
-[class^=rsg--footer-] p::before {
-  @extend .float-right;
-  content: "Guide last updated: November 12th, 2019" !important;
-  visibility: visible !important;
-  margin-bottom: 0px !important;
-}
+
 
 // BORDER STYLING
 div[class^=rsg--preview-] {
@@ -199,9 +198,23 @@ div[class^=rsg--preview-] {
 
 [class^=rsg--para-] {
   font-size: 1rem !important;
+  text-align: justify !important;
+}
+
+[class^=rsg--spacing-] + [class^=rsg--para-] {
+  font-size: 1rem !important;
+  max-width: 900px !important;
 }
 
 // ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
 .rsg--isSelected-51, .rsg--isSelected-34, .rsg--isSelected-43, .rsg--isSelected-28  {
   background-color: rgba($mediumdark, .2) !important;
+}
+
+
+[class^=rsg--footer-] p::before {
+  @extend .float-right;
+  content: "Guide last updated: November 13th, 2019" !important;
+  visibility: visible !important;
+  margin-bottom: 0px !important;
 }

@@ -11,57 +11,65 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Remove/solve form field "underline"</li>
-        <li class="alertListItem">- Add additional form field types</li>
+        <li class="alertListItem">- <del>Remove/solve form field "underline"</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Add datalist type</li>
       </ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Text Field
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>Used for basic form text entry. Form fields will use ":placeholder-shown" to keep labels visible during filling.</p>
+<h3>Standard</h3>
+<p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling. The labels are built into each form field for styling simplicity, organization, and consistency.</p>
 
 ```js
+<template>
+  <div class="row">
 
-<form class="row">
-
-  <div class="col-6 form-label-group">
-    <input id="textfield" class="form-control" placeholder="Text Field" type="email">
-    <label  for="textfield">Text Field</label>
+  <div class="form-label-group formFieldHalf">
+    <b-form-input id="form-field-1" class="form-control" placeholder="First Name"/>
+    <label for="form-field-1">First Name</label>
   </div>
 
-</form>
+  <div class="form-label-group formFieldHalf">
+    <b-form-input id="form-field-2" class="form-control" placeholder="Last Name"/>
+    <label for="form-field-2">Last Name</label>
+  </div>
+
+  </div>
+</template>
 ```
 
-<h3>Text Field - Confirm</h3>
+<h3>Valid</h3>
 <p>Compliant data entered in a text field is marked with a green border and a check mark.</p>
 
 ```js
+<template>
+  <div class="row">
 
-<div class="row">
-
-  <div class="col-6 mt-1" data-toggle="tooltip" data-trigger="focus" data-placement="right" title="Text Field - Confirm">
-    <input class="is-valid form-control border-confirm rounded-0" type="text" value="success@gmail.com" />
+  <div class="form-label-group formFieldHalf">
+    <b-form-input :state="true" id="form-field-2" class="form-control" placeholder="Email" value="valid@gmail.com"/>
+    <label for="form-field-2">Email</label>
   </div>
 
-</div>
+  </div>
+</template>
 ```
 
-<h3>Text Field - Error</h3>
+<h3>Invalid</h3>
 <p>If entered data doesn't match the required type of the field, it's marked with a red border and an exclamation mark. </p>
 
 ```js
+<template>
+  <div class="row">
 
-<div class="row">
-
-  <div class="col-6 mt-1" data-toggle="tooltip" data-trigger="focus" data-placement="right" title="Text Field - Error">
-    <input class="is-invalid form-control border-warning text-warning rounded-0" type="text" value="error@gmail.comm" />
+  <div class="form-label-group formFieldHalf">
+    <b-form-input :state="false" id="form-field-2" class="form-control" placeholder="Email" value="invalid@gmail.commm"/>
+    <label for="form-field-2">Email</label>
   </div>
 
-</div>
+  </div>
+</template>
 ```
 
 

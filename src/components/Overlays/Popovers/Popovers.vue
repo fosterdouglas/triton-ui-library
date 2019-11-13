@@ -117,9 +117,8 @@
 
 ```js
 <template>
-  <div class="row" >
+  <div>
 
-    <div class="col-1">
         <b-button
           id="PopoverHover"
           :pressed="false"
@@ -127,7 +126,7 @@
           class="cursorDefault text-dark"
           @hover="showHover = !showHover"
          >
-          <i class="iconQuestion iconHover  "></i>
+          <i class="iconQuestion iconHover fa-lg"></i>
         </b-button>
 
       <b-popover
@@ -138,10 +137,9 @@
        >
         Here is some content.
       </b-popover>
-    </div>
+
 
   </div>
-
 </template>
 
 <script>

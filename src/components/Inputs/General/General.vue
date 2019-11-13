@@ -13,7 +13,8 @@
         <li class="alertListItem">- Distribute components into separate files</li>
         <li class="alertListItem">- Add sorting function component (for inclusion/exclusion)</li>
         <li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</li>
-        <li class="alertListItem">- Fix checkbox</li>
+        <li class="alertListItem">- <del>Fix checkbox</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Fix mini checkbox</li>
         <li class="alertListItem">- Remove tooltip text (broken anyway)</li>
       </ul>
   </b-alert>
@@ -172,9 +173,7 @@ $(function () {
 ```
 
 
-<h3>Search Box
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
+<h3>Search Box</h3>
 <p>[Needs desciption...]</p>
 
 ```js
@@ -184,13 +183,16 @@ $(function () {
   <div class="col mt-1">
 
 	<form>
-  <div class="input-group-prepend">
-    <span class="input-group-text text-dark ml-1"><i class="far fa-lg fa-search"></i></span>
-  </div>
 
-   <input type="text" name="focus" required class="search-box form-control border-dark d-inline w-75 rounded-lg shadow-sm mr-2 align-middle pl-5" placeholder="Search for Users, Clients, or Agents . . ." />
+    <div class="input-group-prepend">
+      <i class="iconSearch fa-lg"></i>
+    </div>
 
-		<button class="btnSmall pointer close-icon ml-n5" type="reset"><i class="fal fa-lg fa-window-close text-warning iconHover"></i></button>
+     <input type="text" name="focus" required class="search-box form-control border-dark d-inline w-75 rounded-lg shadow-sm mr-2 align-middle pl-5" placeholder="Search for Users, Clients, or Agents . . ." />
+
+     <b-button onclick="this.blur();" variant="none" class="searchClose cursorDefault text-warning" type="reset">
+       <i class="iconClose iconHover"></i>
+     </b-button>
 
 	</form>
 

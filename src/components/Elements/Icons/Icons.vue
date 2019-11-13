@@ -11,10 +11,10 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Change icon for "Edit"</li>
-        <li class="alertListItem">- Add missing icons (return, calendar)</li>
+        <li class="alertListItem">- Change icon for "Edit" (? to what)</li>
+        <li class="alertListItem">- <del>Add missing icons (return, calendar)</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Make tooltip for "Copied" auto close</li>
-        <li class="alertListItem">- Deprecate delete icon and replace instances with Remove icon</li>
+        <li class="alertListItem">- <del>Deprecate delete icon and replace instances with Remove icon</del> <i class="iconConfirm"></i></li>
       </ul>
   </b-alert>
 

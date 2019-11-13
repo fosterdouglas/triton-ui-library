@@ -1,7 +1,11 @@
 <docs>
 
 <h3>Icon</h3>
-<p>...</p>
+<p>The icon-sized buttons are used primarily as a shortcut to accessing a function.
+  For example, in the row element's "Upload File" component, a small delete icon is
+  added to the row to give the user the ability to delete an attached file. Note: this
+  button type should almost always be used with a popover or some other method of confirmation. A single click
+  on an icon-sized button should never be immediately destructive or additive.</p>
 
 ```js
 <template>
@@ -14,7 +18,7 @@
           class="btnSmall cursorDefault text-primary"
           onclick="this.blur()"
          >
-          <i class="iconSettings iconBorderMini"></i>
+          <i class="iconArrow iconBorderMini"></i>
         </b-button>
 
         <b-button
@@ -43,7 +47,7 @@
           class="btnSmall cursorDefault text-primary"
           onclick="this.blur()"
          >
-          <i class="iconSettings iconBorderStd"></i>
+          <i class="iconArrow iconBorderStd"></i>
         </b-button>
 
         <b-button

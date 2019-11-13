@@ -25,7 +25,7 @@
       @dismissed="dismissCountDown=0"
       @dismiss-count-down="countDownChanged"
     >
-      <p>{{ TimedTitle }}{{ dismissCountDown }}</p>
+      <p class="mb-2">{{ TimedTitle }}{{ dismissCountDown }}</p>
       <b-progress
         variant="secondary"
         :max="dismissSecs"
