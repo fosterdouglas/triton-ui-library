@@ -845,7 +845,14 @@ a.info:hover {
   color: $mediumdark;
 }
 
+.form-group .custom-radio {
+  @extend .my-1;
+  @extend .ml-1;
+}
 
+.form-group .custom-radio > label {
+  @extend .pl-2;
+}
 
 input, textarea, select {
   font-family: 'Montserrat';
@@ -1088,7 +1095,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .col-1;
   @extend .pr-0;
   @extend .pl-0;
-  max-width: 7% !important;
+  max-width: 5% !important;
   height: 20px;
 }
 
@@ -1125,6 +1132,13 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   border-top-width: 1px;
 }
 
+.rowTitle {
+  pointer-events: none;
+  @extend .bg-dark;
+  @extend .text-white;
+  @extend .pl-3;
+}
+
 .card { //for nested row elements, should have a more specific selector
   @extend .w-100;
   @extend .rounded-0;
@@ -1132,7 +1146,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 }
 
 .card-body { //for nested row elements, should have a more specific selector
-  width: 93%;
+  width: 95%;
   @extend .float-right;
 }
 
@@ -1349,7 +1363,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   height: 1.38em !important;
   top: 0em!important;
   left: -1.65em !important;
-  position: relative !important;
+  //position: relative !important;
 }
 label {
   margin-bottom: 0 !important;

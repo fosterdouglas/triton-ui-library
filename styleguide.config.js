@@ -48,7 +48,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.5.0',
+    version: 'v0.5.2',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -98,7 +98,13 @@ module.exports = {
       {name: 'Rows', sections: [
         {components: 'src/components/Elements/Rows/*.vue'}
         ],
+      },
+
+      {name: 'Tables', sections: [
+        {components: 'src/components/Elements/Tables/*.vue'}
+        ],
       }
+
     ],
       sectionDepth: 1
     },

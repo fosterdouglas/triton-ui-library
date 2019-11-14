@@ -17,6 +17,7 @@
         <li class="alertListItem">- Adjust all components for recent text size change</li>
         <li class="alertListItem">- <del>Add additional colors to "highlighted"</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Convert checkbox, switch, radio to BUTTONS for WCAG selection highlight.</li>
+        <li class="alertListItem">- Add a status component type.</li>
       </ul>
   </b-alert>
 
@@ -631,12 +632,35 @@ export default {
 ```
 
 
-<h3>Radio</h3>
-<p>[Needs desciption...]</p>
+<h3>Radio List</h3>
+<p>[Needs desciption... distinguish it from Radio Group for forms]</p>
 
 ```js
 <template>
   <div>
+
+    <b-button
+      block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+
+
+        <div class="rowItemText">
+          <p class="mb-0">Please Choose From This Radio List Of Options:</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
     <b-button
       block
       class="rowItem rowStandard rowItemHover cursorDefault"
@@ -654,7 +678,7 @@ export default {
         </div>
 
         <div class="rowItemText">
-          <p class="mb-0">A radio group is used to require a single selection from multiple options.</p>
+          <p class="mb-0">A radio list is used to require a single selection from many options.</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -717,6 +741,18 @@ export default {
       </div>
 
     </b-button>
+
+  </div>
+</template>
+```
+
+<h3>Status
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+
+```js
+<template>
+  <div>
 
   </div>
 </template>
