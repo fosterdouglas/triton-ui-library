@@ -18,7 +18,7 @@
       </ul>
   </b-alert>
 <p class="ml-n3 w-75">App Navigation buttons are used as a means to get around the application.
-  They typically "go somewhere" as opposed to the Functional buttons which "do something," although that
+  They typically "go somewhere" as opposed to the <a class="text-info" href="../../../#/Buttons/Functional">Functional</a> buttons which "do something," although that
   is a generalization for categorizing.
 </p>
 <br/>

@@ -47,19 +47,23 @@
 ```
 
 <h3>Text Standard</h3>
-<p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling. The labels are built into each form field for styling simplicity, organization, and consistency.</p>
+<p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling.
+  The labels are built into each form field for styling simplicity, organization, and consistency.
+  <br/>
+  The "placeholder" property on the input should be appended with (Required) for forms more than a few fields in length.
+  The content of the label should remain without the ammendment qualifier.</p>
 
 ```js
 <template>
   <div class="row">
 
   <div class="form-label-group formFieldHalf">
-    <b-form-input id="form-field-1" class="form-control" placeholder="First Name"/>
+    <b-form-input id="form-field-1" class="form-control" placeholder="First Name (Required)"/>
     <label for="form-field-1">First Name</label>
   </div>
 
   <div class="form-label-group formFieldHalf">
-    <b-form-input id="form-field-2" class="form-control" placeholder="Last Name"/>
+    <b-form-input id="form-field-2" class="form-control" placeholder="Last Name (Optional)"/>
     <label for="form-field-2">Last Name</label>
   </div>
 

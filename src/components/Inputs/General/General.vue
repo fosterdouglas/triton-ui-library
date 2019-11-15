@@ -16,6 +16,7 @@
         <li class="alertListItem">- <del>Fix checkbox</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Fix mini checkbox</li>
         <li class="alertListItem">- Remove tooltip text (broken anyway)</li>
+        <li class="alertListItem">- Refactor checkbox to use Vue classes</li>
       </ul>
   </b-alert>
 
@@ -54,49 +55,43 @@ $(function () {
 <p>[Needs desciption...]</p>
 
 ```js
+<template>
+<div class="justify-content-start mt-1"> <!-- classes used for library display only -->
+  <div class="custom-control custom-checkbox d-inline">
+    <input id="customCheck3" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck3">
+      <b-badge variant="none">Clients</b-badge>
+    </label>
+  </div>
 
-<div class="row">
+  <div class="custom-control custom-checkbox d-inline">
+    <input id="customCheck4" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck4">
+      <b-badge variant="none">Agents</b-badge>
+    </label>
+  </div>
 
-  <div class="col mt-1">
+  <div class="custom-control custom-checkbox d-inline">
+    <input id="customCheck5" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck5">
+      <b-badge variant="none">Users</b-badge>
+    </label>
+  </div>
 
-
-    <small id="filtering" class="form-text">
-
-      <div class="form-check d-inline custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" id="clientsCheck" />
-        <label class="custom-control-label pointer item-text text-dark mr-3 pl-1 p1-5 active" for="clientsCheck">
-          Clients
-        </label>
-      </div>
-
-      <div class="form-check d-inline custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" value="" id="agentsCheck" />
-        <label class="custom-control-label pointer item-text text-dark mr-3 pl-1 p1-5" for="agentsCheck">
-          Agents
-        </label>
-      </div>
-
-      <div class="form-check d-inline custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" value="checked" id="usersCheck" />
-        <label class="custom-control-label pointer item-text text-dark mr-3 pl-1 p1-5" for="usersCheck">
-          Users
-        </label>
-      </div>
-
-      <div class="form-check d-inline custom-control custom-checkbox">
-        <input class="custom-control-input" type="checkbox" value="" id="de-userCheck" />
-        <label class="custom-control-label pointer item-text text-dark mr-3 pl-1 p1-5" for="de-userCheck">
-          Deactivated Users
-        </label>
-      </div>
-
-    </small>
-
-
-
+  <div class="custom-control custom-checkbox d-inline">
+    <input id="customCheck6" class="custom-control-input" type="checkbox"/>
+    <label class="custom-control-label cursorPointer" for="customCheck6">
+      <b-badge variant="none">Deactivated Users</b-badge>
+    </label>
   </div>
 
 </div>
+</template>
+
+<script>
+  export default {
+}
+</script>
 ```
 
 <h3>Multi Select

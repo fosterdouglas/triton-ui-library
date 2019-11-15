@@ -37,7 +37,7 @@
           class="btnSmall cursorDefault text-warning"
           @click="showDelete = !showDelete"
          >
-          <i class="iconRemove iconBorder  "></i>
+          <i class="iconRemove iconBorderStd"></i>
         </b-button>
 
       <b-popover
@@ -71,7 +71,7 @@
           class="btnSmall cursorDefault text-confirm"
           @click="showAdd = !showAdd"
          >
-          <i class="iconConfirm iconBorder  "></i>
+          <i class="iconConfirm iconBorderStd"></i>
         </b-button>
 
       <b-popover

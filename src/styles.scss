@@ -236,9 +236,7 @@ i {
   height: 34px;
 }
 
-.btnSmall {
-  @extend .mx-1;
-}
+
 
 .btnNavigation:focus:active {
   outline: none; //prevents default visual outline on click
@@ -469,6 +467,8 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   padding: 0;
   margin-top: -4px !important; //aligns button vertically
   font-size: 75%; //pulled from .badge standard class
+  @extend .rounded-0;
+  @extend .mx-1;
 }
 
 
@@ -688,6 +688,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   border: 1px solid;
   color: inherit;
   @extend .rounded-sm;
+  @extend .rounded-0;
 }
 
 .iconBorderStd {
@@ -696,6 +697,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .p-2;
   @extend .rounded-sm;
   @extend .fa-lg;
+  @extend .rounded-0;
 }
 
 
@@ -864,8 +866,7 @@ input, textarea, select {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 1px $dark inset !important;
-  border: 1px solid transparent;
+  box-shadow: 0 0 0 .5px $dark inset !important;
 }
 
 .form-control {
@@ -1004,6 +1005,15 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-size: 1rem;
 }
 
+
+//general
+
+.badge {
+  font-weight: 500;
+  @extend .mr-2;
+  @extend .unselectableText;
+}
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                         LIGHTBOX                               //
@@ -1041,6 +1051,87 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .text-center;
 }
 
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                        PAGEINATION                             //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.pagination {
+  @extend .mt-2;
+}
+
+.page-item,
+.page-link,
+.page-item.disabled {
+  @extend .rounded-0;
+}
+
+.page-item.active {
+  pointer-events: none;
+}
+
+.page-item.active .page-link,
+.page-item.active:hover {
+  @extend .text-white;
+  @extend .bg-dark;
+}
+
+.page-link {
+  width: 36px;
+  height: 36px;
+  @extend .text-center;
+}
+
+.page-item.active a:focus {
+  box-shadow: inset 0 0 0 1px white !important; //maintains WCAG
+}
+
+.page-item.active a.page-link:focus {
+  background-color: $dark !important;
+}
+
+.page-link:focus {
+  outline: none;
+  @extend .border-dark;
+  box-shadow: inset 0 0 0 0 !important;
+}
+
+[role=menuitemradio].page-link:hover { //styles for hover over numbers
+  @extend .border-dark;
+  @extend .bg-transparent;
+}
+
+[role=menuitem].page-link:focus, [role=menuitem].page-link:focus i {
+  border: 1px solid transparent !important;
+  @extend .bg-transparent;
+  @extend .fas;
+}
+
+[role=menuitem].page-link:hover {
+  @extend .bg-transparent;
+  @extend .fas;
+}
+
+
+[role=menuitem] i {
+  border: 1px solid transparent;
+  margin-top: -.23em;
+  width: 10px; //prevents prev/next buttons from shifting content on hover
+}
+
+.page-item > [role=menuitem] {
+  border: 0px;
+  @extend .mx-0;
+  @extend .fa-lg;
+}
+
+.page-item.disabled > [role=menuitem] { //styles for disabled arrow
+  border: 0px;
+  @extend .text-medium;
+  @extend .mx-0;
+  @extend .fa-lg;
+}
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -1087,6 +1178,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   @extend .pl-4;
   @extend .pr-0;
   height: 20px;
+  margin-right: -24px;
 }
 
 .rowItemPrefix {
@@ -1233,7 +1325,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   font-size: 1.65em; //custom sizing required for icon
 }
 
-.item-text {
+.unselectableText {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1407,7 +1499,7 @@ label {
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                          SIDE BAR                              //
+  //                          SIDE NAV                              //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .nav {
@@ -1452,6 +1544,59 @@ label {
 .nav-break {
   border-top: 1px solid rgba($primary, .7);
 }
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                          TABLE                                 //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.table th {
+  border: 0px solid transparent !important;
+  @extend .bg-dark;
+  @extend .text-white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: $light;
+}
+
+.table-bordered td {
+  border-width: 1px !important;
+}
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                         TOP NAV                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.navbar {
+  min-height: 68px;
+}
+
+.navbar-brand img {
+  height: 30px;
+}
+
+.nav-item {
+  @extend .text-white;
+  font-size: 1.1em;
+}
+
+.dropdown-menu {
+  @extend .rounded-0;
+  margin-top: .85rem;
+  @extend .border-primary;
+}
+
+.dropdown-item {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
 
 //IMPORT STYLES FOR THE STYLEGUIDE
 @import 'library.scss';
