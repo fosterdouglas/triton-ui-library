@@ -169,6 +169,19 @@ i {
   opacity: 1;
 }
 
+.fixed-bottom > button.close {
+  padding-top: .45em;
+  @extend .mt-2;
+}
+
+.fixed-bottom.alert {
+  @extend .p-4;
+}
+
+.fixed-bottom > button.close::after {
+  @extend .text-warning;
+}
+
 .customAlert {
   @extend .mt-3;
   @extend .m-2;
@@ -1016,6 +1029,12 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-size: 1rem;
 }
 
+.ui-autocomplete {
+  max-height: 200px; //set height for long lists
+  overflow-y: auto;
+  overflow-x: hidden; //prevent horizontal scrollbar
+}
+
 ul.ui-autocomplete {
   background-color: white;
   box-shadow: 0 0 0 1px $dark;
@@ -1143,7 +1162,6 @@ ul.ui-autocomplete {
 }
 
 [role=menuitem].page-link:focus, [role=menuitem].page-link:focus i {
-  border: 1px solid transparent !important;
   @extend .bg-transparent;
   @extend .fas;
 }
@@ -1152,7 +1170,6 @@ ul.ui-autocomplete {
   @extend .bg-transparent;
   @extend .fas;
 }
-
 
 [role=menuitem] i {
   border: 1px solid transparent;
@@ -1605,6 +1622,22 @@ label {
 .table-bordered td {
   border-width: 1px !important;
 }
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                           TOASTS                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+.toast div {
+  font-weight: 600 !important;
+  @extend .text-center;
+}
+
+.toast {
+  @extend .rounded-0;
+}
+
 
 
     // // // // // // // // // // // // // // // // // // // // // // //

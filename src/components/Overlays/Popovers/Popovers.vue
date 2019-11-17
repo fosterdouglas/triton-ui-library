@@ -27,9 +27,9 @@
 ```js
 <template>
   <div class="row" style="margin-top:145px;">
-    <div class="col-2"></div>
+    <div style="width: 150px;"></div>
 
-    <div class="col-1">
+    <div>
         <b-button
           id="PopoverDeleteBtn"
           :pressed="false"
@@ -61,9 +61,9 @@
     </div>
 
 
-    <div class="col-3"></div>
+    <div style="width: 200px;"></div>
 
-    <div class="col-1">
+    <div>
         <b-button
           id="PopoverAddBtn"
           :pressed="false"

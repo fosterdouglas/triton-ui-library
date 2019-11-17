@@ -219,8 +219,8 @@ $(function () {
 <div class="row">
 
   <div class="col mt-1" data-trigger="focus" data-toggle="tooltip" data-placement="right" title="Text Field - Area">
-    <textarea class="form-control border-mediumdark rounded-0" type="text" placeholder="Text Field - Area" rows="3" >
-    </textarea>
+    <b-form-textarea no-resize class="form-control border-mediumdark rounded-0" type="text" placeholder="Text Field - Area" rows="3" >
+    </b-form-textarea>
   </div>
 
     <div class="col mt-1">

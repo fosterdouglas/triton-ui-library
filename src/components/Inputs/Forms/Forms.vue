@@ -148,6 +148,7 @@
     ];
     $( "#form-field-1" ).autocomplete({
       source: availableTags,
+      maxShowItems: 10,
       autoFocus: true
     });
   } );

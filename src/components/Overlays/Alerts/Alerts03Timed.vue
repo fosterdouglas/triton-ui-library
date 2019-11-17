@@ -9,8 +9,8 @@
 
     <b-button
       @click="showAlert"
-      variant="outline-secondary"
-      class="btnFunction btnFunctionHighlighted"
+      variant="outline-primaryfade"
+      class="btnFunction btnFunctionStandard"
       onclick="this.blur();"
       >
       Test Timed Alert

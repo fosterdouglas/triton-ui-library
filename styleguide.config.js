@@ -15,7 +15,6 @@ module.exports = {
 						{src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'},
 						{src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.js'},
 						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'},
-
 					],
 				  links: [
 						{
@@ -48,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.6.0',
+    version: 'v0.6.2',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
