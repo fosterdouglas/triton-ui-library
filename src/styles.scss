@@ -804,14 +804,14 @@ a.info:hover {
 
 .form-label-group > input,
 .form-label-group > label {
-  height: 50px; //custom heigh for form fields
+  height: 50px; //custom height for form fields
   padding-left: 1.2em;
 }
 
 .form-label-group > label {
   position: absolute;
-  top: 1em;
-  left: .55em;
+  top: 1.05em;
+  margin-left: .05em;
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
@@ -819,7 +819,7 @@ a.info:hover {
   color: $mediumdark;
   pointer-events: none;
   cursor: text; /* Match the input under the label */
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-out;
 }
@@ -842,7 +842,7 @@ a.info:hover {
   top:0;
   left: 0;
   padding-top: .5em;
-  padding-left: 2.05em;
+  padding-left: 2.0em;
   font-size: .8em;
   color: $mediumdark;
 }
@@ -866,27 +866,22 @@ input, textarea, select {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 .5px $dark inset !important;
-}
-
-.form-control {
-  transition: all .1s ease-out;
+  border-color: $dark;
 }
 
 .form-control:focus.is-valid {
-  box-shadow: 0 0 0 .5px $confirm inset !important;
+  box-shadow: 0 0 0 1px $confirm inset !important;
 }
 
 .form-control:focus.is-invalid {
-  box-shadow: 0 0 0 .5px $warning inset !important;
+  box-shadow: 0 0 0 1px $warning inset !important;
 }
 
 .form-control.is-valid + label,
 .form-control.is-invalid + label {
-  top:calc(1em - 1px); //detail adjustment for valid or invalid colored labels
+  top:1em; //detail adjustment for valid or invalid colored labels
+  left:.55em; //detail adjustment for valid or invalid colored labels
 }
-
-
 
 .form-control:disabled {
   background-color: $light !important;
@@ -896,8 +891,9 @@ input, textarea, select {
   color: $medium !important;
 }
 .form-control {
-  border-radius: 0rem !important;
-  color: $dark;
+  @extend .rounded-0;
+  transition: all .1s ease-out;
+  box-shadow: 0 0 0 .5px $mediumdark !important;
 }
 .form-control::placeholder {
   color: $medium !important;
@@ -931,15 +927,20 @@ select:not([multiple]) {
   padding: 0;
   @extend .ml-n5;
 }
-.search-box:not(:valid) ~ .searchClose {
+.searchBox:not(:valid) ~ .searchClose {
 	display: none; //hides "clear" button
 }
 
+.searchBox {
+  @extend .border-dark;
+  @extend .d-inline;
+  @extend .mr-2;
+  @extend .pl-5;
+}
 
 .input-group-prepend i {
   @extend .fa-lg;
 }
-
 
 .input-group-prepend {
   position: absolute;
@@ -947,22 +948,23 @@ select:not([multiple]) {
   @extend .ml-2;
   z-index: 5;
 }
+
 .input-group-text {
   display: inline-block;
   background-color: unset;
   border: none;
   margin-top: .1em; //detailed position fix for magnifying glass
 }
+
 small {
   font-weight: 300;
 }
-.p1-5 {
-  padding-top: .15em;
-}
-.search-box[type=text]:focus {
+
+.searchBox[type=text]:focus {
   border: 1px solid $secondary !important;
   box-shadow: 0px 0px 0px 0px $secondary !important;
 }
+
 .custom-select {
   background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-light.svg");
   background-position: 97% 50% !important;
@@ -970,12 +972,14 @@ small {
   background-origin: border-box;
   background-size: 20px 20px;
 }
+
 .custom-select-hover:hover {
   background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-solid.svg");
   background-repeat: no-repeat;
   background-origin: border-box;
   background-size: 20px 20px;
 }
+
 .hero-image {
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
@@ -983,31 +987,67 @@ small {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
+
 .custom-select-hover:active {
   opacity: .8;
 }
+
 .custom-select-disabled {
   background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-disabled.svg") no-repeat right 1rem center/20px 20px;
 }
+
 option {
   font-weight: 300;
 }
+
 select:not(:disabled) option:not(:disabled):not(:checked):hover {
   opacity: .7;
 }
+
 .options {
   margin-left: 1em;
 }
+
  option:checked {
   background-color: $dark !important;
 }
+
 .editor {
   font-size: 1rem;
 }
 
+ul.ui-autocomplete {
+  background-color: white;
+  box-shadow: 0 0 0 1px $dark;
+  @extend .pl-0;
+  width: 25% !important;
+  margin-left: 5px !important;
+}
 
-//general
+.ui-autocomplete li {
+  list-style: none;
+  @extend .py-1;
+  @extend .ml-0;
+  @extend .pl-4;
+  @extend .cursorDefault;
+  left: 0;
+}
 
+.ui-autocomplete li:hover {
+  @extend .bg-light;
+}
+
+.ui-autocomplete li:active {
+  @extend .bg-dark;
+  @extend .text-white;
+}
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                       GENERAL INPUT                            //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 .badge {
   font-weight: 500;
   @extend .mr-2;
@@ -1510,7 +1550,7 @@ label {
   min-height: 100vh; //unused currently, but for full-height side nav
 }
 
-.nav-pills .nav-link{
+.nav-pills .nav-link {
   @extend .rounded-0;
 }
 
@@ -1577,6 +1617,10 @@ label {
   min-height: 68px;
 }
 
+.navbar-nav .nav-link {
+  @extend .px-3;
+}
+
 .navbar-brand img {
   height: 30px;
 }
@@ -1595,6 +1639,10 @@ label {
 .dropdown-item {
   font-size: 1.1em;
   font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  { //update if padding changes on nav items
+  box-shadow: inset 1rem 0px 0 0 $primary, inset -1rem 0px 0 0 $primary, inset 0 -3px 0 0 $secondary;
 }
 
 

@@ -12,12 +12,151 @@
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
         <li class="alertListItem">- <del>Remove/solve form field "underline"</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- Add datalist type</li>
+        <li class="alertListItem">- <del>Replace datalist with JQueryUI "autocomplete" or similar</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Adjust autocomplete to be able to highlight items with keyboard</li>
       </ul>
   </b-alert>
 
 </div>
 ```
+
+<h3>Autocomplete
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>Autocomplete is best used for form fields that have a set finite list of acceptable values, and with
+   a large-sized data list (dozens to hundreds). It's ideally used for questions for which
+   the user would inheritly or intuitively know an answer for.
+   It's not ideal for highly specific questions that need options displayed or explained.</p>
+
+```js
+<template>
+  <div>
+
+    <div class="form-label-group ui-widget formFieldHalf">
+      <b-form-input id="form-field-1" class="form-control" placeholder="Favourite Fruit (Required)"/>
+      <label for="form-field-1">Favourite Fruit</label>
+    </div>
+
+  </div>
+</template>
+  <script>
+  $( function() {
+    var availableTags = [
+      "Açaí",
+      "Akee",
+      "Apple",
+      "Apricot",
+      "Asian pear",
+      "Avocado",
+      "Banana",
+      "Bilberry",
+      "Blackberry",
+      "Blackcurrant",
+      "Black sapote",
+      "Blood orange",
+      "Blueberry",
+      "Boysenberry",
+      "Cantaloupe",
+      "Crab apples",
+      "Currant",
+      "Cherry",
+      "Cherimoya",
+      "Chico fruit",
+      "Clementine",
+      "Cloudberry",
+      "Coconut",
+      "Cranberry",
+      "Cucumber",
+      "Damson",
+      "Date",
+      "Dragonfruit",
+      "Durian",
+      "Elderberry",
+      "Feijoa",
+      "Fig",
+      "Goji berry",
+      "Gooseberry",
+      "Grape",
+      "Grapefruit",
+      "Guava",
+      "Honeyberry",
+      "Honeydew",
+      "Huckleberry",
+      "Jabuticaba",
+      "Jackfruit",
+      "Jambul",
+      "Japanese plum",
+      "Jostaberry",
+      "Jujube",
+      "Juniper berry",
+      "Kiwano",
+      "Kiwifruit",
+      "Kumquat",
+      "Lemon",
+      "Lime",
+      "Loganberry",
+      "Loquat",
+      "Longan",
+      "Lychee",
+      "Mandarine",
+      "Mango",
+      "Mangosteen",
+      "Marionberry",
+      "Melon",
+      "Miracle fruit",
+      "Mulberry",
+      "Nectarine",
+      "Nance",
+      "Orange",
+      "Papaya",
+      "Passionfruit",
+      "Peach",
+      "Pear",
+      "Persimmon",
+      "Plantain",
+      "Plum",
+      "Prune",
+      "Pineapple",
+      "Pineberry",
+      "Plumcot (or Pluot)",
+      "Pomegranate",
+      "Pomelo",
+      "Purple mangosteen",
+      "Quince",
+      "Raisin",
+      "Rambutan",
+      "Raspberry",
+      "Redcurrant",
+      "Salmonberry",
+      "Salal berry",
+      "Salak",
+      "Satsuma",
+      "Soursop",
+      "Star apple",
+      "Star fruit",
+      "Strawberry",
+      "Surinam cherry",
+      "Tamarillo",
+      "Tamarind",
+      "Tangerine",
+      "Tayberry",
+      "Ugli fruit",
+      "Watermelon",
+      "White currant",
+      "White sapote",
+      "Yuzu"
+    ];
+    $( "#form-field-1" ).autocomplete({
+      source: availableTags,
+      autoFocus: true
+    });
+  } );
+export default {
+
+}
+  </script>
+```
+
 
 <h3>Radio Group</h3>
 <p></p>
@@ -58,17 +197,21 @@
   <div class="row">
 
   <div class="form-label-group formFieldHalf">
-    <b-form-input id="form-field-1" class="form-control" placeholder="First Name (Required)"/>
-    <label for="form-field-1">First Name</label>
+    <b-form-input id="form-field-2" class="form-control" placeholder="First Name (Required)"/>
+    <label for="form-field-2">First Name</label>
   </div>
 
   <div class="form-label-group formFieldHalf">
-    <b-form-input id="form-field-2" class="form-control" placeholder="Last Name (Optional)"/>
-    <label for="form-field-2">Last Name</label>
+    <b-form-input id="form-field-3" class="form-control" placeholder="Last Name (Optional)"/>
+    <label for="form-field-3">Last Name</label>
   </div>
 
   </div>
 </template>
+<script>
+export default {
+}
+</script>
 ```
 
 <h3>Text Valid</h3>

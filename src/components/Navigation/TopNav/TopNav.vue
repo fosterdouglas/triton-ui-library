@@ -38,7 +38,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#">Users</b-nav-item>
-        <b-nav-item href="#">Reports</b-nav-item>
+        <b-nav-item active href="#">Reports</b-nav-item>
         <b-nav-item-dropdown text="Tools">
           <b-dropdown-item href="#">Log Comment</b-dropdown-item>
           <b-dropdown-item href="#">Create Request</b-dropdown-item>

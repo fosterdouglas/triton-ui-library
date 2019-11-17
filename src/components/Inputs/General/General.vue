@@ -103,26 +103,26 @@ $(function () {
 
 <div class="row">
 
-  <div class="col mt-1" data-trigger="focus" data-toggle="tooltip" data-placement="right" title="Favourite Color?">
-    <select multiple class="form-control border-mediumdark rounded-0 pointer" type="text" placeholder="Favourite Color?" >
+  <div class="col" title="Favourite Color?">
+    <b-form-select :select-size="4" class="form-control cursorDefault" type="text">
       <option disabled>Favourite Color?</option>
       <option class="options">Pink</option>
       <option selected class="options">Teal</option>
       <option class="options">Orange</option>
       <option class="options">Black</option>
       <option class="options">Banana</option>
-    </select>
+    </b-form-select>
   </div>
 
-  <div class="col mt-1">
-      <select multiple class="form-control border-medium rounded-0 not-allowed" type="text" placeholder="Example text field" disabled>
+  <div class="col">
+    <b-form-select disabled :select-size="4" class="form-control cursorDisabled" type="text">
       <option disabled>Favourite Color?</option>
       <option class="options">Pink</option>
       <option selected class="options">Teal</option>
       <option class="options">Orange</option>
       <option class="options">Black</option>
       <option class="options">Banana</option>
-      </select>
+    </b-form-select>
   </div>
 
 </div>
@@ -143,7 +143,7 @@ $(function () {
 <div class="row">
 
   <div class="col mt-1" title="Favourite Color?">
-    <select class="form-control border-mediumdark rounded-0 custom-select custom-select-hover pointer" type="text" placeholder="Favourite Color" >
+    <select class="form-control rounded-0 custom-select custom-select-hover pointer" type="text" placeholder="Favourite Color" >
       <option disabled selected>Favourite Color?</option>
       <option class="options">Pink</option>
       <option class="options">Teal</option>
@@ -154,7 +154,7 @@ $(function () {
   </div>
 
     <div class="col mt-1">
-      <select class="form-control border-medium rounded-0 custom-select custom-select-disabled not-allowed" type="text" placeholder="Example text field" disabled >
+      <select class="form-control rounded-0 custom-select custom-select-disabled not-allowed" type="text" placeholder="Example text field" disabled >
       <option disabled selected>Favourite Color?</option>
       <option class="options">Pink</option>
       <option class="options">Teal</option>
@@ -183,8 +183,7 @@ $(function () {
       <i class="iconSearch fa-lg"></i>
     </div>
 
-     <input type="text" name="focus" required class="search-box form-control border-dark d-inline w-75 rounded-lg shadow-sm mr-2 align-middle pl-5" placeholder="Search for Users, Clients, or Agents . . ." />
-
+     <input type="text" name="focus" required class="searchBox form-control w-75" placeholder="Search for Users, Clients, or Agents . . ." />
      <b-button onclick="this.blur();" variant="none" class="searchClose cursorDefault text-warning" type="reset">
        <i class="iconClose iconHover"></i>
      </b-button>
