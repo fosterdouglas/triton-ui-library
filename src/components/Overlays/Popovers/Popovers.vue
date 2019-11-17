@@ -146,7 +146,6 @@
   export default {
     data() {
       return {
-        HoverCaption: HOVER,
         showHover: false
       }
     }

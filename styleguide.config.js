@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.6.2',
+    version: 'v0.6.3',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -55,8 +55,21 @@ module.exports = {
     minimize: false,
 
   	sections: [
+
 		{name: 'Introduction', sections: [
-      {components: 'src/components/Introduction/*.vue'}
+      {components: 'src/components/Intro/Introduction/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Glossary', sections: [
+      {components: 'src/components/Intro/Glossary/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Typography', sections: [
+      {components: 'src/components/Introduction/Typography/*.vue'}
       ],
       sectionDepth: 0
     },

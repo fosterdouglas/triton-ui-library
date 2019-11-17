@@ -12,13 +12,14 @@
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
         <li class="alertListItem">- Update nav item interactivity</li>
+        <li class="alertListItem">- Refactor for Vue.js</li>
       </ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Item</h3>
+<h3>Items</h3>
 
 ```js
 $(function() {
@@ -77,7 +78,7 @@ $(function () {
 </ul>
 ```
 
-<h3>Item - Edited</h3>
+<h3>Edited</h3>
 
 ```js
 <div class="row">
@@ -103,7 +104,7 @@ $(function () {
 </ul>
 ```
 
-<h3>Item - Selected</h3>
+<h3>Selected</h3>
 
 ```js
 <div class="row">
@@ -157,7 +158,7 @@ $(function () {
 </ul>
 ```
 
-<h3>Title - Group</h3>
+<h3>Groups</h3>
 
 ```js
 <div class="row">
@@ -199,7 +200,7 @@ $(function () {
 </ul>
 ```
 
-<h3>Title - Menu</h3>
+<h3>Title</h3>
 
 ```js
 <div class="row">

@@ -1073,6 +1073,11 @@ ul.ui-autocomplete {
   @extend .unselectableText;
 }
 
+.nav-link > .badge {
+  font-weight: 700;
+  @extend .ml-1;
+}
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                         LIGHTBOX                               //
@@ -1250,7 +1255,7 @@ ul.ui-autocomplete {
 
 .rowItemText {
   @extend .d-inline;
-  @extend .col-10;
+  @extend .col-9;
   @extend .pl-0;
   @extend .text-left;
   height: 20px;
@@ -1259,7 +1264,7 @@ ul.ui-autocomplete {
 .rowItemSuffix {
   @extend .text-right;
   @extend .d-inline;
-  @extend .col-1;
+  @extend .col-2;
   @extend .pr-0;
   height: 20px;
 }

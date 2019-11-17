@@ -429,19 +429,6 @@
 ```
 
 
-<h3>Expanding - Accordian
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-
-```js
-<template>
-  <div>
-
-  </div>
-</template>
-```
-
-
 
 <h3>Highlighted</h3>
 <p>The highlighted element can be used for an item that's particularly important or needs focus. It also has additional margin spacing on the top and bottom to set it apart. </p>
@@ -753,6 +740,105 @@ export default {
 ```js
 <template>
   <div>
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Here is an example of the standard row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+          Submitted
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Here is an example of the standard row element.</p>
+        </div>
+
+        <div class="rowItemSuffix text-secondary">
+          In Progress
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Here is an example of the standard row element.</p>
+        </div>
+
+        <div class="rowItemSuffix text-warning">
+          Errors
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Here is an example of the standard row element.</p>
+        </div>
+
+        <div class="rowItemSuffix text-confirm">
+          Completed
+        </div>
+
+      </div>
+
+    </b-button>
 
   </div>
 </template>

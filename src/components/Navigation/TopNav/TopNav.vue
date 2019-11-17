@@ -44,7 +44,7 @@
           <b-dropdown-item href="#">Create Request</b-dropdown-item>
           <b-dropdown-item href="#">New Form</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item href="#">Queue</b-nav-item>
+        <b-nav-item href="#">Queue <b-badge variant="light">4</b-badge></b-nav-item>
         <b-nav-item href="#">Admin</b-nav-item>
 
       </b-navbar-nav>
