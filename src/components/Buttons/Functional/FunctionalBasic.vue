@@ -1,5 +1,13 @@
 <docs>
 
+```jsx noeditor
+<div>
+<p class="ml-n3 w-75">Fuctional buttons are used to initiate an action by the user. They typically "do something" as opposed to the <a class="text-info" href="../../../#/Buttons/AppNavigation">App Navigation</a> buttons which "go somewhere."
+</p>
+<br/>
+</div>
+```
+
 <h3>Standard</h3>
 <p>The primary button for all of the applications functions. As an example, use this for uploading files, adding users, or assigning new packages. Any low-level functions that the user needs to do to utilize the platform's purpose.</p>
 

@@ -25,6 +25,7 @@
 ```js
 <template>
   <div>
+    
     <b-button
       variant="outline-confirmfade"
       @click="toastConfirm()"
@@ -32,6 +33,7 @@
       class="btnNavigation btnConfirm"
       >Successful Save
     </b-button>
+
     <b-button
       variant="outline-warningfade"
       @click="toastWarning()"
@@ -39,6 +41,7 @@
       class="btnNavigation btnWarning"
       >Unsuccessful Save
     </b-button>
+
   </div>
 </template>
 

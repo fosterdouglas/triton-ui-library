@@ -78,6 +78,31 @@ html, div, p, h1, h2, h4, h5, button {
   -webkit-font-smoothing: antialiased;
 }
 
+h2 {
+  @extend .text-primary;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+h5 {
+
+}
+
+h6 {
+  text-transform: uppercase;
+  @extend .py-2;
+  @extend .px-3;
+  @extend .mb-1;
+}
+
+hr {
+  @extend .bg-medium;
+  @extend .mt-1;
+  @extend .mb-4;
+}
+
 p {
   text-align: justify;
   margin-bottom: 0;
@@ -1656,7 +1681,7 @@ label {
 }
 
 .navbar-nav .nav-link {
-  @extend .px-3;
+  @extend .px-2;
 }
 
 .navbar-brand img {
@@ -1665,12 +1690,11 @@ label {
 
 .nav-item {
   @extend .text-white;
-  font-size: 1.1em;
 }
 
 .dropdown-menu {
   @extend .rounded-0;
-  margin-top: .85rem;
+  margin-top: .9rem;
   @extend .border-primary;
 }
 
@@ -1680,7 +1704,7 @@ label {
 }
 
 .navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  { //update if padding changes on nav items
-  box-shadow: inset 1rem 0px 0 0 $primary, inset -1rem 0px 0 0 $primary, inset 0 -3px 0 0 $secondary;
+  box-shadow: inset .5rem 0px 0 0 $primary, inset -.5rem 0px 0 0 $primary, inset 0 -3px 0 0 $secondary;
 }
 
 

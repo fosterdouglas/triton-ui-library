@@ -69,7 +69,7 @@ module.exports = {
     },
 
 		{name: 'Typography', sections: [
-      {components: 'src/components/Introduction/Typography/*.vue'}
+      {components: 'src/components/Intro/Typography/*.vue'}
       ],
       sectionDepth: 0
     },

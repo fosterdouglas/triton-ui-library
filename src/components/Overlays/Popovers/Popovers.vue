@@ -21,7 +21,7 @@
 </div>
 ```
 
-<h3>Click Enabled</h3>
+<h3>Click-Enabled</h3>
 <p></p>
 
 ```js
@@ -112,7 +112,7 @@
 </script>
 ```
 
-<h3>Hover Enabled</h3>
+<h3>Hover-Enabled</h3>
 <p>Used for short descriptions or context for an item.</p>
 
 ```js
