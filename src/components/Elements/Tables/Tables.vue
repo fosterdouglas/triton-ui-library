@@ -21,7 +21,7 @@
 <h3>Standard
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p></p>
+<p>A standard non-interactive fixed-width column table, used to display large amounts of data.</p>
 
 ```js
 <template>
@@ -30,7 +30,6 @@
       :outlined="true"
       :striped="true"
       :fixed="true"
-      :bordered="true"
       :no-border-collapse="true"
       :no-select-on-click="false"
       :items="items"

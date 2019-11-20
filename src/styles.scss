@@ -95,6 +95,7 @@ h6 {
   @extend .py-2;
   @extend .px-3;
   @extend .mb-1;
+  @extend .text-primary;
 }
 
 hr {
@@ -149,7 +150,6 @@ i {
 .close:active, .close:active::after {
   opacity: .6;
 }
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -324,18 +324,21 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 }
 
 .btnIconRight {
-  @extend .ml-2;
+
   margin-top: -1px !important;
+  @extend .align-baseline;
 }
 
 .btnIconLeft {
-  @extend .mr-2;
+
   margin-top: -1px !important;
+  @extend .align-baseline;
 }
 
 .btnText {
   @extend .d-inline-block;
   @extend .align-top;
+  @extend .px-2;
 }
 
 .borderRadiusMax {
@@ -376,7 +379,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .border-primary;
 }
 
-.btnStandard:active {
+.btnStandard:active:focus {
   background-color: rgba($primary, 1) !important; //required for correct opacity
   @extend .text-white;
 }
@@ -396,7 +399,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .border-confirm;
 }
 
-.btnConfirm:active {
+.btnConfirm:active:focus {
   background-color: rgba($confirm, 1) !important; //required for correct opacity
   @extend .text-white;
 }
@@ -416,7 +419,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .border-warning;
 }
 
-.btnWarning:active {
+.btnWarning:active:focus {
   background-color: rgba($warning, 1) !important; //required for correct opacity
   @extend .text-white;
 }
@@ -430,17 +433,25 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 }
 
 // // NAVIGATION FEEDBACK // // // // // // // // // // //
+
+//CHANGE THE NAME OF THIS
+
 .btnFeedback {
   @extend .rounded-0;
   @extend .text-secondary;
   @extend .border-secondary;
 }
 
-.btnFeedback:hover {
+//set up all other buttons like this
+.btnFeedback:hover,
+.btnFeedback:focus,
+a.btnFeedback:hover,
+a.btnFeedback:focus {
   background-color: rgba($secondary, .12);
+  color: $secondary !important;
 }
 
-.btnFeedback:active {
+.btnFeedback:active:focus {
   background-color: rgba($secondary, 1) !important;
   @extend .text-white;
 }
@@ -457,7 +468,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   background-color: unset !important;
 }
 
-.btnFunctionStandard:active {
+.btnFunctionStandard:active:focus {
   background-color: rgba($darkfade, 1) !important; //required for correct opacity
   @extend .text-white;
 }
@@ -535,7 +546,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 
 //ARROW
 .iconArrow {
-  @extend .far;
+  @extend .fal;
   @extend .fa-arrow-right;
   @extend .p-1;
   color: inherit;
@@ -1103,6 +1114,17 @@ ul.ui-autocomplete {
   @extend .ml-1;
 }
 
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                          IMAGES                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+a > img:hover {
+  box-shadow: 0 0 0 1px $dark;
+}
+
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                         LIGHTBOX                               //
@@ -1324,8 +1346,8 @@ ul.ui-autocomplete {
   margin-top: -2px;
 }
 
-.card-body { //for nested row elements, should have a more specific selector
-  width: 95%;
+.card-body { //for nested row elements, needs to be updated to have a more specific selector
+  //width: 95%;
   @extend .float-right;
 }
 

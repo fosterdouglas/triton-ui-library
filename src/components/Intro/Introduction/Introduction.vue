@@ -17,14 +17,14 @@
 
 <div class="pr-5 pl-4 pt-1">
   <h3>Hello!</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <div class="pr-4 pl-4 mb-4 text-justify">
     <p class="mb-3">
       Welcome to the official Triton UI Component Library. Included below is an interactive visual reference and guide to all Triton UI elements.
     </p>
   </div>
 
   <h3>Libraries and Dependencies</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <div class="pr-4 pl-4 mb-4 text-justify">
     <p class="mb-3">
       All components are built with <a class="text-info underline" href="https://vuejs.org/" target="_blank">Vue.js</a>, using <a class="text-info underline" href="https://bootstrap-vue.js.org/" target="_blank">BootstrapVue</a>, some custom CSS, and a small amount of Javascript/jQuery (primarily to illustrate specific interaction examples). A few components use additional libraries.
     </p>
@@ -42,25 +42,39 @@
     </p>
   </div>
 
-  <h3>Responsive Design</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <h3>Responsive</h3>
+  <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
   The Triton UI Component Library is <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is currently a secondary priority.
   </p>
   </div>
 
   <h3>Design System</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
   This design system is based on the consistent use of open <i title="Under construction!" class="p-1 fal fa-sm fa-heart text-info align-middle"></i> and closed <i title="Under construction!" class="p-1 fas fa-sm fa-heart text-info align-middle"></i> styles. In every case, elements that have an open stroked style are interactive in some manner. Elements that are closed indicate a currently-hovering state, an actively selected item, or in some cases a disabled element.
   </p>
+  <p class="mb-3">
+  Below is a link to a design resource and library for internal reference. It contains many in-progress and unapproved designs, and should be used primarily as reference
+  </p>
+      <b-button
+        :pressed="false"
+        variant="outline-darkfade"
+        class="btnFunction btnFunctionStandard"
+        onclick="this.blur();"
+        href="../../#/Design%20Reference%20Files"
+        >
+          <i></i>
+          <div class="btnText">Design Reference Files</div>
+          <i class="iconChevron btnIconRight"></i>
+      </b-button>
   <p class="mb-3">
 
   </p>
   </div>
 
-  <h3>WCAG Compliance</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <h3>WCAG 2.1 Compliance</h3>
+  <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
   Details coming soon.
   <br/>
@@ -74,10 +88,10 @@
   </div>
 
   <h3>Versions & Github</h3>
-  <div class="pr-4 pl-4 text-justify">
+  <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.5.1</strong> - last updated on November 13th 2019.<br/><br/>
+    <strong class="text-dark">v0.7.0</strong> - last updated on November 20th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

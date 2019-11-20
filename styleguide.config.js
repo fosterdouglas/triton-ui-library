@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.6.3',
+    version: 'v0.7.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -55,6 +55,12 @@ module.exports = {
     minimize: false,
 
   	sections: [
+
+		{name: 'Design Reference Files', sections: [
+      {components: 'src/components/Intro/DesignReference/*.vue'}
+      ],
+      sectionDepth: 0
+    },
 
 		{name: 'Introduction', sections: [
       {components: 'src/components/Intro/Introduction/*.vue'}

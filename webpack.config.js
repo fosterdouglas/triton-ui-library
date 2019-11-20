@@ -15,3 +15,11 @@ module.exports = {
     ],
   },
 };
+const options = {
+  transformAssetUrls: {
+    video: ['src', 'poster'],
+    source: 'src/assets',
+    img: 'src/assets',
+    image: 'xlink:href'
+  }
+}

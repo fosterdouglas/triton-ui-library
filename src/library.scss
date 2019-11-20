@@ -3,9 +3,22 @@
 //
 //
 
+.designReferenceSidebar {
+  left: -250px !important;
+  transition: position .5s ease-in-out !important;
+}
+
+.designReferencePosition {
+  left:0 !important;
+}
 
 div.styleguidistOnlyStyles > i {
   @extend .fa-lg;
+}
+
+// REMOVE INVISIBLE TABS BAR
+[class^=rsg--tabs-25]{
+  display: none !important;
 }
 
 // SET SIDEBAR TITLE + SPACING
@@ -26,6 +39,7 @@ div.styleguidistOnlyStyles > i {
   background-repeat: no-repeat !important;
   background-size: 350% !important;
   background-position: 75% 50% !important;
+  transition: position .5s ease-in-out !important;
 }
 
 .rsg--content-3 {
@@ -50,13 +64,15 @@ li[class^=rsg--isChild-] a {
 [class^=rsg--list-] {
   font-weight: 500 !important;
   margin-top: .3em !important;
+  padding-left: 0 !important;
+  padding-bottom: .8em !important;
 }
 .rsg--sidebar-4 [class^=rsg--link-] {
   color: $medium !important;
 }
 .rsg--sidebar-4 [class^=rsg--link-]:hover {
   color: white !important;
-  padding-right: 2.2em !important;
+  padding-right: 1.9em !important;
 }
 
 // UNSET ALL ANCHOR/LINK HOVER COLORING
@@ -119,7 +135,13 @@ a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/
 }
 
 a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] ~ ul, a[href="/#/Inputs"] ~ ul, a[href="/#/Buttons"] ~ ul  {
-  border-right: 3px solid rgba($medium, .5) !important;
+  //border-right: 3px solid rgba($medium, .5) !important;
+}
+
+li > a[href="/#/Design%20Reference%20Files"] {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 
@@ -186,13 +208,12 @@ div[class^=rsg--preview-] {
   padding-right: 2em !important;
 }
 
-[class^=rsg--list-] {
-  padding-left: 0 !important;
+[class^=rsg--item-] a {
+  padding: .25em 1.7em .25em 0em !important;
 }
 
 [class^=rsg--item-] {
   margin: 0 !important;
-  padding: .3em 0em .3em 0em !important;
 }
 
 [class^=rsg--para-] {
@@ -206,10 +227,9 @@ div[class^=rsg--preview-] {
 }
 
 // ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
-.rsg--isSelected-51, .rsg--isSelected-34, .rsg--isSelected-43, .rsg--isSelected-28  {
+.rsg--isSelected-51 a, .rsg--isSelected-34 a, .rsg--isSelected-43 a, .rsg--isSelected-28 a  {
   background-color: rgba($mediumdark, .2) !important;
 }
-
 
 [class^=rsg--footer-] p::before {
   @extend .float-right;

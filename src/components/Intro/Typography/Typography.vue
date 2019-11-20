@@ -12,7 +12,7 @@
 ```
 
 <h3>Sections</h3>
-<p>Generally found at the top of the main content of a page, a secondary indication of the current page you're on (mirrors the Menu Item). Uses ```<h4>``` and uppercase styling (tentatively).</p>
+<p>Generally found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>``` and uppercase styling (tentatively).</p>
 
 ```jsx
 <template>

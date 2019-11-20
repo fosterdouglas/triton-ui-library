@@ -17,26 +17,64 @@
 </div>
 ```
 
-<h3>Inline</h3>
-
+<h3>Standard</h3>
+<p></p>
 
 ```js
-
-<div class="p-3 d-inline-flex">
-  <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
-</div>
-
+<template>
+  <div class="p-3 d-inline-flex">
+      <b-img class="img-fluid" :src="images.sample" draggable="false"></b-img>
+  </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            images: {
+                sample: require('../../../assets/hello-world.png')
+            }
+        }
+    }
+}
+</script>
 ```
 
-<h3>Thumbnail</h3>
+<h3>Standard (Downloadable)</h3>
+<p></p>
 
+```js
+<template>
+  <div class="p-3 d-inline-flex">
+    <a :href="images.sample" download>
+      <b-img class="img-fluid" :src="images.sample" draggable="false"></b-img>
+    </a>
+  </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            images: {
+                sample: require('../../../assets/hello-world.png')
+            }
+        }
+    }
+}
+</script>
+```
+
+
+<h3>Thumbnail</h3>
+<p></p>
 
 ```js
 
 <div class="btn border-dark p-3 text-center">
-  <div class="center-cropped" style="backgroundImage: url(http://sandcastle.co/cdn/ebydesign/triton/hello-world.png)">
-    <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
-  </div>
+  <a href="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png">
+    <div class="center-cropped" style="backgroundImage: url(http://sandcastle.co/cdn/ebydesign/triton/hello-world.png)">
+      <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
+    </div>
+  </a>
 </div>
 
 ```
