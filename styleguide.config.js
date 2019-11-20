@@ -56,12 +56,6 @@ module.exports = {
 
   	sections: [
 
-		{name: 'Design Reference Files', sections: [
-      {components: 'src/components/Intro/DesignReference/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
 		{name: 'Introduction', sections: [
       {components: 'src/components/Intro/Introduction/*.vue'}
       ],
@@ -79,6 +73,12 @@ module.exports = {
       ],
       sectionDepth: 0
     },
+
+		{name: 'Design Reference Files', sections: [
+      {components: 'src/components/Intro/DesignReference/*.vue'}
+      ],
+      sectionDepth: 0
+    },    
 
     {name: '––––––––', sections: [
       {components: ''}
