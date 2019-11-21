@@ -1347,7 +1347,7 @@ a > img:hover {
 }
 
 .card-body { //for nested row elements, needs to be updated to have a more specific selector
-  //width: 95%;
+  width: 95%;
   @extend .float-right;
 }
 
