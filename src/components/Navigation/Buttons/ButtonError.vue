@@ -14,7 +14,7 @@
       onclick="this.blur();"
       >
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON SAMPLE</div>
       <i></i>
     </b-button>
 
@@ -25,8 +25,8 @@
       onclick="this.blur();"
       >
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
-      <i class="iconRemove   btnIconRight"></i>
+      <div class="btnText">BUTTON WITH ICON</div>
+      <i class="iconRemove btnIconRight"></i>
     </b-button>
 
     <b-button
@@ -35,8 +35,9 @@
       class="btnNavigation btnWarningPressed"
       onclick="this.blur();"
       >
+      <b-spinner small type="grow" label="Spinning" class="btnIconLeft"></b-spinner>
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON LOADING</div>
       <i></i>
     </b-button>
 

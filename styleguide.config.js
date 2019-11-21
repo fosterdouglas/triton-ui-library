@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.7.0',
+    version: 'v0.7.2',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -78,27 +78,12 @@ module.exports = {
       {components: 'src/components/Intro/DesignReference/*.vue'}
       ],
       sectionDepth: 0
-    },    
+    },
 
     {name: '––––––––', sections: [
       {components: ''}
       ],
       sectionDepth: 0
-    },
-
-    {name: 'Buttons', sections: [
-
-      {name: 'App Navigation', sections: [
-          {components: 'src/components/Buttons/AppNavigation/*.vue'}
-        ],
-      },
-
-      {name: 'Functional', sections: [
-        {components: 'src/components/Buttons/Functional/*.vue'}
-        ],
-      }
-    ],
-      sectionDepth: 1
     },
 
     {name: 'Elements', sections: [
@@ -149,18 +134,18 @@ module.exports = {
         ],
       },
 
+      {name: 'Buttons', sections: [
+          {components: 'src/components/Navigation/Buttons/*.vue'}
+        ],
+      },
+
+      {name: 'Navs', sections: [
+          {components: 'src/components/Navigation/Navs/*.vue'}
+        ],
+      },
+
       {name: 'Pagination', sections: [
           {components: 'src/components/Navigation/Pagination/*.vue'}
-        ],
-      },
-
-      {name: 'Side Nav', sections: [
-          {components: 'src/components/Navigation/SideNav/*.vue'}
-        ],
-      },
-
-      {name: 'Top Nav', sections: [
-          {components: 'src/components/Navigation/TopNav/*.vue'}
         ],
       }
 

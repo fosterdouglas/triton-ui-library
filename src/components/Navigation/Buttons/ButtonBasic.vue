@@ -2,9 +2,7 @@
 
 ```jsx noeditor
 <div>
-<p class="ml-n3 w-75">App Navigation buttons are used as a means to get around the application.
-  They typically "go somewhere" as opposed to the <a class="text-info" href="../../../#/Buttons/Functional">Functional</a> buttons which "do something," although that
-  is a generalization for categorizing.
+<p class="ml-n3 w-75">Buttons are used as a means to get around the application.
 </p>
 <br/>
 </div>
@@ -24,7 +22,7 @@
       onclick="this.blur();"
       >
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON SAMPLE</div>
       <i></i>
     </b-button>
 
@@ -35,7 +33,7 @@
       onclick="this.blur();"
       >
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON WITH ICON</div>
       <i class="iconArrow btnIconRight"></i>
     </b-button>
 
@@ -45,8 +43,9 @@
       class="btnNavigation btnStandardPressed"
       onclick="this.blur();"
       >
+      <b-spinner small type="grow" label="Spinning" class="btnIconLeft"></b-spinner>
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON LOADING</div>
       <i></i>
     </b-button>
 
@@ -58,7 +57,7 @@
       disabled
       >
       <i></i>
-      <div class="btnText">{{ NavButtonCaption }}</div>
+      <div class="btnText">BUTTON DISABLED</div>
       <i></i>
     </b-button>
 
@@ -69,7 +68,6 @@
   export default {
     data() {
       return {
-        NavButtonCaption: 'SAMPLE BUTTON'
       }
     }
   }

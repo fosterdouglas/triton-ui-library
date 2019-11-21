@@ -24,7 +24,6 @@ $theme-colors: (
 
 // BOOTSTRAP VARIABLE CHANGES
 $enable-gradients: true;
-$enable-responsive-font-sizes: true;
 $font-size-base: .9rem; //reduces entire app font size!
 $spacer: 1rem !default;
 $spacers: () !default;
@@ -80,6 +79,7 @@ html, div, p, h1, h2, h4, h5, button {
 
 h2 {
   @extend .text-primary;
+  text-transform: none;
 }
 
 h4 {
@@ -1611,19 +1611,35 @@ label {
   //                          SIDE NAV                              //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+
 .nav {
   @extend .bg-lightest;
-}
+  @extend .text-right;
+  @extend .py-4;
+  @extend .mr-4;
+  width: 275px; //eventually should be dynamic to the largest menu item
 
-.navHeight {
-  min-height: 100vh; //unused currently, but for full-height side nav
+  //min-height: 100vh; //unused currently, but for full-height side nav
 }
 
 .nav-pills .nav-link {
   @extend .rounded-0;
+  @extend .py-2;
+  text-transform: uppercase;
+}
+
+.nav-pills .nav-link.disabled {
+  @extend .text-medium;
+}
+
+.nav-pills .nav-link:hover  {
+  @extend .bg-white;
+  @extend .text-primary;
 }
 
 .nav-pills .nav-link.active {
+  @extend .text-primary;
   @extend .bg-white;
   border-right: 4px solid $primary;
   font-weight: 700;
@@ -1637,11 +1653,6 @@ label {
   opacity: 1;
 }
 
-.nav-pills .nav-link:hover  {
-  opacity: .6;
-  background: $gray-100;
-}
-
 .nav-pills .show > .nav-link {
   @extend .bg-white;
   font-weight: 700;
@@ -1651,7 +1662,20 @@ label {
 }
 
 .nav-break {
-  border-top: 1px solid rgba($primary, .7);
+  border-top: 1px solid rgba($primary, .8);
+  @extend .mb-3;
+  @extend .mt-2;
+  @extend .mr-3;
+  @extend .ml-4;
+}
+
+.edited a::before {
+  font-weight: 700;
+  font-family: "Font Awesome 5 Pro";
+  content: "\f303";
+  @extend .fa-sm;
+  @extend .mr-2;
+  @extend .text-secondary;
 }
 
 
@@ -1723,6 +1747,22 @@ label {
 .dropdown-item {
   font-size: 1.1em;
   font-weight: 500;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    border: 0px solid transparent;
+    vertical-align: unset;
+}
+
+.dropdownCustomToggle > a::after {
+  @extend .d-inline-block;
+  @extend .ml-1;
+  font-family: "Font Awesome 5 Pro";
+  @extend .fa-sm;
+  font-weight: 300;
+  content: "\f078";
+  border: 0px solid transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  { //update if padding changes on nav items
