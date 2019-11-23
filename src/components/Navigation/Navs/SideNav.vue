@@ -31,7 +31,7 @@
   <div class="row ml-1">
   <!-- FOR STYLEGUIDE ONLY -->
 
-  <b-nav vertical pills>
+  <b-nav class="sideNav" vertical pills>
     <b-nav-item disabled><h2>Nav Title</h2></b-nav-item>
       <b-nav-item disabled>Title of This Group</b-nav-item>
         <b-nav-item @click="active = !active">Test Nav Item</b-nav-item>
@@ -49,7 +49,7 @@
 
   <!-- FOR STYLEGUIDE ONLY -->
   <div class="col border border-medium mr-3" ></div>
-  <!-- FOR STYLEGUIDE ONLY -->  
+  <!-- FOR STYLEGUIDE ONLY -->
 
 </div>
 ```

@@ -65,6 +65,7 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-pro/webfonts';
 @import '../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss';
 
 
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                           GLOBAL                               //
@@ -157,6 +158,7 @@ i {
   //                           ALERTS                               //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
 .alert-dismissible .close {
  visibility: hidden;
  font-size: 1.4rem;
@@ -235,6 +237,7 @@ i {
   //                           BREADCRUMB                           //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
 .breadcrumb {
   @extend .bg-transparent;
   @extend .border-bottom;
@@ -1341,22 +1344,14 @@ a > img:hover {
 }
 
 .card { //for nested row elements, should have a more specific selector
-  @extend .w-100;
   @extend .rounded-0;
   margin-top: -2px;
+  @extend .d-inline-flex;
 }
 
-.card-body { //for nested row elements, needs to be updated to have a more specific selector
+.rowExpandableContent .card-body { //for nested row elements
   width: 95%;
-  @extend .float-right;
-}
-
-.show.collapse { //what it looks like OPEN?
-
-}
-
-.show:not(.collapse) .rowExpandable { //what it looks like CLOSED?
-
+  @extend .ml-auto;
 }
 
 button.rowItem:focus {
@@ -1411,7 +1406,6 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 .card {
   font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
-  display: inline-block !important;
 }
 .card-hover:hover {
   box-shadow: 0px 0px 0px 1px $medium inset;
@@ -1613,7 +1607,7 @@ label {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 
-.nav {
+.sideNav.nav {
   @extend .bg-lightest;
   @extend .text-right;
   @extend .py-4;
@@ -1636,6 +1630,11 @@ label {
 .nav-pills .nav-link:hover  {
   @extend .bg-white;
   @extend .text-primary;
+}
+
+.nav-pills a.nav-link:hover {
+  color: $primary !important;
+  text-shadow: .25px 0px 0px $primary;
 }
 
 .nav-pills .nav-link.active {
@@ -1678,6 +1677,9 @@ label {
   @extend .text-secondary;
 }
 
+.edited a:hover::before {
+  color: $secondary !important;
+}
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -1702,9 +1704,53 @@ label {
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
+  //                             TABS                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.tabsNav.card {
+  @extend .d-block;
+  border: none;
+}
+
+.tabsNav .card-body {
+  border-width: 0px 1px 1px 1px;
+  border-color: $medium;
+  border-style: solid;
+}
+
+.tabs > .card-header {
+  @extend .border-medium;
+  @extend .bg-lightest;
+}
+
+.nav-tabs > .nav-item a {
+  @extend .text-mediumdark;
+}
+
+.nav-tabs > .nav-item a:focus {
+  outline: none;
+}
+
+.nav-tabs .nav-link.active {
+  @extend .text-dark;
+  border-color: $mediumdark transparent white transparent;
+}
+
+.nav-tabs .nav-link {
+  @extend .rounded-0;
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+  border-color: transparent;
+}
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
   //                           TOASTS                               //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
 .toast div {
   font-weight: 600 !important;
   @extend .text-center;
@@ -1713,7 +1759,6 @@ label {
 .toast {
   @extend .rounded-0;
 }
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -1734,7 +1779,7 @@ label {
   height: 30px;
 }
 
-.nav-item {
+.navbar-nav > .nav-item {
   @extend .text-white;
 }
 
@@ -1770,5 +1815,5 @@ label {
 }
 
 
-//IMPORT STYLES FOR THE STYLEGUIDE
+//IMPORT STYLES ONLY REQUIRED FOR THE STYLEGUIDE
 @import 'library.scss';

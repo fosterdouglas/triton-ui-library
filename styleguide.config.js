@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.7.2',
+    version: 'v0.7.3',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -147,7 +147,12 @@ module.exports = {
       {name: 'Pagination', sections: [
           {components: 'src/components/Navigation/Pagination/*.vue'}
         ],
-      }
+      },
+
+      {name: 'Tabs', sections: [
+        {components: 'src/components/Navigation/Tabs/*.vue'}
+        ],
+      },
 
     ],
       sectionDepth: 1
