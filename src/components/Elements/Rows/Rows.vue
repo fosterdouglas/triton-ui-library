@@ -869,7 +869,7 @@ export default {
 
         <div class="rowItemText">
           <div class="uploadedFileText">
-            <i class="iconFile"></i>
+            <i class="iconFolderOpen"></i>
             <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
             <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
               <i class="iconRemove iconBorderMini"></i>

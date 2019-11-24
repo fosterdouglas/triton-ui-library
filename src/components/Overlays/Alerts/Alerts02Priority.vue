@@ -6,11 +6,11 @@
 ```js
 <template>
   <div>
-    
+
     <b-button variant="outline-primaryfade"
     @click="showBottom = !showBottom"
     onclick="this.blur();"
-    class="btnFunction btnFunctionStandard">
+    class="btnNavigation btnStandard">
       {{ showBottom ? 'Hide' : 'Show' }} Fixed bottom Alert
     </b-button>
     <b-alert

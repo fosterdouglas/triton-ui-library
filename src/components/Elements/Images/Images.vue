@@ -69,12 +69,10 @@ export default {
 
 ```js
 
-<div class="btn border-dark p-3 text-center">
-  <a href="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png">
-    <div class="center-cropped" style="backgroundImage: url(http://sandcastle.co/cdn/ebydesign/triton/hello-world.png)">
-      <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
-    </div>
-  </a>
+<div class="imageThumbnail">
+  <div class="centerCropped" style="backgroundImage: url(http://sandcastle.co/cdn/ebydesign/triton/hello-world.png)">
+    <b-img class="img-fluid" src="http://sandcastle.co/cdn/ebydesign/triton/hello-world.png" />
+  </div>
 </div>
 
 ```

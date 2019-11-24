@@ -181,14 +181,52 @@ export default {
 </template>
 ```
 
-<h3>File</h3>
-<p>Used to denote a system file that is or will be uploaded to the application.</p>
+<h3>Folder (Add)</h3>
+<p>...</p>
 
 ```js
 <template>
   <div class="styleguidistOnlyStyles">
-    <i class="iconFile iconHover text-dark"></i>
-    <i class="iconFile iconHover text-dark fas"></i>
+    <i class="iconFolderAdd iconHover text-dark"></i>
+    <i class="iconFolderAdd iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
+
+<h3>Folder (Closed)</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconFolderClosed iconHover text-dark"></i>
+    <i class="iconFolderClosed iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
+<h3>Folder (Open)</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconFolderOpen iconHover text-dark"></i>
+    <i class="iconFolderOpen iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
+
+<h3>Folder (Remove)</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconFolderRemove iconHover text-dark"></i>
+    <i class="iconFolderRemove iconHover text-dark fas"></i>
   </div>
 </template>
 ```
@@ -248,6 +286,18 @@ export default {
   <div class="styleguidistOnlyStyles">
     <i class="iconRemove iconHover text-warning"></i>
     <i class="iconRemove iconHover text-warning fas"></i>
+  </div>
+</template>
+```
+
+<h3>Save</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconSave iconHover text-dark"></i>
+    <i class="iconSave iconHover text-dark fas"></i>
   </div>
 </template>
 ```

@@ -45,7 +45,7 @@
   <h3>Responsive</h3>
   <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
-  The Triton UI Component Library is <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is currently a secondary priority.
+  The Triton UI Component Library components are <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is a long term goal.
   </p>
   </div>
 
@@ -59,8 +59,8 @@
   </p>
       <b-button
         :pressed="false"
-        variant="outline-darkfade"
-        class="btnFunction btnFunctionStandard"
+        variant="outline-primaryfade"
+        class="btnNavigation btnStandard"
         onclick="this.blur();"
         href="../../#/Design%20Reference%20Files"
         >
@@ -91,7 +91,7 @@
   <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.7.3</strong> - last updated on November 23rd 2019.<br/><br/>
+    <strong class="text-dark">v0.7.4</strong> - last updated on November 24th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

@@ -10,10 +10,10 @@
     <b-button
       @click="showAlert"
       variant="outline-primaryfade"
-      class="btnFunction btnFunctionStandard"
+      class="btnNavigation btnStandard"
       onclick="this.blur();"
       >
-      Test Timed Alert
+      Show Timed Alert
       <i></i>
     </b-button>
 

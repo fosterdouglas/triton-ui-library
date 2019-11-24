@@ -26,10 +26,11 @@
 ```js
 <template>
   <div>
+
     <b-button
       :pressed="false"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionStandard"
+      variant="outline-primaryfade"
+      class="btnNavigation btnStandard"
       onclick="this.blur();"
       @click="modalShow = !modalShow"
       >
@@ -94,8 +95,8 @@
   <div>
     <b-button
       :pressed="false"
-      variant="outline-darkfade"
-      class="btnFunction btnFunctionStandard"
+      variant="outline-primaryfade"
+      class="btnNavigation btnStandard"
       onclick="this.blur();"
       @click="modalShow = !modalShow"
       >
