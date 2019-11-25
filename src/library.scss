@@ -16,6 +16,11 @@ div.styleguidistOnlyStyles > i {
   @extend .fa-lg;
 }
 
+.sideNav.card.styleguidistOnlyStyles .tab-content {
+  @extend .border;
+  @extend .border-medium;
+}
+
 // REMOVE INVISIBLE TABS BAR
 [class^=rsg--tabs-25]{
   display: none !important;
@@ -233,7 +238,7 @@ div[class^=rsg--preview-] {
 
 [class^=rsg--footer-] p::before {
   @extend .float-right;
-  content: "Guide last updated: November 24th, 2019" !important;
+  content: "Guide last updated: November 25th, 2019" !important;
   visibility: visible !important;
   margin-bottom: 0px !important;
 }

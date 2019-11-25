@@ -1,9 +1,7 @@
 <docs>
 
-<h3>Top Nav
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p></p>
+<h3>Top Nav</h3>
+<p>The Top Nav is used explicitly to organize and display links with dedicated URL pages. It includes functions for grouped dropdown menus and badges to indicate notifications or numbers. Links can be left or right aligned.</p>
 
 ```js
 <template>

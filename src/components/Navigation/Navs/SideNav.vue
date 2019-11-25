@@ -10,8 +10,8 @@
     </h5>
     <hr/>
       <ul>
-        <li class="alertListItem">- Update nav item interactivity</li>
-        <li class="alertListItem">- Refactor for Vue.js</li>
+        <li class="alertListItem">- <del>Update nav item interactivity</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- <del>Refactor for Vue.js</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- <del>Distribute components into separate files</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- WCAG adjustments</li>
         <li class="alertListItem">- <del>add underline for current selection?</del> <i class="iconConfirm"></i></li>
@@ -23,33 +23,61 @@
 ```
 
 <h3>Side Nav</h3>
+<p>The Side Nav is used across the application as a sub-menu system. It should only be used to show and hide loaded content or to dynamically load content, but not for a URL change. The <span class="ml-1 edited"></span>pencil icon represents content tabs that have been edited. The nav is typically paired with a Save button, but not required for read-only page instances.</p>
 
 ```js
 <div>
 
-  <!-- FOR STYLEGUIDE ONLY -->
-  <div class="row ml-1">
-  <!-- FOR STYLEGUIDE ONLY -->
+<div>
+  <b-card class="sideNav styleguidistOnlyStyles" no-body>
+    <b-tabs pills card vertical>
 
-  <b-nav class="sideNav" vertical pills>
-    <b-nav-item disabled><h2>Nav Title</h2></b-nav-item>
-      <b-nav-item disabled>Title of This Group</b-nav-item>
-        <b-nav-item @click="active = !active">Test Nav Item</b-nav-item>
-        <b-nav-item class="edited">Test Nav Item</b-nav-item>
-        <b-nav-item>Test Nav Item</b-nav-item>
-      <b-nav-item disabled>Title of This Group</b-nav-item>
-        <b-nav-item>Test Nav Item</b-nav-item>
-        <b-nav-item active>Test Nav Item</b-nav-item>
-        <b-nav-item>Test Nav Item</b-nav-item>
-      <div class="nav-break"></div>
-        <b-nav-item>Test Nav Item</b-nav-item>
-        <b-nav-item>Test Nav Item</b-nav-item>
-        <b-nav-item>Test Nav Item</b-nav-item>
-  </b-nav>
+      <b-tab disabled>
+        <template v-slot:title><span><h2>Nav Title</h2></span></template>
+      </b-tab>
 
-  <!-- FOR STYLEGUIDE ONLY -->
-  <div class="col border border-medium mr-3" ></div>
-  <!-- FOR STYLEGUIDE ONLY -->
+      <b-tab disabled>
+        <template v-slot:title><span>Title of This Group</span></template>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span>Test Nav Item</span></template>
+        <b-card-text>Tab contents 1</b-card-text>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span class="edited">Test Nav Item</span></template>
+        <b-card-text>Tab contents 2</b-card-text>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span>Test Nav Item</span></template>
+        <b-card-text>Tab contents 3</b-card-text>
+      </b-tab>
+
+      <b-tab disabled>
+        <template v-slot:title><div class="navBreak"></div></template>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span>Test Nav Item</span></template>
+        <b-card-text>Tab contents 4</b-card-text>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span>Test Nav Item</span></template>
+        <b-card-text>Tab contents 5</b-card-text>
+      </b-tab>
+
+      <b-tab>
+        <template v-slot:title><span>Test Nav Item</span></template>
+        <b-card-text>Tab contents 6</b-card-text>
+      </b-tab>
+
+    </b-tabs>
+  </b-card>
+</div>
+
 
 </div>
 ```

@@ -279,7 +279,9 @@ i {
 
 
 
-.btnNavigation:focus:active {
+.btnNavigation:focus:active,
+.btnSmall:focus:active,
+.searchClose:focus:active {
   outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 0px white !important;
 }
@@ -287,16 +289,6 @@ i {
 .btnFunction:focus:active {
   outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 2px white !important;
-}
-
-.btnSmall:focus:active {
-  outline: none; //prevents default visual outline on click
-  box-shadow: inset 0 0 0 0px white !important;
-}
-
-.searchClose:focus:active {
-  outline: none; //prevents default visual outline on click
-  box-shadow: inset 0 0 0 0px white !important;
 }
 
 button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
@@ -1642,37 +1634,46 @@ label {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-
-.sideNav.nav {
-  @extend .bg-lightest;
+.sideNav.card {
   @extend .text-right;
-  @extend .py-4;
-  @extend .mr-4;
-  width: 275px; //eventually should be dynamic to the largest menu item
-
-  //min-height: 100vh; //unused currently, but for full-height side nav
+  @extend .border-0;
+  @extend .d-block;
 }
 
-.nav-pills .nav-link {
+.sideNav.card ul.card-header {
+  @extend .bg-lightest;
+  @extend .px-0;
+  @extend .py-4;
+  width: 275px;
+  //min-height: 100vh; //unused in styleguide, but needed for full-height side nav
+}
+
+.sideNav.card .tab-content {
+  @extend .ml-4;
+  margin-top: 4.35rem;
+  min-width: 300px;
+}
+
+.sideNav .nav-link {
   @extend .rounded-0;
   @extend .py-2;
   text-transform: uppercase;
 }
 
-.nav-pills .nav-link.disabled {
+.sideNav .nav-link.disabled span{
   @extend .text-medium;
 }
 
-.nav-pills .nav-link:hover  {
+.sideNav .nav-link:hover  {
   @extend .bg-white;
   @extend .text-primary;
 }
 
-.nav-pills a.nav-link:hover {
+.sideNav a.nav-link:hover {
   color: $primary !important;
 }
 
-.nav-pills .nav-link.active {
+.sideNav .nav-link.active {
   @extend .text-primary;
   @extend .bg-white;
   border-right: 4px solid $primary;
@@ -1680,14 +1681,14 @@ label {
   margin-right: -.3em;
 }
 
-.nav-pills .nav-link.active:hover {
+.sideNav .nav-link.active:hover {
   @extend .bg-white;
   @extend .cursorPointer;
   font-weight: 700;
   opacity: 1;
 }
 
-.nav-pills .show > .nav-link {
+.sideNav .show > .nav-link {
   @extend .bg-white;
   font-weight: 700;
   border-right: 4px solid $primary;
@@ -1695,15 +1696,19 @@ label {
   margin-right: -.3em;
 }
 
-.nav-break {
+.navBreak {
   border-top: 1px solid rgba($primary, .8);
   @extend .mb-3;
   @extend .mt-2;
-  @extend .mr-3;
+  @extend .mr-1;
   @extend .ml-4;
 }
 
-.edited a::before {
+.sideNav span {
+  @extend .text-primary;
+}
+
+span.edited::before {
   font-weight: 700;
   font-family: "Font Awesome 5 Pro";
   content: "\f303";
@@ -1712,9 +1717,10 @@ label {
   @extend .text-secondary;
 }
 
-.edited a:hover::before {
+span.edited:hover::before {
   color: $secondary !important;
 }
+
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
