@@ -84,7 +84,7 @@ h2 {
 }
 
 h4 {
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 h5 {
@@ -240,9 +240,14 @@ i {
 
 .breadcrumb {
   @extend .bg-transparent;
-  @extend .border-bottom;
+  @extend .pl-4;
   @extend .rounded-0;
   @extend .text-dark;
+  @extend .position-absolute;
+  left: 275px;
+  @extend .py-3;
+  z-index: 1;
+  font-size: 90%;
 }
 
 .breadcrumb-item a {
@@ -254,7 +259,7 @@ i {
   color: $dark !important; //color override
 }
 
-.breadcrumb-item.active {
+.breadcrumb-item.active span {
   @extend .text-dark;
 }
 
@@ -276,8 +281,6 @@ i {
   @extend .pl-3;
   height: 34px;
 }
-
-
 
 .btnNavigation:focus:active,
 .btnSmall:focus:active,
@@ -1371,7 +1374,7 @@ a > img:hover {
   @extend .pl-3;
 }
 
-.card { //for nested row elements, should have a more specific selector
+.rowExpandableContent.card { //for nested row elements, should have a more specific selector
   @extend .rounded-0;
   margin-top: -2px;
   @extend .d-inline-flex;
@@ -1640,17 +1643,21 @@ label {
   @extend .d-block;
 }
 
+.tab-content > .card-body {
+  @extend .pt-2;
+}
+
 .sideNav.card ul.card-header {
   @extend .bg-lightest;
   @extend .px-0;
-  @extend .py-4;
+  @extend .py-5;
   width: 275px;
-  //min-height: 100vh; //unused in styleguide, but needed for full-height side nav
+  min-height: 100vh;
 }
 
 .sideNav.card .tab-content {
   @extend .ml-4;
-  margin-top: 4.35rem;
+  @extend .mt-5;
   min-width: 300px;
 }
 

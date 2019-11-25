@@ -27,8 +27,6 @@
 
 ```js
 <div>
-
-<div>
   <b-card class="sideNav styleguidistOnlyStyles" no-body>
     <b-tabs pills card vertical>
 
@@ -76,9 +74,6 @@
 
     </b-tabs>
   </b-card>
-</div>
-
-
 </div>
 ```
 

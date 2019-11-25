@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.7.5',
+    version: 'v0.7.6',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -181,6 +181,19 @@ module.exports = {
       }
     ],
       sectionDepth: 1
+    },
+
+    {name: '––––––––', sections: [
+      {components: ''}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Examples', sections: [
+      {components: 'src/components/Examples/*.vue'}
+      ],
+      sectionDepth: 0
     }
+
 	]
 }
