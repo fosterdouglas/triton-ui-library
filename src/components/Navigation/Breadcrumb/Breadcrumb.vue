@@ -24,7 +24,10 @@
 
 ```js
 <template>
-  <b-breadcrumb :items="items"></b-breadcrumb>
+
+    <b-breadcrumb :items="items"></b-breadcrumb>
+
+  </div>
 </template>
 
 <script>

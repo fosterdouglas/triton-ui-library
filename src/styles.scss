@@ -240,12 +240,12 @@ i {
 
 .breadcrumb {
   @extend .bg-transparent;
-  @extend .pl-4;
+  @extend .ml-4;
   @extend .rounded-0;
   @extend .text-dark;
-  @extend .position-absolute;
-  left: 275px;
+  @extend .mb-0;
   @extend .py-3;
+  @extend .pl-2;
   z-index: 1;
   font-size: 90%;
 }
@@ -284,7 +284,8 @@ i {
 
 .btnNavigation:focus:active,
 .btnSmall:focus:active,
-.searchClose:focus:active {
+.searchClose:focus:active,
+.btnThin:focus:active {
   outline: none; //prevents default visual outline on click
   box-shadow: inset 0 0 0 0px white !important;
 }
@@ -380,6 +381,11 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 .btnStandard:active:focus {
   background-color: rgba($primary, 1) !important; //required for correct opacity
   @extend .text-white;
+}
+
+.btnThin:active:focus {
+    background-color: rgba($mediumdark, 1) !important; //required for correct opacity
+    @extend .text-white;
 }
 
 .btnStandardPressed {
@@ -512,12 +518,35 @@ a.btnFeedback:focus {
   outline: none;
   font-weight: inherit;
   padding: 0;
-  margin-top: -4px !important; //aligns button vertically
+  margin-top: -1px !important; //aligns button vertically
   font-size: 75%; //pulled from .badge standard class
   @extend .rounded-0;
   @extend .mx-1;
 }
 
+.btnThin {
+  @extend .rounded-0;
+  @extend .text-mediumdark;
+  @extend .border-mediumdark;
+  @extend .mx-1;
+}
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                          FOOTER                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+footer {
+  @extend .col;
+  @extend .p-4;
+  @extend .bg-lightest;
+  @extend .border-top;
+  @extend .text-mediumdark;
+  @extend .mx-0;
+  font-size: 90%;
+}
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -766,7 +795,6 @@ a.btnFeedback:focus {
 .iconBorderMini {
   border: 1px solid;
   color: inherit;
-  @extend .rounded-sm;
   @extend .rounded-0;
 }
 
@@ -1273,7 +1301,6 @@ a > img:hover {
   border: 0px;
   @extend .text-medium;
   @extend .mx-0;
-  @extend .fa-lg;
 }
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -1319,9 +1346,7 @@ a > img:hover {
   @extend .align-text-top; //add a display inline or inline block here?
   @extend .row;
   @extend .pl-4;
-  @extend .pr-0;
   height: 20px;
-  margin-right: -24px;
 }
 
 .rowItemPrefix {
@@ -1336,7 +1361,7 @@ a > img:hover {
 
 .rowItemText {
   @extend .d-inline;
-  @extend .col-9;
+  @extend .col-auto;
   @extend .pl-0;
   @extend .text-left;
   height: 20px;
@@ -1345,8 +1370,7 @@ a > img:hover {
 .rowItemSuffix {
   @extend .text-right;
   @extend .d-inline;
-  @extend .col-2;
-  @extend .pr-0;
+  @extend .col;
   height: 20px;
 }
 
@@ -1354,7 +1378,7 @@ a > img:hover {
   @extend .text-medium;
 }
 
-.rowItemPrefix i, .rowItemSuffix i {
+.rowItemPrefix i, .rowItemSuffix > i:not(.iconBorderMini) {
   @extend .fa-lg;
 }
 
@@ -1568,6 +1592,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   width: 1.2rem !important;
   height: 1.2rem !important;
   top: .05rem!important;
+  @extend .rounded-0;
 }
 
 //location and size of the checkbox checkmark
@@ -1645,6 +1670,7 @@ label {
 
 .tab-content > .card-body {
   @extend .pt-2;
+  @extend .px-0;
 }
 
 .sideNav.card ul.card-header {
@@ -1657,6 +1683,7 @@ label {
 
 .sideNav.card .tab-content {
   @extend .ml-4;
+  @extend .pl-2;
   @extend .mt-5;
   min-width: 300px;
 }

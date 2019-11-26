@@ -116,7 +116,7 @@ a:hover {
   margin-bottom: 0 !important;
 }
 
-.rsg--root-44 {
+[class^=rsg--root-] > nav {
   @extend .pb-5;
 }
 
@@ -175,18 +175,9 @@ button[name*=rsg-code-editor]:active {
 }
 
 // REMOVE FOOTER
-[class^=rsg--footer-] p, [class^=rsg--footer-] a {
-	font-size: 100% !important;
-  text-decoration: none !important;
-  color: rgba($mediumdark,.6) !important;
-  @extend .float-right;
-  visibility: hidden !important;
-  margin-bottom: 0px !important;
-  margin-top: 2rem !important;
-
+footer[class^=rsg--footer-] {
+  display: none !important;
 }
-
-
 
 // BORDER STYLING
 div[class^=rsg--preview-] {
@@ -236,9 +227,11 @@ div[class^=rsg--preview-] {
   background-color: rgba($mediumdark, .2) !important;
 }
 
-[class^=rsg--footer-] p::before {
+// ADD LAST UPDATED TO FOOTER AREA
+main > section::after {
   @extend .float-right;
-  content: "Guide last updated: November 25th, 2019" !important;
+  @extend .text-mediumdark;
+  content: "Guide last updated: November 26th, 2019" !important;
   visibility: visible !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 2em !important;
 }

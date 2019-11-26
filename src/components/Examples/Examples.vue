@@ -64,7 +64,9 @@
   <div>
 
     <b-card class="sideNav" no-body>
-      <b-breadcrumb :items="items"></b-breadcrumb>
+
+      <b-breadcrumb style="position: absolute; left:275px;" :items="items"></b-breadcrumb>
+
       <b-tabs pills card vertical>
 
         <b-tab disabled>
@@ -125,7 +127,22 @@
 
   </div>
 
-
+  <footer class="row">
+    <b-col class="text-left py-1">© Triton 2019, All Rights Reserved</b-col>
+    <b-col class="text-right">
+      <b-button
+        :pressed="false"
+        variant="outline-light"
+        size="sm"
+        class="btnThin"
+        onclick="this.blur();"
+        >
+        <i></i>
+        <div class="btnText">CONTACT</div>
+        <i></i>
+      </b-button>
+    </b-col>
+  </footer>
 
 </div>
 

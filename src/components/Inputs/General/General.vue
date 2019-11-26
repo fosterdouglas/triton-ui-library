@@ -202,7 +202,7 @@ $(function () {
 
 <div class="row">
 
-  <div class="col mt-1" data-trigger="focus" data-toggle="tooltip" data-placement="right" title="Text Field">
+  <div class="col mt-1" title="Text Field">
     <input class="form-control border-mediumdark rounded-0 mb-1" type="text" placeholder="Text Field" />
   </div>
   <div class="col mt-1">
@@ -218,7 +218,7 @@ $(function () {
 ```js
 <div class="row">
 
-  <div class="col mt-1" data-trigger="focus" data-toggle="tooltip" data-placement="right" title="Text Field - Area">
+  <div class="col mt-1" title="Text Field - Area">
     <b-form-textarea no-resize class="form-control border-mediumdark rounded-0" type="text" placeholder="Text Field - Area" rows="3" >
     </b-form-textarea>
   </div>

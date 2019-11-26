@@ -9,7 +9,7 @@
 ```
 
 <h3>Standard</h3>
-<p>The primary button used for application navigation.
+<p>The primary button used for application navigation.</p>
 
 ```js
 <template>

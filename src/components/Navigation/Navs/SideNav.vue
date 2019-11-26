@@ -1,27 +1,5 @@
 <docs>
 
-```jsx noeditor
-
-<div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- <del>Update nav item interactivity</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>Refactor for Vue.js</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>Distribute components into separate files</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- WCAG adjustments</li>
-        <li class="alertListItem">- <del>add underline for current selection?</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>Initiate</del> <i class="iconConfirm"></i></li>
-      </ul>
-  </b-alert>
-
-</div>
-```
-
 <h3>Side Nav</h3>
 <p>The Side Nav is used across the application as a sub-menu system. It should only be used to show and hide loaded content or to dynamically load content, but not for a URL change. The <span class="ml-1 edited"></span>pencil icon represents content tabs that have been edited. The nav is typically paired with a Save button, but not required for read-only page instances.</p>
 

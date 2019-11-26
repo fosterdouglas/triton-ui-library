@@ -42,6 +42,32 @@
     </p>
   </div>
 
+  <h3>Browser Compatibility</h3>
+  <div class="pr-4 pl-4 mb-4 text-justify">
+  <b-table-simple small fixed bordered class="mb-3">
+    <b-thead head-variant="dark">
+      <b-tr>
+        <b-th colspan="2" class="pl-3">Chrome</b-th>
+        <b-th colspan="2" class="pl-3">Edge</b-th>
+        <b-th colspan="2" class="pl-3">Firefox</b-th>
+        <b-th colspan="2" class="pl-3">IE</b-th>
+        <b-th colspan="2" class="pl-3">Opera</b-th>
+        <b-th colspan="2" class="pl-3">Safari</b-th>
+      </b-tr>
+    </b-thead>
+    <b-tbody>
+      <b-tr>
+        <b-td for="Chrome" colspan="2" class="bg-confirm text-white pl-2"><i class="iconConfirm mr-1"></i>TESTING</b-td>
+        <b-td for="Edge" colspan="2" class="bg-mediumdark text-white pl-2"><i class="iconQuestion mr-1"></i>UNTESTED</b-td>
+        <b-td for="Firefox" colspan="2" class="bg-mediumdark text-white pl-2"><i class="iconQuestion mr-1"></i>UNTESTED</b-td>
+        <b-td for="IE" colspan="2" class="bg-warning text-white pl-2"><i class="iconRemove mr-1"></i>WHY</b-td>
+        <b-td for="Opera" colspan="2" class="bg-mediumdark text-white pl-2"><i class="iconQuestion mr-1"></i>UNTESTED</b-td>
+        <b-td for="Safari" colspan="2" class="bg-secondary text-white pl-2"><i class="iconWarning mr-1"></i>ISSUES</b-td>
+      </b-tr>
+    </b-tbody>
+  </b-table-simple>
+  </div>
+
   <h3>Responsive</h3>
   <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
@@ -91,7 +117,7 @@
   <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.7.4</strong> - last updated on November 24th 2019.<br/><br/>
+    <strong class="text-dark">v0.8.0</strong> - last updated on November 26th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

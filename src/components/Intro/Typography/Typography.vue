@@ -12,7 +12,7 @@
 ```
 
 <h3>Sections</h3>
-<p>Generally found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>``` and uppercase styling (tentatively).</p>
+<p>Generally found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>```.</p>
 
 ```jsx
 <template>
@@ -67,7 +67,20 @@
 <h3>Support Text
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p>...</p>
+<p>For a <a href="../../#/Navigation/Breadcrumb">Breadcrumb</a> component, the <a href="../../#/Navigation/Navs">Footer</a>, or other situations which can be de-emphasized.</p>
+
+```jsx
+<template>
+  <div>
+    <span style="font-size: 90%;">Testing</b-badge>
+  </div>
+</template>
+```
+
+<h3>Tiny Text
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>Used for very small applications, for example for the badge number used in a <a href="../../#/Navigation/Navs">Top Nav</a> component.</p>
 
 ```jsx
 <template>

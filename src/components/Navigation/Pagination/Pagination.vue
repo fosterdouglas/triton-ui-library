@@ -21,7 +21,7 @@
 <h3>Standard (Same Page)
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p>Note: if using a system feature calls more than a few "pages" worth of data, it's highly recommended to pair
+<p>Note: if using a system feature that calls more than a few "pages" worth of data, it's highly recommended to pair
 it with filtering functionality.</p>
 
 ```js
@@ -49,9 +49,10 @@ it with filtering functionality.</p>
     :total-rows="rows"
     :per-page="perPage"
     align="right"
+    onclick="this.blur();"
     >
-      <template v-slot:prev-text><span class="text-danger"><i class="iconChevron iconHover text-dark fa-rotate-180"></i></span></template>
-      <template v-slot:next-text><span class="text-warning"><i class="iconChevron iconHover text-dark"></i></span></template>
+      <template v-slot:prev-text><i class="iconChevron iconHover fa-rotate-180"></i></template>
+      <template v-slot:next-text><i class="iconChevron iconHover"></i></template>
     </b-pagination>
   </div>
 

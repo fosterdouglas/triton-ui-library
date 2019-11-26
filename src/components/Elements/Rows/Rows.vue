@@ -868,17 +868,18 @@ export default {
         </div>
 
         <div class="rowItemText">
-          <div class="uploadedFileText">
+          <div>
             <i class="iconFolderOpen"></i>
             <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
-            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
-              <i class="iconRemove iconBorderMini"></i>
-            </b-button>
           </div>
         </div>
 
         <div class="rowItemSuffix">
-
+          <div>
+            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+              <i class="iconRemove iconBorderMini"></i>
+            </b-button>
+          </div>
         </div>
 
       </div>
