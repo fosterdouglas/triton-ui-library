@@ -1,7 +1,7 @@
 <docs>
 
 <h3>Page Title</h3>
-<p>Used exclusively for titles of pages, typically to label the top of the site's <a href="../../#/Navigation/SideNav">Side Nav</a>. Uses the ```<H2>``` tag and is almost always set in Triton Blue color.</p>
+<p>Used exclusively for titles of pages, typically to label the top of a <a href="../../#/Navigation/SideNav">Side Nav</a>. Uses the ```<h2>``` tag and is almost always set in Triton Blue color.</p>
 
 ```jsx
 <template>
@@ -51,41 +51,37 @@
 </template>
 ```
 
-<h3>Common Text
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>...</p>
+<h3>Common Text</h3>
+<p>The text size for the majority of uses outside of titles.</p>
 
 ```jsx
 <template>
   <div>
-    <p>Testing</p>
+    <p>Welcome to the Triton platform.</p>
   </div>
 </template>
 ```
 
-<h3>Support Text
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>For a <a href="../../#/Navigation/Breadcrumb">Breadcrumb</a> component, the <a href="../../#/Navigation/Navs">Footer</a>, or other situations which can be de-emphasized.</p>
+<h3>Support Text</h3>
+<p>For a <a href="../../#/Navigation/Breadcrumb">Breadcrumb</a> component, the <a href="../../#/Navigation/Navs">Footer</a>, or other situations where text can be de-emphasized.</p>
 
 ```jsx
 <template>
   <div>
-    <span style="font-size: 90%;">Testing</b-badge>
+    <span class="supportText">© Triton 2019</b-badge>
   </div>
 </template>
 ```
 
-<h3>Tiny Text
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>Used for very small applications, for example for the badge number used in a <a href="../../#/Navigation/Navs">Top Nav</a> component.</p>
+<h3>Tiny Text</h3>
+<p>Reserved for footnotes, email footers, and other optional items, for example for the notification number used in a <a href="../../#/Navigation/Navs">Top Nav</a> component. It can also be used as a badge.</p>
 
 ```jsx
 <template>
   <div>
-    <b-badge variant="-">Testing</b-badge>
+    <b-badge variant="-">To unsubscribe, please click here.</b-badge>
+    <br/>
+    <b-badge variant="primary">UNSUBSCRIBE</b-badge>
   </div>
 </template>
 ```

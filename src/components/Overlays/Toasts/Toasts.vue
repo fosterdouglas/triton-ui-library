@@ -1,31 +1,13 @@
 <docs>
 
-```jsx noeditor
-
-<div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- Distribute components into separate files</li>
-      </ul>
-  </b-alert>
-
-</div>
-```
-
-<h3>Auto Dismiss</h3>
+<h3>Auto-Dismiss</h3>
 <p>Most commonly, the auto dissmissing toast is useful to make a clear and noticiable announcement
- in a consistent location on the page. It should always accompany a page's "save" button if the button does not lead to
- a new page.</p>
+ in a consistent location on the page. It should always fire when a page's "save" button is used, if the button does not lead to a new page.</p>
 
 ```js
 <template>
   <div>
-    
+
     <b-button
       variant="outline-confirmfade"
       @click="toastConfirm()"

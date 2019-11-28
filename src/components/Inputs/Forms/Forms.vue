@@ -11,8 +11,6 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- <del>Remove/solve form field "underline"</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>Replace datalist with JQueryUI "autocomplete" or similar</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Adjust autocomplete to be able to highlight items with keyboard</li>
       </ul>
   </b-alert>

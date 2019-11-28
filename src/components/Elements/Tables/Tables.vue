@@ -10,8 +10,7 @@
     </h5>
     <hr/>
       <ul>
-        <li class="alertListItem">- <del>Initiate</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>Basic styling</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Add additional table types</i></li>
       </ul>
   </b-alert>
 

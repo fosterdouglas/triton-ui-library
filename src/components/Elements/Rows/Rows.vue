@@ -10,14 +10,9 @@
     </h5>
     <hr/>
       <ul>
-        <li class="alertListItem">- <del>Refactor expanding component JS and HTML (use Collapse)</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Animate expanding component dropdown carat</li>
-        <li class="alertListItem">- <del>Fix file delete button</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Adjust all components for recent text size change</li>
-        <li class="alertListItem">- <del>Add additional colors to "highlighted"</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Convert checkbox, switch, radio to BUTTONS for WCAG selection highlight.</li>
-        <li class="alertListItem">- Add a status component type.</li>
       </ul>
   </b-alert>
 

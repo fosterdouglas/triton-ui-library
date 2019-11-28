@@ -11,17 +11,14 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Change icon for "Edit" (? to what)</li>
-        <li class="alertListItem">- <del>Add missing icons (return, calendar)</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- Make tooltip for "Copied" auto close</li>
-        <li class="alertListItem">- <del>Deprecate delete icon and replace instances with Remove icon</del> <i class="iconConfirm"></i></li>
+        <li class="alertListItem">- Fix tooltip for "Copied" (should auto close)</li>
       </ul>
   </b-alert>
 
 </div>
 ```
 
-<h3>Add - Single</h3>
+<h3>Add User</h3>
 <p>For actions that refer to adding a single user to something.</p>
 
 ```js
@@ -33,20 +30,8 @@
 </template>
 ```
 
-<h3>Add - Multiple</h3>
-<p>For actions that refer to adding a group to something.</p>
-
-```js
-<template>
-  <div class="styleguidistOnlyStyles">
-    <i class="iconAddMultiple iconHover text-dark"></i>
-    <i class="iconAddMultiple iconHover text-dark fas"></i>
-  </div>
-</template>
-```
-
 <h3>Arrow</h3>
-<p>...</p>
+<p>Used primarily on buttons to indicate forward progression through the UI. Down, Left, and Up variants are seldom used.</p>
 
 ```js
 <template>
@@ -154,6 +139,18 @@ export default {
 <template>
   <div class="styleguidistOnlyStyles">
     <i class="iconDash text-dark"></i>
+  </div>
+</template>
+```
+
+<h3>Download</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconDownload iconHover text-dark"></i>
+    <i class="iconDownload iconHover text-dark fas"></i>
   </div>
 </template>
 ```

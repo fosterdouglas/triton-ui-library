@@ -1,26 +1,6 @@
 <docs>
 
-```jsx noeditor
-
-<div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- <del>Initiate</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- Fix click / WCAG styling and hover styles</li>
-      </ul>
-  </b-alert>
-
-</div>
-```
-
-<h3>Standard (Same Page)
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
+<h3>Same Page</h3>
 <p>Note: if using a system feature that calls more than a few "pages" worth of data, it's highly recommended to pair
 it with filtering functionality.</p>
 

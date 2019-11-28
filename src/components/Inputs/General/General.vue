@@ -11,12 +11,8 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Add sorting function component (for inclusion/exclusion)</li>
+        <li class="alertListItem">- Add a sorting function component (for inclusion/exclusion)</li>
         <li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</li>
-        <li class="alertListItem">- <del>Fix checkbox</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- Fix mini checkbox</li>
-        <li class="alertListItem">- Remove tooltip text (broken anyway)</li>
-        <li class="alertListItem">- Refactor checkbox to use Vue classes</li>
       </ul>
   </b-alert>
 
@@ -24,7 +20,7 @@
 ```
 
 <h3>Checkbox</h3>
-<p>[Needs desciption...]</p>
+<p>A general-use checkbox that can be implemented in various ways, but is primarily seen used for group selection of items with <a href="../../#/Elements/Tables">Tables</a>. In many cases, the Toggle element is a preferrable choice for clearer UI interaction.</p>
 
 ```js
 <template>
@@ -49,43 +45,55 @@ $(function () {
 </script>
 ```
 
-<h3>Filtering
+<h3>Date Picker
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p>[Needs desciption...]</p>
+<p>
+<span class="text-info">~Feature in progress~</span>
+</p>
 
 ```js
 <template>
-<div class="justify-content-start mt-1"> <!-- classes used for library display only -->
-  <div class="custom-control custom-checkbox d-inline">
-    <input id="customCheck3" class="custom-control-input" type="checkbox"/>
-    <label class="custom-control-label cursorPointer" for="customCheck3">
-      <b-badge variant="none">Clients</b-badge>
-    </label>
-  </div>
+</template>
+```
 
-  <div class="custom-control custom-checkbox d-inline">
-    <input id="customCheck4" class="custom-control-input" type="checkbox"/>
-    <label class="custom-control-label cursorPointer" for="customCheck4">
-      <b-badge variant="none">Agents</b-badge>
-    </label>
-  </div>
 
-  <div class="custom-control custom-checkbox d-inline">
-    <input id="customCheck5" class="custom-control-input" type="checkbox"/>
-    <label class="custom-control-label cursorPointer" for="customCheck5">
-      <b-badge variant="none">Users</b-badge>
-    </label>
-  </div>
+<h3>Filtering</h3>
+<p>Typically attached to a Search Box, this group of components is used to filter an attached data set. Uses Toggles and Support Text, and will support a <span class="text-info">~clear filters button~</span>.</p>
 
-  <div class="custom-control custom-checkbox d-inline">
-    <input id="customCheck6" class="custom-control-input" type="checkbox"/>
-    <label class="custom-control-label cursorPointer" for="customCheck6">
-      <b-badge variant="none">Deactivated Users</b-badge>
-    </label>
-  </div>
+```js
+<template>
+  <div>
 
-</div>
+    <div class="custom-control custom-switch d-inline">
+      <input id="customSwitch0" class="custom-control-input" type="checkbox" />
+      <label class="custom-control-label cursorPointer" for="customSwitch0">
+        <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
+      </label>
+    </div>
+
+    <div class="custom-control custom-switch d-inline">
+      <input id="customSwitch1" class="custom-control-input" type="checkbox" />
+      <label class="custom-control-label cursorPointer" for="customSwitch1">
+        <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
+      </label>
+    </div>
+
+    <div class="custom-control custom-switch d-inline">
+      <input id="customSwitch2" class="custom-control-input" type="checkbox" />
+      <label class="custom-control-label cursorPointer" for="customSwitch2">
+        <b-badge class="supportText pl-2" variant="-">Users</b-badge>
+      </label>
+    </div>
+
+    <div class="custom-control custom-switch d-inline">
+      <input id="customSwitch3" class="custom-control-input" type="checkbox" />
+      <label class="custom-control-label cursorPointer" for="customSwitch3">
+        <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
+      </label>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -94,10 +102,37 @@ $(function () {
 </script>
 ```
 
-<h3>Multi Select
+<h3>Search Box</h3>
+<p>A highlighted text field specifically designed for search functionality. Supports a clear icon upon typing, and is often paired with a group Filtering options.</p>
+
+```js
+
+<div class="row">
+
+  <div class="col mt-1">
+
+	<form>
+
+    <div class="input-group-prepend">
+      <i class="iconSearch fa-lg"></i>
+    </div>
+
+     <input type="text" name="focus" required class="searchBox form-control w-75" placeholder="Search for Users, Clients, or Agents . . ." />
+     <b-button onclick="this.blur();" variant="none" class="searchClose cursorDefault text-warning" type="reset">
+       <i class="iconClose iconHover"></i>
+     </b-button>
+
+	</form>
+
+  </div>
+
+</div>
+```
+
+<h3>Select - Stacked View
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p>[Needs desciption...]</p>
+<p><span class="text-info">~Use case undetermined~</span></p>
 
 ```js
 
@@ -128,91 +163,29 @@ $(function () {
 </div>
 ```
 
-<h3>Multi Select - Drop Down
+
+<h3>Text Field
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p>[Needs desciption...]</p>
 
 ```js
-//ENABLE ALL TOOLTIPS FOR PAGE
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip({delay: { show: 0, hide: 0 }});
-});
-//
 
 <div class="row">
 
-  <div class="col mt-1" title="Favourite Color?">
-    <select class="form-control rounded-0 custom-select custom-select-hover pointer" type="text" placeholder="Favourite Color" >
-      <option disabled selected>Favourite Color?</option>
-      <option class="options">Pink</option>
-      <option class="options">Teal</option>
-      <option class="options">Orange</option>
-      <option class="options">Black</option>
-      <option class="options">Banana</option>
-    </select>
+  <div class="col">
+    <input class="form-control border-medium rounded-0" type="text" placeholder="Text Field" />
   </div>
-
-    <div class="col mt-1">
-      <select class="form-control rounded-0 custom-select custom-select-disabled not-allowed" type="text" placeholder="Example text field" disabled >
-      <option disabled selected>Favourite Color?</option>
-      <option class="options">Pink</option>
-      <option class="options">Teal</option>
-      <option class="options">Orange</option>
-      <option class="options">Black</option>
-      <option class="options">Banana</option>
-      </select>
-    </div>
-
-</div>
-```
-
-
-<h3>Search Box</h3>
-<p>[Needs desciption...]</p>
-
-```js
-
-<div class="row">
-
-  <div class="col mt-1">
-
-	<form>
-
-    <div class="input-group-prepend">
-      <i class="iconSearch fa-lg"></i>
-    </div>
-
-     <input type="text" name="focus" required class="searchBox form-control w-75" placeholder="Search for Users, Clients, or Agents . . ." />
-     <b-button onclick="this.blur();" variant="none" class="searchClose cursorDefault text-warning" type="reset">
-       <i class="iconClose iconHover"></i>
-     </b-button>
-
-	</form>
-
+  <div class="col">
+    <input class="form-control border-medium rounded-0 not-allowed " type="text" placeholder="Disabled Text Field" disabled />
   </div>
 
 </div>
 ```
 
-<h3>Text Field</h3>
-<p>[Needs desciption...]</p>
-
-```js
-
-<div class="row">
-
-  <div class="col mt-1" title="Text Field">
-    <input class="form-control border-mediumdark rounded-0 mb-1" type="text" placeholder="Text Field" />
-  </div>
-  <div class="col mt-1">
-    <input class="form-control border-medium rounded-0 placeholder-dim not-allowed " type="text" placeholder="Disabled Text Field" disabled />
-  </div>
-
-</div>
-```
-
-<h3>Text Field - Area</h3>
+<h3>Text Field - Area
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
 <p>[Needs desciption...]</p>
 
 ```js
@@ -239,7 +212,7 @@ $(function () {
 </p>
 
 ```js
-<div class="col-6">
+<div class="col-6 ml-0 pl-0">
 
   <div id="editor" class="editor mt-1 border-mediumdark rounded-0">
 
@@ -262,16 +235,17 @@ $(function () {
   $('#customSwitch4').prop('checked', true)
 });
 
-<div class="col pl-0 justify-content-start"> <!-- classes used for library display only -->
-  <div class="m-3 d-inline custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="customSwitch3" />
-    <label class="custom-control-label pointer" for="customSwitch3"></label>
+
+  <div class="custom-control custom-switch d-inline mr-1">
+    <input type="checkbox" class="custom-control-input" id="customSwitch4" />
+    <label class="custom-control-label cursorPointer" for="customSwitch4"></label>
   </div>
-  <div class="m-3 d-inline custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="customSwitch4"/>
-    <label class="custom-control-label pointer" for="customSwitch4"></label>
+
+  <div class="custom-control custom-switch d-inline mr-1">
+    <input type="checkbox" class="custom-control-input" id="customSwitch5"/>
+    <label class="custom-control-label cursorPointer" for="customSwitch5"></label>
   </div>
-</div>
+
 ```
 
 </docs>

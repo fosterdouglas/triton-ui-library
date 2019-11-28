@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.7.6',
+    version: 'v0.8.3',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -128,11 +128,6 @@ module.exports = {
     },
 
     {name: 'Navigation', sections: [
-
-      {name: 'Breadcrumb', sections: [
-          {components: 'src/components/Navigation/Breadcrumb/*.vue'}
-        ],
-      },
 
       {name: 'Buttons', sections: [
           {components: 'src/components/Navigation/Buttons/*.vue'}

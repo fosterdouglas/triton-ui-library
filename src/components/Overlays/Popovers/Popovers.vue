@@ -10,10 +10,7 @@
     </h5>
     <hr/>
       <ul>
-        <li class="alertListItem">- <del>Fix DELETE/ADD buttons to properly dismiss popover</del> <i class="iconConfirm"></i></li>
-        <li class="alertListItem">- <del>BROKEN: not functioning after build, only locally</del> <i class="iconConfirm"></i></li>
         <li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</li>
-        <li class="alertListItem">- Move info tooltip from Icons page to here</li>
         <li class="alertListItem">- Distribute components into separate files</li>
       </ul>
   </b-alert>

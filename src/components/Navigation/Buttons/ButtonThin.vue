@@ -29,7 +29,7 @@
       <i></i>
       <div class="btnText">BUTTON SAMPLE</div>
       <i></i>
-    </b-button>    
+    </b-button>
 
   </div>
 </template>

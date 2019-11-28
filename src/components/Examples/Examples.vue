@@ -1,24 +1,6 @@
 <docs>
 
-```jsx noeditor
-
-<div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- Distribute components into separate files</li>
-      </ul>
-  </b-alert>
-
-</div>
-```
-
 <h3>Default Page Layout</h3>
-<p>...</p>
 
 ```js
 <template>
@@ -65,7 +47,7 @@
 
     <b-card class="sideNav" no-body>
 
-      <b-breadcrumb style="position: absolute; left:275px;" :items="items"></b-breadcrumb>
+      <b-breadcrumb class="breadcrumbTop" :items="items"></b-breadcrumb>
 
       <b-tabs pills card vertical>
 
@@ -123,12 +105,19 @@
         </b-tab>
 
       </b-tabs>
+
+        <b-breadcrumb class="breadcrumbBottom" :items="items"></b-breadcrumb>
+
     </b-card>
+
+
 
   </div>
 
+
+
   <footer class="row">
-    <b-col class="text-left py-1">© Triton 2019, All Rights Reserved</b-col>
+    <b-col class="text-left footerItem">© Triton 2019, All Rights Reserved</b-col>
     <b-col class="text-right">
       <b-button
         :pressed="false"
