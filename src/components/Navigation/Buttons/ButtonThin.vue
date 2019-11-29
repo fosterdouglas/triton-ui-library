@@ -1,7 +1,7 @@
 <docs>
 
 <h3>Thin</h3>
-<p>...</p>
+<p>The shorter and skinnier Thin button should be used in places where a button can safely be de-emphasized, for example in a footer.</p>
 
 ```js
 <template>

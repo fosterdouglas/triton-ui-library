@@ -865,7 +865,7 @@ export default {
         <div class="rowItemText">
           <div>
             <i class="iconFolderOpen"></i>
-            <u class="underline-dotted"><abbr class="initialism">background-check-text.pdf</abbr></u>
+            <abbr title="background-check-text.pdf" class="initialism">background-check-text.pdf</abbr>
           </div>
         </div>
 

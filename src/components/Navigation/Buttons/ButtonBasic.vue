@@ -49,6 +49,8 @@
       <i></i>
     </b-button>
 
+    <br/>
+
     <b-button
       :pressed="null"
       variant="outline-primaryfade"
@@ -58,6 +60,19 @@
       >
       <i></i>
       <div class="btnText">BUTTON DISABLED</div>
+      <i></i>
+    </b-button>
+
+    <b-button
+      :pressed="null"
+      variant="outline-primaryfade"
+      class="btnNavigation btnDisabled cursorDisabled"
+      onclick="this.blur();"
+      disabled
+      >
+      <b-spinner small type="grow" label="Spinning" class="btnIconLeft"></b-spinner>
+      <i></i>
+      <div class="btnText">BUTTON LOADING DISABLED</div>
       <i></i>
     </b-button>
 

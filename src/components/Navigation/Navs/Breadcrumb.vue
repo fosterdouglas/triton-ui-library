@@ -1,6 +1,7 @@
 <docs>
 
 <h3>Breadcrumb</h3>
+<p>A wayfinding function to help the user understand where in the file or page hierarchy the current page lives.</p>
 
 ```js
 <template>

@@ -122,6 +122,13 @@ a, a:hover {
   font-size: 85%;
 }
 
+.unselectableText {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 //CURSOR TYPES
 .cursorDefault {
   cursor: default !important;
@@ -294,10 +301,10 @@ a, a:hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 .btnNavigation {
-  @extend .shadow-sm;
   @extend .m-2;
-  @extend .pr-3;
-  @extend .pl-3;
+  @extend .px-3;
+  @extend .rounded-0;
+  @extend .shadow-sm;
   height: 34px;
 }
 
@@ -309,46 +316,30 @@ a, a:hover {
   box-shadow: inset 0 0 0 0px white !important;
 }
 
-.btnFunction:focus:active {
-  outline: none; //prevents default visual outline on click
-  box-shadow: inset 0 0 0 2px white !important;
-}
-
-button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
-   box-shadow: 0 0 0 4px $medium !important; //retains WCAG standard for screen readers
+button:focus, .btnNavigation:focus, .btnSmall:focus {
+   box-shadow: 0 0 0 4px $medium !important; //custom WCAG solution for screen readers
 }
 
 .btnNavigation {
-  transition: color .35s ease-out, background-color .35s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: color .25s ease-out, background-color .25s ease-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
 .btnNavigation:active {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
 
-.btnFunction {
-  @extend .m-2;
-  @extend .pr-4;
-  @extend .pl-4;
-  height: 34px;
-}
-
-.btnFunction i {
-  @extend .fa-lg;
-}
-
 .btnDisabled {
-  @extend .text-muted;
+  @extend .text-mediumdark;
+  @extend .border-medium;
+  box-shadow: 0 0 0 0px $dark !important;
 }
 
 .btnIconRight {
-
   margin-top: -1px !important;
   @extend .align-baseline;
 }
 
 .btnIconLeft {
-
   margin-top: -1px !important;
   @extend .align-baseline;
 }
@@ -359,67 +350,46 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .px-2;
 }
 
-.borderRadiusMax {
-  border-radius: 2em;
-}
+//STANDARD BUTTON
 
-.btn-outline-warningfade:active i.iconBorder,
-.btn-outline-warningfade:active i.iconBorderMini,
-.btn-outline-warningfade:active i.iconBorderStd
-{
-  background-color: rgba($warning, 1) !important; //required for correct opacity
-  box-shadow: 0px 0px 0px 1px inset $warning !important;
-  @extend .text-white;
-}
-
-.btn-outline-confirmfade:active i.iconBorder,
-.btn-outline-confirmfade:active i.iconBorderMini,
-.btn-outline-confirmfade:active i.iconBorderStd {
-  background-color: rgba($confirm, 1) !important; //required for correct opacity
-  box-shadow: 0px 0px 0px 1px inset $confirm !important;
-  @extend .text-white;
-}
-
-
-.btn-outline-primaryfade:active i.iconBorder,
-.btn-outline-primaryfade:active i.iconBorderMini,
-.btn-outline-primaryfade:active i.iconBorderStd, {
-  background-color: rgba($primary, 1) !important; //required for correct opacity
-  box-shadow: 0px 0px 0px 1px inset $primary !important;
-  @extend .text-white;
-}
-
-
-// // NAVIGATION STANDARD // // // // // // // // // // //
 .btnStandard {
-  @extend .rounded-0;
-  @extend .text-primary;
-  @extend .border-primary;
+  @extend .text-dark;
+  @extend .border-dark;
+}
+
+.btnStandard:hover,
+.btnStandard:focus,
+a.btnStandard:hover,
+a.btnStandard:focus {
+  background-color: rgba($dark, .1);
+  color: $dark !important;
 }
 
 .btnStandard:active:focus {
-  background-color: rgba($primary, 1) !important; //required for correct opacity
+  background-color: rgba($dark, 1) !important; //required for correct opacity
   @extend .text-white;
-}
-
-.btnThin:active:focus {
-    background-color: rgba($mediumdark, 1) !important; //required for correct opacity
-    @extend .text-white;
 }
 
 .btnStandardPressed {
   pointer-events: none;
-  @extend .rounded-0;
-  @extend .bg-primary;
-  @extend .border-primary;
+  @extend .bg-dark;
+  @extend .border-dark;
   @extend .text-white;
 }
 
-// // NAVIGATION CONFIRM // // // // // // // // // // //
+//CONFIRM BUTTON
+
 .btnConfirm {
-  @extend .rounded-0;
   @extend .text-confirm;
   @extend .border-confirm;
+}
+
+.btnConfirm:hover,
+.btnConfirm:focus,
+a.btnConfirm:hover,
+a.btnConfirm:focus {
+  background-color: rgba($confirm, .12);
+  color: $confirm !important;
 }
 
 .btnConfirm:active:focus {
@@ -429,21 +399,29 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
 
 .btnConfirmPressed {
   pointer-events: none;
-  @extend .rounded-0;
   @extend .bg-confirm;
   @extend .border-confirm;
   @extend .text-white;
 }
 
-// // NAVIGATION WARN // // // // // // // // // // //
+//WARN BUTTON
+
 .btnWarning {
   @extend .rounded-0;
   @extend .text-warning;
   @extend .border-warning;
 }
 
+.btnWarning:hover,
+.btnWarning:focus,
+a.btnWarning:hover,
+a.btnWarning:focus {
+  background-color: rgba($warning, .12);
+  color: $warning !important;
+}
+
 .btnWarning:active:focus {
-  background-color: rgba($warning, 1) !important; //required for correct opacity
+  background-color: rgba($warning, 1) !important;
   @extend .text-white;
 }
 
@@ -455,9 +433,7 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .text-white;
 }
 
-// // NAVIGATION FEEDBACK // // // // // // // // // // //
-
-//CHANGE THE NAME OF THIS
+//FEEDBACK BUTTON
 
 .btnFeedback {
   @extend .rounded-0;
@@ -465,7 +441,6 @@ button:focus, .btnNavigation:focus, .btnFunction:focus, .btnSmall:focus {
   @extend .border-secondary;
 }
 
-//set up all other buttons like this
 .btnFeedback:hover,
 .btnFeedback:focus,
 a.btnFeedback:hover,
@@ -479,59 +454,7 @@ a.btnFeedback:focus {
   @extend .text-white;
 }
 
-// // FUNCTION STANDARD // // // // // // // // // // //
-.btnFunctionStandard {
-  @extend .borderRadiusMax;
-  @extend .text-dark;
-  @extend .border-dark;
-}
-
-.btnFunctionStandard:hover {
-  box-shadow: inset 0 0 0 2px $medium !important;
-  background-color: unset !important;
-}
-
-.btnFunctionStandard:active:focus {
-  background-color: rgba($darkfade, 1) !important; //required for correct opacity
-  @extend .text-white;
-}
-
-.btnFunctionPressed {
-  pointer-events: none;
-  @extend .borderRadiusMax;
-  @extend .bg-dark;
-  @extend .border-dark;
-  @extend .text-white;
-}
-
-// // FUNCTION HIGHLIGHTED // // // // // // // // // // //
-.btnFunctionHighlighted {
-  @extend .borderRadiusMax;
-  @extend .text-secondary;
-  @extend .border-secondary;
-}
-
-.btnFunctionHighlighted:hover {
-  box-shadow: inset 0 0 0 2px rgba($secondary, .3) !important;
-  background-color: unset !important;
-}
-
-.btnFunctionHighlighted:active {
-  background-color: rgba($secondary, 1) !important; //required for correct opacity
-  @extend .text-white;
-}
-
-.btnFunctionHighlightedPressed {
-  pointer-events: none;
-  @extend .borderRadiusMax;
-  @extend .bg-secondary;
-  @extend .border-secondary;
-  @extend .text-white;
-}
-
-.btn.btnSmall {
-  border: 0px solid transparent !important; // ?????
-}
+//ICON BUTTON
 
 .btnSmall { //CLASS USED TO OVERRIDE STANDARD BTN STYLES FOR SMALL BUTTONS
   outline: none;
@@ -543,11 +466,71 @@ a.btnFeedback:focus {
   @extend .mx-1;
 }
 
+.btn.btnSmall {
+  border: 0px solid transparent !important; // ?????
+}
+
+.iconBorderMini {
+  border: 1px solid;
+  color: inherit;
+  @extend .rounded-0;
+}
+
+.iconBorderStd {
+  border: 1px solid;
+  height: auto;
+  color: inherit;
+  padding: 11px 11px 11px 11px !important;
+  @extend .rounded-sm;
+  @extend .fa-lg;
+  @extend .rounded-0;
+}
+
+.btn-outline-primaryfade:active i.iconBorder,
+.btn-outline-primaryfade:active i.iconBorderMini,
+.btn-outline-primaryfade:active i.iconBorderStd, {
+  background-color: rgba($dark, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px 1px inset $dark !important;
+  @extend .text-white;
+}
+
+.btn-outline-confirmfade:active i.iconBorder,
+.btn-outline-confirmfade:active i.iconBorderMini,
+.btn-outline-confirmfade:active i.iconBorderStd {
+  background-color: rgba($confirm, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px 1px inset $confirm !important;
+  @extend .text-white;
+}
+
+.btn-outline-warningfade:active i.iconBorder,
+.btn-outline-warningfade:active i.iconBorderMini,
+.btn-outline-warningfade:active i.iconBorderStd
+{
+  background-color: rgba($warning, 1) !important; //required for correct opacity
+  box-shadow: 0px 0px 0px 1px inset $warning !important;
+  @extend .text-white;
+}
+
+//THIN BUTTON
+
 .btnThin {
   @extend .rounded-0;
   @extend .text-mediumdark;
   @extend .border-mediumdark;
   @extend .mx-1;
+}
+
+.btnThin:hover,
+.btnThin:focus,
+a.btnThin:hover,
+a.btnThin:focus {
+  background-color: rgba($mediumdark, .12);
+  color: $mediumdark !important;
+}
+
+.btnThin:active:focus {
+    background-color: rgba($mediumdark, 1) !important;
+    @extend .text-white;
 }
 
 
@@ -579,18 +562,10 @@ footer {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-//ADD - SINGLE
+//ADD USER
 .iconAddSingle {
   @extend .fal;
   @extend .fa-user-plus;
-  @extend .p-1;
-  color: inherit;
-}
-
-//ADD - MULTIPLE
-.iconAddMultiple {
-  @extend .fal;
-  @extend .fa-users-cog;
   @extend .p-1;
   color: inherit;
 }
@@ -816,62 +791,16 @@ footer {
   color: inherit;
 }
 
-.iconBorder {
-  border: 1px solid;
-  color: inherit;
-  @extend .p-2;
-  @extend .rounded-sm;
-}
-
-.iconBorderMini {
-  border: 1px solid;
-  color: inherit;
-  @extend .rounded-0;
-}
-
-.iconBorderStd {
-  border: 1px solid;
-  color: inherit;
-  @extend .p-2;
-  @extend .rounded-sm;
-  @extend .fa-lg;
-  @extend .rounded-0;
-}
-
 
 button[class|=btn-outline] { //??????
   background-color: unset;
 }
-
-
 
 .iconHover:hover {
     font-weight: 900;
 }
 
 
-
-.info {
-  outline: none;
-}
-a.info:hover {
-  color: $dark !important;
-}
-.popover {
-  @extend .shadow-sm;
-  max-width: 250px;
-  margin: 1.5em 1em 1.5em 1em !important; //sets popover position
-  border-radius: 0;
-}
-.popover-header {
-  background-color: unset;
-  text-align: center;
-  padding: .75em 1em;
-}
-.popover-body {
-  text-align: center !important;
-  padding: .75em 1.5em .75em 1.5em;
-}
 .bs-tooltip-top {
   margin-bottom: .5em !important;
 }
@@ -899,16 +828,35 @@ a.info:hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-.formFieldHalf {
-  @extend .col-6;
-  @extend .px-2;
+//AUTOCOMPLETE
 
-}
-
-.formFieldFull {
-  @extend .col-12;
+ul.ui-autocomplete {
+  background-color: white;
+  box-shadow: 0 0 0 1px $dark;
   @extend .pl-0;
+  width: 25% !important;
+  margin-left: 5px !important;
 }
+
+.ui-autocomplete li {
+  list-style: none;
+  @extend .py-1;
+  @extend .ml-0;
+  @extend .pl-4;
+  @extend .cursorDefault;
+  left: 0;
+}
+
+.ui-autocomplete li:hover {
+  @extend .bg-light;
+}
+
+.ui-autocomplete li:active {
+  @extend .bg-dark;
+  @extend .text-white;
+}
+
+//
 
 .form-label-group {
   position: relative;
@@ -924,7 +872,7 @@ a.info:hover {
 .form-label-group > label {
   position: absolute;
   top: 1.05em;
-  margin-left: .05em;
+  left: 1.1em;
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
@@ -942,7 +890,7 @@ a.info:hover {
 .form-label-group input::-ms-input-placeholder,
 .form-label-group input::-moz-placeholder,
 .form-label-group input::placeholder {
-  color: transparent; //not sure what this does
+  color: transparent; //not sure what this does LOL
 }
 
 .form-label-group input:not(:placeholder-shown) {
@@ -955,7 +903,7 @@ a.info:hover {
   top:0;
   left: 0;
   padding-top: .5em;
-  padding-left: 2.0em;
+  padding-left: 2.7em;
   font-size: .8em;
   color: $mediumdark;
 }
@@ -1030,6 +978,7 @@ select:not([multiple]) {
     padding-right: 1.5em;
     color: $dark !important;
 }
+
 .searchClose { //red "clear" button for search field
 	border:1px solid transparent;
 	background-color: transparent;
@@ -1040,6 +989,7 @@ select:not([multiple]) {
   padding: 0;
   @extend .ml-n5;
 }
+
 .searchBox:not(:valid) ~ .searchClose {
 	display: none; //hides "clear" button
 }
@@ -1069,28 +1019,9 @@ select:not([multiple]) {
   margin-top: .1em; //detailed position fix for magnifying glass
 }
 
-small {
-  font-weight: 300;
-}
-
 .searchBox[type=text]:focus {
   border: 1px solid $secondary !important;
   box-shadow: 0px 0px 0px 0px $secondary !important;
-}
-
-.custom-select {
-  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-light.svg");
-  background-position: 97% 50% !important;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-size: 20px 20px;
-}
-
-.custom-select-hover:hover {
-  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-solid.svg");
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-size: 20px 20px;
 }
 
 .hero-image {
@@ -1099,14 +1030,6 @@ small {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-}
-
-.custom-select-hover:active {
-  opacity: .8;
-}
-
-.custom-select-disabled {
-  background: url("http://sandcastle.co/cdn/ebydesign/triton/sort-disabled.svg") no-repeat right 1rem center/20px 20px;
 }
 
 option {
@@ -1135,31 +1058,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   overflow-x: hidden; //prevent horizontal scrollbar
 }
 
-ul.ui-autocomplete {
-  background-color: white;
-  box-shadow: 0 0 0 1px $dark;
-  @extend .pl-0;
-  width: 25% !important;
-  margin-left: 5px !important;
-}
 
-.ui-autocomplete li {
-  list-style: none;
-  @extend .py-1;
-  @extend .ml-0;
-  @extend .pl-4;
-  @extend .cursorDefault;
-  left: 0;
-}
-
-.ui-autocomplete li:hover {
-  @extend .bg-light;
-}
-
-.ui-autocomplete li:active {
-  @extend .bg-dark;
-  @extend .text-white;
-}
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -1167,6 +1066,7 @@ ul.ui-autocomplete {
   //                       GENERAL INPUT                            //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
 .badge {
   font-weight: 500;
   @extend .mr-2;
@@ -1176,6 +1076,132 @@ ul.ui-autocomplete {
 .nav-link > .badge {
   font-weight: 700;
   @extend .ml-1;
+}
+
+
+.custom-control-label::after {
+  vertical-align: middle !important;
+}
+
+.custom-control-label::before {
+  background-color: unset;
+}
+
+.custom-switch .custom-control-label::before {
+  top: 0 !important;
+  width: 2.2rem !important;
+  height: 1.3rem !important;
+  left: -2.2rem !important;
+  background-color: unset !important;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.custom-checkbox .custom-control-label::before {
+  top: 0 !important;
+  width: 2.2rem !important;
+  height: 1.3rem !important;
+  left: -1.4rem !important;
+  background-color: unset !important;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.custom-switch .custom-control-label::after,
+.custom-switch .custom-control-label-disabled::after {
+  @extend .border;
+  @extend .border-dark;
+  background-color: unset;
+  left: calc(-2.3rem + 6px) !important;
+  width: calc(1rem - 3px) !important;
+  height: calc(1rem - 3px) !important;
+  top: .23rem !important;
+}
+
+.custom-switch .custom-control-label::after {
+  transition: transform .2s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.custom-switch .custom-control-label::before {
+  border-radius: 1rem !important;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none !important; //remove shadow on toggle click
+}
+.custom-control-input ~ .custom-control-label::before,
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  @extend .border-dark; //custom toggle border color
+}
+
+.custom-control-input-disabled {
+  pointer-events: none;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  background-color: $dark;
+}
+
+.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
+  background: $light !important;
+}
+
+.custom-control-input-disabled.custom-control-input:checked ~ .custom-control-label::before {
+  background: $medium !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background: $dark !important;
+  @extend .border-dark;
+}
+
+.custom-control-input-disabled:checked ~ .custom-control-label::before {
+  @extend .bg-medium;
+  @extend .border-medium;
+}
+.custom-control-input-disabled ~ .custom-control-label::before,
+.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
+  @extend .border-medium; //custom toggle border color
+}
+
+.custom-switch .custom-control-label-disabled::after {
+  @extend .bg-light;
+  @extend .border-medium;
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  @extend .bg-white;
+  @extend .border;
+  @extend .border-white;
+}
+
+//location and size of checkbox
+.custom-checkbox .custom-control-label::before {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  top: .05rem!important;
+  @extend .rounded-0;
+}
+
+//location and size of the checkbox checkmark
+.custom-checkbox .custom-control-label::after {
+  top: -0.1em !important;
+  left: -1.55rem !important;
+  width: 1.6em !important;
+  height: 1.6em !important;
+}
+
+.custom-radio .custom-control-label::before{
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  top: 0rem !important;
+}
+.custom-radio .custom-control-label::after{
+  width: 1.38em !important;
+  height: 1.38em !important;
+  top: 0em!important;
+  left: -1.65em !important;
+  //position: relative !important;
+}
+
+label {
+  margin-bottom: 0 !important;
 }
 
 
@@ -1232,6 +1258,7 @@ img:hover + .imgIcon {
   /* modern browsers */
   opacity: 0;
 }
+
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -1350,6 +1377,30 @@ img:hover + .imgIcon {
   @extend .text-medium;
   @extend .mx-0;
 }
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                         POPOVER                                //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.popover {
+  @extend .shadow-sm;
+  @extend .rounded-0;
+  max-width: 250px;
+  margin: 1.5em 1em 1.5em 1em !important; //sets popover position
+}
+.popover-header {
+  background-color: unset;
+  text-align: center;
+  padding: .75em 1em;
+}
+.popover-body {
+  @extend .text-center;
+  padding: .75em 1.5em .75em 1.5em;
+}
+
+
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -1502,205 +1553,6 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .d-inline-block;
   @extend .text-left;
 }
-
-//update or remove most of the following
-
-.card {
-  font-family: 'Montserrat', sans-serif;
-	font-weight: 300;
-}
-.card-hover:hover {
-  box-shadow: 0px 0px 0px 1px $medium inset;
-  color: black !important;
-}
-.card-hover:hover div {
-  color: black !important;
-}
-.columns-1 {
-    column-count: 1;
-}
-.icon-top{
-  margin-top: .1rem;
-}
-
-.checkbox-size {
-  font-size: 1.5em; //custom sizing required for icon
-}
-.toggle-size {
-  font-size: 1.65em; //custom sizing required for icon
-}
-
-.unselectableText {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.custom-border {
-  box-shadow: 0px 4px 0px 0px $dark !important;
-}
-
-.custom-control-label::after {
-  vertical-align: middle !important;
-}
-
-.custom-control-label::before {
-  background-color: unset;
-}
-
-
-.custom-switch .custom-control-label::before {
-  top: 0 !important;
-  width: 2.2rem !important;
-  height: 1.3rem !important;
-  left: -2.2rem !important;
-  background-color: unset !important;
-  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-.custom-checkbox .custom-control-label::before {
-  top: 0 !important;
-  width: 2.2rem !important;
-  height: 1.3rem !important;
-  left: -1.4rem !important;
-  background-color: unset !important;
-  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-.custom-switch .custom-control-label::after,
-.custom-switch .custom-control-label-disabled::after {
-  @extend .border;
-  @extend .border-dark;
-  background-color: unset;
-  left: calc(-2.3rem + 6px) !important;
-  width: calc(1rem - 3px) !important;
-  height: calc(1rem - 3px) !important;
-  top: .23rem !important;
-}
-
-.custom-switch .custom-control-label::after {
-  transition: transform .2s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-.custom-switch .custom-control-label::before {
-  border-radius: 1rem !important;
-}
-.custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: none !important; //remove shadow on toggle click
-}
-.custom-control-input ~ .custom-control-label::before,
-.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  @extend .border-dark; //custom toggle border color
-}
-
-.custom-control-input-disabled {
-  pointer-events: none;
-}
-
-.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
-  background-color: $dark;
-}
-
-.custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
-  background: $light !important;
-}
-
-.custom-control-input-disabled.custom-control-input:checked ~ .custom-control-label::before {
-  background: $medium !important;
-}
-
-.custom-control-input:checked ~ .custom-control-label::before {
-  background: $dark !important;
-  @extend .border-dark;
-}
-
-.custom-control-input-disabled:checked ~ .custom-control-label::before {
-  @extend .bg-medium;
-  @extend .border-medium;
-}
-.custom-control-input-disabled ~ .custom-control-label::before,
-.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
-  @extend .border-medium; //custom toggle border color
-}
-
-.custom-switch .custom-control-label-disabled::after {
-  @extend .bg-light;
-  @extend .border-medium;
-}
-
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
-  @extend .bg-white;
-  @extend .border;
-  @extend .border-white;
-}
-
-//location and size of checkbox
-.custom-checkbox .custom-control-label::before {
-  width: 1.2rem !important;
-  height: 1.2rem !important;
-  top: .05rem!important;
-  @extend .rounded-0;
-}
-
-//location and size of the checkbox checkmark
-.custom-checkbox .custom-control-label::after {
-  top: -0.1em !important;
-  left: -1.55rem !important;
-  width: 1.6em !important;
-  height: 1.6em !important;
-}
-
-
-.custom-radio .custom-control-label::before{
-  width: 1.25rem !important;
-  height: 1.25rem !important;
-  top: 0rem !important;
-}
-.custom-radio .custom-control-label::after{
-  width: 1.38em !important;
-  height: 1.38em !important;
-  top: 0em!important;
-  left: -1.65em !important;
-  //position: relative !important;
-}
-label {
-  margin-bottom: 0 !important;
-}
-#chevron {
-  display: none;
-}
-.icon {
-  transition: all 0.5s 0s;
-  transform: rotate(-90deg) translate(2px);
-  cursor: pointer;
-}
-#chevron:checked + .icon {
-  transform: rotate(0deg) translate(0px);
-}
-#expand {
-  transition: background-color .3s linear; //sets anim time for 'expanding'
-}
-.tog-header {
-  background-color: $dark !important;
-  color: $light !important;
-  font-weight: 300;
-}
-.tog-header i {
-  color: $light !important;
-}
-.mt-n2-5 {
-  margin-top: -.3rem !important;
-}
-[type="button"] {
-  -webkit-appearance: unset; //what does this do?
-}
-.sub-hr {
-  border-color: $dark;
-}
-.underline-dotted {
-  text-decoration-style: dotted;
-}
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //

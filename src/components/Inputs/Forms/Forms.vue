@@ -28,9 +28,9 @@
 
 ```js
 <template>
-  <div>
+  <div class="row">
 
-    <div class="form-label-group ui-widget formFieldHalf">
+    <div class="col-6 form-label-group ui-widget">
       <b-form-input id="form-field-1" class="form-control" placeholder="Favourite Fruit (Required)"/>
       <label for="form-field-1">Favourite Fruit</label>
     </div>
@@ -195,12 +195,12 @@ export default {
 <template>
   <div class="row">
 
-  <div class="form-label-group formFieldHalf">
+  <div class="col form-label-group">
     <b-form-input id="form-field-2" class="form-control" placeholder="First Name (Required)"/>
     <label for="form-field-2">First Name</label>
   </div>
 
-  <div class="form-label-group formFieldHalf">
+  <div class="col form-label-group">
     <b-form-input id="form-field-3" class="form-control" placeholder="Last Name (Optional)"/>
     <label for="form-field-3">Last Name</label>
   </div>
@@ -220,7 +220,7 @@ export default {
 <template>
   <div class="row">
 
-  <div class="form-label-group formFieldHalf">
+  <div class="col-6 form-label-group">
     <b-form-input :state="true" id="form-field-2" class="form-control" placeholder="Email" value="valid@gmail.com"/>
     <label for="form-field-2">Email</label>
   </div>
@@ -236,7 +236,7 @@ export default {
 <template>
   <div class="row">
 
-  <div class="form-label-group formFieldHalf">
+  <div class="col-6 form-label-group">
     <b-form-input :state="false" id="form-field-2" class="form-control" placeholder="Email" value="invalid@gmail.commm"/>
     <label for="form-field-2">Email</label>
   </div>

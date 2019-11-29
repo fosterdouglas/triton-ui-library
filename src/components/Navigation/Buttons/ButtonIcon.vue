@@ -15,7 +15,7 @@
         <b-button
           :pressed="false"
           variant="outline-primaryfade"
-          class="btnSmall cursorDefault text-primary"
+          class="btnSmall cursorDefault text-dark"
           onclick="this.blur()"
          >
           <i class="iconArrow iconBorderMini"></i>
@@ -39,12 +39,12 @@
           <i class="iconConfirm iconBorderMini"></i>
         </b-button>
 
-    <h5 class="mt-4">Standard</h5>
+    <h5 class="mt-4">Default</h5>
 
         <b-button
           :pressed="false"
           variant="outline-primaryfade"
-          class="btnSmall cursorDefault text-primary"
+          class="btnSmall cursorDefault text-dark"
           onclick="this.blur()"
          >
           <i class="iconArrow iconBorderStd"></i>
