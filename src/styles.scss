@@ -13,9 +13,10 @@ $theme-colors: (
   "medium": #DBDBDB,
 	"light": #F7F7F7,
   "lightest": #fbfbfb,
-  "confirm": #28a745,
+  "confirm": #73a541,
   "warning": #dc3545,
-  "confirmfade": rgba(40,167,69,.1),
+  "info": #19488f,
+  "confirmfade": rgba(115,165,65,.1),
   "warningfade": rgba(220,53,69,.1),
 	"primaryfade": rgba(27,51,85,.1),
   "secondarydark": #7e661e,
@@ -43,9 +44,10 @@ $mediumdark: #9a9a9a;
 $medium: #DBDBDB;
 $light: #F7F7F7;
 $lightest: #fbfbfb;
-$confirm: #28a745;
+$confirm: #73a541;
 $warning: #dc3545;
-$confirmfade: rgba(40,167,69,.1);
+$info: #19488f;
+$confirmfade: rgba(115,165,65,.1);
 $warningfade: rgba(220,53,69,.1);
 $primaryfade: rgba(27,51,85,.1);
 $secondarydark: #7e661e;
@@ -552,6 +554,7 @@ footer {
 
 .footerItem {
   @extend .py-1;
+  @extend .mx-1;
   @extend .supportText;
 }
 
@@ -699,9 +702,16 @@ footer {
   color: inherit;
 }
 
-//INFORMATION
-.iconInformation {
-
+//INHERIT
+.iconInherited {
+  @extend .fal;
+  @extend .fa-sitemap;
+  @extend .px-2;
+  @extend .bg-lightest;
+  @extend .border;
+  @extend .border-mediumdark;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 //INPUT SELECT
@@ -791,6 +801,9 @@ footer {
   color: inherit;
 }
 
+button:not(.btnSmall) > i:not(.btnIconRight) { //SET ALL ICONS' MARGIN
+  @extend .mx-2;
+}
 
 button[class|=btn-outline] { //??????
   background-color: unset;
@@ -799,7 +812,6 @@ button[class|=btn-outline] { //??????
 .iconHover:hover {
     font-weight: 900;
 }
-
 
 .bs-tooltip-top {
   margin-bottom: .5em !important;
@@ -1059,8 +1071,6 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 }
 
 
-
-
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                       GENERAL INPUT                            //
@@ -1077,7 +1087,6 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-weight: 700;
   @extend .ml-1;
 }
-
 
 .custom-control-label::after {
   vertical-align: middle !important;
@@ -1329,6 +1338,7 @@ img:hover + .imgIcon {
   width: 36px;
   height: 36px;
   @extend .text-center;
+  @extend .text-dark;
 }
 
 .page-item.active a:focus {
@@ -1378,6 +1388,7 @@ img:hover + .imgIcon {
   @extend .mx-0;
 }
 
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                         POPOVER                                //
@@ -1399,7 +1410,6 @@ img:hover + .imgIcon {
   @extend .text-center;
   padding: .75em 1.5em .75em 1.5em;
 }
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -1593,13 +1603,14 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   text-transform: uppercase;
 }
 
-.sideNav .nav-link.disabled span{
+.sideNav .nav-link.disabled span {
   @extend .text-medium;
 }
 
 .sideNav .nav-link:hover  {
   @extend .bg-white;
   @extend .text-primary;
+  text-shadow: 0px 0px 0 $primary;
 }
 
 .sideNav a.nav-link:hover {
@@ -1648,11 +1659,13 @@ span.edited::before {
   @extend .fa-sm;
   @extend .mr-2;
   @extend .text-secondary;
+  text-shadow: 0px 0px 0 transparent !important;
 }
 
 span.edited:hover::before {
   color: $secondary !important;
 }
+
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -1729,6 +1742,7 @@ span.edited:hover::before {
   border-color: transparent;
 }
 
+
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                           TOASTS                               //
@@ -1770,13 +1784,20 @@ span.edited:hover::before {
 .dropdown-menu {
   @extend .rounded-0;
   margin-top: .9rem;
+  @extend .text-primary;
   @extend .border-primary;
 }
 
 .dropdown-item {
+  @extend .text-primary;
   font-size: 1.1em;
   font-weight: 500;
 }
+
+ a.dropdown-item:hover {
+   color: $primary !important;
+   text-shadow: 0px 0px 0 $primary;
+ }
 
 .dropdown-toggle::after {
     display: none;

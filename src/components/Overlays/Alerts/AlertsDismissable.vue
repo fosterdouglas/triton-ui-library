@@ -7,6 +7,7 @@
 <template>
 
   <div>
+
     <b-alert fade show dismissible variant="confirm" class="customAlert alertConfirm">
       <h5>{{ AlertConfirmTitle }}</h5>
       <hr/>
@@ -23,6 +24,13 @@
             <li class="alertListItem">Oops this one, too.</li>
           </ul>
     </b-alert>
+
+    <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+      <h5>{{ AlertInfoTitle }}</h5>
+      <hr/>
+      <p class="mb-0">This alert will show up at the top that needs an informational alert.</p>
+    </b-alert>
+
   </div>
 
 </template>
@@ -33,6 +41,7 @@
       return {
         AlertConfirmTitle: 'Success!',
         AlertWarningTitle: 'Warning',
+        AlertInfoTitle: 'Information'
       }
     }
   }

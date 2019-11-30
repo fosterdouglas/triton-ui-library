@@ -70,12 +70,8 @@
 </template>
 ```
 
-<h3>Close
-<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>An icon used to close windows, modals, alerts, and dialogue boxes.
-<br/><span class="text-info">Fix for proper "active" state</span>
-</p>
+<h3>Close</h3>
+<p>An icon used to close windows, modals, alerts, and dialogue boxes.</p>
 
 
 ```js
@@ -239,6 +235,18 @@ export default {
 </template>
 ```
 
+<h3>Inherited</h3>
+<p>Specialized icon for indicating a given item is currently inheriting properties from something else. Hover over it to see from where it is inherited. <span class="text-info"> ~Not a function the Triton platform yet supports~</span></p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconInherited iconHover text-mediumdark"></i>
+    <i class="iconInherited iconHover text-mediumdark fas"></i>
+  </div>
+</template>
+```
+
 <h3>Input Select</h3>
 <p>A custom input select icon, used for drop down selection boxes.</p>
 
@@ -340,8 +348,12 @@ export default {
 ```js
 <template>
   <div class="styleguidistOnlyStyles">
-    <b-spinner small class="btnIconLeft text-dark" type="grow" label="Spinning"></b-spinner>
-    <b-spinner small class="btnIconLeft text-dark" label="Spinning"></b-spinner>
+    <i>
+      <b-spinner small class="btnIconLeft text-dark" type="grow" label="Spinning"></b-spinner>
+    </i>
+    <i>
+      <b-spinner small class="btnIconLeft text-dark" label="Spinning"></b-spinner>
+    </i>
   </div>
 </template>
 ```

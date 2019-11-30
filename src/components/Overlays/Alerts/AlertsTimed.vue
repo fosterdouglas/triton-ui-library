@@ -14,7 +14,6 @@
       onclick="this.blur();"
       >
       Show Timed Alert
-      <i></i>
     </b-button>
 
     <b-alert

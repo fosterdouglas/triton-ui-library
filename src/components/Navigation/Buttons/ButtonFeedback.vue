@@ -15,9 +15,7 @@
         onclick="this.blur();"
         @click="toastConfirm()"
         >
-        <i></i>
         <div class="btnText">{{ NavButtonCaption }}</div>
-        <i></i>
       </b-button>
 
   </div>

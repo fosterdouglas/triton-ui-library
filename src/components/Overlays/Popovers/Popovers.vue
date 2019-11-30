@@ -51,8 +51,8 @@
             onclick="this.blur();"
             @click="showDelete = !showDelete"
             >
-            {{ DeleteButtonCaption }}
-            <i class="iconRemove   btnIconRight"></i>
+            <div class="btnText">{{ DeleteButtonCaption }}</div>
+            <i class="iconRemove btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>
@@ -85,8 +85,8 @@
             onclick="this.blur();"
             @click="showAdd = !showAdd"
             >
-            {{ AddButtonCaption }}
-            <i class="iconConfirm   btnIconRight"></i>
+            <div class="btnText">{{ AddButtonCaption }}</div>
+            <i class="iconConfirm btnIconRight"></i>
           </b-button>
       </b-popover>
     </div>

@@ -614,8 +614,10 @@ export default {
 ```
 
 
-<h3>Radio List</h3>
-<p>[Needs desciption... distinguish it from Radio Group for forms]</p>
+<h3>Radio List
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p><span class="text-info">Needs desciption to distinguish it from Radio Group for forms.</span></p>
 
 ```js
 <template>

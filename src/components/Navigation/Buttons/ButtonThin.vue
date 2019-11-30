@@ -14,9 +14,7 @@
       class="btnThin"
       onclick="this.blur();"
       >
-      <i></i>
       <div class="btnText">BUTTON SAMPLE</div>
-      <i></i>
     </b-button>
 
     <b-button
@@ -26,9 +24,7 @@
       class="btnThin"
       onclick="this.blur();"
       >
-      <i></i>
       <div class="btnText">BUTTON SAMPLE</div>
-      <i></i>
     </b-button>
 
   </div>

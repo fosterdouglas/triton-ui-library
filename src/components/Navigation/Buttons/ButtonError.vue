@@ -13,9 +13,7 @@
       class="btnNavigation btnWarning"
       onclick="this.blur();"
       >
-      <i></i>
       <div class="btnText">BUTTON SAMPLE</div>
-      <i></i>
     </b-button>
 
     <b-button
@@ -24,7 +22,6 @@
       class="btnNavigation btnWarning"
       onclick="this.blur();"
       >
-      <i></i>
       <div class="btnText">BUTTON WITH ICON</div>
       <i class="iconRemove btnIconRight"></i>
     </b-button>
@@ -35,10 +32,10 @@
       class="btnNavigation btnWarningPressed"
       onclick="this.blur();"
       >
-      <b-spinner small type="grow" label="Spinning" class="btnIconLeft"></b-spinner>
-      <i></i>
+      <i>
+        <b-spinner small type="grow" label="Spinning" class="btnIconLeft text-white"></b-spinner>
+      </i>
       <div class="btnText">BUTTON LOADING</div>
-      <i></i>
     </b-button>
 
   </div>
