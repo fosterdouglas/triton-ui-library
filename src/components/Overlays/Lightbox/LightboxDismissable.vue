@@ -21,7 +21,16 @@
 
     <b-modal
       v-model="modalShow"
+
     >
+      <template v-slot:modal-header>
+        <h5 class="mb-0">Dismissable Lightbox Title</h5>
+        <b-button
+          class="close"
+          @click="modalShow = !modalShow"
+          >
+        </b-button>
+      </template>
 
       <div class="modal-body text-center">
 

@@ -217,7 +217,8 @@ div[class^=rsg--preview-] {
   text-align: justify !important;
 }
 
-[class^=rsg--spacing-] + [class^=rsg--para-] {
+[class^=rsg--spacing-] + [class^=rsg--para-],
+h3 + div {
   font-size: 1rem !important;
   max-width: 900px !important;
 }
@@ -231,7 +232,7 @@ div[class^=rsg--preview-] {
 main > section::after {
   @extend .float-right;
   @extend .text-mediumdark;
-  content: "Guide last updated: November 30th, 2019" !important;
+  content: "Guide last updated: December 3rd, 2019" !important;
   visibility: visible !important;
   margin-bottom: 2em !important;
 }

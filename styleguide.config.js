@@ -47,7 +47,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.8.5',
+    version: 'v0.8.6',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -178,7 +178,7 @@ module.exports = {
       sectionDepth: 1
     },
 
-    {name: '––––––––', sections: [
+    {name: '–––––––– ', sections: [
       {components: ''}
       ],
       sectionDepth: 0

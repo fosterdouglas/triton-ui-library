@@ -45,7 +45,7 @@ $(function () {
 </script>
 ```
 
-<h3>Date Picker
+<h3 id="DatePicker">Date Picker
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p>
@@ -54,7 +54,55 @@ $(function () {
 
 ```js
 <template>
+  <div>
+    <div class="datepicker-trigger">
+
+
+      <b-input
+        class="col-3 custom-form-control"
+        type="text"
+        id="datepicker-trigger"
+        placeholder="Select dates"
+        :value="formatDates(dateOne)"
+      />
+
+      <AirbnbStyleDatepicker
+        :trigger-element-id="'datepicker-trigger'"
+        :mode="'single'"
+        :fullscreen-mobile="true"
+        :months-to-show="1"
+        :close-after-select="false"
+        :offset-y="-1"
+        :show-shortcuts-menu-trigger="false"
+        :show-action-buttons="true"
+        :date-one="dateOne"
+        @date-one-selected="val => { dateOne = val }"
+      />
+    </div>
+  </div>
 </template>
+
+<script>
+import format from 'date-fns/format'
+
+export default {
+  data() {
+    return {
+      dateFormat: 'D MMM YYYY',
+      dateOne: ''
+    }
+  },
+  methods: {
+    formatDates(dateOne) {
+      let formattedDates = ''
+      if (dateOne) {
+        formattedDates = format(dateOne, this.dateFormat)
+      }
+      return formattedDates
+    }
+  }
+}
+</script>
 ```
 
 

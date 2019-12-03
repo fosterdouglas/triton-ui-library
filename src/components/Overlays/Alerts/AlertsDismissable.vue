@@ -25,7 +25,7 @@
           </ul>
     </b-alert>
 
-    <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <b-alert fade show dismissible variant="mediumdark" class="customAlert alertMediumDark">
       <h5>{{ AlertInfoTitle }}</h5>
       <hr/>
       <p class="mb-0">This alert will show up at the top that needs an informational alert.</p>

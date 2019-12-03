@@ -169,7 +169,20 @@ export default {
 ```js
 <template>
   <div class="styleguidistOnlyStyles">
-    <i class="iconEdited text-secondary"></i>
+    <i class="iconEdited iconHover text-secondary"></i>
+    <i class="iconEdited iconHover text-secondary fas"></i>
+  </div>
+</template>
+```
+
+<h3>Exclamation</h3>
+<p>Non-interactive, an icon used to denote incorrect input or an error.</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconExclamation text-warning"></i>
+    <i class="iconExclamation text-secondary"></i>
   </div>
 </template>
 ```
@@ -366,17 +379,6 @@ export default {
   <div class="styleguidistOnlyStyles">
     <i class="iconUser iconHover text-dark"></i>
     <i class="iconUser iconHover text-dark fas"></i>
-  </div>
-</template>
-```
-
-<h3>Warning</h3>
-<p>Non-interactive, an icon used to denote incorrect input or an error.</p>
-
-```js
-<template>
-  <div class="styleguidistOnlyStyles">
-    <i class="iconWarning text-warning"></i>
   </div>
 </template>
 ```

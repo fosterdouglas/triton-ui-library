@@ -1,8 +1,8 @@
 <docs>
-  
+
 
 <h3>Persistent (Forced Action)</h3>
-<p>This lightbox <u>requires</u> interaction and cannot be resolved via a standard close button nor by using the "ESC" button.
+<p>This lightbox <u>requires</u> interaction to resolve. A standard close button should not be used, and the "ESC" button is disabled.</p>
 
 ```js
 <template>
