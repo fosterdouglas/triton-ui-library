@@ -1095,7 +1095,17 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+::-webkit-inner-spin-button,
+::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
 
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field {
+  //@extend .text-light;
+}
 
 .asd__day--enabled:focus {
   outline: none;

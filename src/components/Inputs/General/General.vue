@@ -45,6 +45,28 @@ $(function () {
 </script>
 ```
 
+<h3>Date of Birth
+<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p>
+<span class="text-info">~Feature in progress~</span>
+</p>
+
+```js
+<template>
+  <div class="row">
+    <div class="custom-form-control col-3">
+      <b-form-input type="date" class="custom-form-control">
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+}
+</script>
+```
+
 <h3>Date Range Picker
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
@@ -152,6 +174,32 @@ export default {
 </template>
 
 <script>
+  export default {
+}
+</script>
+```
+
+<h3>Select</h3>
+<p></p>
+
+```js
+<template>
+  <div>
+    <select name="salutation" id="choose">
+      <option disabled selected>Choose One...</option>
+      <option>Pink</option>
+      <option>Teal</option>
+      <option>Orange</option>
+      <option>Black</option>
+      <option>Banana</option>
+    </select>
+  </div>
+</template>
+
+<script>
+  $( function() {
+    $( "#choose" ).selectmenu();
+  } );
   export default {
 }
 </script>
