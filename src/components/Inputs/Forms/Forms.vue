@@ -31,7 +31,7 @@
   <div class="row">
 
     <div class="col-6 form-label-group ui-widget">
-      <b-form-input id="form-field-1" class="form-control" placeholder="Favourite Fruit (Required)"/>
+      <b-form-input autocomplete="off" id="form-field-1" class="form-control" placeholder="Favourite Fruit (Required)"/>
       <label for="form-field-1">Favourite Fruit</label>
     </div>
 
@@ -184,7 +184,7 @@ export default {
 </script>
 ```
 
-<h3>Text Standard</h3>
+<h3>Text</h3>
 <p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling.
   The labels are built into each form field for styling simplicity, organization, and consistency.
   <br/>
@@ -193,15 +193,16 @@ export default {
 
 ```js
 <template>
+
   <div class="row">
 
   <div class="col form-label-group">
-    <b-form-input id="form-field-2" class="form-control" placeholder="First Name (Required)"/>
+    <b-form-input autocomplete="off" id="form-field-2" class="form-control" placeholder="First Name (Required)"/>
     <label for="form-field-2">First Name</label>
   </div>
 
   <div class="col form-label-group">
-    <b-form-input id="form-field-3" class="form-control" placeholder="Last Name (Optional)"/>
+    <b-form-input autocomplete="off" id="form-field-3" class="form-control" placeholder="Last Name (Optional)"/>
     <label for="form-field-3">Last Name</label>
   </div>
 

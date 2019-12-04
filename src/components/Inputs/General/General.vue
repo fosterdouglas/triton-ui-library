@@ -45,7 +45,7 @@ $(function () {
 </script>
 ```
 
-<h3 id="DatePicker">Date Picker
+<h3>Date Range Picker
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p>
@@ -63,20 +63,23 @@ $(function () {
         type="text"
         id="datepicker-trigger"
         placeholder="Select dates"
-        :value="formatDates(dateOne)"
+        autocomplete="off"
+        :value="formatDates(dateOne, dateTwo)"
       />
 
       <AirbnbStyleDatepicker
         :trigger-element-id="'datepicker-trigger'"
-        :mode="'single'"
+        :mode="'range'"
         :fullscreen-mobile="true"
-        :months-to-show="1"
+        :months-to-show="2"
         :close-after-select="false"
         :offset-y="-1"
         :show-shortcuts-menu-trigger="false"
         :show-action-buttons="true"
         :date-one="dateOne"
+        :date-two="dateTwo"
         @date-one-selected="val => { dateOne = val }"
+        @date-two-selected="val => { dateTwo = val }"
       />
     </div>
   </div>
@@ -89,14 +92,18 @@ export default {
   data() {
     return {
       dateFormat: 'D MMM YYYY',
-      dateOne: ''
+      dateOne: '',
+      dateTwo: ''
     }
   },
   methods: {
-    formatDates(dateOne) {
+    formatDates(dateOne, dateTwo) {
       let formattedDates = ''
       if (dateOne) {
         formattedDates = format(dateOne, this.dateFormat)
+      }
+      if (dateTwo) {
+        formattedDates += ' - ' + format(dateTwo, this.dateFormat)
       }
       return formattedDates
     }
@@ -150,34 +157,8 @@ export default {
 </script>
 ```
 
-<h3>Search Box</h3>
-<p>A highlighted text field specifically designed for search functionality. Supports a clear icon upon typing, and is often paired with a group Filtering options.</p>
 
-```js
-
-<div class="row">
-
-  <div class="col mt-1">
-
-	<form>
-
-    <div class="input-group-prepend">
-      <i class="iconSearch fa-lg"></i>
-    </div>
-
-     <input type="text" name="focus" required class="searchBox form-control w-75" placeholder="Search for Users, Clients, or Agents . . ." />
-     <b-button onclick="this.blur();" variant="none" class="searchClose cursorDefault text-warning" type="reset">
-       <i class="iconClose iconHover"></i>
-     </b-button>
-
-	</form>
-
-  </div>
-
-</div>
-```
-
-<h3>Select - Stacked View
+<h3>Select List
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p><span class="text-info">~Use case undetermined~</span></p>
@@ -212,73 +193,10 @@ export default {
 ```
 
 
-<h3>Text Field
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>[Needs desciption...]</p>
-
-```js
-
-<div class="row">
-
-  <div class="col">
-    <input class="form-control border-medium rounded-0" type="text" placeholder="Text Field" />
-  </div>
-  <div class="col">
-    <input class="form-control border-medium rounded-0 not-allowed " type="text" placeholder="Disabled Text Field" disabled />
-  </div>
-
-</div>
-```
-
-<h3>Text Field - Area
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>[Needs desciption...]</p>
-
-```js
-<div class="row">
-
-  <div class="col mt-1" title="Text Field - Area">
-    <b-form-textarea no-resize class="form-control border-mediumdark rounded-0" type="text" placeholder="Text Field - Area" rows="3" >
-    </b-form-textarea>
-  </div>
-
-    <div class="col mt-1">
-      <textarea class="form-control border-medium rounded-0 placeholder-dim not-allowed" type="text" placeholder="Disabled Text Field - Area" rows="3" disabled >
-      </textarea>
-    </div>
-
-</div>
-```
-
-<h3>Text Field - Editor
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>
-<span class="text-info">This feature is in development and needs confirmation on use case.</span>
-</p>
-
-```js
-<div class="col-6 ml-0 pl-0">
-
-  <div id="editor" class="editor mt-1 border-mediumdark rounded-0">
-
-  </div>
-
-</div>
-```
-
 <h3>Toggle</h3>
 <p>[Needs desciption...]</p>
 
 ```js
-var toolbarOptions = ['bold', 'italic', 'underline', 'code-block', { 'size': ['small', false, 'large', 'huge'] }];
-var quill = new Quill('#editor', {
-  modules: { toolbar: toolbarOptions },
-  theme: 'snow'
-});
-
 $(function () {
   $('#customSwitch4').prop('checked', true)
 });

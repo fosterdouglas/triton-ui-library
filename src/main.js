@@ -9,13 +9,13 @@ import './styles.scss'
 
 const datepickerOptions = {
   colors: {
-    selected: '#E9B71E',
-    inRange: '#66e2da',
+    selected: '#3B3B3B',
+    inRange: '#717171',
     selectedText: '#fff',
     text: '#3B3B3B',
-    inRangeBorder: '#33dacd',
+    inRangeBorder: '#3B3B3B',
     disabled: '#fff',
-    hoveredInRange: '#DBDBDB'
+    hoveredInRange: '#9a9a9a'
   }
 }
 

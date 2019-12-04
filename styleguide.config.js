@@ -24,7 +24,11 @@ module.exports = {
 						{
 							rel: 'stylesheet',
 		          href: 'https://cdn.quilljs.com/1.3.6/quill.snow.css'
-						}
+						},
+            {
+							rel: 'stylesheet',
+		          href: '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'
+						},
 					]
 				}
 	},
@@ -47,7 +51,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.8.6',
+    version: 'v0.8.7',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -122,7 +126,13 @@ module.exports = {
       {name: 'General', sections: [
         {components: 'src/components/Inputs/General/*.vue'}
         ],
+      },
+
+      {name: 'Text', sections: [
+        {components: 'src/components/Inputs/Text/*.vue'}
+        ],
       }
+
     ],
       sectionDepth: 1
     },

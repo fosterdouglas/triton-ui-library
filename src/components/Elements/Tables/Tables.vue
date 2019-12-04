@@ -20,7 +20,7 @@
 <h3>Standard
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
-<p>A standard non-interactive fixed-width column table, used to display large amounts of data.</p>
+<p>A standard non-interactive fixed-width column table, used to display large amounts of data. Best paired with a <a href="../../#Navigation/Pagination">Pagination</a> component if the table has more than 10 rows.</p>
 
 ```js
 <template>

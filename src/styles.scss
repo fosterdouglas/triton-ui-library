@@ -863,7 +863,6 @@ button[class|=btn-outline] { //??????
 
 ul.ui-autocomplete {
   background-color: white;
-  box-shadow: 0 0 0 1px $dark;
   @extend .pl-0;
   width: 25% !important;
   margin-left: 5px !important;
@@ -873,18 +872,14 @@ ul.ui-autocomplete {
   list-style: none;
   @extend .py-1;
   @extend .ml-0;
-  @extend .pl-4;
+  @extend .pl-2;
   @extend .cursorDefault;
   left: 0;
 }
 
-.ui-autocomplete li:hover {
-  @extend .bg-light;
-}
-
-.ui-autocomplete li:active {
-  @extend .bg-dark;
-  @extend .text-white;
+.ui-widget input {
+  font-family: 'Montserrat' !important;
+  font-weight: 500 !important;
 }
 
 //
@@ -978,17 +973,21 @@ input, textarea, select {
 .form-control:disabled {
   background-color: $light !important;
   color: $medium !important;
+  border-color: $medium !important;
+  @extend .cursorDisabled;
 }
-.placeholder-dim::placeholder {
+
+.form-control:disabled::placeholder {
   color: $medium !important;
 }
+
 .form-control {
   @extend .rounded-0;
+  border-color: $mediumdark;
   transition: all .1s ease-out;
-  box-shadow: 0 0 0 .5px $mediumdark !important;
 }
 .form-control::placeholder {
-  color: $medium !important;
+  color: $mediumdark;
 }
 
 .form-control.is-valid {
@@ -1076,7 +1075,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 }
 
  option:checked {
-  background-color: $dark !important;
+  background-color: $mediumdark !important;
 }
 
 .editor {
@@ -1095,6 +1094,8 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   //                       GENERAL INPUT                            //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+
 
 .asd__day--enabled:focus {
   outline: none;
@@ -1251,6 +1252,53 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 label {
   margin-bottom: 0 !important;
+}
+
+.custom-select[size]:not([size="1"]) {
+  padding-right: .65em;
+}
+
+select[disabled] > option[selected] {
+  background-color: rgba($medium, .5);
+}
+
+//JQUERY UI STYLES
+
+.ui-widget {
+  font-family: 'Montserrat' !important;
+  font-weight: 500 !important;
+  background-color: white;
+  outline: 0;
+  @extend .rounded-0;
+  @extend .border-mediumdark;
+}
+
+.ui-button:hover, .ui-button:focus, .ui-button:active {
+  background-color: $light;
+  @extend .text-dark;
+}
+
+.ui-menu {
+  margin-top: -1px;
+  @extend .p-2;
+}
+
+.ui-menu-item:not(.ui-state-disabled) .ui-menu-item-wrapper {
+  @extend .pl-3;
+}
+
+.ui-widget-content .ui-state-disabled {
+  @extend .ml-n3;
+  @extend .pl-3;
+}
+
+.ui-widget-content .ui-state-active {
+  border-color: $dark;
+  background-color: $mediumdark;
+}
+
+.ui-widget-content .ui-state-active:active {
+  background-color: $dark;
 }
 
 
