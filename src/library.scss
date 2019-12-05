@@ -184,6 +184,7 @@ div[class^=rsg--preview-] {
   margin: .5em 0em 1em 1em !important;
   padding: 2em !important;
   box-shadow: 0 0.1rem .5rem rgba(0, 0, 0, 0.1) !important;
+  width: 1000px !important;
 }
 
 //REMOVE SUB HEADER
@@ -232,7 +233,7 @@ h3 + div {
 main > section::after {
   @extend .float-right;
   @extend .text-mediumdark;
-  content: "Guide last updated: December 4th, 2019" !important;
+  content: "Guide last updated: December 5th, 2019" !important;
   visibility: visible !important;
   margin-bottom: 2em !important;
 }

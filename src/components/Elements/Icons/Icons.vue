@@ -371,6 +371,18 @@ export default {
 </template>
 ```
 
+<h3>Trade</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconTrade iconHover text-dark"></i>
+    <i class="iconTrade iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
 <h3>User</h3>
 <p>An icon used for functions related to a user that aren't covered by other icons.</p>
 

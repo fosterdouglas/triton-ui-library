@@ -179,6 +179,10 @@ a, a:hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+.alert {
+  @extend .rounded-0;
+}
+
 .alert-dismissible .close {
  visibility: hidden;
  font-size: 1.4rem;
@@ -309,7 +313,13 @@ a, a:hover {
   //                           BUTTONS                              //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+.btn {
+  border: 0px solid transparent;
+}
+
 .btnNavigation {
+  @extend .border;
   @extend .m-2;
   @extend .px-3;
   @extend .rounded-0;
@@ -463,10 +473,10 @@ a.btnFeedback:focus {
   outline: none;
   font-weight: inherit;
   padding: 0;
-  margin-top: -1px !important; //aligns button vertically
   font-size: 75%; //pulled from .badge standard class
   @extend .rounded-0;
   @extend .mx-1;
+  @extend .align-text-bottom;
 }
 
 .btn.btnSmall {
@@ -522,6 +532,7 @@ a.btnFeedback:focus {
 //THIN BUTTON
 
 .btnThin {
+  @extend .border;
   @extend .rounded-0;
   @extend .text-mediumdark;
   @extend .border-mediumdark;
@@ -812,6 +823,14 @@ footer {
   vertical-align: baseline !important;
 }
 
+//TRADE
+.iconTrade {
+  @extend .fal;
+  @extend .fa-exchange;
+  @extend .p-1;
+  color: inherit;
+}
+
 //USER
 .iconUser {
   @extend .fal;
@@ -1010,14 +1029,10 @@ select:not([multiple]) {
 }
 
 .searchClose { //red "clear" button for search field
-	border:1px solid transparent;
 	background-color: transparent;
-	display: inline-block;
 	vertical-align: middle;
   outline: 0;
-  left:0;
-  padding: 0;
-  @extend .ml-n5;
+  //@extend .float-right;
 }
 
 .searchBox:not(:valid) ~ .searchClose {
@@ -1027,26 +1042,26 @@ select:not([multiple]) {
 .searchBox {
   @extend .border-dark;
   @extend .d-inline;
-  @extend .mr-2;
-  @extend .pl-5;
 }
 
 .input-group-prepend i {
+  @extend .text-dark;
   @extend .fa-lg;
 }
 
 .input-group-prepend {
-  position: absolute;
-  margin-top: .5em;
-  @extend .ml-2;
-  z-index: 5;
+  @extend .bg-light;
+  @extend .border;
+  @extend .border-mediumdark;
+  height: 36px;
 }
 
 .input-group-text {
+  @extend .text-dark;
   display: inline-block;
   background-color: unset;
   border: none;
-  margin-top: .1em; //detailed position fix for magnifying glass
+  padding-top: 7px;
 }
 
 .searchBox[type=text]:focus {
@@ -1536,7 +1551,7 @@ img:hover + .imgIcon {
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                            ROW                                 //
+  //                            ROWS                                //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -1575,31 +1590,30 @@ img:hover + .imgIcon {
 .rowItemContent {
   @extend .align-text-top; //add a display inline or inline block here?
   @extend .row;
-  @extend .pl-4;
   height: 20px;
 }
 
 .rowItemPrefix {
   @extend .d-inline;
   @extend .align-middle;
-  @extend .col-1;
-  @extend .pr-0;
-  @extend .pl-0;
-  max-width: 5% !important;
+  @extend .mr-2;
+  @extend .px-4;
+  width: 30px;
   height: 20px;
 }
 
 .rowItemText {
-  @extend .d-inline;
   @extend .col-auto;
-  @extend .pl-0;
   @extend .text-left;
+  @extend .text-truncate;
   height: 20px;
+  white-space: nowrap;
 }
 
 .rowItemSuffix {
   @extend .text-right;
   @extend .d-inline;
+  @extend .align-text-top;
   @extend .col;
   height: 20px;
 }
@@ -1626,6 +1640,18 @@ img:hover + .imgIcon {
   @extend .bg-dark;
   @extend .text-white;
   @extend .pl-3;
+}
+
+.sortableGroup {
+  @extend .mx-auto;
+  @extend .col-5;
+  @extend .border;
+  @extend .border-mediumdark;
+  @extend .p-3;
+  @extend .m-1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 200px;
 }
 
 .rowExpandableContent.card { //for nested row elements, should have a more specific selector

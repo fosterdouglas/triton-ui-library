@@ -126,9 +126,7 @@
         class="btnThin"
         onclick="this.blur();"
         >
-        <i></i>
         <div class="btnText">CONTACT</div>
-        <i></i>
       </b-button>
     </b-col>
   </footer>

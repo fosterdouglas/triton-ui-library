@@ -438,7 +438,7 @@
       onclick="this.blur();"
     >
 
-      <div class="rowItemContent">
+      <div class="rowItemContent text-secondary">
 
         <div class="rowItemPrefix">
           <i class="iconDash"></i>
@@ -463,7 +463,7 @@
       onclick="this.blur();"
     >
 
-      <div class="rowItemContent">
+      <div class="rowItemContent text-confirm">
 
         <div class="rowItemPrefix">
           <i class="iconDash"></i>
@@ -488,7 +488,7 @@
       onclick="this.blur();"
     >
 
-      <div class="rowItemContent">
+      <div class="rowItemContent text-warning">
 
         <div class="rowItemPrefix">
           <i class="iconDash"></i>
@@ -514,12 +514,12 @@
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
 <p>This component function uses the jQuery UI library <a class="text-info underline" href="https://api.jqueryui.com/sortable/" target="_blank">Sortable Widget</a>.
-  For it to function properly, the parent container (typically a DIV) must have the ID "sortable" on it.
+  For it to function properly, the parent container (typically a DIV) must have the proper ID assigned to it.
 </p>
 
 ```js
 <template>
-  <div id="sortable">
+  <div id="moveable">
 
       <b-button
         block
@@ -539,7 +539,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconGrab"></i>
+
           </div>
 
         </div>
@@ -564,7 +564,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconGrab"></i>
+
           </div>
 
         </div>
@@ -589,7 +589,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconGrab"></i>
+
           </div>
 
         </div>
@@ -600,10 +600,11 @@
 </template>
 <script>
 $(function() {
-  $( "#sortable" ).sortable({
+  $( "#moveable" ).sortable({
     cancel: '', //need this to function with b-button
     opacity: .7,
-    placeholder: 'ui-state-highlight' //custom style for placeholder while dragging
+    placeholder: 'ui-state-highlight', //custom style for placeholder while dragging
+    appendTo: "div"
   });
   $( "#sortable" ).disableSelection();
 });
@@ -716,7 +717,7 @@ export default {
         </div>
 
         <div class="rowItemText">
-          <p class="mb-0">So make a decision!</p>
+          <p class="mb-0">So make a good decision!</p>
         </div>
 
         <div class="rowItemSuffix">
@@ -729,6 +730,409 @@ export default {
   </div>
 </template>
 ```
+
+<h3>Sortable
+<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
+</h3>
+<p>For adding, removing, and moving items between two or more distinct categories. Functions can be implemented for drag-and-drop (as in the example), or using icon buttons to move items. This component function uses the jQuery UI library <a class="text-info underline" href="https://api.jqueryui.com/sortable/" target="_blank">Sortable Widget</a>.</p>
+
+```js
+<template>
+  <div class="row">
+    <div id="sortable1" class="sortableGroup connectedSortable">
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 1</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+    </div>
+
+    <div class="col-auto align-self-center">
+      <i class="iconTrade fa-lg"></i>
+    </div>
+
+    <div id="sortable2" class="sortableGroup connectedSortable">
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+        <b-button
+          block
+          class="rowItem rowStandard rowItemHover cursorDefault"
+          variant="none"
+          onclick="this.blur();"
+        >
+
+          <div class="rowItemContent text-secondary">
+
+            <div class="rowItemPrefix">
+              <i class="iconDash"></i>
+            </div>
+
+            <div class="rowItemText">
+              <p>Sortable Item Group 2</p>
+            </div>
+
+            <div class="rowItemSuffix">
+              <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                <i class="iconArrow fa-rotate-180 iconBorderMini"></i>
+              </b-button>
+              <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                <i class="iconRemove iconBorderMini"></i>
+              </b-button>
+            </div>
+
+          </div>
+
+        </b-button>
+
+    </div>
+
+  </div>
+
+</template>
+<script>
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable",
+      cancel: '', //need this to function with b-button
+      opacity: .7,
+      placeholder: 'ui-state-highlight', //custom style for placeholder while dragging
+      scroll: false,
+      appendTo: "div",
+      helper: "clone",
+      tolerance: "pointer"
+    }).disableSelection();
+  } );
+
+export default {
+}
+</script>
+```
+
 
 <h3>Status
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>

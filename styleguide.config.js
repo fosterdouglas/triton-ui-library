@@ -51,7 +51,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.8.8',
+    version: 'v0.9.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
