@@ -81,7 +81,7 @@
   <div>
     <b-badge variant="-">To unsubscribe, please click here.</b-badge>
     <br/>
-    <b-badge variant="primary">UNSUBSCRIBE</b-badge>
+    <b-badge variant="dark">UNSUBSCRIBE</b-badge>
   </div>
 </template>
 ```

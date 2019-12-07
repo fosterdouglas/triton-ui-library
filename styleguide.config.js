@@ -51,7 +51,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.9.0',
+    version: 'v0.9.0.5',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -109,6 +109,11 @@ module.exports = {
 
       {name: 'Tables', sections: [
         {components: 'src/components/Elements/Tables/*.vue'}
+        ],
+      },
+
+      {name: 'Timeline', sections: [
+        {components: 'src/components/Elements/Timeline/*.vue'}
         ],
       }
 

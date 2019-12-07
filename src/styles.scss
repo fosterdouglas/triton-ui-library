@@ -1162,12 +1162,16 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   background-color: unset;
 }
 
+.custom-switch {
+  padding-top: .05em !important;
+}
+
 .custom-switch .custom-control-label::before {
   top: 0 !important;
   width: 2.2rem !important;
   height: 1.3rem !important;
   left: -2.2rem !important;
-  background-color: unset !important;
+  //background-color: unset !important;
   transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
@@ -1193,9 +1197,25 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 .custom-switch .custom-control-label::after {
   transition: transform .2s ease-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+  border-color: $warning !important;
 }
+
+.custom-switch .custom-control-label-disabled::after,
+.custom-switch .custom-control-label-disabled::before {
+  border-color: $mediumdark !important;
+}
+
+.custom-switch .custom-control-label-disabled::after {
+  @extend .bg-light;
+}
+
+.custom-switch .custom-control-label-disabled::before {
+  @extend .bg-light;
+}
+
 .custom-switch .custom-control-label::before {
   border-radius: 1rem !important;
+
 }
 .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: none !important; //remove shadow on toggle click
@@ -1219,31 +1239,36 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 .custom-control-input-disabled.custom-control-input:checked ~ .custom-control-label::before {
   background: $medium !important;
+  @extend .border-mediumdark;
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
+ .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+  background: $confirm;
+  border-color: #36521a !important;
+}
+
+ .custom-switch.custom-control-input-disabled:checked ~ .custom-control-label::before {
+  background: $medium;
+
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important;
-  @extend .border-dark;
-}
-
-.custom-control-input-disabled:checked ~ .custom-control-label::before {
-  @extend .bg-medium;
-  @extend .border-medium;
-}
-.custom-control-input-disabled ~ .custom-control-label::before,
-.custom-control-input-disabled:focus:not(:checked) ~ .custom-control-label::before {
-  @extend .border-medium; //custom toggle border color
-}
-
-.custom-switch .custom-control-label-disabled::after {
-  @extend .bg-light;
-  @extend .border-medium;
 }
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   @extend .bg-white;
   @extend .border;
   @extend .border-white;
+  box-shadow: 0 0 0 1px #36521a;
+}
+
+.custom-switch .custom-control-input-disabled:checked ~ .custom-control-label::after {
+  box-shadow: 0 0 0 1px $mediumdark;
+}
+
+.custom-switch .custom-control-input-disabled:checked ~ .custom-control-label::before {
+  border-color: $mediumdark !important;
 }
 
 //location and size of checkbox
@@ -1710,6 +1735,10 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .mb-0;
   @extend .d-inline-block;
   @extend .text-left;
+}
+
+.ui-sortable-handle {
+  border-right: 3px solid $medium;
 }
 
 

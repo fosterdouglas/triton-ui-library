@@ -112,18 +112,15 @@
 ```js
 <template>
   <div class="styleguidistOnlyStyles">
-    <i id="copied" class="iconCopy iconHover"></i>
+
     <i class="iconCopy iconHover text-dark fas"></i>
-    <b-tooltip target="copied" title="Copied" triggers="click"></b-tooltip>
+    <i v-b-tooltip.click.top="'Tooltip!'" id="copied" class="iconCopy iconHover"></i>
+    <b-tooltip data-toggle="tooltip" target="copied" title="Copied" triggers="focus" ></b-tooltip>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-    }
-  }
 }
 </script>
 ```
