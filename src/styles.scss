@@ -633,6 +633,7 @@ footer {
   @extend .fal;
   @extend .fa-times;
   @extend .p-1;
+  @extend .text-center;
   color: inherit;
 }
 
@@ -669,6 +670,7 @@ footer {
   color: inherit;
 }
 
+//DOWNLOAD
 .iconDownload {
   @extend .fal;
   @extend .fa-arrow-alt-to-bottom;
@@ -688,6 +690,14 @@ footer {
 .iconEdited {
   @extend .fal;
   @extend .fa-pencil-alt;
+  @extend .p-1;
+  color: inherit;
+}
+
+//ELLIPSIS
+.iconEllipsis {
+  @extend .far;
+  @extend .fa-ellipsis-h;
   @extend .p-1;
   color: inherit;
 }
@@ -1917,6 +1927,54 @@ span.edited:hover::before {
 
 .nav-tabs .nav-link:not(.active):hover {
   border-color: transparent;
+}
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                         TIMELINE                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.timeline {
+  @extend .container;
+  @extend .py-2;
+}
+
+.timelineStatus {
+  @extend .col-2;
+}
+
+.timelineStatusIcon {
+  @extend .border;
+  width: 25px;
+  border-radius: 5em;
+}
+
+.timelineStatusText {
+  @extend .ml-2;
+  font-weight: 600;
+}
+
+.timelineDescription {
+  @extend .col-5;
+  @extend .pl-0;
+  margin-top: .15em; //detailed adjustment to align with Status
+}
+
+.timelineDescriptionDate {
+  @extend .mb-2;
+}
+
+.timelinePath {
+  @extend .position-absolute;
+  @extend .mb-n1;
+  margin-left: 0.75em;
+  margin-top: 2.3em;
+  bottom:0;
+  height: -webkit-fill-available;
+  border-right-width: 2px;
+  border-right-style: dashed;
 }
 
 

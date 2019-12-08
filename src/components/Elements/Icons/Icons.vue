@@ -172,6 +172,17 @@ export default {
 </template>
 ```
 
+<h3>Ellipsis</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconEllipsis iconHover text-dark"></i>
+  </div>
+</template>
+```
+
 <h3>Exclamation</h3>
 <p>Non-interactive, an icon used to denote incorrect input or an error.</p>
 
