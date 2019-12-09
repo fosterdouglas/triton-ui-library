@@ -981,6 +981,19 @@ input, textarea, select {
     font-family: 'Montserrat', sans-serif;
 }
 
+//DOB
+
+[type="date"].form-control {
+  padding-top: .5em;
+}
+
+input[type="date"]::-webkit-clear-button {
+ margin-bottom: 2px;
+ -webkit-appearance: none;
+}
+
+//
+
 .form-control:focus {
   border-color: $dark;
 }
@@ -1029,41 +1042,55 @@ input, textarea, select {
   background-position: 97% calc(.375em + .6875rem) !important;
 }
 
-select:not([multiple]) {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-position: 97%; //sets position of custom open arrows
-    background-repeat: no-repeat;
-    padding-right: 1.5em;
-    color: $dark !important;
+//SEARCH
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
-.searchClose { //red "clear" button for search field
-	background-color: transparent;
-	vertical-align: middle;
-  outline: 0;
-  //@extend .float-right;
+input[type="search"]::-webkit-search-cancel-button,
+input[type="date"]::-webkit-clear-button {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23dc3545' d='M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 100% 50% !important;
+  height: 20px;
+  width: 13px;
 }
 
-.searchBox:not(:valid) ~ .searchClose {
-	display: none; //hides "clear" button
+input[type="search"]::-webkit-search-cancel-button:hover,
+input[type="date"]::-webkit-clear-button:hover {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'%3E%3Cpath fill='%23dc3545' d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 100% 50% !important;
+  height: 20px;
+  width: 13px;
 }
 
 .searchBox {
-  @extend .border-dark;
+  @extend .border-mediumdark;
   @extend .d-inline;
+}
+
+.searchBox:focus {
+  @extend .border-secondary;
 }
 
 .input-group-prepend i {
   @extend .text-dark;
   @extend .fa-lg;
+  line-height: .55em;
 }
 
 .input-group-prepend {
   @extend .bg-light;
   @extend .border;
   @extend .border-mediumdark;
-  height: 36px;
+  max-width: 20ch;
+  //height: 36px;
+}
+
+.disabled > .input-group-prepend > .input-group-text,
+.disabled > .input-group-prepend {
+  @extend .text-mediumdark;
+  @extend .border-medium;
 }
 
 .input-group-text {
@@ -1072,6 +1099,7 @@ select:not([multiple]) {
   background-color: unset;
   border: none;
   padding-top: 7px;
+
 }
 
 .searchBox[type=text]:focus {
@@ -1119,6 +1147,14 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   //                       GENERAL INPUT                            //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+.ql-snow {
+  @extend .border-mediumdark;
+}
+
+.ql-toolbar.ql-snow:focus {
+  @extend .border-dark;
+}
 
 ::-webkit-inner-spin-button,
 ::-webkit-calendar-picker-indicator {
@@ -1227,6 +1263,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   border-radius: 1rem !important;
 
 }
+
 .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: none !important; //remove shadow on toggle click
 }
@@ -1239,8 +1276,9 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   pointer-events: none;
 }
 
-.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
-  background-color: $dark;
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before,
+.custom-control-input:not(:disabled):checked:active ~ .custom-control-label::before {
+  background-color: $light;
 }
 
 .custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
@@ -1259,10 +1297,13 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
  .custom-switch.custom-control-input-disabled:checked ~ .custom-control-label::before {
   background: $medium;
-
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background: $dark !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important;
 }
 
@@ -1359,6 +1400,19 @@ select[disabled] > option[selected] {
 
 .ui-widget-content .ui-state-active:active {
   background-color: $dark;
+}
+
+.ui-button .ui-icon {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%233B3B3B' d='M287.968 160H32.038c-28.425 0-42.767 34.488-22.627 54.627l127.962 128c12.496 12.496 32.758 12.497 45.255 0l127.968-128C330.695 194.528 316.45 160 287.968 160zM160 320L32 192h256L160 320z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 50% 50% !important;
+  top: 2px;
+}
+
+.ui-button:hover > .ui-icon,
+.ui-button:focus > .ui-icon {
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%233B3B3B' d='M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z'%3E%3C/path%3E%3C/svg%3E");
+  background-position: 50% 50% !important;
+  top: 2px;
 }
 
 

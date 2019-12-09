@@ -11,8 +11,6 @@
     <hr/>
       <ul>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Add a sorting function component (for inclusion/exclusion)</li>
-        <li class="alertListItem">- Solve text field editor issue (user adding/editing JSON)</li>
       </ul>
   </b-alert>
 
@@ -142,28 +140,28 @@ export default {
 <template>
   <div>
 
-    <div class="custom-control custom-switch d-inline">
+    <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch0" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch0">
         <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline">
+    <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch1" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch1">
         <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline">
+    <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch2" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch2">
         <b-badge class="supportText pl-2" variant="-">Users</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline">
+    <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch3" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch3">
         <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
@@ -245,21 +243,29 @@ export default {
 <p>[Needs desciption...]</p>
 
 ```js
+
+
+<template>
+  <div>
+    <div class="custom-control custom-switch d-inline-block">
+      <input type="checkbox" class="custom-control-input" id="customSwitch4" />
+      <label class="custom-control-label cursorPointer" for="customSwitch4"></label>
+    </div>
+
+    <div class="custom-control custom-switch d-inline-block">
+      <input type="checkbox" class="custom-control-input" id="customSwitch5"/>
+      <label class="custom-control-label cursorPointer" for="customSwitch5"></label>
+    </div>
+  </div>
+</template>
+<script>
 $(function () {
   $('#customSwitch4').prop('checked', true)
 });
+export default {
 
-
-  <div class="custom-control custom-switch d-inline mr-1">
-    <input type="checkbox" class="custom-control-input" id="customSwitch4" />
-    <label class="custom-control-label cursorPointer" for="customSwitch4"></label>
-  </div>
-
-  <div class="custom-control custom-switch d-inline mr-1">
-    <input type="checkbox" class="custom-control-input" id="customSwitch5"/>
-    <label class="custom-control-label cursorPointer" for="customSwitch5"></label>
-  </div>
-
+}
+</script>
 ```
 
 </docs>

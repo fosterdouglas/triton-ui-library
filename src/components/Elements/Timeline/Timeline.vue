@@ -19,7 +19,7 @@
         </div>
         <div class="timelineDescription">
           <p class="timelineDescriptionDate">December 8th 2019 - 12:22:19</p>
-          <p>{{ SubmittedText }}</p>
+          <p>{{ Submitted }}</p>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="timelineDescription">
           <p class="timelineDescriptionDate">December 9th 2019 - 12:22:19</p>
-          <p>{{ InProgressText }}</p>
+          <p>{{ InProgress }}</p>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="timelineDescription">
           <p class="timelineDescriptionDate">December 12th 2019 - 12:22:19</p>
-          <p>{{ ErrorsText }}</p>
+          <p>{{ Errors }}</p>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="timelineDescription">
           <p class="timelineDescriptionDate">December 15th 2019 - 12:22:19</p>
-          <p>{{ CompletedText }}</p>
+          <p>{{ Completed }}</p>
         </div>
       </div>
     </div>
@@ -74,10 +74,10 @@
   export default {
     data() {
       return {
-        SubmittedText: 'The application has been successfully completed, but has not been assigned to an agent.',
-        InProgressText: 'An agent has been assigned, but there is no result available as of yet.',
-        ErrorsText: 'There has been an error with the application. Please contact us at help@tritoncanada.ca with questions.',
-        CompletedText: 'The check has been completed. A copy of the results can be found somewhere probably.'
+        Submitted: 'The application has been successfully completed, but has not been assigned to an agent.',
+        InProgress: 'An agent has been assigned, but there is no result available as of yet.',
+        Errors: 'There has been an error with the application. Please contact us at help@tritoncanada.ca with questions.',
+        Completed: 'The check has been completed. A copy of the results can be found somewhere probably.'
       }
     }
 
@@ -104,7 +104,7 @@
         </div>
         <div class="timelineDescription text-dark">
           <p class="timelineDescriptionDate">December 8th - 12:22:19</p>
-          <p>{{ SubmittedText }}</p>
+          <p>{{ Submitted }}</p>
         </div>
       </div>
     </div>
@@ -119,7 +119,7 @@
         </div>
         <div class="timelineDescription text-medium">
           <p class="timelineDescriptionDate">-</p>
-          <p>{{ InProgressText }}</p>
+          <p>{{ InProgress }}</p>
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
         </div>
         <div class="timelineDescription text-medium">
           <p class="timelineDescriptionDate">-</p>
-          <p>{{ CompletedText }}</p>
+          <p>{{ Completed }}</p>
         </div>
       </div>
     </div>
@@ -144,10 +144,10 @@
   export default {
     data() {
       return {
-        SubmittedText: 'The application has been successfully completed, but has not been assigned to an agent.',
-        InProgressText: 'An agent has been assigned, but there is no result available as of yet.',
-        ErrorsText: 'There has been an error with the application. Please contact us at help@tritoncanada.ca with questions.',
-        CompletedText: 'The check has been completed. A copy of the results can be found somewhere probably.'
+        Submitted: 'The application has been successfully completed, but has not been assigned to an agent.',
+        InProgress: 'An agent has been assigned, but there is no result available as of yet.',
+        Errors: 'There has been an error with the application. Please contact us at help@tritoncanada.ca with questions.',
+        Completed: 'The check has been completed. A copy of the results can be found somewhere probably.'
       }
     }
 

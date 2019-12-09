@@ -31,7 +31,9 @@
       </b-input-group>
     </div>
     <div class="col">
-      <b-form-input class="form-control" type="text" placeholder="Disabled Text Field" disabled></b-form-input>
+      <b-input-group class="disabled" prepend="Text Field">
+        <b-form-input class="form-control" type="text" placeholder="Disabled Text Field" disabled></b-form-input>
+      </b-input-group>
     </div>
   </div>
 
@@ -56,11 +58,9 @@
 
        <b-input-group>
           <template v-slot:prepend>
-            <b-input-group-text><i class="iconSearch text-dark"></i></b-input-group-text>
+            <b-input-group-text><i class="iconSearch far text-dark"></i></b-input-group-text>
           </template>
-          <b-form-input type="text" name="focus" required class="searchBox form-control" placeholder="Search for Users, Clients, or Agents . . .">
-             <b-button onclick="this.blur();" variant="-" class="searchClose cursorDefault text-warning" type="reset">
-             </b-button>
+          <b-form-input type="search" name="focus" required class="searchBox form-control" placeholder="Search for Users, Clients, or Agents . . .">
           </b-form-input>
         </b-input-group>
 
@@ -83,11 +83,10 @@ export default {
 <template>
 
   <div class="row">
-    <div class="col" title="Text Field - Area">
-      <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Field - Area" rows="3" >
-      </b-form-textarea>
+    <div class="col">
+        <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Field - Area" rows="3" ></b-form-textarea>
     </div>
-    <div class="col" title="Text Field - Area">
+    <div class="col">
       <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Field - Area" rows="3" disabled>
       </b-form-textarea>
     </div>
@@ -109,19 +108,25 @@ export default {
 
 ```js
 <template>
-  <div class="col-6 ml-0 pl-0">
-
-    <div id="editor" class="editor mt-1 border-mediumdark rounded-0"></div>
-
+  <div>
+    <div>
+      <quill class="quill col-6 pl-0 d-inline-block border-mediumdark" style="height:160px;" v-model="content" :config="config"></quill>
+    </div>
   </div>
 </template>
 <script>
-var toolbarOptions = ['bold', 'italic', 'underline', 'code-block', { 'size': ['small', false, 'large', 'huge'] }];
-var quill = new Quill('#editor', {
-  modules: { toolbar: toolbarOptions },
-  theme: 'snow'
-});
-  export default {
+export default {
+    data() {
+      return {
+          config: {
+              placeholder: 'Compose an epic...',
+              options: 'code-block',
+              modules: {
+                toolbar: [['bold', 'italic', 'code-block'], [{ size: [ false, 'large' ] }]]
+              },
+          },
+      }
+  }
 }
 </script>
 ```
