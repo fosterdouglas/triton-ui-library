@@ -483,9 +483,15 @@ a.btnFeedback:focus {
   border: 0px solid transparent !important; // ?????
 }
 
-.btn-outline-primaryfade:hover {
+.btn-outline-primaryfade:hover,
+.btn-outline-primaryfade:active {
   background-color: rgba($dark, .1) !important;
   border-color: $dark;
+}
+
+.show > .btn-outline-primaryfade.dropdown-toggle {
+  @extend .bg-dark;
+  @extend .text-white;
 }
 
 .iconBorderMini {
@@ -706,6 +712,14 @@ footer {
 .iconExclamation {
   @extend .fas;
   @extend .fa-exclamation-square;
+  @extend .p-1;
+  color: inherit;
+}
+
+//FILTER
+.iconFilter {
+  @extend .fal;
+  @extend .fa-filter;
   @extend .p-1;
   color: inherit;
 }
@@ -1148,6 +1162,24 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+//DROPDOWN
+.dropdownGroup .dropdown-toggle {
+  @extend .btnNavigation;
+  @extend .btnStandard;
+}
+
+.dropdownGroup.dropdown > .dropdown-menu {
+  margin-top: 0;
+}
+
+.b-dropdown-form:focus {
+  outline:0 !important;
+}
+
+.show > .dropdown-toggle:hover {
+  color: white !important;
+}
+
 .ql-snow {
   @extend .border-mediumdark;
 }
@@ -1210,6 +1242,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 .custom-switch {
   padding-top: .05em !important;
+  @extend .my-1;
 }
 
 .custom-switch .custom-control-label::before {

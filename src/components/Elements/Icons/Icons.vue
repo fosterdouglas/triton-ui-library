@@ -195,6 +195,19 @@ export default {
 </template>
 ```
 
+<h3>Filter</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconFilter iconHover text-dark"></i>
+    <i class="iconFilter iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
+
 <h3>Folder (Add)</h3>
 <p>...</p>
 

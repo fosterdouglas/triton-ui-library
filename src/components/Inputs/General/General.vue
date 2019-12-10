@@ -132,8 +132,61 @@ export default {
 </script>
 ```
 
+<h3>Filter Dropdown</h3>
+<p></p>
 
-<h3>Filtering</h3>
+```js
+<template>
+  <div>
+    <b-dropdown  variant="outline-primaryfade" class="dropdownGroup">
+      <template v-slot:button-content>
+        <span>Filter</span>
+        <i class="iconFilter btnIconRight"></i>
+      </template>
+      <b-dropdown-form>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch10" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch10">
+            <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch11" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch11">
+            <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch12" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch12">
+            <b-badge class="supportText pl-2" variant="-">Users</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch13" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch13">
+            <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
+          </label>
+        </div>
+      </b-dropdown-form>
+    </b-dropdown>
+  </div>
+</template>
+
+<script>
+  export default {
+    methods: {
+      onClick() {
+        // Close the menu and (by passing true) return focus to the toggle button
+        this.$refs.dropdown.hide(true)
+      }
+    }
+  }
+</script>
+```
+
+
+<h3>Filter Toggles</h3>
 <p>Typically attached to a Search Box, this group of components is used to filter an attached data set. Uses Toggles and Support Text, and will support a <span class="text-info">~clear filters button~</span>.</p>
 
 ```js
