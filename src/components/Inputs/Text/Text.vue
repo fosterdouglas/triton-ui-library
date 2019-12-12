@@ -24,18 +24,18 @@
 ```js
 <template>
 
-  <div class="row">
-    <div class="col">
+  <b-row>
+    <b-col>
       <b-input-group prepend="Text Field">
         <b-form-input class="form-control" type="text" placeholder="Text Field"></b-form-input>
       </b-input-group>
-    </div>
-    <div class="col">
+    </b-col>
+    <b-col>
       <b-input-group class="disabled" prepend="Text Field">
         <b-form-input class="form-control" type="text" placeholder="Disabled Text Field" disabled></b-form-input>
       </b-input-group>
-    </div>
-  </div>
+    </b-col>
+  </b-row>
 
 </template>
 <script>
@@ -84,10 +84,10 @@ export default {
 
   <div class="row">
     <div class="col">
-        <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Field - Area" rows="3" ></b-form-textarea>
+        <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Area" rows="3" ></b-form-textarea>
     </div>
     <div class="col">
-      <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Field - Area" rows="3" disabled>
+      <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Area" rows="3" disabled>
       </b-form-textarea>
     </div>
   </div>

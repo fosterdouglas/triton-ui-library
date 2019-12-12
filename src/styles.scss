@@ -89,11 +89,12 @@ h2 {
 }
 
 h4 {
+  @extend .text-left;
   //text-transform: uppercase;
 }
 
 h5 {
-
+  @extend .text-left;
 }
 
 h6 {
@@ -585,7 +586,7 @@ footer {
   @extend .border-top;
   @extend .text-mediumdark;
   @extend .mx-0;
-  font-size: 90%;
+  bottom:0;
 }
 
 .footerItem {
@@ -1087,6 +1088,12 @@ input[type="date"]::-webkit-clear-button:hover {
   @extend .border-secondary;
 }
 
+.input-group {
+  @extend .mt-1;
+  @extend .mx-3;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
 .input-group-prepend i {
   @extend .text-dark;
   @extend .fa-lg;
@@ -1094,11 +1101,15 @@ input[type="date"]::-webkit-clear-button:hover {
 }
 
 .input-group-prepend {
-  @extend .bg-light;
+  @extend .bg-lightest;
   @extend .border;
-  @extend .border-mediumdark;
+  min-width: 15ch;
   max-width: 20ch;
-  //height: 36px;
+}
+
+.input-group-append button {
+  @extend .p-0;
+  @extend .mr-n5;
 }
 
 .disabled > .input-group-prepend > .input-group-text,
@@ -1109,11 +1120,26 @@ input[type="date"]::-webkit-clear-button:hover {
 
 .input-group-text {
   @extend .text-dark;
-  display: inline-block;
   background-color: unset;
   border: none;
   padding-top: 7px;
+}
 
+.input-group-prepend > .input-group-text {
+  @extend .ml-auto;
+}
+
+.input-group:hover > .input-group-prepend {
+  @extend .bg-light;
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.input-group:hover > .form-control {
+  border-color: rgba($dark, .8);
+}
+
+.input-group > .form-control:focus  {
+  border-color: $dark;
 }
 
 .searchBox[type=text]:focus {
@@ -1170,13 +1196,26 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 .dropdownGroup.dropdown > .dropdown-menu {
   margin-top: 0;
+  @extend .border-dark;
+  box-shadow: 0 0 0 1px $dark;
+  margin-left: 1px;
+}
+
+.dropdownGroup.show > .dropdown-toggle .badge {
+  @extend .bg-white;
+  @extend .text-dark;
+}
+
+.dropdownGroup > .dropdown-toggle .badge {
+  top:-2px;
+  @extend .mr-0;
 }
 
 .b-dropdown-form:focus {
   outline:0 !important;
 }
 
-.show > .dropdown-toggle:hover {
+.dropdownGroup.show > .dropdown-toggle:hover {
   color: white !important;
 }
 
@@ -1225,6 +1264,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
   font-weight: 500;
   @extend .mr-2;
   @extend .unselectableText;
+  @extend .rounded-0;
 }
 
 .nav-link > .badge {
@@ -1242,7 +1282,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 
 .custom-switch {
   padding-top: .05em !important;
-  @extend .my-1;
+  //@extend .my-1;
 }
 
 .custom-switch .custom-control-label::before {
@@ -1405,6 +1445,20 @@ select[disabled] > option[selected] {
   outline: 0;
   @extend .rounded-0;
   @extend .border-mediumdark;
+
+}
+
+.ui-selectmenu-button{
+  flex: 1 1 auto;
+  width: 1% !important;
+}
+
+.ui-selectmenu-text {
+  margin-top:2px;
+}
+
+.ui-button {
+  margin-right:0;
 }
 
 .ui-button:hover, .ui-button:focus, .ui-button:active {
@@ -1437,15 +1491,15 @@ select[disabled] > option[selected] {
 
 .ui-button .ui-icon {
   background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%233B3B3B' d='M287.968 160H32.038c-28.425 0-42.767 34.488-22.627 54.627l127.962 128c12.496 12.496 32.758 12.497 45.255 0l127.968-128C330.695 194.528 316.45 160 287.968 160zM160 320L32 192h256L160 320z'%3E%3C/path%3E%3C/svg%3E");
-  background-position: 50% 50% !important;
-  top: 2px;
+  background-position: 100% 50% !important;
+  top: 3px;
 }
 
 .ui-button:hover > .ui-icon,
 .ui-button:focus > .ui-icon {
   background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%233B3B3B' d='M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z'%3E%3C/path%3E%3C/svg%3E");
-  background-position: 50% 50% !important;
-  top: 2px;
+  background-position: 100% 50% !important;
+  top: 3px;
 }
 
 
@@ -1762,6 +1816,9 @@ img:hover + .imgIcon {
   @extend .bg-dark;
   @extend .text-white;
   @extend .pl-3;
+  @extend .mt-3;
+  @extend .mb-2;
+  margin-left: 0px !important;
 }
 
 .sortableGroup {
@@ -1854,6 +1911,10 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 .tab-content > .card-body {
   @extend .pt-2;
   @extend .px-0;
+  @extend .mt-3;
+  //margin-right: 275px;
+  min-width: 875px;
+  max-width: 1100px;
 }
 
 .sideNav.card ul.card-header {
@@ -1865,9 +1926,9 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 .sideNav.card .tab-content {
-  @extend .ml-4;
+  @extend .mx-5;
   @extend .pl-2;
-  @extend .mt-5;
+  @extend .mt-4;
   min-width: 300px;
 }
 
@@ -1922,7 +1983,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .ml-4;
 }
 
-.sideNav span {
+span.sideNav  {
   @extend .text-primary;
 }
 
@@ -1977,6 +2038,10 @@ span.edited:hover::before {
   //                             TABS                               //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
+
+.tab {
+  @extend .mt-2;
+}
 
 .tabsNav.card {
   @extend .d-block;
@@ -2091,16 +2156,29 @@ span.edited:hover::before {
   min-height: 68px;
 }
 
+.navbar-collapse {
+  @extend .ml-1;
+}
+
 .navbar-nav .nav-link {
   @extend .px-2;
 }
 
+.navbar-brand {
+  width: 275px;
+  @extend .mr-0;
+}
+
 .navbar-brand img {
   height: 30px;
+  @extend .ml-auto;
+  @extend .mr-auto;
+  @extend .d-block;
 }
 
 .navbar-nav > .nav-item {
   @extend .text-white;
+  @extend .mx-1;
 }
 
 .dropdown-menu {
@@ -2108,6 +2186,7 @@ span.edited:hover::before {
   margin-top: .9rem;
   @extend .text-primary;
   @extend .border-primary;
+  box-shadow: 0 0 0 1px $primary;
 }
 
 .dropdown-item {

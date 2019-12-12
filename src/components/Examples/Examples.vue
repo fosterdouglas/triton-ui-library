@@ -1,6 +1,6 @@
 <docs>
 
-<h3>Default Page Layout</h3>
+<h3>Kitchen Sink Showcase</h3>
 
 ```js
 <template>
@@ -44,74 +44,70 @@
 
 
   <div>
-
     <b-card class="sideNav" no-body>
-
       <b-breadcrumb class="breadcrumbTop" :items="items"></b-breadcrumb>
-
       <b-tabs pills card vertical>
-
         <b-tab disabled>
           <template v-slot:title><span>General Settings</span></template>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Client Details</span></template>
-          <b-card-text>Client Details</b-card-text>
+          <b-button
+            block
+            class="rowItem rowStandard rowItemHover cursorDefault"
+            variant="none"
+            onclick="this.blur();"
+          >
+            <div class="rowItemContent">
+              <div class="rowItemPrefix">
+                <i class="iconDash"></i>
+              </div>
+              <div class="rowItemText">
+                <p>Here is an example of the standard row element.</p>
+              </div>
+              <div class="rowItemSuffix">
+              </div>
+            </div>
+          </b-button>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>General Settings</span></template>
           <b-card-text>General Settings</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Reports & Invoicing</span></template>
           <b-card-text>Reports & Invoicing</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Transactions</span></template>
           <b-card-text>Transactions</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Packages</span></template>
           <b-card-text>Packages</b-card-text>
         </b-tab>
-
         <b-tab disabled>
           <template v-slot:title><span>Override Groups</span></template>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Services</span></template>
           <b-card-text>Services</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Content</span></template>
           <b-card-text>Content</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Email</span></template>
           <b-card-text>Email</b-card-text>
         </b-tab>
-
         <b-tab>
           <template v-slot:title><span>Other</span></template>
           <b-card-text>Other</b-card-text>
         </b-tab>
-
       </b-tabs>
-
         <b-breadcrumb class="breadcrumbBottom" :items="items"></b-breadcrumb>
-
     </b-card>
-
-
-
   </div>
 
 

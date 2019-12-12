@@ -140,8 +140,7 @@ export default {
   <div>
     <b-dropdown  variant="outline-primaryfade" class="dropdownGroup">
       <template v-slot:button-content>
-        <span>Filter</span>
-        <i class="iconFilter btnIconRight"></i>
+        <i class="iconFilter"></i>
       </template>
       <b-dropdown-form>
         <div class="custom-control custom-switch d-inline-block">
@@ -165,6 +164,38 @@ export default {
         <div class="custom-control custom-switch d-inline-block">
           <input id="customSwitch13" class="custom-control-input" type="checkbox" />
           <label class="custom-control-label cursorPointer" for="customSwitch13">
+            <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
+          </label>
+        </div>
+      </b-dropdown-form>
+    </b-dropdown>
+    <b-dropdown  variant="outline-primaryfade" class="dropdownGroup">
+      <template v-slot:button-content>
+        <i class="iconFilter"></i>
+        <b-badge variant="dark" class="btnIconRight">+3</b-badge>
+      </template>
+      <b-dropdown-form>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch14" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch14">
+            <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch15" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch15">
+            <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch16" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch16">
+            <b-badge class="supportText pl-2" variant="-">Users</b-badge>
+          </label>
+        </div>
+        <div class="custom-control custom-switch d-inline-block">
+          <input id="customSwitch17" class="custom-control-input" type="checkbox" />
+          <label class="custom-control-label cursorPointer" for="customSwitch17">
             <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
           </label>
         </div>
@@ -236,7 +267,7 @@ export default {
 ```js
 <template>
   <div>
-    <select name="salutation" id="choose">
+    <select name="salutation" id="chooser">
       <option disabled selected>Choose One...</option>
       <option>Pink</option>
       <option>Teal</option>
@@ -249,7 +280,7 @@ export default {
 
 <script>
   $( function() {
-    $( "#choose" ).selectmenu();
+    $( "#chooser" ).selectmenu();
   } );
   export default {
 }

@@ -16,6 +16,28 @@ div.styleguidistOnlyStyles > i {
   @extend .fa-lg;
 }
 
+[data-preview="KitchenSinkShowcase"] {
+  //background-color: pink !important;
+  width: 100vw !important;
+  border: 0 !important;
+  padding: 0 0 0 0 !important;
+  //border-bottom: 2px solid $medium !important;
+  margin: -29px -50px 0px -64px !important;
+}
+
+[data-preview="KitchenSinkShowcase-example-1"] {
+  margin-bottom: -300px !important;
+}
+
+[data-testid="KitchenSinkShowcase-examples"] div[class^=rsg--spacing-],
+[data-testid="KitchenSinkShowcase-examples"] div[class^=rsg--controls-] {
+  display: none !important;
+}
+
+#kitchen-sink-showcase {
+  display: none !important;
+}
+
 .sideNav.card.styleguidistOnlyStyles .tab-content {
   @extend .border;
   @extend .border-medium;
@@ -143,7 +165,8 @@ a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] 
   //border-right: 3px solid rgba($medium, .5) !important;
 }
 
-li > a[href="/#/Design%20Reference%20Files"] {
+li > a[href="/#/Design%20Reference%20Files"],
+li > a[href="/#/Kitchen%20Sink%20Showcase"] {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -180,7 +203,7 @@ footer[class^=rsg--footer-] {
 }
 
 // BORDER STYLING
-div[class^=rsg--preview-] {
+div[class^=rsg--preview-]:not([data-preview="KitchenSinkShowcase"]) {
   margin: .5em 0em 1em 1em !important;
   padding: 2em !important;
   box-shadow: 0 0.1rem .5rem rgba(0, 0, 0, 0.1) !important;
@@ -233,7 +256,7 @@ h3 + div {
 main > section::after {
   @extend .float-right;
   @extend .text-mediumdark;
-  content: "Guide last updated: December 10th, 2019" !important;
+  content: "Guide last updated: December 12th, 2019" !important;
   visibility: visible !important;
   margin-bottom: 2em !important;
 }

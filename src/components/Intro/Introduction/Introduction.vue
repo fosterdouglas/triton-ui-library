@@ -120,6 +120,19 @@
       </b-tr>
     </b-tbody>
   </b-table-simple>
+
+  <b-button
+    :pressed="false"
+    variant="outline-primaryfade"
+    class="btnNavigation btnStandard"
+    onclick="this.blur();"
+    href="../../#/Kitchen%20Sink%20Showcase"
+    >
+      <i></i>
+      <div class="btnText">Kitchen Sink Showcase</div>
+      <i class="iconChevron btnIconRight"></i>
+  </b-button>
+
   </div>
 
   <h3>Responsive</h3>
@@ -171,7 +184,7 @@
   <div class="pr-4 pl-4 mb-4 text-justify">
   <p class="mb-3">
     This tool is currently in development.<br/>
-    <strong class="text-dark">v0.9.2.5</strong> - last updated on December 10th 2019.<br/><br/>
+    <strong class="text-dark">v0.9.3</strong> - last updated on December 12th 2019.<br/><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
     <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
   </p>

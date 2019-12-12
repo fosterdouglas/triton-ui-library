@@ -51,7 +51,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.9.2.5',
+    version: 'v0.9.3',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -80,6 +80,12 @@ module.exports = {
 
 		{name: 'Design Reference Files', sections: [
       {components: 'src/components/Intro/DesignReference/*.vue'}
+      ],
+      sectionDepth: 0
+    },
+
+		{name: 'Kitchen Sink Showcase', sections: [
+      {components: 'src/components/Intro/KitchenSinkShowcase/*.vue'}
       ],
       sectionDepth: 0
     },
