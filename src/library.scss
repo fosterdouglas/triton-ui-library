@@ -25,10 +25,6 @@ div.styleguidistOnlyStyles > i {
   margin: -29px -50px 0px -64px !important;
 }
 
-[data-preview="KitchenSinkShowcase-example-1"] {
-  margin-bottom: -300px !important;
-}
-
 [data-testid="KitchenSinkShowcase-examples"] div[class^=rsg--spacing-],
 [data-testid="KitchenSinkShowcase-examples"] div[class^=rsg--controls-] {
   display: none !important;
@@ -256,7 +252,7 @@ h3 + div {
 main > section::after {
   @extend .float-right;
   @extend .text-mediumdark;
-  content: "Guide last updated: December 12th, 2019" !important;
+  content: "Guide last updated: December 24th, 2019" !important;
   visibility: visible !important;
   margin-bottom: 2em !important;
 }

@@ -23,7 +23,8 @@
     "jquery": "^3.4.1",
     "vue": "^2.6.10",
     "vue-airbnb-style-datepicker": "^2.7.1",
-    "vue-quill": "^1.5.1"
+    "vue-quill": "^1.5.1",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",

@@ -7,6 +7,8 @@ import 'vue-airbnb-style-datepicker/dist/vue-airbnb-style-datepicker.min.css'
 
 import VueQuill from 'vue-quill'
 
+import VueTheMask from 'vue-the-mask'
+
 import './styles.scss'
 
 const datepickerOptions = {
@@ -24,4 +26,5 @@ const datepickerOptions = {
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueQuill)
+Vue.use(VueTheMask)
 Vue.use(AirbnbStyleDatepicker, datepickerOptions)

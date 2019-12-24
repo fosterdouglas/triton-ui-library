@@ -178,25 +178,25 @@ export default {
         <div class="custom-control custom-switch d-inline-block">
           <input id="customSwitch14" class="custom-control-input" type="checkbox" />
           <label class="custom-control-label cursorPointer" for="customSwitch14">
-            <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
+            <b-badge class="supportText" variant="-">Clients</b-badge>
           </label>
         </div>
         <div class="custom-control custom-switch d-inline-block">
           <input id="customSwitch15" class="custom-control-input" type="checkbox" />
           <label class="custom-control-label cursorPointer" for="customSwitch15">
-            <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
+            <b-badge class="supportText" variant="-">Agents</b-badge>
           </label>
         </div>
         <div class="custom-control custom-switch d-inline-block">
           <input id="customSwitch16" class="custom-control-input" type="checkbox" />
           <label class="custom-control-label cursorPointer" for="customSwitch16">
-            <b-badge class="supportText pl-2" variant="-">Users</b-badge>
+            <b-badge class="supportText" variant="-">Users</b-badge>
           </label>
         </div>
         <div class="custom-control custom-switch d-inline-block">
           <input id="customSwitch17" class="custom-control-input" type="checkbox" />
           <label class="custom-control-label cursorPointer" for="customSwitch17">
-            <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
+            <b-badge class="supportText" variant="-">Deactivated Users</b-badge>
           </label>
         </div>
       </b-dropdown-form>
@@ -227,28 +227,28 @@ export default {
     <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch0" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch0">
-        <b-badge class="supportText pl-2" variant="-">Clients</b-badge>
+        <b-badge class="supportText" variant="-">Clients</b-badge>
       </label>
     </div>
 
     <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch1" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch1">
-        <b-badge class="supportText pl-2" variant="-">Agents</b-badge>
+        <b-badge class="supportText" variant="-">Agents</b-badge>
       </label>
     </div>
 
     <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch2" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch2">
-        <b-badge class="supportText pl-2" variant="-">Users</b-badge>
+        <b-badge class="supportText" variant="-">Users</b-badge>
       </label>
     </div>
 
     <div class="custom-control custom-switch d-inline-block">
       <input id="customSwitch3" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch3">
-        <b-badge class="supportText pl-2" variant="-">Deactivated Users</b-badge>
+        <b-badge class="supportText" variant="-">Deactivated Users</b-badge>
       </label>
     </div>
 
@@ -261,20 +261,26 @@ export default {
 </script>
 ```
 
-<h3>Select</h3>
+<h3>Select Dropdown</h3>
 <p></p>
 
 ```js
 <template>
   <div>
-    <select name="salutation" id="chooser">
-      <option disabled selected>Choose One...</option>
-      <option>Pink</option>
-      <option>Teal</option>
-      <option>Orange</option>
-      <option>Black</option>
-      <option>Banana</option>
-    </select>
+    <b-row>
+      <b-col cols="6">
+        <b-input-group>
+          <select name="colors" id="chooser">
+            <option disabled selected>Choose One...</option>
+            <option>Pink</option>
+            <option>Teal</option>
+            <option>Orange</option>
+            <option>Black</option>
+            <option>Banana</option>
+          </select>
+        </b-input-group>
+      </b-col>
+    </b-row>
   </div>
 </template>
 

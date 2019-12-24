@@ -11,8 +11,8 @@
 </template>
 ```
 
-<h3>Sections</h3>
-<p>Generally found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>```.</p>
+<h3>Support Title</h3>
+<p>Sometimes found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>```.</p>
 
 ```jsx
 <template>
@@ -22,15 +22,27 @@
 </template>
 ```
 
-<h3>Sub-Sections</h3>
-<p>Only used occasionally, sub-section headers are for complex pages that require additional organization or labeling that can't be achieved via other means. Uses ```<h5>```.</p>
+<h3>Sections</h3>
+<p>Section headers are for complex pages that require additional organization or labeling that can't be achieved via other means. Uses a slightly modified version of <a href="../../#/Elements/Rows">Title Row Component</a>.</p>
 
 ```jsx
 <template>
   <div>
-    <h5>Agent Client Exclusions<hr/></h5>
 
-    <h5>Online Forms Settings<hr/></h5>
+    <b-button
+      block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+      <div class="rowItemContent">
+        <div class="rowItemText">
+          <p class="mb-0">Address</p>
+        </div>
+        <div class="rowItemSuffix">
+        </div>
+      </div>
+    </b-button>
 
   </div>
 </template>

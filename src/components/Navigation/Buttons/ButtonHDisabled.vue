@@ -30,8 +30,6 @@
       <div class="btnText">BUTTON LOADING DISABLED</div>
     </b-button>
 
-    <br/>
-
     <div id="PopoverDisabled" class="disabledButtonContainer">
       <b-button
         :pressed="null"

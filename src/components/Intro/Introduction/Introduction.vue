@@ -182,13 +182,22 @@
 
   <h3>Versions & Github</h3>
   <div class="pr-4 pl-4 mb-4 text-justify">
-  <p class="mb-3">
-    This tool is currently in development.<br/>
-    <strong class="text-dark">v0.9.3</strong> - last updated on December 12th 2019.<br/><br/>
-    <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
-    <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
-  </p>
+    <p class="mb-3">
+      This tool is currently in development.<br/>
+      <strong class="text-dark">v0.9.5</strong> - last updated on December 24th 2019.<br/><br/>
+      <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
+      <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
+    </p>
+  </div>
 
+  <h3>List of known issues</h3>
+  <div class="pr-4 pl-4 mb-4 text-justify">
+    <p class="mb-3">
+      <ul>
+        <li>Checkbox check mark position doesn't recalculate when content above or below it on the page is shifted (most noticable when page content is shifted by a large amount).</li>
+        <li>All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected.</li>
+      </ul>
+    </p>
   </div>
 
 <br/>

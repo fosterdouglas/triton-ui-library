@@ -34,17 +34,16 @@
 
       <div class="rowItemContent">
 
-        <div class="rowItemPrefix">
-          <i class="iconDash"></i>
-        </div>
+          <div class="rowItemPrefix">
+            <i class="iconDash"></i>
+          </div>
 
-        <div class="rowItemText">
-          <p>Here is an example of the standard row element.</p>
-        </div>
+          <div class="rowItemText">
+            <p>Here is an example of the standard row element.</p>
+          </div>
 
-        <div class="rowItemSuffix">
-
-        </div>
+          <div class="rowItemSuffix">
+          </div>
 
       </div>
 
@@ -138,6 +137,7 @@
       </div>
 
     </b-button>
+
   </div>
 </template>
 ```
@@ -249,6 +249,33 @@
         <div class="rowItemPrefix">
           <div class="custom-control custom-switch">
             <input checked disabled type="checkbox" class="custom-control-input custom-control-input-disabled" id="customSwitch2" />
+            <label class="custom-control-label custom-control-label-disabled cursorDisabled" for="customSwitch2"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText rowDisabledText">
+          <p>Sometimes the toggle itself is disabled entirely, as a result of other settings.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover rowDisabled cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-switch">
+            <input disabled type="checkbox" class="custom-control-input custom-control-input-disabled" id="customSwitch2" />
             <label class="custom-control-label custom-control-label-disabled cursorDisabled" for="customSwitch2"></label>
           </div>
         </div>
@@ -623,28 +650,6 @@ export default {
 ```js
 <template>
   <div>
-
-    <b-button
-      block
-      class="rowItem rowTitle cursorDefault"
-      variant="none"
-      onclick="this.blur();"
-    >
-
-      <div class="rowItemContent">
-
-
-
-        <div class="rowItemText">
-          <p class="mb-0">Please Choose From This Radio List Of Options:</p>
-        </div>
-
-        <div class="rowItemSuffix">
-        </div>
-
-      </div>
-
-    </b-button>
 
     <b-button
       block
@@ -1244,6 +1249,43 @@ export default {
   </div>
 </template>
 ```
+
+<h3>Title
+<i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+</h3>
+<p><span class="text-info">...</span></p>
+
+```js
+<template>
+  <div>
+
+    <b-button
+      block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+
+
+        <div class="rowItemText">
+          <p class="mb-0">Please Choose From This List Of Options:</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
+
+  </div>
+</template>
+```
+
 
 <h3>Uploaded File
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>

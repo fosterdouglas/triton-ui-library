@@ -82,15 +82,14 @@ export default {
 ```js
 <template>
 
-  <div class="row">
-    <div class="col">
-        <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Area" rows="3" ></b-form-textarea>
-    </div>
-    <div class="col">
+  <b-row>
+    <b-col>
+      <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Area" rows="3" ></b-form-textarea>
+    </b-col>
+    <b-col>
       <b-form-textarea no-resize class="form-control" type="text" placeholder="Text Area" rows="3" disabled>
       </b-form-textarea>
-    </div>
-  </div>
+    </b-col>
 
 </template>
 <script>
