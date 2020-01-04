@@ -184,18 +184,18 @@
   <div class="pr-4 pl-4 mb-4 text-justify">
     <p class="mb-3">
       This tool is currently in development.<br/>
-      <strong class="text-dark">v0.9.5</strong> - last updated on December 24th 2019.<br/><br/>
+      <strong class="text-dark">v0.9.6</strong> - last updated on January 2nd 2019.<br/><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
     </p>
   </div>
 
-  <h3>List of known issues</h3>
+  <h3 class="bg-secondary text-white p-2 d-inline-flex mt-4 mb-3" style="width:auto;">Current List of Known Issues</h3>
   <div class="pr-4 pl-4 mb-4 text-justify">
     <p class="mb-3">
       <ul>
-        <li>Checkbox check mark position doesn't recalculate when content above or below it on the page is shifted (most noticable when page content is shifted by a large amount).</li>
-        <li>All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected.</li>
+        <li>All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected. It doesn't seem like this is something that can be done using CSS, we'll need some simple JS to do it.</li>
+        <li>JQuery UI elements inside of lightboxes will typically not function. The $().sortable needs to be called when the modal is "bv::modal::shown" but I'm too stupid to figure out how to do it with a simple script.</li>
       </ul>
     </p>
   </div>

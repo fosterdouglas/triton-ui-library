@@ -743,8 +743,8 @@ export default {
 
 ```js
 <template>
-  <div class="row">
-    <div id="sortable1" class="sortableGroup connectedSortable">
+  <b-row>
+    <b-col cols="5" id="sortable1" class="sortableGroup connectedSortable">
 
         <b-button
           block
@@ -926,13 +926,13 @@ export default {
 
         </b-button>
 
-    </div>
+    </b-col>
 
     <div class="col-auto align-self-center">
       <i class="iconTrade fa-lg"></i>
     </div>
 
-    <div id="sortable2" class="sortableGroup connectedSortable">
+    <b-col cols="5" id="sortable2" class="sortableGroup connectedSortable">
 
         <b-button
           block
@@ -1114,9 +1114,9 @@ export default {
 
         </b-button>
 
-    </div>
+    </b-col>
 
-  </div>
+  </b-row>
 
 </template>
 <script>

@@ -58,6 +58,7 @@
             class="rowItem rowTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
+            v-b-toggle.test00
           >
 
             <div class="rowItemContent">
@@ -73,7 +74,7 @@
 
             </div>
           </b-button>
-          <div class="sectionGroup">
+          <b-collapse id="test00" class="sectionGroup">
               <b-row>
                 <b-col cols="8">
                   <b-input-group prepend="Parent">
@@ -108,13 +109,14 @@
                 </b-col>
               </b-row>
 
-          </div>
+          </b-collapse>
 
           <b-button
             block
             class="rowItem rowTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
+            v-b-toggle.test000
           >
 
             <div class="rowItemContent">
@@ -131,7 +133,7 @@
             </div>
 
           </b-button>
-          <div class="sectionGroup">
+          <b-collapse id="test000" class="sectionGroup">
             <b-row>
               <b-col cols="8">
                 <b-input-group prepend="Street #">
@@ -221,7 +223,7 @@
                 </b-input-group>
               </b-col>
             </b-row>
-        </div>
+        </b-collapse>
         <div class="breadcrumbBottomSpacer"></div>
       </b-tab>
 
@@ -233,6 +235,7 @@
             class="rowItem rowTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
+            v-b-toggle.optionsgroup1
           >
 
             <div class="rowItemContent">
@@ -249,7 +252,7 @@
             </div>
 
           </b-button>
-          <div class="sectionGroup">
+          <b-collapse id="optionsgroup1" class="sectionGroup">
             <b-input-group>
               <div class="sectionItem">
                 <b-button
@@ -367,7 +370,7 @@
 
 
             </b-input-group>
-          </div>
+          </b-collapse>
 
 
       </b-tab>
@@ -381,19 +384,19 @@
         </b-tab>
         <b-tab>
           <template v-slot:title><span>Packages</span></template>
-          <h4>Package Services</h4>
+          <h4>{ Package Name }</h4>
               <div>
                 <b-card class="tabsNav" no-body>
                   <b-tabs pills card vertical end>
-                    <b-tab title="ASSIGNED PACKAGES" disabled>
-                    </b-tab>
-                    <b-tab title="Package Name 001" active>
-
+                    <b-tab title="Bell Package A1" active>
+                      <h6>Options</h6>
+                      <h6>Services</h6>
                         <b-button
                           block
                           class="rowItem rowTitle cursorDefault"
                           variant="none"
                           onclick="this.blur();"
+                          v-b-toggle.collapse-0
                         >
 
                           <div class="rowItemContent">
@@ -410,7 +413,7 @@
                           </div>
 
                         </b-button>
-                        <div class="sectionGroup">
+                        <b-collapse id="collapse-0" class="sectionGroup">
                           <div class="sectionItem">
 
                             <b-button
@@ -468,7 +471,7 @@
                                 </b-button>
                                 <b-button
                                   block
-                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
                                   variant="none"
                                   v-b-toggle.collapse-2-inner
                                   onclick="this.blur();"
@@ -529,7 +532,7 @@
 
                               <b-button
                                 block
-                                class="rowItem rowStandard rowItemHover cursorDefault"
+                                class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
                                 variant="none"
                                 v-b-toggle.collapse-3-inner
                                 onclick="this.blur();"
@@ -567,77 +570,828 @@
 
                               <h6>Options</h6>
                               <hr/>
-
-                              <b-button
-                                block
-                                class="rowItem rowStandard rowItemHover cursorDefault"
-                                variant="none"
-                                onclick="this.blur();"
-                              >
-
-                                <div class="rowItemContent">
-
-                                  <div class="rowItemPrefix">
-                                    <div class="custom-control custom-checkbox">
-                                      <input id="customCheck15" class="custom-control-input" type="checkbox"/>
-                                      <label class="custom-control-label cursorPointer" for="customCheck15"></label>
-                                    </div>
-                                  </div>
-
-                                  <div class="rowItemText">
-                                    <p class="mb-0">Fee Hidden From Client</p>
-                                  </div>
-
-                                  <div class="rowItemSuffix">
-                                  </div>
-
-                                </div>
-
-                              </b-button>
                               <b-row>
-                              <b-col cols="11">
-                              <b-button
-                                block
-                                class="rowItem rowStandard rowItemHover cursorDefault"
-                                variant="none"
-                                onclick="this.blur();"
-                              >
+                                <b-col cols="11">
+                                  <b-button
+                                    block
+                                    class="rowItem rowStandard rowItemHover cursorDefault"
+                                    variant="none"
+                                    onclick="this.blur();"
+                                  >
 
-                                <div class="rowItemContent">
+                                    <div class="rowItemContent">
 
-                                  <div class="rowItemPrefix">
-                                    <div class="custom-control custom-checkbox">
-                                      <input id="customCheck16" class="custom-control-input" type="checkbox"/>
-                                      <label class="custom-control-label cursorPointer" for="customCheck16"></label>
+                                      <div class="rowItemPrefix">
+                                        <div class="custom-control custom-checkbox">
+                                          <input id="customCheck15" class="custom-control-input" type="checkbox"/>
+                                          <label class="custom-control-label cursorPointer" for="customCheck15"></label>
+                                        </div>
+                                      </div>
+
+                                      <div class="rowItemText">
+                                        <p class="mb-0">Fee Hidden From Client</p>
+                                      </div>
+
+                                      <div class="rowItemSuffix">
+                                      </div>
+
                                     </div>
-                                  </div>
 
-                                  <div class="rowItemText">
-                                    <p class="mb-0">Allow Agency Entered Fees (Invoiced Services Only)</p>
-                                  </div>
+                                  </b-button>
+                                </b-col>
+                              </b-row>
+                              <b-row>
+                                <b-col cols="11">
+                                  <b-button
+                                    block
+                                    class="rowItem rowStandard rowItemHover cursorDefault"
+                                    variant="none"
+                                    onclick="this.blur();"
+                                  >
 
-                                  <div class="rowItemSuffix">
-                                  </div>
+                                    <div class="rowItemContent">
 
-                                </div>
+                                      <div class="rowItemPrefix">
+                                        <div class="custom-control custom-checkbox">
+                                          <input id="customCheck16" class="custom-control-input" type="checkbox"/>
+                                          <label class="custom-control-label cursorPointer" for="customCheck16"></label>
+                                        </div>
+                                      </div>
 
-                              </b-button>
-                            </b-col>
-                          </b-row>
+                                      <div class="rowItemText">
+                                        <p class="mb-0">Allow Agency Entered Fees (Invoiced Services Only)</p>
+                                      </div>
+
+                                      <div class="rowItemSuffix">
+                                      </div>
+
+                                    </div>
+
+                                  </b-button>
+                                </b-col>
+                              </b-row>
                           </div>
+
                         <div class="sectionItem">
 
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-2222
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconDash"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <p>Documents</p>
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+
+                          <b-collapse id="collapse-2222">
+                            <b-card class="rowExpandableContent">
+                            </b-card>
+                          </b-collapse>
+
                         </div>
+
+                        <div class="sectionItem">
+
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-22222
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconDash"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <p>{ State Options }</p>
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+
+                          <b-collapse id="collapse-22222">
+                            <b-card class="rowExpandableContent">
+                            </b-card>
+                          </b-collapse>
+
+                        </div>
+
+                        <div class="sectionItem">
+
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-222222
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconDash"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <p>Additional Options</p>
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+
+                          <b-collapse id="collapse-222222">
+                            <b-card class="rowExpandableContent">
+                            </b-card>
+                          </b-collapse>
+
+                        </div>
+
+                      </b-collapse>
+
+                      <b-button
+                        block
+                        class="rowItem rowTitle cursorDefault"
+                        variant="none"
+                        onclick="this.blur();"
+                        v-b-toggle.collapse-000
+                      >
+
+                        <div class="rowItemContent">
+
+
+
+                          <div class="rowItemText">
+                            <p class="mb-0">Employment Verification</p>
+                          </div>
+
+                          <div class="rowItemSuffix">
+                          </div>
+
+                        </div>
+
+                      </b-button>
+                      <b-collapse id="collapse-000" class="sectionGroup">
+                        <div class="sectionItem">
+
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-222
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconDash"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <p>Service Fees</p>
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+
+                          <b-collapse id="collapse-222">
+                            <b-card class="rowExpandableContent">
+                              <b-button
+                                block
+                                class="rowItem rowStandard rowItemHover cursorDefault"
+                                variant="none"
+                                onclick="this.blur();"
+                              >
+
+                                <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <i class="iconInherited"></i>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      Base Fee: $14.95
+                                      <b-badge variant="medium">Inherited</b-badge>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+
+                                    </div>
+
+                                </div>
+
+                              </b-button>
+                              <b-button
+                                block
+                                class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
+                                variant="none"
+                                v-b-toggle.collapse-222-inner
+                                onclick="this.blur();"
+                              >
+
+                                <div class="rowItemContent">
+
+                                  <div class="rowItemPrefix">
+                                    <i class="iconDash"></i>
+                                  </div>
+
+                                  <div class="rowItemText">
+                                    <p>Fees Override</p>
+                                  </div>
+
+                                  <div class="rowItemSuffix">
+                                    <i class="iconChevron"></i>
+                                  </div>
+
+                                </div>
+
+                              </b-button>
+
+                              <b-collapse id="collapse-222-inner">
+                                <b-card class="rowExpandableContentInner">
+                                  <div class="custom-control custom-switch">
+                                    <input v-b-toggle.collapse-444-inner type="checkbox" class="custom-control-input" id="customSwitch111" />
+                                    <label class="custom-control-label cursorPointer" for="customSwitch111"></label>
+                                    <div class="switchLabelColored"></div>
+                                    <b-collapse id="collapse-444-inner">
+                                      <b-row class="subGroup">
+                                        <b-col class="mt-2" cols="6">
+                                          <b-input-group prepend="Fee Override">
+                                            <b-form-input class="form-control" type="text" placeholder="Fee Override"></b-form-input>
+                                          </b-input-group>
+                                        </b-col>
+                                        <b-col cols="12">
+                                          <b-input-group class="dropdownMenu" prepend="Condition">
+                                            <select name="salutation" id="choose">
+                                              <option disabled selected>Condition...</option>
+                                              <option>Standard</option>
+                                              <option>CandidateCurrentPostalCode</option>
+                                              <option>GovRedeclare</option>
+                                            </select>
+                                          </b-input-group>
+                                        </b-col>
+                                        <b-col cols="12">
+                                          <b-form-textarea no-resize class="form-control" type="text" placeholder="Parameters" rows="3" ></b-form-textarea>
+                                        </b-col>
+                                      </b-row>
+                                    </b-collapse>
+                                  </div>
+
+                                </b-card>
+
+                            </b-collapse>
+
+
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
+                              variant="none"
+                              v-b-toggle.collapse-333-inner
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <i class="iconDash"></i>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p>Taxes Override</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+
+                            <b-collapse id="collapse-333-inner" class="">
+                              <b-card class="rowExpandableContentInner">
+                                <div class="custom-control custom-switch">
+                                  <input type="checkbox" class="custom-control-input" id="customSwitch222" />
+                                  <label class="custom-control-label cursorPointer" for="customSwitch222"></label>
+                                  <div class="switchLabelColored"></div>
+                                </div>
+
+                              </b-card>
+
+                          </b-collapse>
+
+                            <h6>Options</h6>
+                            <hr/>
+                            <b-row>
+                              <b-col cols="11">
+                                <b-button
+                                  block
+                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  variant="none"
+                                  onclick="this.blur();"
+                                >
+
+                                  <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <div class="custom-control custom-checkbox">
+                                        <input id="customCheck1555" class="custom-control-input" type="checkbox"/>
+                                        <label class="custom-control-label cursorPointer" for="customCheck1555"></label>
+                                      </div>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      <p class="mb-0">Fee Hidden From Client</p>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+                                    </div>
+
+                                  </div>
+
+                                </b-button>
+                              </b-col>
+                            </b-row>
+                            <b-row>
+                              <b-col cols="11">
+                                <b-button
+                                  block
+                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  variant="none"
+                                  onclick="this.blur();"
+                                >
+
+                                  <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <div class="custom-control custom-checkbox">
+                                        <input id="customCheck1666" class="custom-control-input" type="checkbox"/>
+                                        <label class="custom-control-label cursorPointer" for="customCheck1666"></label>
+                                      </div>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      <p class="mb-0">Allow Agency Entered Fees (Invoiced Services Only)</p>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+                                    </div>
+
+                                  </div>
+
+                                </b-button>
+                              </b-col>
+                            </b-row>
+                        </div>
+                      <div class="sectionItem">
+
                       </div>
-                      <h4>Package Options</h4>
+                    </b-collapse>
+
+
                       <div class="breadcrumbBottomSpacer"></div>
                     </b-tab>
-                    <b-tab title="Package Name 002">
+
+
+                    <b-tab title="Bell Pacakge E">
+                      <b-button
+                        block
+                        class="rowItem rowTitle cursorDefault"
+                        variant="none"
+                        onclick="this.blur();"
+                        v-b-toggle.collapse-00
+                      >
+
+                        <div class="rowItemContent">
+
+
+
+                          <div class="rowItemText">
+                            <p class="mb-0">Employment Verification</p>
+                          </div>
+
+                          <div class="rowItemSuffix">
+                          </div>
+
+                        </div>
+
+                      </b-button>
+                      <b-collapse id="collapse-00" class="sectionGroup">
+                        <div class="sectionItem">
+
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-22
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconDash"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <p>Service Fees</p>
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+
+                          <b-collapse id="collapse-22">
+                            <b-card class="rowExpandableContent">
+                              <b-button
+                                block
+                                class="rowItem rowStandard rowItemHover cursorDefault"
+                                variant="none"
+                                onclick="this.blur();"
+                              >
+
+                                <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <i class="iconInherited"></i>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      Base Fee: $14.95
+                                      <b-badge variant="medium">Inherited</b-badge>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+
+                                    </div>
+
+                                </div>
+
+                              </b-button>
+                              <b-button
+                                block
+                                class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
+                                variant="none"
+                                v-b-toggle.collapse-22-inner
+                                onclick="this.blur();"
+                              >
+
+                                <div class="rowItemContent">
+
+                                  <div class="rowItemPrefix">
+                                    <i class="iconDash"></i>
+                                  </div>
+
+                                  <div class="rowItemText">
+                                    <p>Fees Override</p>
+                                  </div>
+
+                                  <div class="rowItemSuffix">
+                                    <i class="iconChevron"></i>
+                                  </div>
+
+                                </div>
+
+                              </b-button>
+
+                              <b-collapse id="collapse-22-inner">
+                                <b-card class="rowExpandableContentInner">
+                                  <div class="custom-control custom-switch">
+                                    <input v-b-toggle.collapse-44-inner type="checkbox" class="custom-control-input" id="customSwitch11" />
+                                    <label class="custom-control-label cursorPointer" for="customSwitch11"></label>
+                                    <div class="switchLabelColored"></div>
+                                    <b-collapse id="collapse-44-inner">
+                                      <b-row class="subGroup">
+                                        <b-col class="mt-2" cols="6">
+                                          <b-input-group prepend="Fee Override">
+                                            <b-form-input class="form-control" type="text" placeholder="Fee Override"></b-form-input>
+                                          </b-input-group>
+                                        </b-col>
+                                        <b-col cols="12">
+                                          <b-input-group class="dropdownMenu" prepend="Condition">
+                                            <select name="salutation" id="choose">
+                                              <option disabled selected>Condition...</option>
+                                              <option>Standard</option>
+                                              <option>CandidateCurrentPostalCode</option>
+                                              <option>GovRedeclare</option>
+                                            </select>
+                                          </b-input-group>
+                                        </b-col>
+                                        <b-col cols="12">
+                                          <b-form-textarea no-resize class="form-control" type="text" placeholder="Parameters" rows="3" ></b-form-textarea>
+                                        </b-col>
+                                      </b-row>
+                                    </b-collapse>
+                                  </div>
+
+                                </b-card>
+
+                            </b-collapse>
+
+
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover rowExpandable cursorDefault"
+                              variant="none"
+                              v-b-toggle.collapse-33-inner
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <i class="iconDash"></i>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p>Taxes Override</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+
+                            <b-collapse id="collapse-33-inner" class="">
+                              <b-card class="rowExpandableContentInner">
+                                <div class="custom-control custom-switch">
+                                  <input type="checkbox" class="custom-control-input" id="customSwitch22" />
+                                  <label class="custom-control-label cursorPointer" for="customSwitch22"></label>
+                                  <div class="switchLabelColored"></div>
+                                </div>
+
+                              </b-card>
+
+                          </b-collapse>
+
+                            <h6>Options</h6>
+                            <hr/>
+                            <b-row>
+                              <b-col cols="11">
+                                <b-button
+                                  block
+                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  variant="none"
+                                  onclick="this.blur();"
+                                >
+
+                                  <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <div class="custom-control custom-checkbox">
+                                        <input id="customCheck155" class="custom-control-input" type="checkbox"/>
+                                        <label class="custom-control-label cursorPointer" for="customCheck155"></label>
+                                      </div>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      <p class="mb-0">Fee Hidden From Client</p>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+                                    </div>
+
+                                  </div>
+
+                                </b-button>
+                              </b-col>
+                            </b-row>
+                            <b-row>
+                              <b-col cols="11">
+                                <b-button
+                                  block
+                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  variant="none"
+                                  onclick="this.blur();"
+                                >
+
+                                  <div class="rowItemContent">
+
+                                    <div class="rowItemPrefix">
+                                      <div class="custom-control custom-checkbox">
+                                        <input id="customCheck166" class="custom-control-input" type="checkbox"/>
+                                        <label class="custom-control-label cursorPointer" for="customCheck166"></label>
+                                      </div>
+                                    </div>
+
+                                    <div class="rowItemText">
+                                      <p class="mb-0">Allow Agency Entered Fees (Invoiced Services Only)</p>
+                                    </div>
+
+                                    <div class="rowItemSuffix">
+                                    </div>
+
+                                  </div>
+
+                                </b-button>
+                              </b-col>
+                            </b-row>
+                        </div>
+                      <div class="sectionItem">
+
+                      </div>
+                    </b-collapse>
 
                     </b-tab>
-                    <b-tab title="Package Name 003">
+                    <b-tab title="Base Services">
 
                     </b-tab>
+                    <template v-slot:tabs-end>
+                      <b-button
+                        :pressed="false"
+                        variant="outline-light"
+                        size="sm"
+                        class="btnThin"
+                        onclick="this.blur();"
+                        @click="modalShow = !modalShow"
+
+                        >
+                        <div class="btnText">EDIT PACKAGES LIST</div>
+
+                      </b-button>
+                      <div class="ui-front">
+                        <b-modal
+                          v-model="modalShow"
+                          :no-close-on-backdrop="true"
+                          :no-close-on-esc="true"
+                          id="modal1"
+
+                        >
+                          <template v-slot:modal-header>
+                            <h5 class="mb-0">Edit Packages List</h5>
+                            
+                          </template>
+
+                          <div class="modal-body text-center">
+                              <p>Add, remove, or rearrange packages assigned to this client.</p>
+                              <b-row>
+                                <b-col cols="11" id="sortable" class="sortableGroup connectedSortable">
+
+                                    <b-button
+                                      block
+                                      class="rowItem rowStandard rowItemHover cursorDefault"
+                                      variant="none"
+                                      onclick="this.blur();"
+                                    >
+
+                                      <div class="rowItemContent">
+
+                                        <div class="rowItemPrefix">
+                                          <i class="iconDash"></i>
+                                        </div>
+
+                                        <div class="rowItemText">
+                                          <p>Bell Package A1</p>
+                                        </div>
+
+                                        <div class="rowItemSuffix">
+                                          <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                                            <i class="iconArrow iconBorderMini"></i>
+                                          </b-button>
+                                          <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                                            <i class="iconRemove iconBorderMini"></i>
+                                          </b-button>
+                                        </div>
+
+                                      </div>
+
+                                    </b-button>
+
+                                    <b-button
+                                      block
+                                      class="rowItem rowStandard rowItemHover cursorDefault"
+                                      variant="none"
+                                      onclick="this.blur();"
+                                    >
+
+                                      <div class="rowItemContent">
+
+                                        <div class="rowItemPrefix">
+                                          <i class="iconDash"></i>
+                                        </div>
+
+                                        <div class="rowItemText">
+                                          <p>Bell Package E</p>
+                                        </div>
+
+                                        <div class="rowItemSuffix">
+                                          <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                                            <i class="iconArrow iconBorderMini"></i>
+                                          </b-button>
+                                          <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                                            <i class="iconRemove iconBorderMini"></i>
+                                          </b-button>
+                                        </div>
+
+                                      </div>
+
+                                    </b-button>
+
+                                    <b-button
+                                      block
+                                      class="rowItem rowStandard rowItemHover cursorDefault"
+                                      variant="none"
+                                      onclick="this.blur();"
+                                    >
+
+                                      <div class="rowItemContent">
+
+                                        <div class="rowItemPrefix">
+                                          <i class="iconDash"></i>
+                                        </div>
+
+                                        <div class="rowItemText">
+                                          <p>Base Services</p>
+                                        </div>
+
+                                        <div class="rowItemSuffix">
+                                          <b-button onclick="this.blur()" variant="outline-primaryfade" class="btnSmall cursorDefault text-dark">
+                                            <i class="iconArrow iconBorderMini"></i>
+                                          </b-button>
+                                          <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                                            <i class="iconRemove iconBorderMini"></i>
+                                          </b-button>
+                                        </div>
+
+                                      </div>
+
+                                    </b-button>
+
+                                </b-col>
+                              </b-row>
+                          </div>
+
+                          <template v-slot:modal-footer>
+
+                              <b-button
+                                :pressed="false"
+                                variant="outline-warningfade"
+                                class="btnNavigation btnWarning float-left"
+                                @click="modalShow=false"
+                                >
+                                CANCEL
+                              </b-button>
+
+                              <b-button
+                                :pressed="false"
+                                variant="outline-confirmfade"
+                                class="btnNavigation btnConfirm float-right"
+                                @click="modalShow=false"
+                                >
+                                SAVE
+                              </b-button>
+
+                          </template>
+
+                        </b-modal>
+                      </div>
+
+
+                    </template>
+
                   </b-tabs>
                 </b-card>
               </div>
@@ -662,12 +1416,13 @@
           <h4>Other</h4>
         </b-tab>
         <template v-slot:tabs-end>
-          <div class="ml-auto mt-4 mr-2">
+          <div class="mt-3 mr-4 ml-2">
             <b-button
+              disabled
               :pressed="false"
               variant="-"
               id="changesBtn"
-              class="btnNavigation btnConfirm"
+              class="btnNavigation btnDisabled w-100"
               onclick="this.blur();"
               @click="toastConfirm()"
               >
@@ -703,18 +1458,31 @@
 
 <script>
 $('form').attr('autocomplete','off');
+
 $(document).ready(function(){
   $( ".rsg--sidebar-4" ).addClass( "designReferenceSidebar" );
   $( ".rsg--root-1" ).removeClass( "rsg--hasSidebar-2" );
 });
+
 $( function() {
     $( "#choose, #parent" ).selectmenu();
   } );
 
+$( function() {
+  $( "#sortable" ).sortable({
+    cancel: '', //need this to function with b-button
+    opacity: .7,
+    placeholder: 'ui-state-highlight', //custom style for placeholder while dragging
+    scroll: false,
+    helper: "clone",
+    tolerance: "pointer"
+  }).disableSelection();
+} );
 
 export default {
     data() {
       return {
+        modalShow: false,
         items: [
           {
             text: 'Sample Agency',

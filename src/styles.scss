@@ -11,7 +11,7 @@ $theme-colors: (
 	"dark": #3B3B3B,
   "mediumdark": #9a9a9a,
   "medium": #DBDBDB,
-	"light": #F7F7F7,
+	"light": #F3F3F3,
   "lightest": #fbfbfb,
   "confirm": #73a541,
   "warning": #dc3545,
@@ -42,7 +42,7 @@ $secondary: #E9B71E;
 $dark: #3B3B3B;
 $mediumdark: #9a9a9a;
 $medium: #DBDBDB;
-$light: #F7F7F7;
+$light: #F3F3F3;
 $lightest: #fbfbfb;
 $confirm: #73a541;
 $warning: #dc3545;
@@ -81,6 +81,7 @@ html, div, p, h1, h2, h4, h5, button {
   font-family: 'Montserrat' !important;
   font-weight: 500 !important;
   -webkit-font-smoothing: antialiased;
+  text-align: left;
 }
 
 h2 {
@@ -89,13 +90,11 @@ h2 {
 }
 
 h4 {
-  @extend .text-left;
   @extend .mt-1;
-  //text-transform: uppercase;
 }
 
 h5 {
-  @extend .text-left;
+
 }
 
 h6 {
@@ -105,6 +104,7 @@ h6 {
   @extend .mb-1;
   @extend .mt-3;
   @extend .text-mediumdark;
+  text-align: left;
 }
 
 hr {
@@ -295,6 +295,7 @@ a, a:hover {
 
 .breadcrumb-item.active span {
   @extend .text-dark;
+  font-weight: 600;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -1352,13 +1353,14 @@ select[disabled] > option[selected] {
 //CUSTOM SWITCH
 
 .custom-switch {
-  //top: -.1rem;
   @extend .mr-1;
   @extend .pl-0;
+  display: inline-block !important;
 }
 
 .custom-switch > label {
   padding-left: 2.25rem;
+  user-select: none;
 }
 
 .switchLabelColored {
@@ -1371,18 +1373,23 @@ select[disabled] > option[selected] {
 }
 
  .custom-switch > .custom-control-input:checked ~ .switchLabelColored::after {
-   content: "Enabled";
+   content: "Overriden";
    color: $confirm !important;
  }
 
 .custom-switch > .custom-control-input:not(:checked) ~ .switchLabelColored::after {
-   content: "Disabled";
+   content: "Inherited";
    color: $warning !important;
 }
 
 
 .custom-switch input:focus {
   outline-color: pink !important;
+}
+
+.custom-control-label {
+  vertical-align: top;
+  position: static !important;
 }
 
 .custom-switch > .custom-control-label::before {
@@ -1399,11 +1406,10 @@ select[disabled] > option[selected] {
 .custom-switch > .custom-control-label-disabled::after {
   @extend .border;
   @extend .border-dark;
+  position: relative;
   background-color: unset;
-  width: .8rem;
-  height: .8rem;
+  left: -1.9rem;
   top: .35rem;
-  left: .3rem;
 }
 
 .custom-switch > .custom-control-label::after {
@@ -1423,7 +1429,7 @@ select[disabled] > option[selected] {
   @extend .bg-light;
 }
 
- .custom-switch > .custom-control-input:checked ~ .custom-control-label::before {
+.custom-switch > .custom-control-input:checked ~ .custom-control-label::before {
   background: $confirm;
   border-color: #36521a !important;
 }
@@ -1449,7 +1455,7 @@ select[disabled] > option[selected] {
   width: 1.2rem;
   height: 1.2rem;
   margin-top: -.05rem;
-  margin-left: .4rem;
+  margin-left: 2rem;
 }
 
 .custom-checkbox > .custom-control-label::before {
@@ -1460,9 +1466,9 @@ select[disabled] > option[selected] {
 }
 
 .custom-checkbox > .custom-control-label::after {
-  top: -.05rem;
-  left: -1.65rem;
-  width: 1.35rem;
+  top: 0rem;
+  left: -1.75rem;
+  width: 100%;
   height: 1.35rem;
 }
 
@@ -1634,13 +1640,16 @@ img:hover + .imgIcon {
 
 .modal-header {
   @extend .px-4;
-  @extend .py-4;
+  @extend .pt-4;
+  @extend .pb-3;
   @extend .border-0;
   @extend .rounded-0;
+  @extend .bg-light;
+  border-bottom: .5px solid $medium !important;
 }
 
 .modal-header h5 {
-  @extend .mb-0;
+  //@extend .mb-0;
 }
 
 .modal-header .close {
@@ -1803,8 +1812,12 @@ img:hover + .imgIcon {
   @extend .rounded-0;
   @extend .d-inline-block;
   @extend .text-left;
-  height: 34px !important; //standard height for all row items
+  height: 34px; //standard height for all row items
   transition: border-color 0s ease-in-out;
+}
+
+.rowItem.collapsed {
+  //@extend .cursorPointer;
 }
 
 .sectionItem {
@@ -1851,7 +1864,10 @@ img:hover + .imgIcon {
   @extend .px-4;
   width: 30px;
   height: 20px;
-  font-size: 85% !important;
+}
+
+.rowItemPrefix i {
+  font-size: 100% !important;
 }
 
 .rowItemText {
@@ -1882,7 +1898,7 @@ img:hover + .imgIcon {
   @extend .w-100;
   @extend .rounded-0;
   @extend .text-left;
-  margin-top: -2px;
+  background-color: inherit;
   border-top-style: solid;
   border-top-color: $dark;
   border-top-width: 1px;
@@ -1892,28 +1908,48 @@ img:hover + .imgIcon {
   @extend .pl-2;
   @extend .rounded-0;
   @extend .text-left;
-  margin-top: -2px;
   border-top-style: solid;
   border-top-color: $dark;
   border-top-width: 1px;
 }
 
-.rowTitle {
-  pointer-events: none;
-  background: $dark;
-  border-bottom: 1px solid $dark;
-  @extend .text-white;
+.rowTitle.collapsed {
+  border: 1px solid $mediumdark;
   @extend .pl-3;
-  margin-left: 0px !important;
+  transition: all .2s;
+  height:34px;
+}
+
+.rowTitle:not(.collapsed) {
+  background-color: $light;
+  border-color: $medium;
+  height:51px;
+  padding-left: 1.1rem;
+  transition: all .2s;
+}
+
+.rowTitle.collapsed:hover {
+  background-color: $light;
+}
+
+.rowTitle:not(.collapsed):hover {
+  box-shadow: 0 0 0 .5px $mediumdark;
+}
+
+.rowTitle:not(.collapsed) ~ .sectionGroup {
+  @extend .bg-lightest;
+}
+
+.rowTitle.active ~ .sectionGroup > .sectionItem > .rowExpandable {
+  box-shadow: 0 0 0 .5px $medium;
 }
 
 .sortableGroup {
-  @extend .mx-auto;
-  @extend .col-5;
   @extend .border;
   @extend .border-mediumdark;
   @extend .p-3;
   @extend .m-1;
+  @extend .mx-auto;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 200px;
@@ -1921,7 +1957,6 @@ img:hover + .imgIcon {
 
 .rowExpandableContent.card { //for nested row elements, should have a more specific selector
   @extend .rounded-0;
-  margin-top: -2px;
   @extend .d-inline-flex;
   @extend .border-mediumdark;
 }
@@ -1931,8 +1966,9 @@ img:hover + .imgIcon {
   @extend .ml-auto;
 }
 
-button.rowItem:focus {
+button.rowItem:focus:active {
   background-color: $light !important;
+  box-shadow: 0 0 0 0px transparent !important;
 }
 
 button.rowExpandable:hover, button.rowExpandable:focus:active  {
@@ -2001,7 +2037,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 .sideNav.card .nav-tabs {
-  @extend .bg-lightest;
+  background-color: rgba($light, .6);
   @extend .px-0;
   @extend .py-5;
   width: 275px;
@@ -2016,13 +2052,15 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 .sideNav .nav-link {
+  @extend .text-right;
   @extend .rounded-0;
   @extend .py-2;
   text-transform: uppercase;
 }
 
 .sideNav .nav-link.disabled span {
-  @extend .text-medium;
+  color: rgba($primary, .3);
+  border-bottom: 1px solid;
 }
 
 .sideNav .nav-link:hover  {
@@ -2198,19 +2236,24 @@ span.edited:hover::before {
 .nav-pills {
   min-height: unset !important;
   max-width: 300px;
-  @extend .float-right;
-  right: 0;
+  background-color: unset;
+  @extend .py-1;
+  border-left: 1px solid $mediumdark;
+  font-size: .9rem;
 }
 
 .nav-pills > .nav-item > a.nav-link {
   @extend .text-dark;
   @extend .mx-3;
-  @extend .my-1;
+  @extend .my-0;
   @extend .text-left;
 }
 
 .nav-pills > .nav-item > a.nav-link.disabled {
-  @extend .text-medium;
+  color: rgba($mediumdark, .6) !important;
+  @extend .pb-0;
+  @extend .pl-0;
+  border-bottom: 1px solid;
 }
 
 .nav-pills > .nav-item > a.nav-link:hover {
@@ -2225,7 +2268,7 @@ span.edited:hover::before {
 .nav-pills > .nav-item > a.nav-link.active:hover,
 .nav-pills > .nav-item > a.nav-link.active:focus,
 .nav-pills > .nav-item > a.nav-link.active:focus:hover {
-  background-color: rgba($medium, .4) !important;
+  background-color: rgba($light, .7) !important;
   opacity: 1;
   @extend .text-dark;
   border-right: 0px solid transparent;
@@ -2234,6 +2277,10 @@ span.edited:hover::before {
   font-weight: 600;
 }
 
+.nav-pills > button {
+  @extend .my-3;
+  @extend .mx-3;
+}
 
 
     // // // // // // // // // // // // // // // // // // // // // // //

@@ -333,17 +333,15 @@ export default {
 <p>[Needs desciption...]</p>
 
 ```js
-
-
 <template>
   <div>
-    <div class="custom-control custom-switch d-inline-block">
+    <div class="custom-control custom-switch">
       <input type="checkbox" class="custom-control-input" id="customSwitch4" />
       <label class="custom-control-label cursorPointer" for="customSwitch4"></label>
     </div>
 
-    <div class="custom-control custom-switch d-inline-block">
-      <input type="checkbox" class="custom-control-input" id="customSwitch5"/>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitch5" />
       <label class="custom-control-label cursorPointer" for="customSwitch5"></label>
     </div>
   </div>

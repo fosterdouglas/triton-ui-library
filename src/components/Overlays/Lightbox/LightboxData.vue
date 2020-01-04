@@ -1,9 +1,9 @@
 <docs>
 
-<h3>Dismissable
+<h3>Data-Only
 <i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
 </h3>
-
+<p>used for only displaying data, no interaction (can be dismissed in multiple ways)</p>
 
 ```js
 <template>
@@ -21,6 +21,7 @@
 
     <b-modal
       v-model="modalShow"
+      :hide-footer="true"
 
     >
       <template v-slot:modal-header>
@@ -36,27 +37,6 @@
 
       </div>
 
-      <template v-slot:modal-footer>
-
-          <b-button
-            :pressed="false"
-            variant="outline-warningfade"
-            class="btnNavigation btnWarning float-left"
-            @click="modalShow=false"
-            >
-            {{ CancelButtonCaption }}
-          </b-button>
-
-          <b-button
-            :pressed="false"
-            variant="outline-confirmfade"
-            class="btnNavigation btnConfirm float-right"
-            @click="modalShow=false"
-            >
-            {{ SaveButtonCaption }}
-          </b-button>
-
-      </template>
 
     </b-modal>
   </div>
