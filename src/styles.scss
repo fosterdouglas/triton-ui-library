@@ -98,12 +98,13 @@ h5 {
 }
 
 h6 {
-  text-transform: uppercase;
   @extend .py-2;
   @extend .px-3;
   @extend .mb-1;
   @extend .mt-3;
   @extend .text-mediumdark;
+  @extend .cursorDefault;
+  text-transform: uppercase;
   text-align: left;
 }
 
@@ -573,7 +574,8 @@ a.btnFeedback:focus {
   @extend .rounded-0;
   @extend .text-mediumdark;
   @extend .border-mediumdark;
-  @extend .mx-1;
+  @extend .mx-2;
+  text-transform: uppercase;
   transition: none 0s;
 }
 
@@ -1176,6 +1178,7 @@ input[type="date"]::-webkit-clear-button:hover {
 
 .input-group-prepend > .input-group-text {
   @extend .ml-auto;
+  @extend .cursorDefault;
 }
 
 .input-group:hover > .input-group-prepend {
@@ -1332,6 +1335,10 @@ input[for="postal"] {
   @extend .rounded-0;
 }
 
+.badge-secondary {
+  @extend .text-white;
+}
+
 .nav-link > .badge {
   font-weight: 700;
   @extend .ml-1;
@@ -1455,7 +1462,7 @@ select[disabled] > option[selected] {
   width: 1.2rem;
   height: 1.2rem;
   margin-top: -.05rem;
-  margin-left: 2rem;
+  margin-left: 1.85rem;
 }
 
 .custom-checkbox > .custom-control-label::before {
@@ -1476,7 +1483,7 @@ select[disabled] > option[selected] {
 
 .custom-radio {
   margin-top: -.1rem;
-  margin-left: .4rem;
+  margin-left: 1.6rem;
 }
 
 .custom-radio > .custom-control-label::before {
@@ -1806,6 +1813,10 @@ img:hover + .imgIcon {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+.nonRowItem {
+  @extend .my-3;
+}
+
 .rowItem {
   @extend .mt-1;
   @extend .mb-0;
@@ -1921,8 +1932,9 @@ img:hover + .imgIcon {
 }
 
 .rowTitle:not(.collapsed) {
-  background-color: $light;
-  border-color: $medium;
+  background-color: $dark;
+  color: $white;
+  border-color: transparent;
   height:51px;
   padding-left: 1.1rem;
   transition: all .2s;
@@ -1933,14 +1945,10 @@ img:hover + .imgIcon {
 }
 
 .rowTitle:not(.collapsed):hover {
-  box-shadow: 0 0 0 .5px $mediumdark;
+  background-color: rgba($dark, .9);
 }
 
-.rowTitle:not(.collapsed) ~ .sectionGroup {
-  @extend .bg-lightest;
-}
-
-.rowTitle.active ~ .sectionGroup > .sectionItem > .rowExpandable {
+.rowTitle.active ~ .collapse > .sectionGroup > .sectionItem > .rowExpandable {
   box-shadow: 0 0 0 .5px $medium;
 }
 
@@ -1948,7 +1956,8 @@ img:hover + .imgIcon {
   @extend .border;
   @extend .border-mediumdark;
   @extend .p-3;
-  @extend .m-1;
+  @extend .mt-2;
+  @extend .mb-3;
   @extend .mx-auto;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -2027,7 +2036,8 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 
 .sectionGroup {
   @extend .p-3;
-  @extend .mb-2;
+  @extend .pb-4;
+  @extend .bg-lightest;
 }
 
 .sideNav.card {
@@ -2052,7 +2062,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 .sideNav .nav-link {
-  @extend .text-right;
+  text-align: right;
   @extend .rounded-0;
   @extend .py-2;
   text-transform: uppercase;
@@ -2246,8 +2256,14 @@ span.edited:hover::before {
   @extend .text-dark;
   @extend .mx-3;
   @extend .my-0;
-  @extend .text-left;
+  text-align: left;
 }
+
+.nav-pills > .nav-item > a.nav-link > .badge {
+  @extend .float-right;
+  margin-top: .2rem;
+}
+
 
 .nav-pills > .nav-item > a.nav-link.disabled {
   color: rgba($mediumdark, .6) !important;
@@ -2281,6 +2297,17 @@ span.edited:hover::before {
   @extend .my-3;
   @extend .mx-3;
 }
+
+
+
+.tabTitle > h4 {
+  @extend .d-inline;
+}
+
+.tabTitle > .badge {
+  @extend .align-text-top;
+}
+
 
 
     // // // // // // // // // // // // // // // // // // // // // // //

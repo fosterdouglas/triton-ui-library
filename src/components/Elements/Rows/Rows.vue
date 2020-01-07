@@ -12,7 +12,6 @@
       <ul>
         <li class="alertListItem">- Animate expanding component dropdown carat</li>
         <li class="alertListItem">- Distribute components into separate files</li>
-        <li class="alertListItem">- Convert checkbox, switch, radio to BUTTONS for WCAG selection highlight.</li>
       </ul>
   </b-alert>
 
@@ -296,7 +295,7 @@
 </template>
 ```
 
-<h3>Expanding
+<h3>Nesting
 <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p>
@@ -1164,7 +1163,7 @@ export default {
         </div>
 
         <div class="rowItemSuffix">
-          Submitted
+          <b-badge variant="medium">Inherited</b-badge>
         </div>
 
       </div>
@@ -1188,8 +1187,8 @@ export default {
           <p>Here is an example of the standard row element.</p>
         </div>
 
-        <div class="rowItemSuffix text-secondary">
-          In Progress
+        <div class="rowItemSuffix">
+          <b-badge variant="dark">Submitted</b-badge>
         </div>
 
       </div>
@@ -1213,8 +1212,8 @@ export default {
           <p>Here is an example of the standard row element.</p>
         </div>
 
-        <div class="rowItemSuffix text-warning">
-          Errors
+        <div class="rowItemSuffix">
+          <b-badge variant="secondary">In Progress</b-badge>
         </div>
 
       </div>
@@ -1238,8 +1237,33 @@ export default {
           <p>Here is an example of the standard row element.</p>
         </div>
 
-        <div class="rowItemSuffix text-confirm">
-          Completed
+        <div class="rowItemSuffix">
+          <b-badge variant="warning">Errors</b-badge>
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <i class="iconDash"></i>
+        </div>
+
+        <div class="rowItemText">
+          <p>Here is an example of the standard row element.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+          <b-badge variant="confirm">Completed</b-badge>
         </div>
 
       </div>
@@ -1250,7 +1274,7 @@ export default {
 </template>
 ```
 
-<h3>Title
+<h3>Expandable Title
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p><span class="text-info">...</span></p>
@@ -1271,15 +1295,42 @@ export default {
 
 
         <div class="rowItemText">
-          <p class="mb-0">Please Choose From This List Of Options:</p>
+          <p class="mb-0">Expanded Styling</p>
         </div>
 
         <div class="rowItemSuffix">
+
         </div>
 
       </div>
 
     </b-button>
+
+    <b-button
+      block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+      v-b-toggle.testing2
+    >
+
+      <div class="rowItemContent">
+
+
+
+        <div class="rowItemText">
+          <p class="mb-0">Collapsed Styling (Click Me!)</p>
+        </div>
+
+        <div class="rowItemSuffix">
+
+        </div>
+
+      </div>
+
+    </b-button>
+    <b-collapse id="testing2">
+    </b-collapse>
 
 
   </div>
@@ -1318,11 +1369,9 @@ export default {
         </div>
 
         <div class="rowItemSuffix">
-          <div>
-            <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
-              <i class="iconRemove iconBorderMini"></i>
-            </b-button>
-          </div>
+          <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+            <i class="iconRemove iconBorderMini"></i>
+          </b-button>
         </div>
 
       </div>
