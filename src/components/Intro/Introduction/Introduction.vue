@@ -44,6 +44,21 @@
 
   <h3>Browser Compatibility</h3>
   <div class="pr-4 pl-4 mb-4 text-justify">
+    <p>The chart below details the current overall status of browser compatibility with this set of components. The button below for the "Kitchen Sink" leads to a demo page that showcases every component being used in some context that it may be found in a production environment.</p>
+    <br/>
+    <b-button
+      :pressed="false"
+      variant="outline-primaryfade"
+      class="btnNavigation btnStandard"
+      onclick="this.blur();"
+      href="../../#/Kitchen%20Sink%20Showcase"
+      >
+        <i></i>
+        <div class="btnText">View Kitchen Sink</div>
+        <i class="iconChevron btnIconRight"></i>
+    </b-button>
+    <br/>
+    <br/>
   <b-table-simple small fixed bordered class="mb-3">
     <b-thead head-variant="dark">
       <b-tr>
@@ -121,17 +136,7 @@
     </b-tbody>
   </b-table-simple>
 
-  <b-button
-    :pressed="false"
-    variant="outline-primaryfade"
-    class="btnNavigation btnStandard"
-    onclick="this.blur();"
-    href="../../#/Kitchen%20Sink%20Showcase"
-    >
-      <i></i>
-      <div class="btnText">Kitchen Sink Showcase</div>
-      <i class="iconChevron btnIconRight"></i>
-  </b-button>
+
 
   </div>
 
@@ -184,7 +189,7 @@
   <div class="pr-4 pl-4 mb-4 text-justify">
     <p class="mb-3">
       This tool is currently in development.<br/>
-      <strong class="text-dark">v0.9.6.5</strong> - last updated on January 7th 2020.<br/><br/>
+      <strong class="text-dark">v0.9.7</strong> - last updated on January 27th 2020.<br/><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
     </p>
@@ -195,7 +200,7 @@
     <p class="mb-3">
       <ul>
         <li>All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected. It doesn't seem like this is something that can be done using CSS, we'll need some simple JS to do it.</li>
-        <li>JQuery UI elements inside of lightboxes will typically not function. The $().sortable needs to be called when the modal is "bv::modal::shown" but I'm too stupid to figure out how to do it with a simple script.</li>
+        <li>JQuery UI elements inside of lightboxes will typically not function without some alteration. Currently, the ".sortable()" function is being called when the lightbox is "shown", but a more elegant and evergreen solution is still required.</li>
       </ul>
     </p>
   </div>

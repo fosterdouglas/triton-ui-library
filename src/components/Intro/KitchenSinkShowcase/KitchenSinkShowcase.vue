@@ -56,7 +56,7 @@
           <h6>Options</h6>
           <b-button
             block
-            class="rowItem rowTitle cursorDefault"
+            class="rowItem rowGroupTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
             v-b-toggle.test00
@@ -81,12 +81,67 @@
                 <b-col cols="8">
                   <b-input-group prepend="Parent">
                     <template v-slot:append>
+
                       <b-button
                         :pressed="false"
                         variant="outline-secondary"
                         class="btnSmall btnFeedback text-secondary"
                         onclick="this.blur();"
+                        @click="modalShow3 = !modalShow3"
                         >
+
+                          <b-modal
+                            v-model="modalShow3"
+                            :no-close-on-backdrop="true"
+                            :no-close-on-esc="true"
+                            id="modal3"
+                            @shown="modalJQ"
+                          >
+
+                            <template v-slot:modal-header>
+                              <h5 class="mb-0">Change Parent Contact</h5>
+                            </template>
+
+                            <div class="modal-body">
+                              <b-row class="subGroup">
+                                <b-col cols="12">
+                                  <b-input-group class="dropdownMenu" prepend="Parent" >
+                                    <select name="Parent" id="choose5">
+                                      <option disabled selected>Choose One...</option>
+                                      <option>Parent Option 1</option>
+                                      <option>Parent Option 2</option>
+                                      <option>Parent Option 3</option>
+                                      <option>Parent Option 4</option>
+                                    </select>
+                                  </b-input-group>
+                                </b-col>
+                              </b-row>
+                            </div>
+
+                            <template v-slot:modal-footer>
+
+                                <b-button
+                                  :pressed="false"
+                                  variant="outline-warningfade"
+                                  class="btnNavigation btnWarning float-left"
+                                  @click="modalShow3=false"
+                                  >
+                                  CANCEL
+                                </b-button>
+
+                                <b-button
+                                  :pressed="false"
+                                  variant="outline-confirmfade"
+                                  class="btnNavigation btnConfirm float-right"
+                                  @click="modalShow3=false"
+                                  >
+                                  SAVE
+                                </b-button>
+
+                            </template>
+
+                          </b-modal>
+
                       <i class="iconEdit iconBorderStd"></i>
                       </b-button>
                     </template>
@@ -115,7 +170,7 @@
 
           <b-button
             block
-            class="rowItem rowTitle cursorDefault"
+            class="rowItem rowGroupTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
             v-b-toggle.test000
@@ -237,7 +292,7 @@
         <h6>Options</h6>
           <b-button
             block
-            class="rowItem rowTitle cursorDefault"
+            class="rowItem rowGroupTitle cursorDefault"
             variant="none"
             onclick="this.blur();"
             v-b-toggle.optionsgroup1
@@ -706,7 +761,7 @@
                       <h6>Content Override (Services)</h6>
                         <b-button
                           block
-                          class="rowItem rowTitle cursorDefault"
+                          class="rowItem rowGroupTitle cursorDefault"
                           variant="none"
                           onclick="this.blur();"
                           v-b-toggle.collapse-0
@@ -870,14 +925,14 @@
 
                               </b-button>
 
-                              <b-collapse id="collapse-3-inner" class="">
+                              <b-collapse id="collapse-3-inner">
+
                                 <b-card class="rowExpandableContentInner">
                                   <div class="custom-control custom-switch">
                                     <input type="checkbox" class="custom-control-input" id="customSwitch2" />
                                     <label class="custom-control-label cursorPointer" for="customSwitch2"></label>
                                     <div class="switchLabelColored"></div>
                                   </div>
-
                                 </b-card>
 
                             </b-collapse>
@@ -944,6 +999,10 @@
                                   </b-button>
                                 </b-col>
                               </b-row>
+
+                            </b-card>
+                          </b-collapse>
+
                           </div>
 
                         <div class="sectionItem">
@@ -1055,7 +1114,7 @@
 
                       <b-button
                         block
-                        class="rowItem rowTitle cursorDefault"
+                        class="rowItem rowGroupTitle cursorDefault"
                         variant="none"
                         onclick="this.blur();"
                         v-b-toggle.collapse-000
@@ -1293,6 +1352,8 @@
                                 </b-button>
                               </b-col>
                             </b-row>
+                          </b-card>
+                        </b-collapse>
                         </div>
                       <div class="sectionItem">
 
@@ -1576,6 +1637,7 @@ export default {
       return {
         modalShow: false,
         modalShow2: false,
+        modalShow3: false,
         items: [
           {
             text: 'Sample Agency',
@@ -1591,7 +1653,19 @@ export default {
           }
         ]
       }
-    }
+    },
+    methods: {
+      modalJQ() {
+
+        console.log('Modal has shown, .selectmenu called, and z-index of dropdown updated')
+
+        // THIS IS REQUIRED TO SHOW UI SELECT PROPERLY INSIDE MODALS
+        $( function() {
+            $( "#choose5" ).selectmenu();
+            $( ".ui-front" ).css('z-index',9999);
+          } );
+      }
+  }
 }
 </script>
 ```

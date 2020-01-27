@@ -56,9 +56,11 @@
 
     <div class="col-6">
 
-       <b-input-group>
+       <b-input-group class="prependIcon">
           <template v-slot:prepend>
-            <b-input-group-text><i class="iconSearch far text-dark"></i></b-input-group-text>
+            <b-input-group-text >
+              <i class="iconSearch far text-dark"></i>
+            </b-input-group-text>
           </template>
           <b-form-input type="search" name="focus" required class="searchBox form-control" placeholder="Search for Users, Clients, or Agents . . .">
           </b-form-input>

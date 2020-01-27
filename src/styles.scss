@@ -116,7 +116,7 @@ hr {
 
 p {
   text-align: justify;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 i {
@@ -130,8 +130,12 @@ a, a:hover {
 .supportText {
   @extend .ml-n1;
   @extend .pl-2;
-  margin-top: 3px;
+  @extend .text-dark;
   font-size: 85%;
+}
+
+.custom-switch > label > .supportText {
+  @extend .align-text-top;
 }
 
 .unselectableText {
@@ -266,7 +270,6 @@ a, a:hover {
 }
 
 
-
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
   //                           BREADCRUMB                           //
@@ -328,6 +331,7 @@ a, a:hover {
 
 .btn {
   border: 0px solid transparent;
+  vertical-align: initial;
 }
 
 .btnNavigation {
@@ -351,10 +355,6 @@ button:focus, .btnNavigation:focus, .btnSmall:focus {
    box-shadow: 0 0 0 4px $medium !important; //custom WCAG solution for screen readers
 }
 
-.btnNavigation:active {
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-}
-
 .btnIconRight {
   margin-top: -1px !important;
   @extend .align-baseline;
@@ -369,6 +369,10 @@ button:focus, .btnNavigation:focus, .btnSmall:focus {
   @extend .d-inline-block;
   @extend .align-top;
   @extend .px-2;
+}
+
+.btnWhite {
+  background: white;
 }
 
 //STANDARD BUTTON
@@ -500,7 +504,7 @@ a.btnFeedback:focus {
 
 //ICON BUTTON
 
-.btnSmall { //CLASS USED TO OVERRIDE STANDARD BTN STYLES FOR SMALL BUTTONS
+.btnSmall {
   outline: none;
   font-weight: inherit;
   padding: 0;
@@ -508,7 +512,6 @@ a.btnFeedback:focus {
   @extend .rounded-0;
   @extend .mx-1;
   @extend .align-text-bottom;
-  //height: 34px;
 }
 
 .btn.btnSmall {
@@ -539,7 +542,6 @@ a.btnFeedback:focus {
   @extend .rounded-sm;
   @extend .fa-lg;
   @extend .rounded-0;
-  //height: 34px;
 }
 
 .btn-outline-primaryfade:active i.iconBorder,
@@ -588,8 +590,8 @@ a.btnThin:focus {
 }
 
 .btnThin:active:focus {
-    background-color: rgba($mediumdark, 1) !important;
-    @extend .text-white;
+  background-color: rgba($mediumdark, 1) !important;
+  @extend .text-white;
 }
 
 //DISABLED
@@ -667,6 +669,14 @@ footer {
   @extend .py-1;
   @extend .px-2;
   font-size: 100% !important;
+  color: inherit;
+}
+
+//CIRCLE
+.iconCircle {
+  @extend .fal;
+  @extend .fa-circle;
+  @extend .p-1;
   color: inherit;
 }
 
@@ -900,11 +910,8 @@ footer {
   color: inherit;
 }
 
-button:not(.btnSmall) > i:not(.btnIconRight) { //SET ALL ICONS' MARGIN
-  @extend .mx-2;
-}
 
-button[class|=btn-outline] { //??????
+button[class|=btn-outline] { //Sets all btn variant backgrounds
   background-color: unset;
 }
 
@@ -915,19 +922,24 @@ button[class|=btn-outline] { //??????
 .bs-tooltip-top {
   margin-bottom: .5em !important;
 }
+
 .tooltip-inner {
   background-color: $dark;
   color: white;
 }
+
 .tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-top .arrow::before {
   border-top-color: $dark;
 }
+
 .tooltip.bs-tooltip-auto[x-placement^=right] .arrow::before, .tooltip.bs-tooltip-right .arrow::before {
   border-right-color: $dark;
 }
+
 .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
   border-bottom-color: $dark;
 }
+
 .tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before, .tooltip.bs-tooltip-left .arrow::before {
   border-left-color: $dark;
 }
@@ -960,6 +972,17 @@ ul.ui-autocomplete {
 .ui-widget input {
   font-family: 'Montserrat' !important;
   font-weight: 500 !important;
+}
+
+// DOB
+
+[type="date"].form-control {
+  padding-top: .5em;
+}
+
+input[type="date"]::-webkit-clear-button {
+ margin-bottom: 2px;
+ -webkit-appearance: none;
 }
 
 //
@@ -1030,17 +1053,6 @@ input, textarea, select {
 }
 .custom-control-label {
     font-family: 'Montserrat', sans-serif;
-}
-
-// DOB
-
-[type="date"].form-control {
-  padding-top: .5em;
-}
-
-input[type="date"]::-webkit-clear-button {
- margin-bottom: 2px;
- -webkit-appearance: none;
 }
 
 //
@@ -1136,6 +1148,10 @@ input[type="date"]::-webkit-clear-button:hover {
   line-height: .55em;
 }
 
+.prependIcon .input-group-prepend {
+  min-width: unset !important;
+}
+
 .input-group-prepend {
   @extend .bg-lightest;
   @extend .border;
@@ -1151,8 +1167,7 @@ input[type="date"]::-webkit-clear-button:hover {
 .input-group-append > button {
   height: 34px;
   @extend .p-0;
-  margin-right: -5em !important;
-  //margin-right: calc(-2.8em - 3px); //compensates for "?" hover button, this needs a FIX to  support multiple icons in the appended area
+  margin-right: -5em !important; //compensates for "?" hover button, this needs a FIX to support multiple icons in the appended area
 }
 
 .input-group-append > button.btnSmall > i {
@@ -1197,14 +1212,6 @@ input[type="date"]::-webkit-clear-button:hover {
 .searchBox[type=text]:focus {
   border: 1px solid $secondary !important;
   box-shadow: 0px 0px 0px 0px $secondary !important;
-}
-
-.hero-image {
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 option {
@@ -1297,12 +1304,6 @@ select:first-child {
     -webkit-appearance: none;
 }
 
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-year-field {
-  //@extend .text-light;
-}
-
 input[for="postal"] {
   text-transform: uppercase !important;
 }
@@ -1356,13 +1357,16 @@ select[disabled] > option[selected] {
   background-color: rgba($medium, .5);
 }
 
-
 //CUSTOM SWITCH
 
 .custom-switch {
   @extend .mr-1;
   @extend .pl-0;
   display: inline-block !important;
+}
+
+.custom-switch > .custom-control-label {
+  margin-top: .1rem;
 }
 
 .custom-switch > label {
@@ -1389,20 +1393,15 @@ select[disabled] > option[selected] {
    color: $warning !important;
 }
 
-
 .custom-switch input:focus {
   outline-color: pink !important;
-}
-
-.custom-control-label {
-  vertical-align: top;
-  position: static !important;
 }
 
 .custom-switch > .custom-control-label::before {
   width: 2.1rem;
   height: 1.2rem;
   left: 0rem;
+  top: 0rem;
   border-radius: 1rem;
   background-color: unset;
   @extend .border-dark;
@@ -1413,10 +1412,12 @@ select[disabled] > option[selected] {
 .custom-switch > .custom-control-label-disabled::after {
   @extend .border;
   @extend .border-dark;
-  position: relative;
+  position: absolute;
   background-color: unset;
-  left: -1.9rem;
-  top: .35rem;
+  left: .25rem;
+  top: .2rem;
+  width: .8rem;
+  height: .8rem;
 }
 
 .custom-switch > .custom-control-label::after {
@@ -1461,8 +1462,13 @@ select[disabled] > option[selected] {
 .custom-checkbox {
   width: 1.2rem;
   height: 1.2rem;
-  margin-top: -.05rem;
+  top: -.1rem;
   margin-left: 1.85rem;
+  display: inline;
+}
+
+.custom-checkbox > .custom-control-label {
+  position: static;
 }
 
 .custom-checkbox > .custom-control-label::before {
@@ -1474,29 +1480,30 @@ select[disabled] > option[selected] {
 
 .custom-checkbox > .custom-control-label::after {
   top: 0rem;
-  left: -1.75rem;
   width: 100%;
   height: 1.35rem;
+  left: -1.75rem;
 }
 
 //CUSTOM RADIO
 
 .custom-radio {
-  margin-top: -.1rem;
-  margin-left: 1.6rem;
+  margin-top: -.15rem;
+  //margin-left: .05rem;
 }
 
 .custom-radio > .custom-control-label::before {
-  width: 1.1rem !important;
-  height: 1.1rem !important;
+  width: 1.15rem !important;
+  height: 1.15rem !important;
   @extend .border-dark;
+  @extend .rounded-0;
   background-color: unset;
 }
 
 .custom-radio > .custom-control-label::after{
-  width: 1.25rem;
-  height: 1.25rem;
-  top: .1rem;
+  width: 20px;
+  height: 19px;
+  top: .15rem;
   left: -1.55rem;
 }
 
@@ -1515,6 +1522,10 @@ select[disabled] > option[selected] {
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAEUlEQVR42mP8/58BC2AcEcIAttUV9qOoTcsAAAAASUVORK5CYII=);
 }
 
 //JQUERY UI STYLES
@@ -1607,6 +1618,7 @@ a > img:hover {
   opacity: 0;
   transition: .2s ease-out;
   box-shadow: 0 0 0 0px $dark;
+  pointer-events: none;
 }
 
 img:hover + .imgIcon {
@@ -1656,7 +1668,7 @@ img:hover + .imgIcon {
 }
 
 .modal-header h5 {
-  //@extend .mb-0;
+
 }
 
 .modal-header .close {
@@ -1795,12 +1807,15 @@ img:hover + .imgIcon {
   @extend .rounded-0;
   max-width: 250px;
   margin: 1.5em 1em 1.5em 1em !important; //sets popover position
+  background-clip: unset !important;
 }
+
 .popover-header {
   background-color: unset;
   text-align: center;
   padding: .75em 1em;
 }
+
 .popover-body {
   @extend .text-center;
   padding: .75em 1.5em .75em 1.5em;
@@ -1827,10 +1842,6 @@ img:hover + .imgIcon {
   transition: border-color 0s ease-in-out;
 }
 
-.rowItem.collapsed {
-  //@extend .cursorPointer;
-}
-
 .sectionItem {
   @extend .col-12;
   @extend .px-0;
@@ -1844,6 +1855,13 @@ img:hover + .imgIcon {
 .rowExpandable {
   color: $dark;
   background-color: $light;
+}
+
+.rowTitle {
+  background: $dark;
+  @extend .text-white;
+  @extend .pl-4;
+  pointer-events: none;
 }
 
 .rowHighlightDark {
@@ -1924,14 +1942,14 @@ img:hover + .imgIcon {
   border-top-width: 1px;
 }
 
-.rowTitle.collapsed {
+.rowGroupTitle.collapsed {
   border: 1px solid $mediumdark;
   @extend .pl-3;
   transition: all .2s;
   height:34px;
 }
 
-.rowTitle:not(.collapsed) {
+.rowGroupTitle:not(.collapsed) {
   background-color: $dark;
   color: $white;
   border-color: transparent;
@@ -1940,15 +1958,15 @@ img:hover + .imgIcon {
   transition: all .2s;
 }
 
-.rowTitle.collapsed:hover {
+.rowGroupTitle.collapsed:hover {
   background-color: $light;
 }
 
-.rowTitle:not(.collapsed):hover {
+.rowGroupTitle:not(.collapsed):hover {
   background-color: rgba($dark, .9);
 }
 
-.rowTitle.active ~ .collapse > .sectionGroup > .sectionItem > .rowExpandable {
+.rowGroupTitle.active ~ .collapse > .sectionGroup > .sectionItem > .rowExpandable {
   box-shadow: 0 0 0 .5px $medium;
 }
 
@@ -2036,8 +2054,8 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 
 .sectionGroup {
   @extend .p-3;
-  @extend .pb-4;
-  @extend .bg-lightest;
+  @extend .my-3;
+  background: $lightest;
 }
 
 .sideNav.card {
@@ -2136,7 +2154,6 @@ span.edited:hover::before {
 .navSubLink {
   @extend .p-0;
 }
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
@@ -2241,7 +2258,7 @@ span.edited:hover::before {
   border-color: transparent;
 }
 
-//styles for vertical tabs
+//VERTICAL TABS
 
 .nav-pills {
   min-height: unset !important;
@@ -2263,7 +2280,6 @@ span.edited:hover::before {
   @extend .float-right;
   margin-top: .2rem;
 }
-
 
 .nav-pills > .nav-item > a.nav-link.disabled {
   color: rgba($mediumdark, .6) !important;
@@ -2298,7 +2314,7 @@ span.edited:hover::before {
   @extend .mx-3;
 }
 
-
+// ???
 
 .tabTitle > h4 {
   @extend .d-inline;
@@ -2427,20 +2443,20 @@ span.edited:hover::before {
   @extend .text-left;
 }
 
- a.dropdown-item:hover {
-   background: $primary;
-   color: white !important;
-   text-shadow: 0px 0px 0 $primary;
- }
+a.dropdown-item:hover {
+  background: $primary;
+  color: white !important;
+  text-shadow: 0px 0px 0 $primary;
+}
 
-  a.dropdown-item:active {
-    background: rgba($primary, .8);
-  }
+a.dropdown-item:active {
+  background: rgba($primary, .8);
+}
 
 .dropdown-toggle::after {
-    display: none;
-    border: 0px solid transparent;
-    vertical-align: unset;
+  display: none;
+  border: 0px solid transparent;
+  vertical-align: unset;
 }
 
 .dropdownCustomToggle > a::after {
@@ -2453,9 +2469,28 @@ span.edited:hover::before {
   border: 0px solid transparent;
 }
 
-.navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  { //update if padding changes on nav items
+.navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  {
+  //Compensates for padding on nav items
   box-shadow: inset .5rem 0px 0 0 $primary, inset -.5rem 0px 0 0 $primary, inset 0 -3px 0 0 $secondary;
 }
+
+
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                       NEEDS CATEGORY                           //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.highlightSection {
+  @extend .rounded-0;
+  //@extend .d-inline-flex;
+  @extend .border-mediumdark;
+  @extend .w-100;
+  @extend .my-4;
+  @extend .text-center;
+}
+
 
 
 //IMPORT STYLES ONLY REQUIRED FOR THE STYLEGUIDE

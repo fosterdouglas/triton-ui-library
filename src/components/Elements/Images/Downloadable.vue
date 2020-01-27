@@ -7,7 +7,7 @@
 <template>
   <div class="p-3 d-inline-flex">
     <a :href="images.sample" download>
-      <b-img class="img-fluid" :src="images.sample" draggable="false"></b-img>
+      <b-img :src="images.sample" draggable="false"></b-img>
       <i class="iconDownload imgIcon"></i>
     </a>
   </div>

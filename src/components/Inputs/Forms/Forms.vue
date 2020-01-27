@@ -156,34 +156,6 @@ export default {
   </script>
 ```
 
-
-<h3>Radio Group</h3>
-<p></p>
-
-```js
-<template>
-  <div>
-
-    <b-form-group label="Group of options:">
-      <b-form-radio-group
-        name="radios-stacked"
-        stacked
-      >
-      <b-form-radio class="custom-radio" name="radio-group" value="1">You Can Choose This One</b-form-radio>
-      <b-form-radio class="custom-radio" name="radio-group" value="2">Or This Option</b-form-radio>
-      <b-form-radio class="custom-radio" name="radio-group" value="3">Even This One Is An Option</b-form-radio>
-
-    </b-form-radio-group>
-    </b-form-group>
-
-  </div>
-</template>
-<script>
-  export default {
-  }
-</script>
-```
-
 <h3>Text</h3>
 <p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling.
   The labels are built into each form field for styling simplicity, organization, and consistency.

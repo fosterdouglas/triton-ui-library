@@ -70,6 +70,18 @@
 </template>
 ```
 
+<h3>Circle</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconCircle text-dark"></i>
+    <i class="iconCircle text-dark fas"></i>
+  </div>
+</template>
+```
+
 <h3>Close</h3>
 <p>An icon used to close windows, modals, alerts, and dialogue boxes.</p>
 
@@ -392,7 +404,7 @@ export default {
 </template>
 ```
 
-<h3>Trade</h3>
+<h3>Swap</h3>
 <p>...</p>
 
 ```js

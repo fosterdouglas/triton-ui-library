@@ -85,6 +85,27 @@
   <div>
     <b-button
       block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+
+        <div class="rowItemText">
+          <p class="mb-0">Please check all that apply:</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
       class="rowItem rowStandard rowItemHover cursorDefault"
       variant="none"
       onclick="this.blur();"
@@ -139,6 +160,14 @@
 
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+</script>
 ```
 
 <h3>Clickable</h3>
@@ -199,6 +228,14 @@
 
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+</script>
 ```
 
 <h3>Enable/Disable</h3>
@@ -293,6 +330,14 @@
 
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+</script>
 ```
 
 <h3>Nesting
@@ -1274,7 +1319,7 @@ export default {
 </template>
 ```
 
-<h3>Expandable Title
+<h3>Expandable Title (Grouping)
 <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
 </h3>
 <p><span class="text-info">...</span></p>
@@ -1285,7 +1330,7 @@ export default {
 
     <b-button
       block
-      class="rowItem rowTitle cursorDefault"
+      class="rowItem rowGroupTitle cursorDefault"
       variant="none"
       onclick="this.blur();"
     >
@@ -1308,7 +1353,7 @@ export default {
 
     <b-button
       block
-      class="rowItem rowTitle cursorDefault"
+      class="rowItem rowGroupTitle cursorDefault"
       variant="none"
       onclick="this.blur();"
       v-b-toggle.testing2

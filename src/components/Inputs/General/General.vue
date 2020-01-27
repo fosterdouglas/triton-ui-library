@@ -22,15 +22,13 @@
 
 ```js
 <template>
-<div class="justify-content-start mt-1"> <!-- classes used for library display only -->
-  <div class="custom-control custom-checkbox d-inline">
+<div>
+
+  <div class="custom-control custom-checkbox">
     <input id="customCheck1" class="custom-control-input" type="checkbox"/>
     <label class="custom-control-label cursorPointer" for="customCheck1"></label>
   </div>
-  <div class="custom-control custom-checkbox d-inline">
-    <input id="customCheck2" class="custom-control-input" type="checkbox"/>
-    <label class="custom-control-label cursorPointer" for="customCheck2"></label>
-  </div>
+
 </div>
 </template>
 
@@ -224,28 +222,28 @@ export default {
 <template>
   <div>
 
-    <div class="custom-control custom-switch d-inline-block">
+    <div class="custom-control custom-switch">
       <input id="customSwitch0" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch0">
         <b-badge class="supportText" variant="-">Clients</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline-block">
+    <div class="custom-control custom-switch">
       <input id="customSwitch1" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch1">
         <b-badge class="supportText" variant="-">Agents</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline-block">
+    <div class="custom-control custom-switch">
       <input id="customSwitch2" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch2">
         <b-badge class="supportText" variant="-">Users</b-badge>
       </label>
     </div>
 
-    <div class="custom-control custom-switch d-inline-block">
+    <div class="custom-control custom-switch">
       <input id="customSwitch3" class="custom-control-input" type="checkbox" />
       <label class="custom-control-label cursorPointer" for="customSwitch3">
         <b-badge class="supportText" variant="-">Deactivated Users</b-badge>

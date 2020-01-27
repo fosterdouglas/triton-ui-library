@@ -31,7 +31,7 @@
 
     <b-button
       block
-      class="rowItem rowTitle cursorDefault"
+      class="rowItem rowGroupTitle cursorDefault"
       variant="none"
       onclick="this.blur();"
     >

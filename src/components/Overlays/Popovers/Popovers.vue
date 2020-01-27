@@ -282,7 +282,7 @@
   export default {
     data() {
       return {
-        showHover: false
+      
       }
     }
   }

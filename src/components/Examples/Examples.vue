@@ -1,158 +1,189 @@
 <docs>
 
-<h3>Kitchen Sink Showcase</h3>
+<h3>Triton 5-0 Pricing Survey</h3>
 
 ```js
 <template>
-
-
-<div>
-  <b-navbar toggleable="lg" type="dark" variant="primary">
-    <b-navbar-brand href="#">
-      <img src="https://e-bydesign.ca/assets/triton-logo.svg">
-    </b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-
-      <!-- Left aligned nav items -->
-      <b-navbar-nav>
-        <b-nav-item active href="#">Clients / Users</b-nav-item>
-        <b-nav-item href="#">Reports</b-nav-item>
-        <b-nav-item-dropdown class="dropdownCustomToggle" text="Tools">
-          <b-dropdown-item href="#">Log Comment</b-dropdown-item>
-          <b-dropdown-item href="#">Create Request</b-dropdown-item>
-          <b-dropdown-item href="#">New Form</b-dropdown-item>
-          <b-dropdown-item href="#">File Upload</b-dropdown-item>
-        </b-nav-item-dropdown>
-        <b-nav-item href="#">Queue <b-badge variant="light">4</b-badge></b-nav-item>
-        <b-nav-item href="#">Admin</b-nav-item>
-      </b-navbar-nav>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown class="dropdownCustomToggle" text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">FR</b-dropdown-item>
-        </b-nav-item-dropdown>
-      </b-navbar-nav>
-
-    </b-collapse>
-  </b-navbar>
-
-
-
   <div>
-    <b-card class="sideNav" no-body>
-      <b-breadcrumb class="breadcrumbTop" :items="items"></b-breadcrumb>
-      <b-tabs pills card vertical>
-        <b-tab disabled>
-          <template v-slot:title><span>General Settings</span></template>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Client Details</span></template>
+    <h1>Getting Started</h1>
+    <p>Please complete the questions below to determine the correct check for your needs.</p>
+    <hr/>
+      <b-row align-h="between">
+        <b-col sm="auto">
+          <i class="iconCircle text-dark fas fa-xs"></i>
+          <i class="iconCircle text-dark fa-xs"></i>
+          <i class="iconCircle text-dark fa-xs"></i>
+          <i class="iconCircle text-dark fa-xs"></i>
+        </b-col>
+        <b-col sm="auto">
           <b-button
-            block
-            class="rowItem rowStandard rowItemHover cursorDefault"
-            variant="none"
+            :pressed="false"
+            variant="outline-primaryfade"
+            class="btnThin"
+            size="sm"
             onclick="this.blur();"
-          >
-            <div class="rowItemContent">
-              <div class="rowItemPrefix">
-                <i class="iconDash"></i>
-              </div>
-              <div class="rowItemText">
-                <p>Here is an example of the standard row element.</p>
-              </div>
-              <div class="rowItemSuffix">
-              </div>
-            </div>
+            >
+            <div class="btnText">Reset Selection</div>
+
           </b-button>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>General Settings</span></template>
-          <b-card-text>General Settings</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Reports & Invoicing</span></template>
-          <b-card-text>Reports & Invoicing</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Transactions</span></template>
-          <b-card-text>Transactions</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Packages</span></template>
-          <b-card-text>Packages</b-card-text>
-        </b-tab>
-        <b-tab disabled>
-          <template v-slot:title><span>Override Groups</span></template>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Services</span></template>
-          <b-card-text>Services</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Content</span></template>
-          <b-card-text>Content</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Email</span></template>
-          <b-card-text>Email</b-card-text>
-        </b-tab>
-        <b-tab>
-          <template v-slot:title><span>Other</span></template>
-          <b-card-text>Other</b-card-text>
-        </b-tab>
-      </b-tabs>
-        <b-breadcrumb class="breadcrumbBottom" :items="items"></b-breadcrumb>
-    </b-card>
-  </div>
+        </b-col>
+      </b-row>
 
 
-
-  <footer class="row">
-    <b-col class="text-left footerItem">© Triton 2019, All Rights Reserved</b-col>
-    <b-col class="text-right">
+  <div class="sectionGroup">
+    <h5>Is this check requested as a part of a volunteer position?
       <b-button
         :pressed="false"
-        variant="outline-light"
-        size="sm"
-        class="btnThin"
-        onclick="this.blur();"
-        >
-        <div class="btnText">CONTACT</div>
+        variant="outline"
+        class="cursorDefault"
+        @hover="showHover5 = !showHover5"
+       >
+        <i id="PopoverHover5" class="iconQuestion iconHover text-mediumdark fa-lg"></i>
+        <b-popover
+          triggers="hover blur"
+          variant="mediumdark"
+          placement="right"
+          target="PopoverHover5"
+          :show.sync="showHover5"
+         >
+          here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text
+        </b-popover>
       </b-button>
-    </b-col>
-  </footer>
+    </h5>
 
-</div>
+    <p></p>
+    <b-button
+      block
+      class="rowItem rowTitle cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
 
+      <div class="rowItemContent">
+
+
+        <div class="rowItemText">
+          <p class="mb-0">Please choose one:</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-radio">
+            <input id="customRadio1" class="custom-control-input" type="radio" name="radio"/>
+            <label class="custom-control-label cursorPointer" for="customRadio1"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">Yes, I volunteer with an organization that requested this check.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+
+    <b-button
+      block
+      class="rowItem rowStandard rowItemHover cursorDefault"
+      variant="none"
+      onclick="this.blur();"
+    >
+
+      <div class="rowItemContent">
+
+        <div class="rowItemPrefix">
+          <div class="custom-control custom-radio">
+            <input id="customRadio2" class="custom-control-input" type="radio" name="radio"/>
+            <label class="custom-control-label cursorPointer" for="customRadio2"></label>
+          </div>
+        </div>
+
+        <div class="rowItemText">
+          <p class="mb-0">No.</p>
+        </div>
+
+        <div class="rowItemSuffix">
+        </div>
+
+      </div>
+
+    </b-button>
+  </div>
+
+    <b-row align-h="start">
+      <b-col sm="auto">
+        <b-button
+          :pressed="false"
+          variant="outline-primaryfade"
+          class="btnNavigation btnStandard float-right"
+          onclick="this.blur();"
+          >
+          <div class="btnText">NEXT</div>
+          <i class="iconArrow btnIconRight"></i>
+        </b-button>
+      </b-col>
+    </b-row>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <b-row align-h="center">
+      <b-col cols="10">
+        <b-card class="highlightSection">
+          <h3>Criminal Record and Judicial Matters Check (CRJMC)</h3>
+          <p>A collection of offence information, including convictions, outstanding warrants, charges and judicial orders available from a local police agency's records management system and other systems/records where authorized.</p>
+          <p>This check is intended for applicants who are seeking volunteer and/or employment with agencies who require a criminal record check. The agency has determined that a search of pardoned sex offenders database is NOT required (i.e., border crossing or visa) therefore this check is NOT intended for applicants who are seeking volunteer and/or employment with vulnerable persons.</p>
+          <b-row align-h="center">
+            <b-col sm="auto">
+              <div class="sectionGroup text-center border border-dark bg-light">
+                <b-button
+                  :pressed="false"
+                  variant="outline-primary"
+                  class="btnNavigation btnStandard btnWhite"
+                  onclick="this.blur();"
+                  >
+                  <div class="btnText">START CHECK</div>
+                  <i class="iconArrow btnIconRight"></i>
+                </b-button>
+                <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+              </div>
+            </b-col>
+          </b-row>
+        </b-card>
+      </b-col>
+    </b-row>
+
+  </div>
 </template>
 <script>
-export default {
-      data() {
-        return {
-          items: [
-            {
-              text: 'Bell Canada',
-              href: '#'
-            },
-            {
-              text: 'Success Factors',
-              href: '#'
-            },
-            {
-              text: 'Bell Canada - Ontario Sector',
-              active: true
-            }
-          ]
-        }
+  export default {
+    data() {
+      return {
       }
-}
+    }
+  }
 </script>
 ```
-
 
 </docs>
