@@ -1,6 +1,6 @@
 <docs>
 
-<h3>Triton 5-0 Pricing Survey</h3>
+<h3>Triton 5-0: Dynamic Pricing + Landing Page</h3>
 
 ```js
 <template>
@@ -149,14 +149,45 @@
     <br/>
 
     <b-row align-h="center">
-      <b-col cols="10">
+      <b-col cols="11">
         <b-card class="highlightSection">
           <h3>Criminal Record and Judicial Matters Check (CRJMC)</h3>
           <p>A collection of offence information, including convictions, outstanding warrants, charges and judicial orders available from a local police agency's records management system and other systems/records where authorized.</p>
           <p>This check is intended for applicants who are seeking volunteer and/or employment with agencies who require a criminal record check. The agency has determined that a search of pardoned sex offenders database is NOT required (i.e., border crossing or visa) therefore this check is NOT intended for applicants who are seeking volunteer and/or employment with vulnerable persons.</p>
           <b-row align-h="center">
             <b-col sm="auto">
-              <div class="sectionGroup text-center border border-dark bg-light">
+              <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                <h5 class="text-center">Employment</h5>
+                <b-button
+                  :pressed="false"
+                  variant="outline-primary"
+                  class="btnNavigation btnStandard btnWhite"
+                  onclick="this.blur();"
+                  >
+                  <div class="btnText">START CHECK</div>
+                  <i class="iconArrow btnIconRight"></i>
+                </b-button>
+                <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+              </div>
+            </b-col>
+            <b-col sm="auto">
+              <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                <h5 class="text-center">Volunteer</h5>
+                <b-button
+                  :pressed="false"
+                  variant="outline-primary"
+                  class="btnNavigation btnStandard btnWhite"
+                  onclick="this.blur();"
+                  >
+                  <div class="btnText">START CHECK</div>
+                  <i class="iconArrow btnIconRight"></i>
+                </b-button>
+                <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+              </div>
+            </b-col>
+            <b-col sm="auto">
+              <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                <h5 class="text-center">Other</h5>
                 <b-button
                   :pressed="false"
                   variant="outline-primary"

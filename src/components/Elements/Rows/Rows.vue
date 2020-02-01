@@ -10,7 +10,6 @@
     </h5>
     <hr/>
       <ul>
-        <li class="alertListItem">- Animate expanding component dropdown carat</li>
         <li class="alertListItem">- Distribute components into separate files</li>
       </ul>
   </b-alert>
@@ -34,7 +33,7 @@
       <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+
           </div>
 
           <div class="rowItemText">
@@ -58,7 +57,7 @@
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -364,7 +363,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+            <i class="iconChevron"></i>
           </div>
 
           <div class="rowItemText">
@@ -372,7 +371,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconChevron"></i>
+
           </div>
 
         </div>
@@ -395,7 +394,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+            <i class="iconChevron"></i>
           </div>
 
           <div class="rowItemText">
@@ -403,7 +402,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconChevron"></i>
+
           </div>
 
         </div>
@@ -426,7 +425,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+            <i class="iconChevron"></i>
           </div>
 
           <div class="rowItemText">
@@ -434,7 +433,7 @@
           </div>
 
           <div class="rowItemSuffix">
-            <i class="iconChevron"></i>
+
           </div>
 
         </div>
@@ -454,7 +453,7 @@
                 <div class="rowItemContent">
 
                   <div class="rowItemPrefix">
-                    <i class="iconDash"></i>
+                    <i class="iconChevron"></i>
                   </div>
 
                   <div class="rowItemText">
@@ -462,7 +461,7 @@
                   </div>
 
                   <div class="rowItemSuffix">
-                    <i class="iconChevron"></i>
+
                   </div>
 
                 </div>
@@ -512,7 +511,7 @@
       <div class="rowItemContent text-secondary">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+          <i class="iconExclamation"></i>
         </div>
 
         <div class="rowItemText">
@@ -537,7 +536,7 @@
       <div class="rowItemContent text-confirm">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+          <i class="iconConfirm"></i>
         </div>
 
         <div class="rowItemText">
@@ -562,7 +561,7 @@
       <div class="rowItemContent text-warning">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+          <i class="iconRemove"></i>
         </div>
 
         <div class="rowItemText">
@@ -602,7 +601,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+
           </div>
 
           <div class="rowItemText">
@@ -610,7 +609,7 @@
           </div>
 
           <div class="rowItemSuffix">
-
+            <i class="iconGrab"></i>
           </div>
 
         </div>
@@ -627,7 +626,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+
           </div>
 
           <div class="rowItemText">
@@ -635,7 +634,7 @@
           </div>
 
           <div class="rowItemSuffix">
-
+            <i class="iconGrab"></i>
           </div>
 
         </div>
@@ -652,7 +651,7 @@
         <div class="rowItemContent">
 
           <div class="rowItemPrefix">
-            <i class="iconDash"></i>
+
           </div>
 
           <div class="rowItemText">
@@ -660,7 +659,7 @@
           </div>
 
           <div class="rowItemSuffix">
-
+            <i class="iconGrab"></i>
           </div>
 
         </div>
@@ -800,7 +799,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -830,7 +829,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -860,7 +859,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -890,7 +889,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -920,7 +919,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -950,7 +949,7 @@ export default {
           <div class="rowItemContent">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -988,7 +987,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1018,7 +1017,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1048,7 +1047,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1078,7 +1077,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1108,7 +1107,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1138,7 +1137,7 @@ export default {
           <div class="rowItemContent text-secondary">
 
             <div class="rowItemPrefix">
-              <i class="iconDash"></i>
+
             </div>
 
             <div class="rowItemText">
@@ -1200,7 +1199,7 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -1225,7 +1224,7 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -1250,7 +1249,7 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -1275,7 +1274,7 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -1300,7 +1299,7 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+
         </div>
 
         <div class="rowItemText">
@@ -1337,7 +1336,9 @@ export default {
 
       <div class="rowItemContent">
 
-
+        <div class="rowItemPrefix">
+          <i class="iconChevron"></i>
+        </div>
 
         <div class="rowItemText">
           <p class="mb-0">Expanded Styling</p>
@@ -1361,7 +1362,9 @@ export default {
 
       <div class="rowItemContent">
 
-
+        <div class="rowItemPrefix">
+          <i class="iconChevron"></i>
+        </div>
 
         <div class="rowItemText">
           <p class="mb-0">Collapsed Styling (Click Me!)</p>
@@ -1403,12 +1406,12 @@ export default {
       <div class="rowItemContent">
 
         <div class="rowItemPrefix">
-          <i class="iconDash"></i>
+          <i class="iconFolderOpen"></i>
         </div>
 
         <div class="rowItemText">
           <div>
-            <i class="iconFolderOpen"></i>
+
             <abbr title="background-check-text.pdf" class="initialism">background-check-text.pdf</abbr>
           </div>
         </div>

@@ -30,6 +30,18 @@
 </template>
 ```
 
+<h3>API</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconAPI iconHover text-dark"></i>
+    <i class="iconAPI iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
 <h3>Arrow</h3>
 <p>Used primarily on buttons to indicate forward progression through the UI. Down, Left, and Up variants are seldom used.</p>
 

@@ -64,7 +64,9 @@
 
             <div class="rowItemContent">
 
-
+              <div class="rowItemPrefix">
+                <i class="iconChevron"></i>
+              </div>
 
               <div class="rowItemText">
                 <p class="mb-0">Account</p>
@@ -77,94 +79,93 @@
           </b-button>
           <b-collapse id="test00">
             <div class="sectionGroup">
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Parent">
-                    <template v-slot:append>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Parent">
+                      <template v-slot:append>
 
-                      <b-button
-                        :pressed="false"
-                        variant="outline-secondary"
-                        class="btnSmall btnFeedback text-secondary"
-                        onclick="this.blur();"
-                        @click="modalShow3 = !modalShow3"
-                        >
-
-                          <b-modal
-                            v-model="modalShow3"
-                            :no-close-on-backdrop="true"
-                            :no-close-on-esc="true"
-                            id="modal3"
-                            @shown="modalJQ"
+                        <b-button
+                          :pressed="false"
+                          variant="outline-secondary"
+                          class="btnSmall btnFeedback text-secondary"
+                          onclick="this.blur();"
+                          @click="modalShow3 = !modalShow3"
                           >
 
-                            <template v-slot:modal-header>
-                              <h5 class="mb-0">Change Parent Contact</h5>
-                            </template>
+                            <b-modal
+                              v-model="modalShow3"
+                              :no-close-on-backdrop="true"
+                              :no-close-on-esc="true"
+                              id="modal3"
+                              @shown="modalJQ"
+                            >
 
-                            <div class="modal-body">
-                              <b-row class="subGroup">
-                                <b-col cols="12">
-                                  <b-input-group class="dropdownMenu" prepend="Parent" >
-                                    <select name="Parent" id="choose5">
-                                      <option disabled selected>Choose One...</option>
-                                      <option>Parent Option 1</option>
-                                      <option>Parent Option 2</option>
-                                      <option>Parent Option 3</option>
-                                      <option>Parent Option 4</option>
-                                    </select>
-                                  </b-input-group>
-                                </b-col>
-                              </b-row>
-                            </div>
+                              <template v-slot:modal-header>
+                                <h5 class="mb-0">Change Parent Contact</h5>
+                              </template>
 
-                            <template v-slot:modal-footer>
+                              <div class="modal-body">
+                                <b-row class="subGroup">
+                                  <b-col cols="12">
+                                    <b-input-group class="dropdownMenu" prepend="Parent" >
+                                      <select name="Parent" id="choose5">
+                                        <option disabled selected>Choose One...</option>
+                                        <option>Parent Option 1</option>
+                                        <option>Parent Option 2</option>
+                                        <option>Parent Option 3</option>
+                                        <option>Parent Option 4</option>
+                                      </select>
+                                    </b-input-group>
+                                  </b-col>
+                                </b-row>
+                              </div>
 
-                                <b-button
-                                  :pressed="false"
-                                  variant="outline-warningfade"
-                                  class="btnNavigation btnWarning float-left"
-                                  @click="modalShow3=false"
-                                  >
-                                  CANCEL
-                                </b-button>
+                              <template v-slot:modal-footer>
 
-                                <b-button
-                                  :pressed="false"
-                                  variant="outline-confirmfade"
-                                  class="btnNavigation btnConfirm float-right"
-                                  @click="modalShow3=false"
-                                  >
-                                  SAVE
-                                </b-button>
+                                  <b-button
+                                    :pressed="false"
+                                    variant="outline-warningfade"
+                                    class="btnNavigation btnWarning float-left"
+                                    @click="modalShow3=false"
+                                    >
+                                    CANCEL
+                                  </b-button>
 
-                            </template>
+                                  <b-button
+                                    :pressed="false"
+                                    variant="outline-confirmfade"
+                                    class="btnNavigation btnConfirm float-right"
+                                    @click="modalShow3=false"
+                                    >
+                                    SAVE
+                                  </b-button>
 
-                          </b-modal>
+                              </template>
 
-                      <i class="iconEdit iconBorderStd"></i>
-                      </b-button>
-                    </template>
+                            </b-modal>
 
-                    <b-form-input class="form-control" type="text" placeholder="Triton Master" title="Triton Master" disabled>
+                        <i class="iconEdit iconBorderStd"></i>
+                        </b-button>
+                      </template>
 
-                    </b-form-input>
+                      <b-form-input class="form-control" type="text" placeholder="Triton Master" title="Triton Master" disabled></b-form-input>
 
-
-
-
-                  </b-input-group>
+                    </b-input-group>
 
 
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Name">
-                    <b-form-input value="Current Client or User" class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Name">
+                      <b-form-input value="Current Client or User" class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
             </div>
           </b-collapse>
 
@@ -178,7 +179,9 @@
 
             <div class="rowItemContent">
 
-
+              <div class="rowItemPrefix">
+                <i class="iconChevron"></i>
+              </div>
 
               <div class="rowItemText">
                 <p class="mb-0">Contact Information</p>
@@ -190,99 +193,117 @@
             </div>
 
           </b-button>
+
           <b-collapse id="test000">
             <div class="sectionGroup">
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Street #">
-                    <template v-slot:append>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Street #">
+                      <template v-slot:append>
 
-                          <b-button
-                            :pressed="false"
-                            variant="-"
-                            class="cursorDefault"
-                            onclick="this.blur();"
-                            @hover="showHover20 = !showHover20"
-                           >
-                            <i id="PopoverHover20" class="iconQuestion iconHover text-mediumdark fa-lg"></i>
-                            <b-popover
-                              triggers="hover blur"
-                              variant="mediumdark"
-                              placement="right"
-                              target="PopoverHover20"
+                            <b-button
+                              :pressed="false"
+                              variant="-"
+                              class="cursorDefault"
+                              onclick="this.blur();"
+                              @hover="showHover20 = !showHover20"
                              >
-                              Here is some content.
-                            </b-popover>
-                          </b-button>
+                              <i id="PopoverHover20" class="iconQuestion iconHover text-mediumdark fa-lg"></i>
+                              <b-popover
+                                triggers="hover blur"
+                                variant="mediumdark"
+                                placement="right"
+                                target="PopoverHover20"
+                               >
+                                Here is some content.
+                              </b-popover>
+                            </b-button>
 
-                    </template>
-                    <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Street Name">
-                    <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Unit">
-                    <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="City">
-                    <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Province">
-                    <select name="salutation" id="choose">
-                      <option disabled selected>Choose One...</option>
-                      <option>Alberta</option>
-                      <option>British Columbia</option>
-                      <option>Manitoba</option>
-                      <option>New Brunswick</option>
-                      <option>Newfoundland and Labrador</option>
-                      <option>Nova Scotia</option>
-                      <option>Ontario</option>
-                      <option>Prince Edward Island</option>
-                      <option>Quebec</option>
-                      <option>Saskatchewan</option>
-                    </select>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Postal Code">
-                    <b-form-input class="form-control" for="postal" v-mask="'XXX XXX'"></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Country">
-                    <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="8">
-                  <b-input-group prepend="Phone">
-                    <b-form-input class="form-control" type="tel" v-mask="'###-###-####'" placeholder=""></b-form-input>
-                  </b-input-group>
-                </b-col>
-              </b-row>
+                      </template>
+                      <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Street Name">
+                      <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Unit">
+                      <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="City">
+                      <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Province">
+                      <select name="salutation" id="choose">
+                        <option disabled selected>Choose One...</option>
+                        <option>Alberta</option>
+                        <option>British Columbia</option>
+                        <option>Manitoba</option>
+                        <option>New Brunswick</option>
+                        <option>Newfoundland and Labrador</option>
+                        <option>Nova Scotia</option>
+                        <option>Ontario</option>
+                        <option>Prince Edward Island</option>
+                        <option>Quebec</option>
+                        <option>Saskatchewan</option>
+                      </select>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Postal Code">
+                      <b-form-input class="form-control" for="postal" v-mask="'XXX XXX'"></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Country">
+                      <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
+              <div class="sectionItem">
+                <b-row>
+                  <b-col cols="12">
+                    <b-input-group prepend="Phone">
+                      <b-form-input class="form-control" type="tel" v-mask="'###-###-####'" placeholder=""></b-form-input>
+                    </b-input-group>
+                  </b-col>
+                </b-row>
+              </div>
             </div>
         </b-collapse>
+
         <div class="breadcrumbBottomSpacer"></div>
       </b-tab>
 
@@ -300,7 +321,9 @@
 
             <div class="rowItemContent">
 
-
+              <div class="rowItemPrefix">
+                <i class="iconChevron"></i>
+              </div>
 
               <div class="rowItemText">
                 <p class="mb-0">Options Group Name 1</p>
@@ -314,7 +337,7 @@
           </b-button>
           <b-collapse id="optionsgroup1">
             <div class="sectionGroup">
-            <b-input-group>
+
               <div class="sectionItem">
                 <b-button
                   block
@@ -430,7 +453,6 @@
               </div>
 
 
-            </b-input-group>
           </div>
           </b-collapse>
 
@@ -439,8 +461,9 @@
 
         <b-tab>
           <template v-slot:title><span>Packages</span></template>
+
             <div class="tabTitle">
-              <h4>Bell Package A1</h4>
+              <h4>{ Active SubTab Name }</h4>
               <b-badge variant="confirm">ACTIVE</b-badge>
             </div>
               <div>
@@ -448,25 +471,613 @@
                   <b-tabs pills card vertical end>
                     <b-tab active>
                       <template v-slot:title>
+                        <span>Global Options</span>
+                      </template>
+                      <h6>Landing Page Configuration</h6>
+                      <div id="moveable">
+                        <div>
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-1011new
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <b-badge variant="medium">#1</b-badge>
+                                Police Vulnerable Sector Check (PVS)
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconGrab"></i>
+
+                              </div>
+
+                            </div>
+
+                          </b-button>
+                          <b-collapse id="collapse-1011new">
+                            <b-card class="rowExpandableContent">
+                              <div class="textUnderline">DESCRIPTION TEXT</div>
+                              <p>This check is restricted to applicants seeking employment and/or volunteering in a position of authority or trust relative to vulnerable persons in Canada only. It is a collection of offence information, including convictions, outstanding warrants, charges and judicial orders available from a local police agency's records management system and other systems/records where authorized. This check will include sexual offence convictions for which the individual has received a record suspension (pardon) where authorized by the Minister of Public Safety and Emergency Preparedness. Non-conviction information shall be released only when it meets the Exceptional Disclosure Assessment.</p>
+                              <b-table
+                                :outlined="true"
+                                :striped="true"
+                                :fixed="true"
+                                :no-border-collapse="true"
+                                :no-select-on-click="false"
+                                :items="tableitems"
+                                :fields="fields"
+                                :tbody-tr-class="rowClass"
+                                class="tableTruncate"
+                              ></b-table>
+                              <b-button
+                                :pressed="false"
+                                variant="outline-light"
+                                size="sm"
+                                class="btnThin nonRowItem"
+                                onclick="this.blur();"
+                                >
+                                <div class="btnText">Edit Group</div>
+
+                              </b-button>
+                            </b-card>
+                          </b-collapse>
+                        </div>
+
+                        <div>
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-1011newnew
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <b-badge variant="medium">#2</b-badge>
+                                Criminal Record and Judicial Matters Check (CRJMC)
+                              </div>
+
+                              <div class="rowItemSuffix">
+
+                                <i class="iconGrab"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+                          <b-collapse id="collapse-1011newnew">
+                            <b-card class="rowExpandableContent">
+                            </b-card>
+                          </b-collapse>
+                        </div>
+
+                        <div>
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-1011newnewnew
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                              <div class="rowItemText">
+                                <b-badge variant="medium">#3</b-badge>
+                                Police Criminal Record Check (PCRC)
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconGrab"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+                          <b-collapse id="collapse-1011newnewnew">
+                            <b-card class="rowExpandableContent">
+                            </b-card>
+                          </b-collapse>
+                        </div>
+
+                      </div>
+
+                      <b-button
+                        :pressed="false"
+                        variant="outline-light"
+                        size="sm"
+                        class="btnThin nonRowItem"
+                        onclick="this.blur();"
+                        @click="modalShow2new = !modalShow2new"
+
+                        >
+                        <div class="btnText">Add Landing Page Group</div>
+
+                      </b-button>
+
+                      <b-modal
+                        v-model="modalShow2new"
+                        :no-close-on-backdrop="true"
+                        :no-close-on-esc="true"
+                        id="modal2new"
+                        size="lg"
+
+                      >
+                        <template v-slot:modal-header>
+                          <h5 class="mb-0">Add Landing Page Group</h5>
+
+                        </template>
+
+                        <div class="modal-body text-center">
+                          <b-row>
+                            <b-col cols="11">
+                              <b-input-group prepend="Check Name">
+                                <b-form-input class="form-control" type="text" placeholder="Check Name"></b-form-input>
+                              </b-input-group>
+                            </b-col>
+                          </b-row>
+                          <b-row>
+                            <b-col cols="11">
+                              <b-input-group prepend="Description">
+                                <b-form-textarea no-resize class="form-control" type="text" placeholder="Description" rows="5" ></b-form-textarea>
+                              </b-input-group>
+                            </b-col>
+                          </b-row>
+                          <div class="sectionGroup">
+                            <h5>Packages Available</h5>
+                            <p>Assign and configure packages to this landing page group:</p>
+                            <b-button
+                              block
+                              class="rowItem rowExpandable rowItemHover cursorDefault"
+                              variant="none"
+                              v-b-toggle.collapse-1011newnewnewtest
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck0101" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck0101"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package A1</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                            <b-collapse id="collapse-1011newnewnewtest">
+                              <b-card class="rowExpandableContent">
+                                <b-row>
+                                  <b-col cols="12">
+                                    <b-input-group prepend="Display Title">
+                                      <b-form-input class="form-control" type="text" placeholder="Display Title"></b-form-input>
+                                    </b-input-group>
+                                  </b-col>
+                                </b-row>
+                              </b-card>
+                            </b-collapse>
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover cursorDefault"
+                              variant="none"
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck010101" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck010101"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package E</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover cursorDefault"
+                              variant="none"
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck01010101" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck01010101"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package Services</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                          </div>
+                        </div>
+
+                        <template v-slot:modal-footer>
+
+                            <b-button
+                              :pressed="false"
+                              variant="outline-warningfade"
+                              class="btnNavigation btnWarning float-left"
+                              @click="modalShow2new=false"
+                              >
+                              CANCEL
+                            </b-button>
+
+                            <b-button
+                              :pressed="false"
+                              variant="outline-confirmfade"
+                              class="btnNavigation btnConfirm float-right"
+                              @click="modalShow2new=false"
+                              >
+                              ADD
+                            </b-button>
+
+                        </template>
+
+                      </b-modal>
+
+                      <h6>API Configuration</h6>
+
+                        <div>
+                          <b-button
+                            block
+                            class="rowItem rowExpandable rowItemHover cursorDefault"
+                            variant="none"
+                            v-b-toggle.collapse-1011newAPI
+                            onclick="this.blur();"
+                          >
+
+                            <div class="rowItemContent">
+
+                              <div class="rowItemPrefix">
+                                <i class="iconChevron"></i>
+                              </div>
+
+                              <div class="rowItemText">
+
+                                Test Connection
+                              </div>
+
+                              <div class="rowItemSuffix">
+                                <i class="iconAPI bg-medium"></i>
+                              </div>
+
+                            </div>
+
+                          </b-button>
+                          <b-collapse id="collapse-1011newAPI">
+                            <b-card class="rowExpandableContent">
+
+
+                              <b-button
+                                :pressed="false"
+                                variant="outline-light"
+                                size="sm"
+                                class="btnThin nonRowItem"
+                                onclick="this.blur();"
+                                >
+                                <div class="btnText">Edit API Connection</div>
+
+                              </b-button>
+                            </b-card>
+                          </b-collapse>
+                        </div>
+
+
+                      <b-button
+                        :pressed="false"
+                        variant="outline-light"
+                        size="sm"
+                        class="btnThin nonRowItem"
+                        onclick="this.blur();"
+                        @click="modalShow2newAPI = !modalShow2newAPI"
+
+                        >
+                        <div class="btnText">New API Connection</div>
+
+                      </b-button>
+
+                      <b-modal
+                        v-model="modalShow2newAPI"
+                        :no-close-on-backdrop="true"
+                        :no-close-on-esc="true"
+                        id="modal2newAPI"
+                        size="lg"
+                        @shown="modalJQ"
+
+                      >
+                        <template v-slot:modal-header>
+                          <h5 class="mb-0">New API Connection</h5>
+
+                        </template>
+
+                        <div class="modal-body text-center">
+                          <b-row>
+                            <b-col cols="11">
+                              <b-input-group prepend="Label">
+                                <b-form-input class="form-control" type="text" placeholder="Label"></b-form-input>
+                              </b-input-group>
+                            </b-col>
+                            <b-col cols="11">
+                              <b-input-group prepend="Username">
+                                <b-form-input class="form-control" type="text" placeholder="Username"></b-form-input>
+                              </b-input-group>
+                            </b-col>
+                            <b-col cols="11">
+                              <b-input-group prepend="Password">
+                                <b-form-input class="form-control" type="text" placeholder="Password"></b-form-input>
+                              </b-input-group>
+                            </b-col>
+                            <b-col cols="11">
+                              <b-input-group prepend="Package Code">
+                                <b-form-input class="form-control" type="text" placeholder="Package Code"></b-form-input>
+                              </b-input-group>
+                            </b-col>
+                            <b-col cols="11">
+                              <b-input-group prepend="IP List">
+                                <b-form-tags no-resize class="form-control" type="text" placeholder="IP Whitelist" rows="5" ></b-form-tags>
+                              </b-input-group>
+                            </b-col>
+                          </b-row>
+
+                          <div class="sectionGroup">
+                            <h5>Callback Assignments</h5>
+                            <p>Assign and configure callbacks:</p>
+                            <b-button
+                              block
+                              class="rowItem rowExpandable rowItemHover cursorDefault"
+                              variant="none"
+                              v-b-toggle.collapse-1011newnewnewtestAPIcallback
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <i class="iconDash"></i>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <b-badge variant="medium">#1</b-badge>
+                                  Callback Assignment
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <b-button onclick="this.blur()" variant="outline-warningfade" class="btnSmall cursorDefault text-warning">
+                                    <i class="iconRemove iconBorderMini"></i>
+                                  </b-button>
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                            <b-collapse id="collapse-1011newnewnewtestAPIcallback">
+                              <b-card class="rowExpandableContent">
+                                <b-row>
+                                  <b-col cols="9">
+                                    <b-input-group prepend="Callback URL">
+                                      <b-form-input class="form-control" type="text" placeholder="Callback URL"></b-form-input>
+                                    </b-input-group>
+                                  </b-col>
+                                  <b-col cols="9">
+                                    <b-input-group class="dropdownMenu" prepend="Callback Type">
+                                      <select name="salutation" id="choose3">
+                                        <option disabled selected>Callback Type...</option>
+                                        <option>Accio</option>
+                                        <option>BellSuccessFactors</option>
+                                        <option>ICIMS</option>
+                                        <option>rampinteractive</option>
+                                        <option>TazWorks</option>
+                                        <option>TheMinery</option>
+                                        <option>Uber</option>
+                                        <option>WorkDay</option>
+                                        <option>*Generic*</option>
+                                      </select>
+                                    </b-input-group>
+                                  </b-col>
+                                </b-row>
+                              </b-card>
+                            </b-collapse>
+
+                            <b-button
+                              :pressed="false"
+                              variant="outline-light"
+                              size="sm"
+                              class="btnThin nonRowItem"
+                              onclick="this.blur();"
+                              @click="xxx = !xxx"
+
+                              >
+                              <div class="btnText">Add Callback</div>
+
+                            </b-button>
+
+                          </div>
+
+                          <div class="sectionGroup">
+                            <h5>Packages Available</h5>
+                            <p>Assign and configure API connections to packages:</p>
+                            <b-button
+                              block
+                              class="rowItem rowExpandable rowItemHover cursorDefault"
+                              variant="none"
+                              v-b-toggle.collapse-1011newnewnewtestAPI
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck0101API" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck0101API"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package A1</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                            <b-collapse id="collapse-1011newnewnewtestAPI">
+                              <b-card class="rowExpandableContent">
+                                <b-row>
+                                  <b-col cols="12">
+                                    <b-input-group prepend="Display Title">
+                                      <b-form-input class="form-control" type="text" placeholder="Display Title"></b-form-input>
+                                    </b-input-group>
+                                  </b-col>
+                                </b-row>
+                              </b-card>
+                            </b-collapse>
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover cursorDefault"
+                              variant="none"
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck010101API" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck010101API"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package E</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                            <b-button
+                              block
+                              class="rowItem rowStandard rowItemHover cursorDefault"
+                              variant="none"
+                              onclick="this.blur();"
+                            >
+
+                              <div class="rowItemContent">
+
+                                <div class="rowItemPrefix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input id="customCheck01010101API" class="custom-control-input" type="checkbox"/>
+                                    <label class="custom-control-label cursorPointer" for="customCheck01010101API"></label>
+                                  </div>
+                                </div>
+
+                                <div class="rowItemText">
+                                  <p class="mb-0">Bell Package Services</p>
+                                </div>
+
+                                <div class="rowItemSuffix">
+                                  <i class="iconChevron"></i>
+                                </div>
+
+                              </div>
+
+                            </b-button>
+                          </div>
+                        </div>
+
+                        <template v-slot:modal-footer>
+
+                            <b-button
+                              :pressed="false"
+                              variant="outline-warningfade"
+                              class="btnNavigation btnWarning float-left"
+                              @click="modalShow2newAPI=false"
+                              >
+                              CANCEL
+                            </b-button>
+
+                            <b-button
+                              :pressed="false"
+                              variant="outline-confirmfade"
+                              class="btnNavigation btnConfirm float-right"
+                              @click="modalShow2newAPI=false"
+                              >
+                              ADD
+                            </b-button>
+
+                        </template>
+
+                      </b-modal>
+
+                      <div class="breadcrumbBottomSpacer"></div>
+                    </b-tab>
+
+
+
+                    <b-tab>
+                      <template v-slot:title>
                         <span>Bell Package A1</span>
                         <b-badge variant="confirm">&nbsp</b-badge>
                       </template>
                       <h6>Options</h6>
-                        <b-row class="subGroup">
-                          <b-col cols="8">
-                            <b-input-group class="dropdownMenu" prepend="Landing Type">
-                              <select name="salutation" id="choose">
-                                <option disabled selected>Customer Landing Type...</option>
-                                <option>PoliceCriminalRecordCheckEmployment</option>
-                                <option>PoliceCriminalRecordCheckVolunteer</option>
-                                <option>PoliceInformationCheckEmployment</option>
-                                <option>PoliceInformationCheckVolunteer</option>
-                                <option>VulnerableSectorEmployment</option>
-                                <option>VulnerableSectorVolunteer</option>
-                              </select>
-                            </b-input-group>
-                          </b-col>
-                        </b-row>
                         <b-button
                           block
                           class="rowItem rowStandard rowItemHover cursorDefault"
@@ -493,229 +1104,6 @@
                           </div>
 
                         </b-button>
-
-                        <b-button
-                          block
-                          class="rowItem rowExpandable rowItemHover cursorDefault"
-                          variant="none"
-                          v-b-toggle.collapse-1011
-                          onclick="this.blur();"
-                        >
-
-                          <div class="rowItemContent">
-
-                            <div class="rowItemPrefix">
-                              <i class="iconDash"></i>
-                            </div>
-
-                            <div class="rowItemText">
-                              Static EIV Links
-                              <b-badge variant="medium">3</b-badge>
-                            </div>
-
-                            <div class="rowItemSuffix">
-                              <i class="iconChevron"></i>
-                            </div>
-
-                          </div>
-
-                        </b-button>
-
-                        <b-collapse id="collapse-1011">
-                          <b-card class="rowExpandableContent">
-                            <b-button
-                              block
-                              class="rowItem rowExpandable rowItemHover cursorDefault"
-                              variant="none"
-                              v-b-toggle.collapse-707
-                              onclick="this.blur();"
-                            >
-
-                              <div class="rowItemContent">
-
-                                <div class="rowItemPrefix">
-                                  <i class="iconDash"></i>
-                                </div>
-
-                                <div class="rowItemText">
-                                  <p>Eunice Hooper</p>
-                                </div>
-
-                                <div class="rowItemSuffix">
-                                  <i class="iconChevron"></i>
-                                </div>
-
-                              </div>
-
-                            </b-button>
-
-                            <b-collapse id="collapse-707">
-                              <b-card class="rowExpandableContent">
-                                <b-row class="nonRowItem">
-                                  <b-col cols="2">
-                                    <b-button
-                                      block
-                                      class="cursorDefault"
-                                      variant="none"
-                                      onclick="this.blur();"
-                                    >
-
-                                      <div class="rowItemContent">
-
-                                          <div class="rowItemText">
-                                            <p>EIV Code</p>
-                                          </div>
-
-                                      </div>
-                                    </b-button>
-                                  </b-col>
-                                    <b-button
-                                      :pressed="false"
-                                      variant="outline-light"
-                                      size="sm"
-                                      class="btnThin"
-                                      onclick="this.blur();"
-
-                                      >
-                                      <div class="btnText">01c196d2-a8da-518a-f6ca-8cfc1ac79b50
-                                      </div>
-
-                                    </b-button>
-
-                                </b-row>
-
-                                <b-row class="nonRowItem">
-                                  <b-col cols="2">
-                                    <b-button
-                                      block
-                                      class="cursorDefault"
-                                      variant="none"
-                                      onclick="this.blur();"
-                                    >
-
-                                      <div class="rowItemContent">
-
-                                          <div class="rowItemText">
-                                            <p>English</p>
-                                          </div>
-
-                                      </div>
-                                    </b-button>
-                                  </b-col>
-                                <b-button
-                                  :pressed="false"
-                                  variant="outline-light"
-                                  size="sm"
-                                  class="btnThin"
-                                  onclick="this.blur();"
-
-                                  >
-                                  <div class="btnText">Copy Link</div>
-
-                                </b-button>
-                              </b-row>
-
-
-
-                              <b-row class="nonRowItem">
-                                <b-col cols="2">
-                                  <b-button
-                                    block
-                                    class="cursorDefault"
-                                    variant="none"
-                                    onclick="this.blur();"
-                                  >
-
-                                    <div class="rowItemContent">
-
-
-
-                                        <div class="rowItemText">
-                                          <p>French</p>
-                                        </div>
-
-
-
-                                    </div>
-
-                                  </b-button>
-                                </b-col>
-                              <b-button
-                                :pressed="false"
-                                variant="outline-light"
-                                size="sm"
-                                class="btnThin"
-                                onclick="this.blur();"
-
-                                >
-                                <div class="btnText">Copy Link</div>
-
-                              </b-button>
-                            </b-row>
-
-                              </b-card>
-                            </b-collapse>
-
-                            <b-button
-                              :pressed="false"
-                              variant="outline-light"
-                              size="sm"
-                              class="btnThin nonRowItem"
-                              onclick="this.blur();"
-                              @click="modalShow2 = !modalShow2"
-
-                              >
-                              <div class="btnText">Create New EIV Link</div>
-
-                            </b-button>
-                            <div class="ui-front">
-                              <b-modal
-                                v-model="modalShow2"
-                                :no-close-on-backdrop="true"
-                                id="modal2"
-
-                              >
-                                <template v-slot:modal-header>
-                                  <h5 class="mb-0">Create New EIV Link</h5>
-
-                                </template>
-
-                                <div class="modal-body text-center">
-                                  <b-row>
-                                    <b-col cols="12">
-                                      <b-input-group prepend="Name">
-                                        <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
-                                      </b-input-group>
-                                    </b-col>
-                                  </b-row>
-                                </div>
-
-                                <template v-slot:modal-footer>
-
-                                    <b-button
-                                      :pressed="false"
-                                      variant="outline-warningfade"
-                                      class="btnNavigation btnWarning float-left"
-                                      @click="modalShow2=false"
-                                      >
-                                      CANCEL
-                                    </b-button>
-
-                                    <b-button
-                                      :pressed="false"
-                                      variant="outline-confirmfade"
-                                      class="btnNavigation btnConfirm float-right"
-                                      @click="modalShow2=false"
-                                      >
-                                      CREATE NEW EIV LINK
-                                    </b-button>
-
-                                </template>
-
-                              </b-modal>
-                            </div>
-                          </b-card>
-                        </b-collapse>
 
                         <b-button
                           block
@@ -815,7 +1203,7 @@
                               <b-card class="rowExpandableContent">
                                 <b-button
                                   block
-                                  class="rowItem rowStandard rowItemHover cursorDefault"
+                                  class="rowItem rowStandard rowItemHover rowHighlightDark cursorDefault col-11"
                                   variant="none"
                                   onclick="this.blur();"
                                 >
@@ -823,12 +1211,12 @@
                                   <div class="rowItemContent">
 
                                       <div class="rowItemPrefix">
-                                        <i class="iconInherited"></i>
+
                                       </div>
 
                                       <div class="rowItemText">
-                                        Base Fee: $14.95
-
+                                        Base Fee:
+                                        <span class="text-monospace">$14.95</span>
                                       </div>
 
                                       <div class="rowItemSuffix">
@@ -849,7 +1237,7 @@
                                   <div class="rowItemContent">
 
                                     <div class="rowItemPrefix">
-                                      <i class="iconDash"></i>
+                                      <i class="iconChevron"></i>
                                     </div>
 
                                     <div class="rowItemText">
@@ -857,7 +1245,7 @@
                                     </div>
 
                                     <div class="rowItemSuffix">
-                                      <i class="iconChevron"></i>
+
                                     </div>
 
                                   </div>
@@ -910,7 +1298,7 @@
                                 <div class="rowItemContent">
 
                                   <div class="rowItemPrefix">
-                                    <i class="iconDash"></i>
+                                    <i class="iconChevron"></i>
                                   </div>
 
                                   <div class="rowItemText">
@@ -918,7 +1306,7 @@
                                   </div>
 
                                   <div class="rowItemSuffix">
-                                    <i class="iconChevron"></i>
+
                                   </div>
 
                                 </div>
@@ -1375,7 +1763,7 @@
 
                     <b-tab>
                       <template v-slot:title>
-                        <span>Base Services</span>
+                        <span>Bell Base Services</span>
                         <b-badge variant="confirm">&nbsp</b-badge>
                       </template>
                     </b-tab>
@@ -1632,11 +2020,54 @@ $( function() {
   }).disableSelection();
 } );
 
+$(function() {
+  $( "#moveable" ).sortable({
+    cancel: '', //need this to function with b-button
+    opacity: .7,
+    placeholder: 'ui-state-highlight', //custom style for placeholder while dragging
+    appendTo: "div",
+    scroll: false,
+    helper: "clone",
+    tolerance: "pointer"
+  });
+  $( "#sortable" ).disableSelection();
+});
+
 export default {
     data() {
       return {
+        fields: ['assigned_package', 'display_title', 'grouping'],
+        tableitems: [
+          { assigned_package: 'Bell Base Services', display_title: 'Employment/Other', grouping: 'X Value' },
+          { assigned_package: 'Bell Package A1', display_title: 'Volunteer', grouping: 'X Value' },
+          { assigned_package: 'Bell Package E', display_title: 'Other', grouping: 'X Value' }
+        ],
+        tableVariants: [
+          'primary',
+          'secondary',
+          'info',
+          'danger',
+          'warning',
+          'success',
+          'light',
+          'dark'
+        ],
+        striped: false,
+        bordered: false,
+        borderless: false,
+        outlined: false,
+        small: false,
+        hover: false,
+        dark: false,
+        fixed: false,
+        footClone: false,
+        headVariant: null,
+        tableVariant: '',
+        noCollapse: false,
         modalShow: false,
         modalShow2: false,
+        modalShow2new: false,
+        modalShow2newAPI: false,
         modalShow3: false,
         items: [
           {
@@ -1662,9 +2093,11 @@ export default {
         // THIS IS REQUIRED TO SHOW UI SELECT PROPERLY INSIDE MODALS
         $( function() {
             $( "#choose5" ).selectmenu();
+            $( "#choose3" ).selectmenu();
             $( ".ui-front" ).css('z-index',9999);
           } );
-      }
+      },
+      rowClass: 'text-truncate'
   }
 }
 </script>

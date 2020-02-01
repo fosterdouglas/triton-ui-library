@@ -134,6 +134,17 @@ a, a:hover {
   font-size: 85%;
 }
 
+.textUnderline {
+  text-decoration: underline;
+}
+
+.text-monospace {
+  background-color: $medium;
+  @extend .px-1;
+  @extend .mx-1;
+  font-size: 95%;
+}
+
 .custom-switch > label > .supportText {
   @extend .align-text-top;
 }
@@ -646,6 +657,14 @@ footer {
   color: inherit;
 }
 
+//API
+.iconAPI {
+  @extend .fal;
+  @extend .fa-plug;
+  @extend .p-1;
+  color: inherit;
+}
+
 //ARROW
 .iconArrow {
   @extend .fal;
@@ -665,12 +684,16 @@ footer {
 //CHEVRON
 .iconChevron {
   @extend .fal;
-  @extend .fa-chevron-right;
-  @extend .py-1;
-  @extend .px-2;
-  font-size: 100% !important;
+  @extend .fa-play;
+  @extend .p-1;
   color: inherit;
+  transition: .3s all;
 }
+
+  :not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconChevron {
+    @extend .fa-rotate-90;
+    transition: .3s all;
+  }
 
 //CIRCLE
 .iconCircle {
@@ -805,7 +828,7 @@ footer {
 //GRABBABLE
 .iconGrab {
   @extend .fal;
-  @extend .fa-grip-lines-vertical;
+  @extend .fa-stream;
   @extend .p-1;
   color: inherit;
 }
@@ -1155,19 +1178,26 @@ input[type="date"]::-webkit-clear-button:hover {
 .input-group-prepend {
   @extend .bg-lightest;
   @extend .border;
-  min-width: 15ch;
+  min-width: 18ch;
   max-width: 20ch;
-  height: 34px;
+  height: auto;
+  align-items: baseline;
 }
 
 .input-group-append {
-  margin-left:0;
+  margin-left: 0;
 }
 
 .input-group-append > button {
-  height: 34px;
-  @extend .p-0;
-  margin-right: -5em !important; //compensates for "?" hover button, this needs a FIX to support multiple icons in the appended area
+  @extend .rounded-0;
+  @extend .mr-0;
+}
+
+.input-group-append > button > i {
+  //height: 22px;
+  //@extend .px-1;
+
+  @extend .rounded-0;
 }
 
 .input-group-append > button.btnSmall > i {
@@ -1175,7 +1205,7 @@ input[type="date"]::-webkit-clear-button:hover {
 }
 
 .sectionItem ~ .input-group-append button {
-  @extend .mt-1;
+  //@extend .mt-1;
 }
 
 .disabled > .input-group-prepend > .input-group-text,
@@ -1188,7 +1218,8 @@ input[type="date"]::-webkit-clear-button:hover {
   @extend .text-dark;
   background-color: unset;
   border: none;
-  padding-top: 7px;
+  padding-top: 6px;
+  padding-bottom: 5px;
 }
 
 .input-group-prepend > .input-group-text {
@@ -1248,7 +1279,7 @@ select:not(:disabled) option:not(:disabled):not(:checked):hover {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 textarea {
-  @extend .mt-1;
+  //@extend .mt-1;
 }
 
 //DROPDOWN
@@ -1843,8 +1874,8 @@ img:hover + .imgIcon {
 }
 
 .sectionItem {
-  @extend .col-12;
-  @extend .px-0;
+  @extend .mx-3;
+  //@extend .w-100;
 }
 
 .rowStandard {
@@ -1889,14 +1920,20 @@ img:hover + .imgIcon {
 .rowItemPrefix {
   @extend .d-inline;
   @extend .align-middle;
-  @extend .mr-2;
-  @extend .px-4;
+  margin-right: 0.5rem;
+  padding: 0rem 1.5rem;
   width: 30px;
   height: 20px;
 }
 
+.rowItemPrefix:empty {
+  margin-right: 0rem !important;
+  padding: 0rem 0rem !important;
+  width: 11px !important;
+}
+
 .rowItemPrefix i {
-  font-size: 100% !important;
+  //font-size: 100% !important;
 }
 
 .rowItemText {
@@ -1920,7 +1957,7 @@ img:hover + .imgIcon {
 }
 
 .rowItemPrefix i, .rowItemSuffix > i:not(.iconBorderMini) {
-  @extend .fa-lg;
+  //@extend .fa-lg;
 }
 
 .rowExpandableContent {
@@ -1942,19 +1979,36 @@ img:hover + .imgIcon {
   border-top-width: 1px;
 }
 
+//rename this class
 .rowGroupTitle.collapsed {
   border: 1px solid $mediumdark;
   @extend .pl-3;
-  transition: all .2s;
+  transition: all .3s;
   height:34px;
 }
 
+//rename this class
 .rowGroupTitle:not(.collapsed) {
   background-color: $dark;
   color: $white;
   border-color: transparent;
   height:51px;
   padding-left: 1.1rem;
+  transition: all .3s;
+}
+
+.rowGroupTitle:not(.collapsed):focus:active {
+  background-color: $dark !important;
+  color: $white;
+}
+
+.rowGroupTitle.collapsed > .rowItemContent > .rowItemPrefix > .iconChevron {
+  color: $dark !important;
+  transition: all .2s;
+}
+
+.rowGroupTitle:not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconChevron {
+  color: $white !important;
   transition: all .2s;
 }
 
@@ -1982,6 +2036,10 @@ img:hover + .imgIcon {
   height: 200px;
 }
 
+.rowExpandableContent {
+  //background-color: rgba($medium, .2);
+}
+
 .rowExpandableContent.card { //for nested row elements, should have a more specific selector
   @extend .rounded-0;
   @extend .d-inline-flex;
@@ -1989,8 +2047,7 @@ img:hover + .imgIcon {
 }
 
 .rowExpandableContent > .card-body { //for nested row elements
-  width: 95%;
-  @extend .ml-auto;
+  @extend .mx-3;
 }
 
 button.rowItem:focus:active {
@@ -2041,10 +2098,6 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .text-left;
 }
 
-.ui-sortable-handle {
-  border-right: 3px solid $medium;
-}
-
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -2056,6 +2109,12 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .p-3;
   @extend .my-3;
   background: $lightest;
+}
+
+//removes additional margin at the top of the first item of a group
+.sectionItem:first-child > .rowItem,
+.sectionItem:first-child > .row > div > .input-group {
+  margin-top: 0 !important;
 }
 
 .sideNav.card {
@@ -2102,22 +2161,29 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 .sideNav .nav-link.active {
-  @extend .text-primary;
-  @extend .bg-white;
+  @extend .text-white;
+  @extend .bg-primary;
   border-right: 4px solid $primary;
   font-weight: 700;
   margin-right: -.3em;
 }
 
-.sideNav a.nav-link.active:focus {
-  color: $primary !important;
+.sideNav a.nav-link.active:focus,
+.sideNav a.nav-link.active:hover {
+  background-color: $primary !important;
 }
 
-.sideNav .nav-link.active:hover {
-  @extend .bg-white;
+.sideNav .nav-link.active:hover,
+.sideNav .nav-link.active:focus:hover {
+  background-color: $primary !important;
+  @extend .text-white;
   @extend .cursorPointer;
   font-weight: 700;
   opacity: 1;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: 0px;
 }
 
 .navBreak {
@@ -2182,6 +2248,10 @@ span.edited:hover::before {
 .table-bordered td {
   border-width: 1px !important;
 
+}
+
+.tableTruncate > tbody > tr > td {
+  @extend .text-truncate;
 }
 
 
@@ -2256,6 +2326,10 @@ span.edited:hover::before {
 
 .nav-tabs .nav-link:not(.active):hover {
   border-color: transparent;
+}
+
+.tabsNav > .tabs > .card-header > .nav-tabs > .nav-item {
+  margin-bottom: -1px;
 }
 
 //VERTICAL TABS
@@ -2488,6 +2562,7 @@ a.dropdown-item:active {
   @extend .border-mediumdark;
   @extend .w-100;
   @extend .my-4;
+  @extend .p-2;
   @extend .text-center;
 }
 
