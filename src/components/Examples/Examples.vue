@@ -46,7 +46,6 @@
           variant="mediumdark"
           placement="right"
           target="PopoverHover5"
-          :show.sync="showHover5"
          >
           here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text here is some text
         </b-popover>
@@ -213,6 +212,7 @@
   export default {
     data() {
       return {
+        showHover5: false
       }
     }
   }

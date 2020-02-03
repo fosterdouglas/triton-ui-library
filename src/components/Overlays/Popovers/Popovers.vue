@@ -282,7 +282,11 @@
   export default {
     data() {
       return {
-
+        showHover1: false,
+        showHover2: false,
+        showHover3: false,
+        showHover4: false,
+        showHover5: false
       }
     }
   }

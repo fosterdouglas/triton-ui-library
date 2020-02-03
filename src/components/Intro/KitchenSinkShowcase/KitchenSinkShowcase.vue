@@ -7,7 +7,7 @@
 
 
 <div>
-  <b-navbar class="supportNav" type="dark" variant="dark" sticky="true">
+  <b-navbar class="supportNav" type="dark" variant="dark" sticky>
     <b-row class="w-100" align-h="between">
       <b-col sm="auto">
         <b-navbar-nav>
@@ -198,7 +198,6 @@
                             placement="right"
                             target="PopoverHover20"
                             contenteditable="true"
-                            :show.sync="PopoverHover20"
                            >
                            Here is some content.
                            <br/>
@@ -245,7 +244,6 @@
                             placement="right"
                             target="PopoverHover2016"
                             contenteditable="true"
-                            :show.sync="PopoverHover2016"
                            >
                            Here is some content.
                           </b-popover>
@@ -307,7 +305,6 @@
                                 placement="right"
                                 target="PopoverHover20a"
                                 contenteditable="true"
-                                :show.sync="PopoverHover20a"
                                >
                                Here is some content.
                               </b-popover>
@@ -340,7 +337,6 @@
                                 placement="right"
                                 target="PopoverHover20b"
                                 contenteditable="true"
-                                :show.sync="PopoverHover20b"
                                >
                                Here is some content.
                               </b-popover>
@@ -372,7 +368,6 @@
                             placement="right"
                             target="PopoverHover20c"
                             contenteditable="true"
-                            :show.sync="PopoverHover20c"
                            >
                            Here is some content.
                           </b-popover>
@@ -403,7 +398,6 @@
                             placement="right"
                             target="PopoverHover20d"
                             contenteditable="true"
-                            :show.sync="PopoverHover20d"
                            >
                            Here is some content.
                           </b-popover>
@@ -434,7 +428,6 @@
                             placement="right"
                             target="PopoverHover20e"
                             contenteditable="true"
-                            :show.sync="PopoverHover20e"
                            >
                            Here is some content.
                           </b-popover>
@@ -477,7 +470,6 @@
                             placement="right"
                             target="PopoverHover20f"
                             contenteditable="true"
-                            :show.sync="PopoverHover20f"
                            >
                            Here is some content.
                           </b-popover>
@@ -508,7 +500,6 @@
                             placement="right"
                             target="PopoverHover20g"
                             contenteditable="true"
-                            :show.sync="PopoverHover20g"
                            >
                            Here is some content.
                           </b-popover>
@@ -539,7 +530,6 @@
                             placement="right"
                             target="PopoverHover20h"
                             contenteditable="true"
-                            :show.sync="PopoverHover20h"
                            >
                            Here is some content.
                           </b-popover>
@@ -2011,67 +2001,6 @@
                         <span>TRITON 50 TEST</span>
                         <b-badge variant="warning">&nbsp</b-badge>
                       </template>
-
-
-                      <b-row align-h="center">
-                        <b-col cols="11">
-                          <b-card class="highlightSection">
-                            <h3>Criminal Record and Judicial Matters Check (CRJMC)</h3>
-                            <p>A collection of offence information, including convictions, outstanding warrants, charges and judicial orders available from a local police agency's records management system and other systems/records where authorized.</p>
-                            <p>This check is intended for applicants who are seeking volunteer and/or employment with agencies who require a criminal record check. The agency has determined that a search of pardoned sex offenders database is NOT required (i.e., border crossing or visa) therefore this check is NOT intended for applicants who are seeking volunteer and/or employment with vulnerable persons.</p>
-                            <b-row align-h="center">
-                              <b-col sm="auto">
-                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
-                                  <h5 class="text-center">Employment</h5>
-                                  <b-button
-                                    :pressed="false"
-                                    variant="outline-primary"
-                                    class="btnNavigation btnStandard btnWhite"
-                                    onclick="this.blur();"
-                                    >
-                                    <div class="btnText">START CHECK</div>
-                                    <i class="iconArrow btnIconRight"></i>
-                                  </b-button>
-                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
-                                </div>
-                              </b-col>
-                              <b-col sm="auto">
-                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
-                                  <h5 class="text-center">Volunteer</h5>
-                                  <b-button
-                                    :pressed="false"
-                                    variant="outline-primary"
-                                    class="btnNavigation btnStandard btnWhite"
-                                    onclick="this.blur();"
-                                    >
-                                    <div class="btnText">START CHECK</div>
-                                    <i class="iconArrow btnIconRight"></i>
-                                  </b-button>
-                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
-                                </div>
-                              </b-col>
-                              <b-col sm="auto">
-                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
-                                  <h5 class="text-center">Other</h5>
-                                  <b-button
-                                    :pressed="false"
-                                    variant="outline-primary"
-                                    class="btnNavigation btnStandard btnWhite"
-                                    onclick="this.blur();"
-                                    >
-                                    <div class="btnText">START CHECK</div>
-                                    <i class="iconArrow btnIconRight"></i>
-                                  </b-button>
-                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
-                                </div>
-                              </b-col>
-                            </b-row>
-                          </b-card>
-                        </b-col>
-                      </b-row>
-
-                      <div class="breadcrumbBottomSpacer"></div>
-
                     </b-tab>
 
                     <b-tab>
@@ -2350,6 +2279,16 @@ $(function() {
 export default {
     data() {
       return {
+        PopoverHover20: false,
+        PopoverHover2016: false,
+        PopoverHover20a: false,
+        PopoverHover20b: false,
+        PopoverHover20c: false,
+        PopoverHover20d: false,
+        PopoverHover20e: false,
+        PopoverHover20f: false,
+        PopoverHover20g: false,
+        PopoverHover20h: false,
         config: {
             placeholder: 'Compose an epic...',
             options: 'code-block',
