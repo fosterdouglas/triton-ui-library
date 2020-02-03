@@ -17,10 +17,6 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
       <b-tabs card vertical>
 
         <b-tab disabled>
-          <template v-slot:title><span><h2>Nav Title</h2></span></template>
-        </b-tab>
-
-        <b-tab disabled>
           <template v-slot:title><span>Title of This Group</span></template>
         </b-tab>
 
@@ -43,6 +39,9 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
           <template v-slot:title><div class="navBreak"></div></template>
         </b-tab>
 
+
+        <!--
+        
         <b-tab>
           <template v-slot:title>
             <div variant="-"
@@ -75,6 +74,7 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
         </template>
         </b-tab>
 
+        -->
 
       </b-tabs>
     </b-card>

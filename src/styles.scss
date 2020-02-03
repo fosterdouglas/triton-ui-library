@@ -343,6 +343,7 @@ a, a:hover {
 .btn {
   border: 0px solid transparent;
   vertical-align: initial;
+  transition: none;
 }
 
 .btnNavigation {
@@ -413,7 +414,6 @@ a.btnStandard:focus {
 }
 
 .btnStandardPressed {
-  pointer-events: none;
   @extend .bg-dark;
   @extend .border-dark;
   @extend .text-white;
@@ -446,7 +446,6 @@ a.btnConfirm:focus {
 }
 
 .btnConfirmPressed {
-  pointer-events: none;
   @extend .bg-confirm;
   @extend .border-confirm;
   @extend .text-white;
@@ -480,7 +479,6 @@ a.btnWarning:focus {
 }
 
 .btnWarningPressed {
-  pointer-events: none;
   @extend .rounded-0;
   @extend .bg-warning;
   @extend .border-warning;
@@ -511,6 +509,16 @@ a.btnFeedback:focus {
 
 .btnFeedback:active:focus i {
   font-weight: 700;
+}
+
+.btnFeedbackPressed {
+  @extend .rounded-0;
+  @extend .bg-secondary;
+  @extend .text-white;
+}
+
+button.btnFeedbackPressed:hover {
+  background-color: rgba($secondary, .75) !important;
 }
 
 //ICON BUTTON
@@ -692,6 +700,7 @@ footer {
 
   :not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconChevron {
     @extend .fa-rotate-90;
+    //@extend .fas;
     transition: .3s all;
   }
 
@@ -724,6 +733,14 @@ footer {
 .iconCopy {
   @extend .fal;
   @extend .fa-clone;
+  @extend .p-1;
+  color: inherit;
+}
+
+//CROWN
+.iconCrown {
+  @extend .fal;
+  @extend .fa-crown;
   @extend .p-1;
   color: inherit;
 }
@@ -854,6 +871,14 @@ footer {
   color: inherit;
 }
 
+//PLUS
+.iconPlus {
+  @extend .fal;
+  @extend .fa-plus;
+  @extend .p-1;
+  color: inherit;
+}
+
 //PREVIOUS
 .iconPrevious {
   @extend .fal;
@@ -927,11 +952,13 @@ footer {
 
 //USER
 .iconUser {
-  @extend .fal;
-  @extend .fa-user;
+  @extend .far;
+  @extend .fa-id-card;
+  @extend .fa-lg;
   @extend .p-1;
   color: inherit;
 }
+
 
 
 button[class|=btn-outline] { //Sets all btn variant backgrounds
@@ -1288,13 +1315,15 @@ select:first-child {
 }
 
 .dropdownGroup .dropdown-toggle {
-  @extend .btnNavigation;
-  @extend .btnStandard;
+  //@extend .btnNavigation;
+  //@extend .btnStandard;
+  @extend .rounded-0;
+  @extend .bg-light;
+  @extend .text-dark;
 }
 
 .dropdownGroup.dropdown > .dropdown-menu {
   margin-top: 0;
-  @extend .border-dark;
   box-shadow: 0 0 0 1px $dark;
   margin-left: 1px;
 }
@@ -1309,6 +1338,10 @@ select:first-child {
   @extend .mr-0;
 }
 
+.b-dropdown-form {
+  @extend .px-3;
+}
+
 .b-dropdown-form:focus {
   outline:0 !important;
 }
@@ -1319,6 +1352,10 @@ select:first-child {
 
 .dropdownGroup.show > .dropdown-toggle:hover {
   color: white !important;
+}
+
+.dropdownGroup > .dropdown-menu {
+  @extend .pr-0;
 }
 
 .ql-snow {
@@ -1810,14 +1847,14 @@ img:hover + .imgIcon {
 
 [role=menuitem] i {
   border: 1px solid transparent;
-  margin-top: -.23em;
+  margin-top: -.15em;
   width: 10px; //prevents prev/next buttons from shifting content on hover
 }
 
 .page-item > [role=menuitem] {
   border: 0px;
   @extend .mx-0;
-  @extend .fa-lg;
+  //@extend .fa-lg;
 }
 
 .page-item.disabled > [role=menuitem] { //styles for disabled arrow
@@ -1834,10 +1871,10 @@ img:hover + .imgIcon {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 .popover {
-  @extend .shadow-sm;
+  //@extend .shadow-sm;
   @extend .rounded-0;
   max-width: 250px;
-  margin: 1.5em 1em 1.5em 1em !important; //sets popover position
+  margin: 1.5em 1em 1.5em 1.5em !important; //sets popover position
   background-clip: unset !important;
 }
 
@@ -1850,6 +1887,25 @@ img:hover + .imgIcon {
 .popover-body {
   @extend .text-center;
   padding: .75em 1.5em .75em 1.5em;
+}
+
+.questionBox {
+  @extend .py-0;
+  @extend .px-2;
+  @extend .mx-1;
+  @extend .border;
+  @extend .border-medium;
+  @extend .rounded-0;
+  height: 34px;
+}
+
+.questionBox:hover {
+  //@extend .border-mediumdark;
+}
+
+.questionBox:hover > i {
+  @extend .fas;
+  @extend .text-mediumdark;
 }
 
 
@@ -2343,6 +2399,10 @@ span.edited:hover::before {
   font-size: .9rem;
 }
 
+.nav-pills > .nav-item a:focus {
+  outline: 0;
+}
+
 .nav-pills > .nav-item > a.nav-link {
   @extend .text-dark;
   @extend .mx-3;
@@ -2470,16 +2530,21 @@ span.edited:hover::before {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-.navbar {
+.navbar.primaryNav {
   min-height: 68px;
+}
+
+.navbar.supportNav {
+  height: 34px;
 }
 
 .navbar-collapse {
   @extend .ml-1;
 }
 
-.navbar-nav .nav-link {
-  @extend .px-2;
+.navbar-nav > .nav-item > .nav-link {
+  @extend .px-3;
+  //@extend .py-0;
 }
 
 .navbar-brand {
@@ -2496,17 +2561,32 @@ span.edited:hover::before {
 
 .navbar-nav > .nav-item {
   @extend .text-white;
-  @extend .mx-1;
+  @extend .mx-0;
 }
 
 .dropdown-menu {
   @extend .rounded-0;
-  margin-top: 1.1em;
   @extend .text-primary;
-  //@extend .border-primary;
   border: 0px solid transparent;
   padding-right: 1em;
   box-shadow: 0 0 0 2px $primary;
+}
+
+.primaryNav > .navbar-collapse > .navbar-nav > .dropdown > .dropdown-menu {
+  margin-top: .95rem;
+}
+
+//THE BOX SHADOW IS A TEMPORARY STYLE, SHOULD CHANGE PROGRAMATICALLY IN FINAL BUILD
+.supportNav > div > div > .navbar-nav > .dropdown > .dropdown-menu {
+  //position: static !important;
+  margin-top: -.15rem !important;
+  box-shadow: -7px 3px 10px rgba($dark, .07), /*left and bottom*/
+            7px 3px 10px rgba($dark, .07); /*right and bottom*/
+}
+
+//THE BG COLOR IS A TEMPORARY STYLE, SHOULD CHANGE PROGRAMATICALLY IN FINAL BUILD
+.supportNav > div > div > .navbar-nav > .dropdown > .dropdown-menu > li > .dropdown-item:hover {
+  @extend .bg-dark;
 }
 
 .dropdown-item {
@@ -2535,17 +2615,25 @@ a.dropdown-item:active {
 
 .dropdownCustomToggle > a::after {
   @extend .d-inline-block;
-  @extend .ml-1;
+  @extend .ml-2;
   font-family: "Font Awesome 5 Pro";
-  @extend .fa-sm;
-  font-weight: 300;
-  content: "\f078";
+  @extend .fa-xs;
+  @extend .fal;
+  @extend .fa-rotate-90;
+  content: "\f2ec";
   border: 0px solid transparent;
+  transition: .2s transform;
+}
+
+.dropdownCustomToggle > a[aria-expanded=true]:after {
+  @extend .fa-rotate-180;
+  @extend .fas;
+  transition: .2s transform;
 }
 
 .navbar-dark .navbar-nav .nav-link.active:not(.dropdown)  {
   //Compensates for padding on nav items
-  box-shadow: inset .5rem 0px 0 0 $primary, inset -.5rem 0px 0 0 $primary, inset 0 -3px 0 0 $secondary;
+  box-shadow: inset .5rem 0px 0 0 $primary, inset -.5rem 0px 0 0 $primary, inset 0 -3px 0 0 white;
 }
 
 

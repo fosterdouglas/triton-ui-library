@@ -1,10 +1,12 @@
 <docs>
 
-<h3>Triton 5-0: Dynamic Pricing + Landing Page</h3>
+<h3>Triton 50 Dynamic Pricing Landing Page</h3>
+<p>...</p>
 
 ```js
 <template>
   <div>
+
     <h1>Getting Started</h1>
     <p>Please complete the questions below to determine the correct check for your needs.</p>
     <hr/>

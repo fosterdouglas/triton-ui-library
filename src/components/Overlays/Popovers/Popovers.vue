@@ -282,7 +282,47 @@
   export default {
     data() {
       return {
-      
+
+      }
+    }
+  }
+</script>
+```
+
+<h3>Info Box</h3>
+<p>...</p>
+
+```js
+<template>
+  <div>
+
+    <b-button
+      :pressed="false"
+      variant="-"
+      class="cursorDefault py-0 px-2 mx-1 border border-medium rowItemHover questionBox"
+      onclick="this.blur();"
+      @hover="showHover20 = !showHover20"
+      id="PopoverHover20"
+     >
+      <i  class="iconQuestion text-medium fa-lg"></i>
+      <b-popover
+        triggers="hover blur"
+        variant="mediumdark"
+        placement="right"
+        target="PopoverHover20"
+       >
+        Here is some content.
+      </b-popover>
+    </b-button>
+
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+
       }
     }
   }

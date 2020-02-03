@@ -117,7 +117,7 @@
 ```
 
 <h3>Confirm</h3>
-<p>Non-interactive, this icon is used to denote correct input or confirmation of something.</p>
+<p>Mostly non-interactive, this icon is used to denote correct input or confirmation of something.</p>
 
 ```js
 <template>
@@ -147,6 +147,18 @@
 export default {
 }
 </script>
+```
+
+<h3>Crown</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconCrown iconHover text-secondary"></i>
+    <i class="iconCrown iconHover text-secondary fas"></i>
+  </div>
+</template>
 ```
 
 <h3>Dash</h3>
@@ -317,6 +329,18 @@ export default {
 </template>
 ```
 
+<h3>Plus</h3>
+<p>...</p>
+
+```js
+<template>
+  <div class="styleguidistOnlyStyles">
+    <i class="iconPlus iconHover text-dark"></i>
+    <i class="iconPlus iconHover text-dark fas"></i>
+  </div>
+</template>
+```
+
 <h3>Previous</h3>
 <p>...</p>
 
@@ -429,7 +453,7 @@ export default {
 ```
 
 <h3>User</h3>
-<p>An icon used for functions related to a user that aren't covered by other icons.</p>
+<p>A custom icon used specifically for...</p>
 
 ```js
 <template>
@@ -440,6 +464,4 @@ export default {
 </template>
 ```
 
-
-<p><small class="text-mediumdark float-right mb-4">Page updated: November 4, 2019</small></p>
 </docs>

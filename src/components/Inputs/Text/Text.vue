@@ -1,7 +1,6 @@
 <docs>
 
 ```jsx noeditor
-
 <div>
 
   <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
@@ -124,8 +123,8 @@ export default {
               options: 'code-block',
               modules: {
                 toolbar: [['bold', 'italic', 'code-block'], [{ size: [ false, 'large' ] }]]
-              },
-          },
+              }
+          }
       }
   }
 }

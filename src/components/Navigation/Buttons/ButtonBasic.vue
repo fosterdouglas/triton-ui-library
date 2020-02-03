@@ -2,6 +2,22 @@
 
 ```jsx noeditor
 <div>
+
+  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
+    <h5 class="alert-heading">Foster's Task List
+      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
+    </h5>
+    <hr/>
+      <ul>
+        <li class="alertListItem">- Fix alignment of "Pressed" button state</li>
+      </ul>
+  </b-alert>
+
+</div>
+```
+
+```jsx noeditor
+<div>
 <p class="ml-n3 w-75">Buttons are used as a means to get around the application.
 </p>
 <br/>

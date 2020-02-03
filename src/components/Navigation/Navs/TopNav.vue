@@ -6,7 +6,7 @@
 ```js
 <template>
 <div>
-  <b-navbar toggleable="lg" type="dark" variant="primary">
+  <b-navbar class="primaryNav" toggleable="lg" type="dark" variant="primary">
     <b-navbar-brand href="#">
       <img src="https://e-bydesign.ca/assets/triton-logo.svg">
     </b-navbar-brand>

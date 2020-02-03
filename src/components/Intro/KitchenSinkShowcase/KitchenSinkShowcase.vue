@@ -1,13 +1,47 @@
 <docs>
 
-<h3>Kitchen Sink Showcase</h3>
+<h3>Kitchen Sink</h3>
 
 ```js
 <template>
 
 
 <div>
-  <b-navbar toggleable="lg" type="dark" variant="primary">
+  <b-navbar class="supportNav" type="dark" variant="dark" sticky="true">
+    <b-row class="w-100" align-h="between">
+      <b-col sm="auto">
+        <b-navbar-nav>
+          <b-nav-item-dropdown right class="">
+            <template v-slot:button-content>
+
+                <i class="iconUser far fa-lg"></i>
+              <em class="text-white">Eunice Hooper</em>
+            </template>
+            <b-dropdown-item href="#">Edit Profile</b-dropdown-item>
+            <b-dropdown-item href="#">Log Out</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-col>
+      <b-col sm="auto">
+        <b-navbar-nav>
+          <b-nav-item-dropdown right>
+            <template v-slot:button-content>
+              <i class="iconCrown text-white fas" style="visibility: hidden;"></i>
+              <em class="text-white" id="securityType">USER</em>
+            </template>
+            <b-dropdown-item @click="superadmin">SUPER ADMIN</b-dropdown-item>
+            <b-dropdown-item @click="tritonadmin">TRITON ADMIN</b-dropdown-item>
+            <b-dropdown-item @click="support">TRITON SUPPORT T3</b-dropdown-item>
+            <b-dropdown-item @click="support">TRITON SUPPORT T2</b-dropdown-item>
+            <b-dropdown-item @click="support">TRITON SUPPORT T1</b-dropdown-item>
+            <b-dropdown-item @click="user">USER [SHADOW]</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-navbar-nav>
+      </b-col>
+    </b-row>
+  </b-navbar>
+
+  <b-navbar class="primaryNav" toggleable="lg" type="dark" variant="primary">
     <b-navbar-brand href="#">
       <img src="https://e-bydesign.ca/assets/triton-logo.svg">
     </b-navbar-brand>
@@ -27,7 +61,8 @@
           <b-dropdown-item href="#">File Upload</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item href="#">Queue <b-badge variant="light">4</b-badge></b-nav-item>
-        <b-nav-item href="#">Admin</b-nav-item>
+        <b-nav-item class="adminMenu" style="visibility: hidden;" href="#">Admin</b-nav-item>
+        <b-nav-item class="securityMenu" style="visibility: hidden;" href="#"><i class="iconCrown fas"></i>Security</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -87,8 +122,8 @@
 
                         <b-button
                           :pressed="false"
-                          variant="outline-secondary"
-                          class="btnSmall btnFeedback text-secondary"
+                          variant="outline-primary"
+                          class="btnSmall btnStandard"
                           onclick="this.blur();"
                           @click="modalShow3 = !modalShow3"
                           >
@@ -145,8 +180,41 @@
 
                             </b-modal>
 
-                        <i class="iconEdit iconBorderStd"></i>
+                          <i class="iconEdit iconBorderStd"></i>
                         </b-button>
+
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20 = !PopoverHover20"
+                          id="PopoverHover20"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20"
+                           >
+                           Here is some content.
+                           <br/>
+                                 <b-button
+                                   :pressed="false"
+                                   variant="outline-secondary"
+                                   size="sm"
+                                   class="btnNavigation btnFeedbackPressed"
+                                   >
+                                   EDIT TEXT <i class="iconCrown fas"></i>
+                                 </b-button>
+
+                          </b-popover>
+
+                        </b-button>
+
                       </template>
 
                       <b-form-input class="form-control" type="text" placeholder="Triton Master" title="Triton Master" disabled></b-form-input>
@@ -161,6 +229,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Name">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover2016 = !PopoverHover2016"
+                          id="PopoverHover2016"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover2016"
+                            contenteditable="true"
+                            :show.sync="PopoverHover2016"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input value="Current Client or User" class="form-control" type="text" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -205,18 +295,21 @@
                             <b-button
                               :pressed="false"
                               variant="-"
-                              class="cursorDefault"
+                              class="cursorDefault rowItemHover questionBox"
                               onclick="this.blur();"
-                              @hover="showHover20 = !showHover20"
+                              @hover="PopoverHover20a = !PopoverHover20a"
+                              id="PopoverHover20a"
                              >
-                              <i id="PopoverHover20" class="iconQuestion iconHover text-mediumdark fa-lg"></i>
+                              <i  class="iconQuestion text-medium fa-lg"></i>
                               <b-popover
                                 triggers="hover blur"
                                 variant="mediumdark"
                                 placement="right"
-                                target="PopoverHover20"
+                                target="PopoverHover20a"
+                                contenteditable="true"
+                                :show.sync="PopoverHover20a"
                                >
-                                Here is some content.
+                               Here is some content.
                               </b-popover>
                             </b-button>
 
@@ -230,6 +323,30 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Street Name">
+                      <template v-slot:append>
+
+                            <b-button
+                              :pressed="false"
+                              variant="-"
+                              class="cursorDefault rowItemHover questionBox"
+                              onclick="this.blur();"
+                              @hover="PopoverHover20b = !PopoverHover20b"
+                              id="PopoverHover20b"
+                             >
+                              <i  class="iconQuestion text-medium fa-lg"></i>
+                              <b-popover
+                                triggers="hover blur"
+                                variant="mediumdark"
+                                placement="right"
+                                target="PopoverHover20b"
+                                contenteditable="true"
+                                :show.sync="PopoverHover20b"
+                               >
+                               Here is some content.
+                              </b-popover>
+                            </b-button>
+
+                      </template>
                       <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -239,6 +356,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Unit">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20c = !PopoverHover20c"
+                          id="PopoverHover20c"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20c"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20c"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -248,6 +387,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="City">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20d = !PopoverHover20d"
+                          id="PopoverHover20d"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20d"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20d"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -257,6 +418,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Province">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20e = !PopoverHover20e"
+                          id="PopoverHover20e"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20e"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20e"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <select name="salutation" id="choose">
                         <option disabled selected>Choose One...</option>
                         <option>Alberta</option>
@@ -278,6 +461,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Postal Code">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20f = !PopoverHover20f"
+                          id="PopoverHover20f"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20f"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20f"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input class="form-control" for="postal" v-mask="'XXX XXX'"></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -287,6 +492,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Country">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20g = !PopoverHover20g"
+                          id="PopoverHover20g"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20g"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20g"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input class="form-control" type="text" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -296,6 +523,28 @@
                 <b-row>
                   <b-col cols="12">
                     <b-input-group prepend="Phone">
+                      <template v-slot:append>
+                        <b-button
+                          :pressed="false"
+                          variant="-"
+                          class="cursorDefault rowItemHover questionBox"
+                          onclick="this.blur();"
+                          @hover="PopoverHover20h = !PopoverHover20h"
+                          id="PopoverHover20h"
+                         >
+                          <i  class="iconQuestion text-medium fa-lg"></i>
+                          <b-popover
+                            triggers="hover blur"
+                            variant="mediumdark"
+                            placement="right"
+                            target="PopoverHover20h"
+                            contenteditable="true"
+                            :show.sync="PopoverHover20h"
+                           >
+                           Here is some content.
+                          </b-popover>
+                        </b-button>
+                      </template>
                       <b-form-input class="form-control" type="tel" v-mask="'###-###-####'" placeholder=""></b-form-input>
                     </b-input-group>
                   </b-col>
@@ -610,7 +859,10 @@
                         @click="modalShow2new = !modalShow2new"
 
                         >
-                        <div class="btnText">Add Landing Page Group</div>
+
+                        <div class="btnText">
+                          <i class="iconPlus"></i>
+                          Add Landing Page Group</div>
 
                       </b-button>
 
@@ -822,7 +1074,7 @@
                         @click="modalShow2newAPI = !modalShow2newAPI"
 
                         >
-                        <div class="btnText">New API Connection</div>
+                        <div class="btnText"><i class="iconPlus"></i> New API Connection</div>
 
                       </b-button>
 
@@ -938,7 +1190,7 @@
                               @click="xxx = !xxx"
 
                               >
-                              <div class="btnText">Add Callback</div>
+                              <div class="btnText"><i class="iconPlus"></i> Add Callback</div>
 
                             </b-button>
 
@@ -1756,9 +2008,70 @@
 
                     <b-tab>
                       <template v-slot:title>
-                        <span>Bell Pacakge E</span>
+                        <span>TRITON 50 TEST</span>
                         <b-badge variant="warning">&nbsp</b-badge>
                       </template>
+
+
+                      <b-row align-h="center">
+                        <b-col cols="11">
+                          <b-card class="highlightSection">
+                            <h3>Criminal Record and Judicial Matters Check (CRJMC)</h3>
+                            <p>A collection of offence information, including convictions, outstanding warrants, charges and judicial orders available from a local police agency's records management system and other systems/records where authorized.</p>
+                            <p>This check is intended for applicants who are seeking volunteer and/or employment with agencies who require a criminal record check. The agency has determined that a search of pardoned sex offenders database is NOT required (i.e., border crossing or visa) therefore this check is NOT intended for applicants who are seeking volunteer and/or employment with vulnerable persons.</p>
+                            <b-row align-h="center">
+                              <b-col sm="auto">
+                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                                  <h5 class="text-center">Employment</h5>
+                                  <b-button
+                                    :pressed="false"
+                                    variant="outline-primary"
+                                    class="btnNavigation btnStandard btnWhite"
+                                    onclick="this.blur();"
+                                    >
+                                    <div class="btnText">START CHECK</div>
+                                    <i class="iconArrow btnIconRight"></i>
+                                  </b-button>
+                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+                                </div>
+                              </b-col>
+                              <b-col sm="auto">
+                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                                  <h5 class="text-center">Volunteer</h5>
+                                  <b-button
+                                    :pressed="false"
+                                    variant="outline-primary"
+                                    class="btnNavigation btnStandard btnWhite"
+                                    onclick="this.blur();"
+                                    >
+                                    <div class="btnText">START CHECK</div>
+                                    <i class="iconArrow btnIconRight"></i>
+                                  </b-button>
+                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+                                </div>
+                              </b-col>
+                              <b-col sm="auto">
+                                <div class="sectionGroup border border-dark bg-light" style="max-width:230px;">
+                                  <h5 class="text-center">Other</h5>
+                                  <b-button
+                                    :pressed="false"
+                                    variant="outline-primary"
+                                    class="btnNavigation btnStandard btnWhite"
+                                    onclick="this.blur();"
+                                    >
+                                    <div class="btnText">START CHECK</div>
+                                    <i class="iconArrow btnIconRight"></i>
+                                  </b-button>
+                                  <h6 class="mt-1 mb-n2 text-center">$50 + tax ($56.50)</h6>
+                                </div>
+                              </b-col>
+                            </b-row>
+                          </b-card>
+                        </b-col>
+                      </b-row>
+
+                      <div class="breadcrumbBottomSpacer"></div>
+
                     </b-tab>
 
                     <b-tab>
@@ -1967,6 +2280,7 @@
               onclick="this.blur();"
               @click="toastConfirm()"
               >
+              <i class="iconSave"></i>
               <div class="btnText">SAVE CHANGES</div>
             </b-button>
           </div>
@@ -2036,6 +2350,13 @@ $(function() {
 export default {
     data() {
       return {
+        config: {
+            placeholder: 'Compose an epic...',
+            options: 'code-block',
+            modules: {
+              toolbar: []
+            }
+        },
         fields: ['assigned_package', 'display_title', 'grouping'],
         tableitems: [
           { assigned_package: 'Bell Base Services', display_title: 'Employment/Other', grouping: 'X Value' },
@@ -2097,7 +2418,54 @@ export default {
             $( ".ui-front" ).css('z-index',9999);
           } );
       },
-      rowClass: 'text-truncate'
+      rowClass: 'text-truncate',
+      superadmin() {
+        $( function() {
+            $( ".supportNav" ).removeClass( "navbar-dark bg-dark navbar-secondary bg-secondary navbar-info bg-info" );
+            $( ".supportNav" ).addClass( "navbar-secondary bg-secondary text-white" );
+            $( ".supportNav > div > div > .navbar-nav > .nav-item > .nav-link" ).addClass( "text-white" );
+            $( ".securityMenu" ).addClass( "bg-secondary active" );
+            document.getElementById('securityType').innerHTML = 'SUPER ADMIN';
+            document.getElementsByClassName('iconCrown')[0].style.visibility = 'visible';
+            document.getElementsByClassName('adminMenu')[0].style.visibility = 'visible';
+            document.getElementsByClassName('securityMenu')[0].style.visibility = 'visible';
+            $( ".adminMenu" ).removeClass( "bg-info active" );
+          } );
+      },
+      tritonadmin() {
+        $( function() {
+            $( ".supportNav" ).removeClass( "navbar-dark bg-dark navbar-secondary bg-secondary navbar-info bg-info" );
+            $( ".supportNav" ).addClass( "navbar-info bg-info text-white" );
+            $( ".supportNav > div > div > .navbar-nav > .nav-item > .nav-link" ).addClass( "text-white" );
+            $( ".adminMenu" ).addClass( "bg-info active" );
+            document.getElementById('securityType').innerHTML = 'TRITON ADMIN';
+            document.getElementsByClassName('adminMenu')[0].style.visibility = 'visible';
+            document.getElementsByClassName('iconCrown')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('securityMenu')[0].style.visibility = 'hidden';
+          } );
+      },
+      support() {
+        $( function() {
+            $( ".supportNav" ).removeClass( "navbar-dark bg-dark navbar-secondary bg-secondary navbar-info bg-info" );
+            $( ".supportNav" ).addClass( "navbar-info bg-info text-white" );
+            $( ".supportNav > div > div > .navbar-nav > .nav-item > .nav-link" ).addClass( "text-white" );
+            document.getElementById('securityType').innerHTML = 'TRITON SUPPORT';
+            document.getElementsByClassName('iconCrown')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('securityMenu')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('adminMenu')[0].style.visibility = 'hidden';
+          } );
+      },
+      user() {
+        $( function() {
+            $( ".supportNav" ).removeClass( "navbar-dark bg-dark navbar-secondary bg-secondary navbar-info bg-info" );
+            $( ".supportNav" ).addClass( "navbar-dark bg-dark text-white" );
+            $( ".supportNav > div > div > .navbar-nav > .nav-item > .nav-link" ).addClass( "text-white" );
+            document.getElementById('securityType').innerHTML = 'USER [SHADOWED USER]';
+            document.getElementsByClassName('iconCrown')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('securityMenu')[0].style.visibility = 'hidden';
+            document.getElementsByClassName('adminMenu')[0].style.visibility = 'hidden';
+          } );
+      }
   }
 }
 </script>
