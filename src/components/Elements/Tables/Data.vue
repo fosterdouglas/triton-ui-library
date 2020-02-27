@@ -1,39 +1,35 @@
 <docs>
 
 ```jsx noeditor
-
 <div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- Add additional table types</i></li>
-      </ul>
-  </b-alert>
-
+<p class="ml-n3 w-75 mb-0">Tables are an efficient way to organize a large amount of read-only data. They are best paired with a <a href="../../#Navigation/Pagination">Pagination</a> component if the table has more than 10 rows. <b>Important:</b> Table data is non-interactive and these are best used only for displaying data.</p>
+<br/>
 </div>
 ```
 
-<h3>Standard
-<i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i>
-</h3>
-<p>A standard non-interactive fixed-width column table, used to display large amounts of data. Best paired with a <a href="../../#Navigation/Pagination">Pagination</a> component if the table has more than 10 rows.</p>
+<h3>Data</h3>
+<p>A non-interactive and fixed table, used to a small amount of data, or for a large set of data with limited columns required.</p>
 
 ```js
 <template>
   <div>
     <b-table
       :outlined="true"
-      :striped="true"
-      :fixed="true"
+      :striped="false"
+      :fixed="false"
       :no-border-collapse="true"
       :no-select-on-click="false"
       :items="items"
       :fields="fields"
-    ></b-table>
+      :sticky-header="true"
+      responsive
+    >
+      <template v-slot:head()="scope">
+        <div class="text-nowrap">
+          {{ scope.label }}
+        </div>
+      </template>
+  </b-table>
   </div>
 </template>
 
@@ -41,7 +37,7 @@
   export default {
     data() {
       return {
-        fields: ['first_name', 'last_name', 'age'],
+        fields: ['first_name', 'middle_name', 'last_name', 'age'],
         items: [
           { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
           { age: 21, first_name: 'Larsen', last_name: 'Shaw' },

@@ -2,6 +2,31 @@
 // USED ONLY TO STYLE THE GUIDE, THESE REQUIRE '!important' TO BUILD STYLEGUIDIST CORRECTLY
 //
 //
+:not(li):not(h1) > a {
+  //text-decoration: underline !important;
+}
+
+a.btn {
+  //text-decoration: none !important;
+}
+
+a:hover {
+  //text-decoration: none !important;
+  //color: initial !important;
+}
+
+ul {
+  list-style: none !important;
+  padding-inline-start: 0px !important;
+}
+
+main > section,
+main > section > section,
+main > section > section > section,
+main > section > section > section > section,
+main > section > section > section > section > section, {
+  margin: 0 !important; //this is dumb
+}
 
 .designReferenceSidebar {
   left: -250px !important;
@@ -37,6 +62,10 @@ div.styleguidistOnlyStyles > i {
 .sideNav.card.styleguidistOnlyStyles .tab-content {
   @extend .border;
   @extend .border-medium;
+}
+
+.styleguidistOnlyStyles > .tabs > .tab-content {
+  max-width: 500px !important;
 }
 
 // REMOVE INVISIBLE TABS BAR
@@ -88,7 +117,7 @@ li[class^=rsg--isChild-] a {
   font-weight: 500 !important;
   margin-top: .3em !important;
   padding-left: 0 !important;
-  padding-bottom: .8em !important;
+  //padding-bottom: .8em !important;
 }
 .rsg--sidebar-4 [class^=rsg--link-] {
   color: $medium !important;
@@ -150,15 +179,11 @@ a[href*="/#/%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%80%93%E2%8
 }
 
 //DISABLES CLICKING MENU SUB HEADERS
-a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/#/Inputs"], a[href="/#/Buttons"] {
+a[href="/#/Navigation"], a[href="/#/Overlays"], a[href="/#/Elements"], a[href="/#/Inputs"], a[href="/#/Buttons"], a[href="/#/Examples"] {
   opacity: .5 !important;
   text-decoration: underline !important;
   pointer-events: none !important;
   padding: 0 !important;
-}
-
-a[href="/#/Navigation"] ~ ul, a[href="/#/Overlays"] ~ ul, a[href="/#/Elements"] ~ ul, a[href="/#/Inputs"] ~ ul, a[href="/#/Buttons"] ~ ul  {
-  //border-right: 3px solid rgba($medium, .5) !important;
 }
 
 li > a[href="/#/Design%20Reference%20Files"],
@@ -167,7 +192,6 @@ li > a[href="/#/Kitchen%20Sink%20Showcase"] {
   margin: 0 !important;
   padding: 0 !important;
 }
-
 
 //VIEW CODE BUTTON
 div[class^=rsg--controls-] [class^=rsg--button-] {
@@ -232,15 +256,17 @@ div[class^=rsg--preview-]:not([data-preview="KitchenSinkShowcase"]) {
   margin: 0 !important;
 }
 
+
 [class^=rsg--para-] {
   font-size: 1rem !important;
   text-align: justify !important;
 }
 
 [class^=rsg--spacing-] + [class^=rsg--para-],
-h3 + div {
+h3[class^=rsg--heading-] + div,
+[class^=rsg--para-] h3 + div {
   font-size: 1rem !important;
-  max-width: 900px !important;
+  max-width: 700px !important;
 }
 
 // ADJUST SELECTED MENU ITEM STYLES *NEEDS BETTER SOLUTION*
@@ -252,7 +278,7 @@ h3 + div {
 main > section::after {
   @extend .float-right;
   @extend .text-mediumdark;
-  content: "Guide last updated: February 3rd, 2020" !important;
+  content: "Guide last updated: February 27th, 2020" !important;
   visibility: visible !important;
   margin-bottom: 2em !important;
 }

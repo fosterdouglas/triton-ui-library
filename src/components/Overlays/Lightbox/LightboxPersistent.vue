@@ -2,7 +2,7 @@
 
 
 <h3>Persistent (Forced Action)</h3>
-<p>This lightbox <u>requires</u> interaction to resolve. A standard close button should not be used, and the "ESC" button is disabled.</p>
+<p>A specific variation of the Decision lightbox, it requires interaction within a specific time period, otherwise resolves itself false. A standard close button is not used, and the ```ESC``` button is disabled.</p>
 
 ```js
 <template>

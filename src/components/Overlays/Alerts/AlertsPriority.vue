@@ -1,7 +1,7 @@
 <docs>
 
 <h3>Priority</h3>
-<p></p>
+<p>This is rarely used, but could be useful to announce or warn the user about some unexpected change or update, or an upcoming outtage. It can be applied to a single page or to the entire application.</p>
 
 ```js
 <template>

@@ -6,42 +6,51 @@
 
 ```js
 <template>
-  <div>
+  <b-container class="containsRowItems" fluid>
+    <b-row>
 
-    <b-button
-      :pressed="false"
-      variant="outline-confirmfade"
-      class="btnNavigation btnConfirm"
-      onclick="this.blur();"
-      >
-      <div class="btnText">BUTTON SAMPLE</div>
-    </b-button>
+      <b-col class="buttonCol">
+        <b-button
+          :pressed="false"
+          variant="outline-confirmfade"
+          class="btnNavigation btnConfirm"
+          onclick="this.blur();"
+          >
+          <div class="btnText">BUTTON SAMPLE</div>
+        </b-button>
+      </b-col>
 
-    <b-button
-      :pressed="false"
-      variant="outline-confirmfade"
-      class="btnNavigation btnConfirm"
-      onclick="this.blur();"
-      >
-      <div class="btnText">BUTTON WITH ICON</div>
-      <i class="iconConfirm btnIconRight"></i>
-    </b-button>
+      <b-col class="buttonCol">
+        <b-button
+          :pressed="false"
+          variant="outline-confirmfade"
+          class="btnNavigation btnConfirm"
+          onclick="this.blur();"
+          >
+          <div class="btnText">BUTTON WITH ICON</div>
+          <i class="iconConfirm btnIconRight"></i>
+        </b-button>
+      </b-col>
 
-    <b-button
-      :pressed="true"
-      variant="outline-confirmfade"
-      class="btnNavigation btnConfirmPressed"
-      onclick="this.blur();"
-      >
-      <i>
-        <b-spinner small type="grow" label="Spinning" class="btnIconLeft text-white"></b-spinner>
-      </i>
-      <div class="btnText">BUTTON LOADING</div>
-    </b-button>
+      <b-col class="buttonCol">
+        <b-button
+          :pressed="true"
+          variant="outline-confirmfade"
+          class="btnNavigation btnConfirmPressed"
+          onclick="this.blur();"
+          >
+          <i>
+            <b-spinner small type="grow" label="Spinning" class="btnIconLeft text-white"></b-spinner>
+          </i>
+          <div class="btnText">BUTTON LOADING</div>
+        </b-button>
+      </b-col>
 
-  </div>
+    </b-row>
+
+  </b-container>
+
 </template>
-
 <script>
   export default {
     data() {

@@ -11,7 +11,7 @@ $theme-colors: (
 	"dark": #3B3B3B,
   "mediumdark": #9a9a9a,
   "medium": #DBDBDB,
-	"light": #F3F3F3,
+	"light": #F1F1F1,
   "lightest": #fbfbfb,
   "confirm": #73a541,
   "warning": #dc3545,
@@ -24,7 +24,7 @@ $theme-colors: (
 );
 
 // BOOTSTRAP VARIABLE CHANGES
-$enable-gradients: true;
+$enable-gradients: false;
 $font-size-base: .9rem; //reduces entire app font size!
 $spacer: 1rem !default;
 $spacers: () !default;
@@ -42,7 +42,7 @@ $secondary: #E9B71E;
 $dark: #3B3B3B;
 $mediumdark: #9a9a9a;
 $medium: #DBDBDB;
-$light: #F3F3F3;
+$light: #F1F1F1;
 $lightest: #fbfbfb;
 $confirm: #73a541;
 $warning: #dc3545;
@@ -89,12 +89,24 @@ h2 {
   text-transform: none;
 }
 
+h3 {
+  font-size: 1.35rem;
+  @extend .mb-0;
+}
+
 h4 {
-  @extend .mt-1;
+  font-size: 1.125rem;
+  @extend .mb-0;
 }
 
 h5 {
-
+  font-size: 1rem;
+  @extend .mb-0;
+  @extend .py-2;
+  @extend .px-3;
+  background: rgba($dark, 1);
+  color: white;
+  height: 34px;
 }
 
 h6 {
@@ -102,7 +114,7 @@ h6 {
   @extend .px-3;
   @extend .mb-1;
   @extend .mt-3;
-  @extend .text-mediumdark;
+  @extend .text-dark;
   @extend .cursorDefault;
   text-transform: uppercase;
   text-align: left;
@@ -123,30 +135,39 @@ i {
   color: $dark;
 }
 
-a, a:hover {
+a:hover {
   text-decoration: none;
 }
 
-.supportText {
-  @extend .ml-n1;
-  @extend .pl-2;
-  @extend .text-dark;
-  font-size: 85%;
+p > a[href] {
+  text-decoration: underline;
 }
+
+p > a[href]:hover {
+  text-decoration: none;
+}
+
+
+//UTILITY CLASSES
+
+
 
 .textUnderline {
   text-decoration: underline;
 }
 
 .text-monospace {
-  background-color: $medium;
   @extend .px-1;
   @extend .mx-1;
-  font-size: 95%;
+  font-size: 85%;
 }
 
-.custom-switch > label > .supportText {
-  @extend .align-text-top;
+.supportText {
+  @extend .ml-n1;
+  @extend .pl-2;
+  @extend .text-dark;
+  margin-top: 2px;
+  font-size: 85%; // change to rem
 }
 
 .unselectableText {
@@ -156,7 +177,6 @@ a, a:hover {
   user-select: none;
 }
 
-//CURSOR TYPES
 .cursorDefault {
   cursor: default !important;
 }
@@ -168,6 +188,9 @@ a, a:hover {
 }
 .cursorDisabled {
   cursor: not-allowed !important;
+}
+.cursorNone {
+  pointer-events: none !important;
 }
 
 // CHANGES SELECTION COLOR
@@ -205,6 +228,10 @@ a, a:hover {
   @extend .rounded-0;
 }
 
+.alert i.iconExclamation {
+  @extend .fa-2x;
+}
+
 .alert-dismissible .close {
  visibility: hidden;
  font-size: 1.4rem;
@@ -221,6 +248,16 @@ a, a:hover {
   @extend .align-middle;
   @extend .cursorPointer;
   @extend .mt-1;
+}
+
+.alert hr {
+  @extend .mb-3;
+  @extend .mt-3;
+}
+
+//OVERRIDES "dark yellow" COLOR
+.alert-secondary i {
+  @extend .text-secondary;
 }
 
 //CUSTOM CLOSE BUTTON
@@ -256,13 +293,10 @@ a, a:hover {
 }
 
 .customAlert {
-  @extend .mt-3;
-  @extend .m-2;
-  @extend .mb-5;
-  @extend .pt-3;
-  @extend .pr-4;
-  @extend .pb-4;
-  @extend .pl-4;
+  @extend .my-3;
+  @extend .mx-3;
+  @extend .py-3;
+  @extend .px-4;
 }
 
 .alertListItem {
@@ -330,7 +364,7 @@ a, a:hover {
 }
 
 .breadcrumbBottomSpacer {
-  height: 75px;
+  //height: 75px;
 }
 
 
@@ -346,9 +380,24 @@ a, a:hover {
   transition: none;
 }
 
+.buttonCol {
+  //do we need this class or not
+  @extend .col-sm-auto;
+  @extend .px-0;
+  @extend .m-2;
+}
+
+.sectionGroup .buttonCol:first-of-type {
+  @extend .ml-3;
+}
+
+.sectionGroup > p:first-of-type {
+  @extend .ml-3;
+}
+
 .btnNavigation {
   @extend .border;
-  @extend .mx-2;
+  //@extend .mx-2;
   @extend .px-3;
   @extend .rounded-0;
   @extend .shadow-sm;
@@ -368,13 +417,15 @@ button:focus, .btnNavigation:focus, .btnSmall:focus {
 }
 
 .btnIconRight {
-  margin-top: -1px !important;
-  @extend .align-baseline;
+  @extend .ml-1;
+  @extend .pr-0;
+  @extend .align-text-bottom;
 }
 
 .btnIconLeft {
-  margin-top: -1px !important;
-  @extend .align-baseline;
+  @extend .mr-1;
+  @extend .pl-0;
+  @extend .align-text-bottom;
 }
 
 .btnText {
@@ -529,12 +580,78 @@ button.btnFeedbackPressed:hover {
   padding: 0;
   font-size: 75%; //pulled from .badge standard class
   @extend .rounded-0;
-  @extend .mx-1;
   @extend .align-text-bottom;
+}
+
+:not(.prependButton).col-sm-auto:last-of-type > .btnSmall,
+:not(.prependButton).col-sm-auto:nth-last-of-type(2) > .btnSmall,
+:not(.prependButton).col-sm-auto:nth-last-of-type(3) > .btnSmall,
+:not(.prependButton).col-sm-auto:nth-last-of-type(4) > .btnSmall {
+  //deals with correct spcaing for multiple "appended" buttons
+  //create specific class instead of col-sm-auto, like .appendButton
+  //@extend .mr-0;
+  //@extend .ml-1;
+}
+
+//PREPEND BUTTON
+
+.prependButton {
+  @extend .col-sm-auto;
+  @extend .p-0;
+  @extend .mr-1;
+  @extend .ml-0;
+  @extend .border;
+  @extend .border-mediumdark;
+  height: 34px;
+}
+
+.prependButton > .btnSwitch {
+  //FOR PREPENDED SWITCHES
+  padding-left: .4rem;
+  width: 44px;
+  height: 34px;
+  font-size: 100%;
+}
+
+.prependButton > .btnCheck {
+  //FOR PREPENDED CHECK BOXES
+  padding-left: .55rem;
+  width: 44px;
+  height: 34px;
+  font-size: 100%;
+}
+
+.prependButton > .btnRadio {
+  //FOR PREPENDED RADIOS
+  //margin-top: -3px;
+  //padding-left: 6px;
+  width: 44px;
+  height: 34px;
+  font-size: 100%;
+}
+
+.prependButton input[type="radio"]:checked + .col button {
+  //@extend .rowHighlightDark;
+}
+
+.appendButton {
+  @extend .col-sm-auto;
+  @extend .mr-0;
+  @extend .ml-1;
+  height: 34px;
+}
+
+.disabledButton input {
+  pointer-events: none !important;
+}
+
+.btnSmall > i {
+  width: 44px;
 }
 
 .btn.btnSmall {
   border: 0px solid transparent !important; // ?????
+
 }
 
 .btn-outline-primaryfade:hover,
@@ -558,6 +675,7 @@ button.btnFeedbackPressed:hover {
   border: 1px solid;
   color: inherit;
   padding: 11px 11px 11px 11px !important;
+  //@extend .p-2;
   @extend .rounded-sm;
   @extend .fa-lg;
   @extend .rounded-0;
@@ -593,9 +711,8 @@ button.btnFeedbackPressed:hover {
 .btnThin {
   @extend .border;
   @extend .rounded-0;
-  @extend .text-mediumdark;
-  @extend .border-mediumdark;
-  @extend .mx-2;
+  @extend .text-dark;
+  @extend .border-dark;
   text-transform: uppercase;
   transition: none 0s;
 }
@@ -604,12 +721,12 @@ button.btnFeedbackPressed:hover {
 .btnThin:focus,
 a.btnThin:hover,
 a.btnThin:focus {
-  background-color: rgba($mediumdark, .12);
-  color: $mediumdark !important;
+  background-color: rgba($dark, .12);
+  color: $dark !important;
 }
 
 .btnThin:active:focus {
-  background-color: rgba($mediumdark, 1) !important;
+  background-color: rgba($dark, 1) !important;
   @extend .text-white;
 }
 
@@ -657,10 +774,11 @@ footer {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-//ADD USER
-.iconAddSingle {
-  @extend .fal;
-  @extend .fa-user-plus;
+//ACCOUNT
+.iconAccount {
+  @extend .far;
+  @extend .fa-id-card;
+  @extend .fa-lg;
   @extend .p-1;
   color: inherit;
 }
@@ -689,21 +807,6 @@ footer {
   color: inherit;
 }
 
-//CHEVRON
-.iconChevron {
-  @extend .fal;
-  @extend .fa-play;
-  @extend .p-1;
-  color: inherit;
-  transition: .3s all;
-}
-
-  :not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconChevron {
-    @extend .fa-rotate-90;
-    //@extend .fas;
-    transition: .3s all;
-  }
-
 //CIRCLE
 .iconCircle {
   @extend .fal;
@@ -721,10 +824,34 @@ footer {
   color: inherit;
 }
 
+//COLLAPSE/EXPAND
+.iconCollapseExpand {
+  @extend .fal;
+  @extend .fa-play;
+  @extend .p-1;
+  color: inherit;
+  transition: .3s all;
+  font-size: .9rem !important;
+}
+
+  :not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconCollapseExpand {
+    @extend .fa-rotate-90;
+    //@extend .fas;
+    transition: .3s all;
+  }
+
 //CONFIRM
 .iconConfirm {
   @extend .far;
   @extend .fa-check;
+  padding: .25rem;
+  color: inherit;
+}
+
+//CONNECTED
+.iconConnected {
+  @extend .fal;
+  @extend .fa-link;
   @extend .p-1;
   color: inherit;
 }
@@ -855,18 +982,13 @@ footer {
   @extend .fal;
   @extend .fa-sitemap;
   @extend .p-1;
-  //font-size: 100% !important;
-  //@extend .bg-medium;
-  //@extend .border;
-  //@extend .border-mediumdark;
-  //padding-top: 5px;
-  //padding-bottom: 5px;
+  color: inherit;
 }
 
-//INPUT SELECT
-.iconInputSelect {
+//PACKAGE
+.iconPackage {
   @extend .fal;
-  @extend .fa-sort;
+  @extend .fa-box-open;
   @extend .p-1;
   color: inherit;
 }
@@ -936,27 +1058,59 @@ footer {
   color: inherit;
 }
 
+//SORT
+.iconSort {
+  @extend .fal;
+  @extend .fa-sort;
+  @extend .p-1;
+  color: inherit;
+}
+
 //SPINNER
 .spinner-grow-sm {
   margin-top: 2px !important; //fine tune spinner inline spacing
   vertical-align: baseline !important;
 }
 
-//TRADE
-.iconTrade {
-  @extend .fal;
-  @extend .fa-exchange;
+//USER
+.iconUser {
+  @extend .far;
+  @extend .fa-user;
+  @extend .fa-lg;
   @extend .p-1;
   color: inherit;
 }
 
-//USER
-.iconUser {
-  @extend .far;
-  @extend .fa-id-card;
-  @extend .fa-lg;
+//USER (ADD)
+.iconUserAdd {
+  @extend .fal;
+  @extend .fa-user-plus;
   @extend .p-1;
   color: inherit;
+}
+
+//VISIBLE
+.iconVisible {
+  @extend .fas;
+  @extend .fa-eye;
+  @extend .p-1;
+  color: inherit;
+}
+//INVISIBLE
+.iconInvisible {
+  @extend .fas;
+  @extend .fa-eye-slash;
+  @extend .p-1;
+  color: inherit;
+}
+
+//Z - PLACEHOLDER
+.iconZ {
+  @extend .fal;
+  @extend .fa-square;
+  @extend .p-1;
+  @extend .fa-lg;
+  opacity: 0;
 }
 
 
@@ -1001,18 +1155,20 @@ button[class|=btn-outline] { //Sets all btn variant backgrounds
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+
+
 //AUTOCOMPLETE
 
 ul.ui-autocomplete {
   background-color: white;
-  @extend .pl-0;
-  width: 25% !important;
+  //@extend .pl-0;
+  width: 50% !important;
   margin-left: 5px !important;
+  margin-top: 5px !important;
 }
 
 .ui-autocomplete li {
   list-style: none;
-  @extend .py-1;
   @extend .ml-0;
   @extend .pl-2;
   @extend .cursorDefault;
@@ -1024,34 +1180,56 @@ ul.ui-autocomplete {
   font-weight: 500 !important;
 }
 
-// DOB
+//BUTTON
+.btnForm {
+  @extend .py-2;
+  @extend .px-3;
+  @extend .d-inline-flex;
+  font-size: 1rem;
 
-[type="date"].form-control {
-  padding-top: .5em;
 }
 
-input[type="date"]::-webkit-clear-button {
- margin-bottom: 2px;
- -webkit-appearance: none;
+.btn-primary.btnForm {
+  box-shadow: 0px 7px 7px -3px rgba($primary, 0.5);
+}
+
+.btn-info.btnForm {
+  box-shadow: 0px 7px 7px -3px rgba($info, 0.5);
+}
+
+.btn-confirm.btnForm {
+  box-shadow: 0px 7px 7px -3px rgba($confirm, 0.5);
+}
+
+// DOB
+.formDOB {
+  @extend .col-2;
+}
+
+.formDOB.form-label-group input:not(:placeholder-shown) {
+  padding-top: .1rem;
 }
 
 //
+.form-group .custom-radio > label {
+  padding-top: 2px !important;
+  @extend .mb-2;
+  @extend .ml-0;
+  @extend .pl-2;
+}
 
 .form-label-group {
   position: relative;
   @extend .mb-2;
+  @extend .px-1;
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group input {
   height: 50px; //custom height for form fields
-  padding-left: 1.2em;
 }
 
-.form-label-group > label {
+.form-label-group label {
   position: absolute;
-  top: 1.05em;
-  left: 1.1em;
   display: block;
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
@@ -1072,28 +1250,27 @@ input[type="date"]::-webkit-clear-button {
   color: transparent; //not sure what this does LOL
 }
 
-.form-label-group input:not(:placeholder-shown) {
-  padding-top: 1.5rem;
-  padding-bottom: .6rem;
-  padding-left: 1.1em;
+.form-label-group input:placeholder-shown ~ label { //moves large placeholder
+  left:1.2rem;
+  top: 1rem;
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label { //styling for small text after input
-  top:0;
-  left: 0;
-  padding-top: .5em;
-  padding-left: 2.7em;
+.form-label-group input:not(:placeholder-shown) { //when has small text, moves large text
+  padding-top: .7rem;
+  padding-bottom: 0rem;
+  padding-left: 1.2rem;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label { //moves small text only
+  top:.35rem;
+  left: 1.2rem;
   font-size: .8em;
   color: $mediumdark;
 }
 
-.form-group .custom-radio {
-  @extend .my-1;
-  @extend .ml-1;
-}
-
-.form-group .custom-radio > label {
-  @extend .pl-2;
+.form-control.is-invalid:placeholder-shown ~ label,
+.form-control.is-valid:placeholder-shown ~ label {
+  //left: 1.2rem;
 }
 
 input, textarea, select {
@@ -1106,6 +1283,18 @@ input, textarea, select {
 }
 
 //
+
+input {
+  color: -internal-light-dark-color($dark, white) !important;
+}
+
+.b-form-tags-input {
+  color: $dark;
+}
+
+.form-control {
+  color: $dark;
+}
 
 .form-control:focus {
   border-color: $dark;
@@ -1136,14 +1325,52 @@ input, textarea, select {
   color: $medium !important;
 }
 
-.form-control {
+.form-control, .b-form-tags {
   @extend .rounded-0;
   border-color: $mediumdark;
   transition: all .1s ease-out;
   height: 34px;
 }
+
+.b-form-tags {
+  //height: 34px !important;
+  z-index: 20;
+}
+
+.b-form-tags > div > small {
+  //this affects the popup warning for duplicate tag value
+  @extend .bg-white;
+  @extend .py-1;
+  @extend .px-3;
+  @extend .mt-2;
+  @extend .text-warning;
+  @extend .border;
+  @extend .border-warning;
+}
+
+.b-form-tags-button {
+  @extend .rounded-0;
+  @extend .bg-white;
+  @extend .text-dark;
+  @extend .border;
+  @extend .border-dark;
+  @extend .ml-auto;
+}
+
+.b-form-tag {
+  margin-right: .6rem !important;
+}
+
+.b-form-tag-content {
+  @extend .pl-1;
+}
+
+::-webkit-input-placeholder {
+  color: $medium;
+}
+
 .form-control::placeholder {
-  color: $mediumdark;
+  color: $medium;
 }
 
 .form-control.is-valid {
@@ -1187,15 +1414,12 @@ input[type="date"]::-webkit-clear-button:hover {
   @extend .border-secondary;
 }
 
-.input-group {
-  @extend .mt-1;
-  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+.sectionGroup > :not(:first-of-type).row > div > .input-group {
+  //@extend .mt-1;
 }
 
-.input-group-prepend i {
-  @extend .text-dark;
-  @extend .fa-lg;
-  line-height: .55em;
+.input-group {
+  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .prependIcon .input-group-prepend {
@@ -1203,12 +1427,17 @@ input[type="date"]::-webkit-clear-button:hover {
 }
 
 .input-group-prepend {
-  @extend .bg-lightest;
+  background-color: rgba($medium, .5);
   @extend .border;
-  min-width: 18ch;
-  max-width: 20ch;
+  min-width: 19ch; //eventually this value should be set dynamically to the exact character length of the longest string in any prepend in a given .container-fluid
   height: auto;
   align-items: baseline;
+}
+
+.input-group-prepend i {
+  @extend .text-dark;
+  @extend .fa-lg;
+  line-height: .55em;
 }
 
 .input-group-append {
@@ -1221,18 +1450,11 @@ input[type="date"]::-webkit-clear-button:hover {
 }
 
 .input-group-append > button > i {
-  //height: 22px;
-  //@extend .px-1;
-
   @extend .rounded-0;
 }
 
 .input-group-append > button.btnSmall > i {
   @extend .align-top;
-}
-
-.sectionItem ~ .input-group-append button {
-  //@extend .mt-1;
 }
 
 .disabled > .input-group-prepend > .input-group-text,
@@ -1256,11 +1478,14 @@ input[type="date"]::-webkit-clear-button:hover {
 
 .input-group:hover > .input-group-prepend {
   @extend .bg-light;
-  transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .input-group:hover > .form-control {
   border-color: rgba($dark, .8);
+}
+
+.input-group:hover > .input-group-prepend {
+  background-color: rgba($medium, .6) !important;
 }
 
 .input-group > .form-control:focus  {
@@ -1309,14 +1534,22 @@ textarea {
   //@extend .mt-1;
 }
 
+//DOB
+[type="date"].form-control {
+  padding-top: .5em;
+}
+
+input[type="date"]::-webkit-clear-button {
+ margin-bottom: 2px;
+ -webkit-appearance: none;
+}
+
 //DROPDOWN
 select:first-child {
   color: $dark !important;
 }
 
 .dropdownGroup .dropdown-toggle {
-  //@extend .btnNavigation;
-  //@extend .btnStandard;
   @extend .rounded-0;
   @extend .bg-light;
   @extend .text-dark;
@@ -1326,6 +1559,7 @@ select:first-child {
   margin-top: 0;
   box-shadow: 0 0 0 1px $dark;
   margin-left: 1px;
+  @extend .px-3;
 }
 
 .dropdownGroup.show > .dropdown-toggle .badge {
@@ -1333,13 +1567,9 @@ select:first-child {
   @extend .text-dark;
 }
 
-.dropdownGroup > .dropdown-toggle .badge {
-  top:-2px;
-  @extend .mr-0;
-}
-
-.b-dropdown-form {
-  @extend .px-3;
+.dropdownGroup .badge {
+  top: -2px;
+  vertical-align: middle;
 }
 
 .b-dropdown-form:focus {
@@ -1355,7 +1585,7 @@ select:first-child {
 }
 
 .dropdownGroup > .dropdown-menu {
-  @extend .pr-0;
+  @extend .p-2;
 }
 
 .ql-snow {
@@ -1399,9 +1629,21 @@ input[for="postal"] {
 
 .badge {
   font-weight: 500;
-  @extend .mx-2;
+  //@extend .mx-2;
+  max-height: 22px;
+  min-height: 15px;
+  //@extend .pb-0;
   @extend .unselectableText;
   @extend .rounded-0;
+}
+
+.badge > i {
+  @extend .p-0;
+  @extend .px-1;
+}
+
+.badge-text {
+  @extend .align-baseline;
 }
 
 .badge-secondary {
@@ -1425,54 +1667,27 @@ select[disabled] > option[selected] {
   background-color: rgba($medium, .5);
 }
 
+.custom-control-input:focus:active {
+  //outline: none !important;
+}
+
 //CUSTOM SWITCH
 
 .custom-switch {
-  @extend .mr-1;
-  @extend .pl-0;
-  display: inline-block !important;
-}
-
-.custom-switch > .custom-control-label {
-  margin-top: .1rem;
+  @extend .d-inline;
 }
 
 .custom-switch > label {
-  padding-left: 2.25rem;
   user-select: none;
-}
-
-.switchLabelColored {
-  @extend .d-inline-block;
-  padding-top: .1rem;
-}
-
-.switchLabelColored::after {
-  @extend .align-middle;
-}
-
- .custom-switch > .custom-control-input:checked ~ .switchLabelColored::after {
-   content: "Overriden";
-   color: $confirm !important;
- }
-
-.custom-switch > .custom-control-input:not(:checked) ~ .switchLabelColored::after {
-   content: "Inherited";
-   color: $warning !important;
-}
-
-.custom-switch input:focus {
-  outline-color: pink !important;
+  margin-top: -1px;
 }
 
 .custom-switch > .custom-control-label::before {
-  width: 2.1rem;
-  height: 1.2rem;
-  left: 0rem;
-  top: 0rem;
-  border-radius: 1rem;
-  background-color: unset;
   @extend .border-dark;
+  width: 30px;
+  height: 18px;
+  border-radius: 2rem;
+  background-color: unset;
   transition: background-color .2s ease-in-out, border-color .3s ease-in-out;
 }
 
@@ -1480,12 +1695,41 @@ select[disabled] > option[selected] {
 .custom-switch > .custom-control-label-disabled::after {
   @extend .border;
   @extend .border-dark;
-  position: absolute;
   background-color: unset;
-  left: .25rem;
-  top: .2rem;
-  width: .8rem;
-  height: .8rem;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 12px;
+}
+
+.custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
+  @extend .bg-white;
+  @extend .border;
+  @extend .border-white;
+  width: 12px;
+  height: 12px;
+}
+
+.custom-switch > label > .supportText {
+  //specifically for the "Filter Dropdown" sized switches/text
+  @extend .align-text-top;
+  @extend .pl-1;
+  @extend .mr-2;
+}
+
+.switchLabelColored {
+  @extend .d-inline-block;
+}
+
+.switchLabelColored::after {
+  @extend .align-middle;
+}
+
+ .custom-switch > .custom-control-input:checked ~ .switchLabelColored {
+   color: $dark !important;
+ }
+
+.custom-switch > .custom-control-input:not(:checked) ~ .switchLabelColored {
+   color: $mediumdark !important;
 }
 
 .custom-switch > .custom-control-label::after {
@@ -1506,15 +1750,8 @@ select[disabled] > option[selected] {
 }
 
 .custom-switch > .custom-control-input:checked ~ .custom-control-label::before {
-  background: $confirm;
+  background: $dark;
   border-color: #36521a !important;
-}
-
-.custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
-  @extend .bg-white;
-  @extend .border;
-  @extend .border-white;
-  box-shadow: 0 0 0 1px #36521a;
 }
 
 .custom-switch > .custom-control-input-disabled:checked ~ .custom-control-label::after {
@@ -1528,51 +1765,51 @@ select[disabled] > option[selected] {
 //CUSTOM CHECKBOX
 
 .custom-checkbox {
-  width: 1.2rem;
-  height: 1.2rem;
-  top: -.1rem;
-  margin-left: 1.85rem;
-  display: inline;
+  @extend .d-inline;
 }
 
-.custom-checkbox > .custom-control-label {
-  position: static;
+.custom-checkbox > label {
+  margin-top: -1px;
 }
 
 .custom-checkbox > .custom-control-label::before {
   @extend .rounded-0;
   @extend .border-dark;
+  width: 17px;
+  height: 17px;
   background-color: unset !important;
   transition: background-color .2s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .custom-checkbox > .custom-control-label::after {
-  top: 0rem;
-  width: 100%;
-  height: 1.35rem;
-  left: -1.75rem;
+  width: 24px;
+  height: 24px;
+  margin-left: -3px;
+  margin-top: -3px;
 }
 
 //CUSTOM RADIO
 
 .custom-radio {
-  margin-top: -.15rem;
-  //margin-left: .05rem;
+  @extend .d-inline;
+}
+
+.custom-radio > label {
+  margin-top: -3px;
+  margin-left: 5px;
 }
 
 .custom-radio > .custom-control-label::before {
-  width: 1.15rem !important;
-  height: 1.15rem !important;
+  width: 20px;
+  height: 20px;
   @extend .border-dark;
-  @extend .rounded-0;
   background-color: unset;
 }
 
 .custom-radio > .custom-control-label::after{
   width: 20px;
-  height: 19px;
-  top: .15rem;
-  left: -1.55rem;
+  height: 20px;
+  opacity: 0;
 }
 
 .custom-control-input-disabled:not(:disabled):active ~ .custom-control-label::before {
@@ -1590,10 +1827,7 @@ select[disabled] > option[selected] {
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important;
-}
-
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAEUlEQVR42mP8/58BC2AcEcIAttUV9qOoTcsAAAAASUVORK5CYII=);
+  box-shadow: 0 0 0 3px inset white !important;
 }
 
 //JQUERY UI STYLES
@@ -1604,7 +1838,7 @@ select[disabled] > option[selected] {
   background-color: white;
   outline: 0;
   @extend .rounded-0;
-  @extend .border-mediumdark;
+  @extend .border-dark;
 }
 
 .ui-selectmenu-button{
@@ -1612,9 +1846,17 @@ select[disabled] > option[selected] {
   width: 1% !important;
 }
 
-.ui-selectmenu-text {
+ .ui-selectmenu-text {
   margin-top:2px;
-  color: $mediumdark;
+  //color: pink;
+}
+
+.ui-selectmenu-menu > ul > li:first-child {
+  //color:pink;
+}
+
+.ui-selectmenu-menu > ul > li:not(:first-child) {
+  //color:yellow;
 }
 
 .ui-button {
@@ -1669,24 +1911,38 @@ select[disabled] > option[selected] {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-a > img:hover {
-  box-shadow: 0 0 0 1px $dark;
-  transition: .2s ease-out;
-  text-decoration: none !important;
+.img-fluid:hover {
+    transition: .2s ease-out;
+    text-decoration: none !important;
+}
+
+.img-fluid:hover > .centerCropped {
+  opacity: .8;
+}
+
+.imgLink {
+  position: relative;
+  width: auto;
+}
+
+.imgLink:hover {
+  opacity: .8;
 }
 
 .imgIcon {
-  left: -8%; // test this
-  top: 43%; // test this
-  position: relative;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: 8px;
   @extend .text-white;
   @extend .fa-2x;
+  @extend .fas;
   filter:drop-shadow(0px 0px 1px $dark);
   z-index: 5;
   opacity: 0;
   transition: .2s ease-out;
   box-shadow: 0 0 0 0px $dark;
   pointer-events: none;
+  text-decoration: none !important;
 }
 
 img:hover + .imgIcon {
@@ -1695,10 +1951,14 @@ img:hover + .imgIcon {
 }
 
 .imageThumbnail {
+  @extend .position-relative;
   @extend .card;
   @extend .border-dark;
   @extend .p-3;
+  @extend .d-inline-flex;
+  @extend .mx-2;
   width: fit-content;
+  border-radius: 0 !important;
 }
 
 .centerCropped {
@@ -1707,6 +1967,7 @@ img:hover + .imgIcon {
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
+
 }
 
 .centerCropped img {
@@ -1733,10 +1994,6 @@ img:hover + .imgIcon {
   @extend .rounded-0;
   @extend .bg-light;
   border-bottom: .5px solid $medium !important;
-}
-
-.modal-header h5 {
-
 }
 
 .modal-header .close {
@@ -1871,11 +2128,11 @@ img:hover + .imgIcon {
 // // // // // // // // // // // // // // // // // // // // // // //
 
 .popover {
-  //@extend .shadow-sm;
   @extend .rounded-0;
   max-width: 250px;
   margin: 1.5em 1em 1.5em 1.5em !important; //sets popover position
   background-clip: unset !important;
+  @extend .shadow-sm;
 }
 
 .popover-header {
@@ -1892,15 +2149,10 @@ img:hover + .imgIcon {
 .questionBox {
   @extend .py-0;
   @extend .px-2;
-  @extend .mx-1;
-  @extend .border;
-  @extend .border-medium;
+  //@extend .ml-1;
   @extend .rounded-0;
   height: 34px;
-}
-
-.questionBox:hover {
-  //@extend .border-mediumdark;
+  width: 44px;
 }
 
 .questionBox:hover > i {
@@ -1915,33 +2167,43 @@ img:hover + .imgIcon {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-.nonRowItem {
-  @extend .my-3;
+.container-fluid {
+  @extend .px-0;
+}
+
+.container-fluid > .row {
+  @extend .no-gutters;
 }
 
 .rowItem {
-  @extend .mt-1;
-  @extend .mb-0;
   @extend .rounded-0;
   @extend .d-inline-block;
   @extend .text-left;
+  width: 100%;
   height: 34px; //standard height for all row items
   transition: border-color 0s ease-in-out;
 }
 
-.sectionItem {
-  @extend .mx-3;
-  //@extend .w-100;
+.nonRowItem {
+  @extend .my-3;
+}
+
+.containsRowItems > :not(:first-child).row {
+  @extend .mt-1; //replace eventually with half-valued top AND bottom margin???
+}
+
+.rowItemHover {
+  box-shadow: 0px 0px 0px .5px $mediumdark inset;
 }
 
 .rowStandard {
   @extend .text-dark;
-  @extend .bg-light;
+  background: rgba($medium, .47);
 }
-
+// combine these two classes?
 .rowExpandable {
   color: $dark;
-  background-color: $light;
+  background: rgba($medium, .47);
 }
 
 .rowTitle {
@@ -1952,19 +2214,43 @@ img:hover + .imgIcon {
 }
 
 .rowHighlightDark {
-  box-shadow:0px 0px 0px 1px $dark inset;
+  box-shadow:0px 0px 0px 1px $dark inset !important;
+  @extend .text-dark;
+  @extend .my-2;
+}
+
+.rowHighlightDark > .rowItemContent {
+  @extend .text-dark;
 }
 
 .rowHighlightSecondary {
-  box-shadow:0px 0px 0px 1px $secondary inset;
+  box-shadow:0px 0px 0px 1px $secondary inset !important;
+  @extend .text-secondary;
+  @extend .my-2;
+}
+
+.rowHighlightSecondary > .rowItemContent {
+  @extend .text-secondary;
 }
 
 .rowHighlightConfirm {
-  box-shadow:0px 0px 0px 1px $confirm inset;
+  box-shadow:0px 0px 0px 1px $confirm inset !important;
+  @extend .text-confirm;
+  @extend .my-2;
+}
+
+.rowHighlightConfirm > .rowItemContent {
+  @extend .text-confirm;
 }
 
 .rowHighlightWarning {
-  box-shadow:0px 0px 0px 1px $warning inset;
+  box-shadow:0px 0px 0px 1px $warning inset !important;
+  @extend .text-warning;
+  @extend .my-2;
+}
+
+.rowHighlightWarning > .rowItemContent {
+  @extend .text-warning;
 }
 
 .rowItemContent {
@@ -1982,14 +2268,14 @@ img:hover + .imgIcon {
   height: 20px;
 }
 
+.rowItemPrefix i {
+  @extend .fa-lg;
+}
+
 .rowItemPrefix:empty {
   margin-right: 0rem !important;
   padding: 0rem 0rem !important;
   width: 11px !important;
-}
-
-.rowItemPrefix i {
-  //font-size: 100% !important;
 }
 
 .rowItemText {
@@ -2012,22 +2298,25 @@ img:hover + .imgIcon {
   @extend .text-medium;
 }
 
-.rowItemPrefix i, .rowItemSuffix > i:not(.iconBorderMini) {
-  //@extend .fa-lg;
-}
-
 .rowExpandableContent {
   @extend .w-100;
   @extend .rounded-0;
   @extend .text-left;
-  background-color: inherit;
-  border-top-style: solid;
-  border-top-color: $dark;
-  border-top-width: 1px;
+  @extend .mt-1;
 }
 
-.rowExpandableContentInner {
-  @extend .pl-2;
+.rowExpandableContent.card { //for nested row elements, should have a more specific selector
+  @extend .rounded-0;
+  @extend .d-inline-flex;
+  //@extend .border-mediumdark;
+}
+
+.rowExpandableContent > .card-body { //for nested row elements
+  @extend .mx-3;
+}
+
+.rowExpandableContentInner { //remove this class!
+  //@extend .pl-2;
   @extend .rounded-0;
   @extend .text-left;
   border-top-style: solid;
@@ -2035,7 +2324,21 @@ img:hover + .imgIcon {
   border-top-width: 1px;
 }
 
-//rename this class
+.rowClickable:hover .rowItemPrefix i {
+  @extend .fas;
+  line-height: .7; //why the hell does this need this
+}
+
+.rowGroupTitle {
+  @extend .mt-1;
+  @extend .rounded-0;
+}
+
+.rowGroupTitle ~ .collapse {
+  @extend .pl-4;
+}
+
+//rename this class?
 .rowGroupTitle.collapsed {
   border: 1px solid $mediumdark;
   @extend .pl-3;
@@ -2043,10 +2346,10 @@ img:hover + .imgIcon {
   height:34px;
 }
 
-//rename this class
+//rename this class?
 .rowGroupTitle:not(.collapsed) {
-  background-color: $dark;
-  color: $white;
+  background-color: rgba($medium, .45);
+  color: $dark;
   border-color: transparent;
   height:51px;
   padding-left: 1.1rem;
@@ -2054,17 +2357,16 @@ img:hover + .imgIcon {
 }
 
 .rowGroupTitle:not(.collapsed):focus:active {
-  background-color: $dark !important;
-  color: $white;
+  background-color: $lightest !important;
+  color: $dark;
 }
 
-.rowGroupTitle.collapsed > .rowItemContent > .rowItemPrefix > .iconChevron {
+.rowGroupTitle.collapsed > .rowItemContent > .rowItemPrefix > .iconCollapseExpand {
   color: $dark !important;
   transition: all .2s;
 }
 
-.rowGroupTitle:not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconChevron {
-  color: $white !important;
+.rowGroupTitle:not(.collapsed) > .rowItemContent > .rowItemPrefix > .iconCollapseExpand {
   transition: all .2s;
 }
 
@@ -2073,14 +2375,10 @@ img:hover + .imgIcon {
 }
 
 .rowGroupTitle:not(.collapsed):hover {
-  background-color: rgba($dark, .9);
+  background-color: rgba($medium, .3);
 }
 
-.rowGroupTitle.active ~ .collapse > .sectionGroup > .sectionItem > .rowExpandable {
-  box-shadow: 0 0 0 .5px $medium;
-}
-
-.sortableGroup {
+.fixedGroup {
   @extend .border;
   @extend .border-mediumdark;
   @extend .p-3;
@@ -2092,19 +2390,6 @@ img:hover + .imgIcon {
   height: 200px;
 }
 
-.rowExpandableContent {
-  //background-color: rgba($medium, .2);
-}
-
-.rowExpandableContent.card { //for nested row elements, should have a more specific selector
-  @extend .rounded-0;
-  @extend .d-inline-flex;
-  @extend .border-mediumdark;
-}
-
-.rowExpandableContent > .card-body { //for nested row elements
-  @extend .mx-3;
-}
 
 button.rowItem:focus:active {
   background-color: $light !important;
@@ -2115,9 +2400,9 @@ button.rowExpandable:hover, button.rowExpandable:focus:active  {
   @extend .cursorPointer;
 }
 
-button.rowItemHover:hover, button.rowItemHover:focus:active {
-  box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
-  background-color: $light !important;
+button.rowItemHover:hover, button.rowItemHover:focus:active, a.rowStandard:hover {
+  box-shadow: 0px 0px 0px .5px $dark inset;
+  background-color: rgba($medium, .6) !important;
 }
 
 .rowItemHover:focus:active {
@@ -2137,7 +2422,7 @@ button.rowClickable:active:focus {
 
 button.rowClickable:hover {
    box-shadow: 0px 0px 0px .5px $mediumdark inset !important;
-   background-color: $light !important;
+   background-color: rgba($medium, .6) !important;
 }
 
 button.rowDisabled:hover, button.rowDisabled:focus:active {
@@ -2150,39 +2435,39 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   height: 34px !important;
   @extend .mt-1;
   @extend .mb-0;
-  @extend .d-inline-block;
+  @extend .d-block;
   @extend .text-left;
 }
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                          SIDE NAV                              //
+  //                      CUSTOM SIDE NAV                           //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
 .sectionGroup {
   @extend .p-3;
-  @extend .my-3;
+  @extend .mt-1;
+  @extend .mb-3;
   background: $lightest;
+  @extend .shadow-sm;
 }
 
-//removes additional margin at the top of the first item of a group
-.sectionItem:first-child > .rowItem,
-.sectionItem:first-child > .row > div > .input-group {
+.sectionGroup > h6 {
   margin-top: 0 !important;
 }
 
-.sideNav.card {
+.sideNav {
   @extend .text-right;
   @extend .border-0;
   @extend .d-block;
 }
 
-.sideNav.card .nav-tabs {
+.sideNav > .tabs > .col-auto > .nav-tabs { //this is too specific
   background-color: rgba($light, .6);
   @extend .px-0;
-  @extend .py-5;
+  @extend .py-4;
   width: 275px;
   min-height: 100vh;
 }
@@ -2190,33 +2475,40 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 .sideNav > .tabs > .tab-content {
   @extend .mx-5;
   @extend .pl-2;
-  @extend .mt-4;
-  min-width: 300px;
+  @extend .pr-2;
+  @extend .mt-5;
 }
 
-.sideNav .nav-link {
+
+
+.sideNav > .tabs > .tab-content > .tab-pane > .tabsNav {
+  //width: 800px; //sets width for tabs that have a subnav
+}
+
+
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link {
   text-align: right;
   @extend .rounded-0;
   @extend .py-2;
   text-transform: uppercase;
 }
 
-.sideNav .nav-link.disabled span {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link.disabled span {
   color: rgba($primary, .3);
   border-bottom: 1px solid;
 }
 
-.sideNav .nav-link:hover  {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link:hover  {
   @extend .bg-white;
   @extend .text-primary;
   text-shadow: 0px 0px 0 $primary;
 }
 
-.sideNav a.nav-link:hover {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > a.nav-link:hover {
   color: $primary !important;
 }
 
-.sideNav .nav-link.active {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link.active {
   @extend .text-white;
   @extend .bg-primary;
   border-right: 4px solid $primary;
@@ -2224,13 +2516,13 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   margin-right: -.3em;
 }
 
-.sideNav a.nav-link.active:focus,
-.sideNav a.nav-link.active:hover {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > a.nav-link.active:focus,
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > a.nav-link.active:hover {
   background-color: $primary !important;
 }
 
-.sideNav .nav-link.active:hover,
-.sideNav .nav-link.active:focus:hover {
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link.active:hover,
+.sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link.active:focus:hover {
   background-color: $primary !important;
   @extend .text-white;
   @extend .cursorPointer;
@@ -2238,7 +2530,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   opacity: 1;
 }
 
-.nav-tabs .nav-item {
+.sideNav > .tabs > .col-auto > .nav-tabs .nav-item {
   margin-bottom: 0px;
 }
 
@@ -2251,7 +2543,7 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
 }
 
 span.sideNav  {
-  @extend .text-primary;
+  //@extend .text-primary;  ?????
 }
 
 span.edited::before {
@@ -2268,6 +2560,8 @@ span.edited:hover::before {
   color: $secondary !important;
 }
 
+
+//these 2 belong in a different section
 .navSubNav {
   @extend .pt-1;
   @extend .px-1;
@@ -2286,8 +2580,8 @@ span.edited:hover::before {
 
 .table th {
   border: 0px solid transparent !important;
-  @extend .bg-dark;
-  @extend .text-white;
+  @extend .bg-light;
+  @extend .text-dark;
   @extend .py-2;
   @extend .px-3;
 }
@@ -2303,7 +2597,6 @@ span.edited:hover::before {
 
 .table-bordered td {
   border-width: 1px !important;
-
 }
 
 .tableTruncate > tbody > tr > td {
@@ -2313,43 +2606,47 @@ span.edited:hover::before {
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                             TABS                               //
+  //                         TAB CONTENT                            //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+.sideNav > .tabs > .tab-content > .tab-pane {
+  //sets width for most tabs
+   width: 900px;
+   @extend .pr-4;
+}
+
+.containsSubNav {
+  //sets width for tabs that contain SubNav
+  width: 1200px !important;
+}
+
+.pageHeader {
+  @extend .mb-3;
+  @extend .px-3;
+  @extend .py-2;
+  border-bottom: 1px solid $dark;
+}
+
+section {
+  @extend .mt-3; //accounts for breadcrumb footer. might remove if footer is removed
+  //@extend .mr-5;
+}
+
 .tab {
-  @extend .mt-2;
-}
-
-.col-auto > .nav-pills {
-  position: absolute;
-  @extend .ml-5;
-  left: 0px; //same as .tab-pane width
-  width: 300px;
-  height: auto !important;
-}
-
-.col-auto ~ .tab-content.col {
-  @extend .pt-4; //sets only the "tab content" container immediately after the side nav
-}
-
-.tabsNav > .tabs > .tab-content.col {
-  @extend .pr-5;
-  @extend .pt-0;
-}
-
-.tabsNav > .tabs > .tab-content:not(.col) {
-  @extend .p-3;
+  //@extend .mt-2;
 }
 
 .tab-pane {
   @extend .p-0;
-  width: 800px;
+  //@extend .mt-2;
+  @extend .mb-4;
 }
 
 .tabsNav.card {
   @extend .d-block;
   border: none;
+  @extend .p-0;
 }
 
 .tabsNav.card-body {
@@ -2388,15 +2685,47 @@ span.edited:hover::before {
   margin-bottom: -1px;
 }
 
-//VERTICAL TABS
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                     TABS (HORIZONTAL)                          //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.nav-link {
+  text-transform: uppercase;
+}
+
+.nav-link.active {
+  font-weight: inherit !important;
+}
+
+.tabs,
+.tabs > .card-header {
+  @extend .rounded-0; //better placement for this?
+}
+
+.collapse > .tabs {
+  //specifically for when tabs are used inside of a .rowGroupTitle
+  @extend .mt-1;
+}
+
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                     TABS (VERTICAL)                            //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
 
 .nav-pills {
-  min-height: unset !important;
-  max-width: 300px;
+  height: auto !important; //not sure why it needs the .5, needs a fix
+  width: 300px;
+  top:68px;
+  bottom: 0px;
   background-color: unset;
-  @extend .py-1;
+  @extend .pt-4;
   border-left: 1px solid $mediumdark;
   font-size: .9rem;
+  position: sticky !important;
+  @extend .ml-4;
 }
 
 .nav-pills > .nav-item a:focus {
@@ -2408,6 +2737,7 @@ span.edited:hover::before {
   @extend .mx-3;
   @extend .my-0;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .nav-pills > .nav-item > a.nav-link > .badge {
@@ -2448,48 +2778,123 @@ span.edited:hover::before {
   @extend .mx-3;
 }
 
-// ???
-
-.tabTitle > h4 {
-  @extend .d-inline;
-}
-
-.tabTitle > .badge {
-  @extend .align-text-top;
-}
-
 
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                         TIMELINE                               //
+  //                         TIMELINE √                             //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-.timeline {
-  @extend .container;
-  @extend .py-2;
-}
-
-.timelineStatus {
+.timeline .col:first-of-type {
   @extend .col-2;
 }
 
+.timeline .col:last-of-type {
+    @extend .col-5;
+    @extend .pl-0;
+    margin-top: .15em; //detailed adjustment to align with Status
+}
+
 .timelineStatusIcon {
-  @extend .border;
   width: 25px;
   border-radius: 5em;
+  @extend .text-white;
+  @extend .border;
+  @extend .fas;
 }
+
+//SUBMITTED STATUS
+.timelineSubmitted .timelineStatusIcon {
+  @extend .iconSort;
+  @extend .fa-rotate-90;
+  @extend .border-dark;
+  @extend .bg-dark;
+}
+
+  .timelineStatusIcon.iconSort::before {
+    //specifically for the "sort" icon because it's getting rotated/adjusted
+    position: relative;
+    left: 3px !important;
+    @extend .fas;
+  }
+
+  .timelineSubmitted .timelineStatusText::before {
+    content: 'Submitted';
+  }
+
+  .timelineSubmitted .timelineDescriptionText::before {
+    content: 'The application has been successfully completed, but has not been assigned to an agent.'
+  }
+
+  .timelineSubmitted .timelinePath {
+    @extend .border-dark;
+  }
+
+//IN PROGRESS STATUS
+.timelineInProgress .timelineStatusIcon {
+  @extend .iconEllipsis;
+  @extend .border-secondary;
+  @extend .bg-secondary;
+}
+
+  .timelineInProgress .timelineStatusText::before {
+    @extend .text-secondary;
+    content: 'In Progress';
+  }
+
+  .timelineInProgress .timelineDescriptionText::before {
+    content: 'An agent has been assigned, but there is no result available as of yet.'
+  }
+
+  .timelineInProgress .timelinePath {
+    @extend .border-secondary;
+  }
+
+//ERROR STATUS
+.timelineErrors .timelineStatusIcon {
+  @extend .iconClose;
+  @extend .border-warning;
+  @extend .bg-warning;
+}
+
+  .timelineErrors .timelineStatusText::before {
+    @extend .text-warning;
+    content: 'Errors';
+  }
+
+  .timelineErrors .timelineDescriptionText::before {
+    content: 'There has been an error with the application. Please contact us at help@tritoncanada.ca with questions.'
+  }
+
+  .timelineErrors .timelinePath {
+    @extend .border-warning;
+  }
+
+//COMPLETED STATUS
+.timelineCompleted .timelineStatusIcon {
+  @extend .iconConfirm;
+  @extend .border-confirm;
+  @extend .bg-confirm;
+}
+
+  .timelineCompleted .timelineStatusText::before {
+    @extend .text-confirm;
+    content: 'Completed';
+  }
+
+  .timelineCompleted .timelineDescriptionText::before {
+    content: 'The check has been completed. A copy of the results can be found somewhere probably.'
+  }
+
+  .timelineCompleted .timelinePath {
+    @extend .border-confirm;
+  }
 
 .timelineStatusText {
   @extend .ml-2;
-  font-weight: 600;
-}
-
-.timelineDescription {
-  @extend .col-5;
-  @extend .pl-0;
-  margin-top: .15em; //detailed adjustment to align with Status
+  @extend .py-1;
+  font-weight: 700;
 }
 
 .timelineDescriptionDate {
@@ -2498,15 +2903,35 @@ span.edited:hover::before {
 
 .timelinePath {
   @extend .position-absolute;
-  @extend .mb-n1;
   margin-left: 0.75em;
-  margin-top: 2.3em;
-  bottom:0;
+  margin-top: 2.5em;
+  top:0;
+  max-height: 35px;
   height: -webkit-fill-available;
   border-right-width: 2px;
   border-right-style: dashed;
 }
 
+//PENDING
+//when using .timelinePending these styles override all other color/weight styles above
+.timelinePending {
+  opacity: .25;
+}
+
+.timelinePending .timelineStatusIcon {
+  color: $mediumdark !important;
+  background-color: white !important;
+  border-color: $mediumdark !important;
+}
+
+.timelinePending .timelinePath {
+  border-color: $mediumdark !important;
+}
+
+.timelinePending .timelineStatusText::before {
+  color: $mediumdark !important;
+  font-weight: 500 !important;
+}
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -2526,7 +2951,7 @@ span.edited:hover::before {
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
-  //                         TOP NAV                                //
+  //                          NAV TOP                               //
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
@@ -2534,17 +2959,12 @@ span.edited:hover::before {
   min-height: 68px;
 }
 
-.navbar.supportNav {
-  height: 34px;
-}
-
 .navbar-collapse {
   @extend .ml-1;
 }
 
 .navbar-nav > .nav-item > .nav-link {
-  @extend .px-3;
-  //@extend .py-0;
+  @extend .px-2;
 }
 
 .navbar-brand {
@@ -2561,7 +2981,7 @@ span.edited:hover::before {
 
 .navbar-nav > .nav-item {
   @extend .text-white;
-  @extend .mx-0;
+  @extend .mx-2;
 }
 
 .dropdown-menu {
@@ -2574,19 +2994,6 @@ span.edited:hover::before {
 
 .primaryNav > .navbar-collapse > .navbar-nav > .dropdown > .dropdown-menu {
   margin-top: .95rem;
-}
-
-//THE BOX SHADOW IS A TEMPORARY STYLE, SHOULD CHANGE PROGRAMATICALLY IN FINAL BUILD
-.supportNav > div > div > .navbar-nav > .dropdown > .dropdown-menu {
-  //position: static !important;
-  margin-top: -.15rem !important;
-  box-shadow: -7px 3px 10px rgba($dark, .07), /*left and bottom*/
-            7px 3px 10px rgba($dark, .07); /*right and bottom*/
-}
-
-//THE BG COLOR IS A TEMPORARY STYLE, SHOULD CHANGE PROGRAMATICALLY IN FINAL BUILD
-.supportNav > div > div > .navbar-nav > .dropdown > .dropdown-menu > li > .dropdown-item:hover {
-  @extend .bg-dark;
 }
 
 .dropdown-item {
@@ -2637,6 +3044,34 @@ a.dropdown-item:active {
 }
 
 
+    // // // // // // // // // // // // // // // // // // // // // // //
+   //                                                                //
+  //                         NAV USER                               //
+ //                                                                //
+// // // // // // // // // // // // // // // // // // // // // // //
+
+.userNav {
+  height: 34px;
+}
+
+.userNav .dropdown-item {
+  color: $dark !important;
+}
+
+.userNav .dropdown-item:hover {
+  //THE BG COLOR IS A TEMPORARY STYLE, SHOULD CHANGE DYNAMICALLY IN FINAL BUILD
+  background: $dark;
+  color: white;
+}
+
+//THE BOX SHADOW IS A TEMPORARY STYLE, SHOULD CHANGE DYNAMICALLY IN FINAL BUILD
+.userNav .dropdown-menu {
+  margin-top: -.1rem !important;
+  box-shadow: -7px 3px 10px rgba($dark, .07), /*left and bottom*/
+            7px 3px 10px rgba($dark, .07); /*right and bottom*/
+}
+
+
 
     // // // // // // // // // // // // // // // // // // // // // // //
    //                                                                //
@@ -2646,7 +3081,6 @@ a.dropdown-item:active {
 
 .highlightSection {
   @extend .rounded-0;
-  //@extend .d-inline-flex;
   @extend .border-mediumdark;
   @extend .w-100;
   @extend .my-4;
@@ -2654,7 +3088,25 @@ a.dropdown-item:active {
   @extend .text-center;
 }
 
+//TEMPORARY
+#tempButton, #tempButton2, #tempText3 {
+  display:none;
+}
 
+
+// CUSTOM SCROLL BAR
+:not(html) ::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+:not(html) ::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.85);
+}
+
+:not(html) ::-webkit-scrollbar-thumb {
+    background: $medium;
+}
 
 //IMPORT STYLES ONLY REQUIRED FOR THE STYLEGUIDE
 @import 'library.scss';

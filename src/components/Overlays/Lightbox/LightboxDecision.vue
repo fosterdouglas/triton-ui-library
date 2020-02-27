@@ -1,9 +1,7 @@
 <docs>
 
-<h3>Decision
-<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
-</h3>
-
+<h3>Decision</h3>
+<p>The most common type of lightbox, it requires the user to either confirm the addition or changes inside, or to cancel. The ```ESC``` key is disabled, and clicking outside of the modal will not close it.</p>
 
 ```js
 <template>
@@ -25,11 +23,17 @@
       :no-close-on-esc="true"
     >
       <template v-slot:modal-header>
-        <h5 class="mb-0">Dismissable Lightbox Title</h5>
+        <h4 class="mb-0">Decision Lightbox</h4>
       </template>
 
-      <div class="modal-body text-center">
-
+      <div class="modal-body">
+        <b-row class="subGroup">
+          <b-col cols="12">
+            <b-input-group class="dropdownMenu" prepend="Text Field" >
+              <b-form-input class="form-control" type="text" placeholder="Text Field"></b-form-input>
+            </b-input-group>
+          </b-col>
+        </b-row>
       </div>
 
       <template v-slot:modal-footer>

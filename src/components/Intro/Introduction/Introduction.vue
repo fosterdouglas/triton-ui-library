@@ -1,61 +1,48 @@
 <docs>
 
 ```jsx noeditor
+
 <div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Under construction!
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-    <p class="mb-0">Many components in this library are <span class="font-weight-bolder">missing or are actively under construction, </span>
-    and this page has <span class="font-weight-bolder">not yet been cross-browser or platform tested.</span> Look for this icon <i title="Under construction!" class="p-1 fal fa-sm fa-exclamation-triangle text-info align-middle"></i> next to components that are notably incomplete. If you find any inconsistencies, please Slack or Email Foster. Thank you for your patience!
-	</p>
-  </b-alert>
-
-</div>
-
-<div class="pr-5 pl-4 pt-1">
   <h3>Hello!</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-    <p class="mb-3">
+  <div class="pl-4 mb-4 mt-2 text-justify">
+    <p>
       Welcome to the official Triton UI Component Library. Included below is an interactive visual reference and guide to all Triton UI elements.
     </p>
   </div>
 
   <h3>Libraries and Dependencies</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-    <p class="mb-3">
-      All components are built with <a class="text-info underline" href="https://vuejs.org/" target="_blank">Vue.js</a>, using <a class="text-info underline" href="https://bootstrap-vue.js.org/" target="_blank">BootstrapVue</a>, some custom CSS, and a small amount of Javascript/jQuery (primarily to illustrate specific interaction examples). A few components use additional libraries.
+  <div class="pl-4 mb-4 mt-2 text-justify">
+    <p>
+      All components are built with <a class="text-info underline" href="https://vuejs.org/" target="_blank">Vue.js</a>, using <a class="text-info underline" href="https://bootstrap-vue.js.org/" target="_blank">BootstrapVue</a>, some custom CSS, and a very small amount of Javascript/jQuery. A few components use additional libraries.
     </p>
     <p class="mb-3">
-      <a class="text-info underline" href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank">Bootstrap 4.3</a><br/>
-      <a class="text-info underline" href="https://fontawesome.com/" target="_blank">Font Awesome 5.10.2</a><br/>
+      <a class="text-info underline" href="https://bootstrap-vue.js.org/" target="_blank">BootstrapVue 2.5.0</a> (Using Bootstrap 4.3)<br/>
+      <a class="text-info underline" href="https://fontawesome.com/" target="_blank">Font Awesome 5.12.1</a><br/>
       <a class="text-info underline" href="http://jquery.com" target="_blank">jQuery</a><br/>
       <a class="text-info underline" href="https://popper.js.org/" target="_blank">Popper.js</a><br/>
       <a class="text-info underline" href="https://api.jqueryui.com/sortable/" target="_blank">jQuery UI</a><br/>
       <a class="text-info underline" href="https://fonts.google.com/" target="_blank">Google Fonts</a>
     </p>
     <p class="mb-3">
-    This website is built and maintained with the documentation tool
-    <a class="text-info underline" href="https://vue-styleguidist.github.io/" target="_blank">Vue Styleguidist</a>.
+    This website is built and maintained with the documentation organization tool
+    <a class="text-info underline" href="https://vue-styleguidist.github.io/" target="_blank">Vue Styleguidist</a>, with some heavy customizations.
     </p>
   </div>
 
   <h3>Browser Compatibility</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-    <p>The chart below details the current overall status of browser compatibility with this set of components. The button below for the "Kitchen Sink" leads to a demo page that showcases every component being used in some context that it may be found in a production environment.</p>
+  <div class="pl-4 mb-4 mt-2 text-justify">
+    <p class="mb-0">The chart below details the current overall status of browser compatibility with this set of components. The button below for the "Kitchen Sink" leads to a demo page that showcases every component being used in some context that it may be found in a production environment.</p>
     <br/>
     <b-button
       :pressed="false"
       variant="outline-primaryfade"
       class="btnNavigation btnStandard"
       onclick="this.blur();"
+      style="font-weight:500;"
       href="../../#/Kitchen%20Sink%20Showcase"
       >
-        <i></i>
-        <div class="btnText">View Kitchen Sink</div>
-        <i class="iconChevron btnIconRight"></i>
+        VIEW KITCHEN SINK
+        <i class="iconArrow"></i>
     </b-button>
     <br/>
     <br/>
@@ -141,17 +128,18 @@
   </div>
 
   <h3>Responsive</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-  <p class="mb-3">
+  <div class="pl-4 mb-4 mt-2 text-justify">
+  <p>
   The Triton UI Component Library components are <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is a long term goal.
   </p>
   </div>
 
   <h3>Design System</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-  <p class="mb-3">
+  <div class="pl-4 mb-4 mt-2 text-justify">
+  <p>
   This design system is based on the consistent use of open <i title="Under construction!" class="p-1 fal fa-sm fa-heart text-info align-middle"></i> and closed <i title="Under construction!" class="p-1 fas fa-sm fa-heart text-info align-middle"></i> styles. In every case, elements that have an open stroked style are interactive in some manner. Elements that are closed indicate a currently-hovering state, an actively selected item, or in some cases a disabled element.
   </p>
+  <!--
   <p class="mb-3">
   Below is a link to a design resource and library for internal reference. It contains many in-progress and unapproved designs, and should be used primarily as reference
   </p>
@@ -164,16 +152,16 @@
         >
           <i></i>
           <div class="btnText">Design Reference Files</div>
-          <i class="iconChevron btnIconRight"></i>
+          <i class="iconCollapseExpand btnIconRight"></i>
       </b-button>
   <p class="mb-3">
-
   </p>
+-->
   </div>
 
   <h3>WCAG 2.1 Compliance</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-  <p class="mb-3">
+  <div class="pl-4 mb-4 mt-2 text-justify">
+  <p>
   Details coming soon.
   <br/>
   <br/>
@@ -186,22 +174,12 @@
   </div>
 
   <h3>Versions & Github</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-    <p class="mb-3">
+  <div class="pl-4 mb-4 mt-2 text-justify">
+    <p>
       This tool is currently in development.<br/>
-      <strong class="text-dark">v0.9.9</strong> - last updated on February 3rd 2020.<br/><br/>
+      <strong class="text-dark">v1.0.0</strong> - last updated on February 27th 2020.<br/><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
-    </p>
-  </div>
-
-  <h3 class="bg-secondary text-white p-2 d-inline-flex mt-4 mb-3" style="width:auto;">Current List of Known Issues</h3>
-  <div class="pr-4 pl-4 mb-4 text-justify">
-    <p class="mb-3">
-      <ul>
-        <li>All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected. It doesn't seem like this is something that can be done using CSS, we'll need some simple JS to do it.</li>
-        <li>JQuery UI elements inside of lightboxes will typically not function without some alteration. Currently, the ".sortable()" function is being called when the lightbox is "shown", but a more elegant and evergreen solution is still required.</li>
-      </ul>
     </p>
   </div>
 

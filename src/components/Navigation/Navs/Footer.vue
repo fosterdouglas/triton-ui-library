@@ -1,6 +1,7 @@
 <docs>
 
 <h3>Footer</h3>
+<p>Reserved for copyright information and for a contact button or details.</p>
 
 ```js
 <template>

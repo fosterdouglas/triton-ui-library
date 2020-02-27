@@ -1,11 +1,11 @@
 <docs>
 
-<h3>Standard</h3>
-<p></p>
+<h3>Inline</h3>
+<p>A standard inline image, but rarely used in the application.</p>
 
 ```js
 <template>
-  <div class="p-3 d-inline-flex">
+  <div>
       <b-img class="img-fluid" :src="images.sample" draggable="false"></b-img>
   </div>
 </template>

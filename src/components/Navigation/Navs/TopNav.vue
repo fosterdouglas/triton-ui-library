@@ -1,12 +1,12 @@
 <docs>
 
 <h3>Top Nav</h3>
-<p>The Top Nav is used explicitly to organize and display links with dedicated URL pages. It includes functions for grouped dropdown menus and badges to indicate notifications or numbers. Links can be left or right aligned.</p>
+<p>The Top Nav is used to organize and display links with dedicated URL pages. It includes functions for grouped dropdown menus and badges to indicate notifications or numbers. Links can be left or right aligned. It sticks to the top of the page when scrolling for quick site navigation.</p>
 
 ```js
 <template>
 <div>
-  <b-navbar class="primaryNav" toggleable="lg" type="dark" variant="primary">
+  <b-navbar class="primaryNav" toggleable="lg" type="dark" variant="primary" sticky>
     <b-navbar-brand href="#">
       <img src="https://e-bydesign.ca/assets/triton-logo.svg">
     </b-navbar-brand>

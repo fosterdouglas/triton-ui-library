@@ -51,7 +51,7 @@ module.exports = {
     // }
     defaultExample: true,
 
-    version: 'v0.9.9',
+    version: 'v1.0.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -66,8 +66,8 @@ module.exports = {
       sectionDepth: 0
     },
 
-		{name: 'Glossary', sections: [
-      {components: 'src/components/Intro/Glossary/*.vue'}
+		{name: 'Changelog', sections: [
+      {components: 'src/components/Intro/Changelog/*.vue'}
       ],
       sectionDepth: 0
     },
@@ -90,7 +90,7 @@ module.exports = {
       sectionDepth: 0
     },
 
-    {name: '––––––––', sections: [
+    {name: '––––––––––––––', sections: [
       {components: ''}
       ],
       sectionDepth: 0
@@ -199,16 +199,25 @@ module.exports = {
       sectionDepth: 1
     },
 
-    {name: '–––––––– ', sections: [
+    {name: '––––––––––––––', sections: [
       {components: ''}
       ],
       sectionDepth: 0
     },
 
-		{name: 'Examples', sections: [
-      {components: 'src/components/Examples/*.vue'}
-      ],
-      sectionDepth: 0
+    {name: 'Examples', sections: [
+
+      {name: 'Dynamic Landing Page', sections: [
+          {components: 'src/components/Examples/DynamicLandingPage.vue'}
+        ],
+      },
+
+      {name: 'EIV Flow', sections: [
+          {components: 'src/components/Examples/EIV.vue'}
+        ],
+      }
+    ],
+      sectionDepth: 1
     }
 
 	]

@@ -1,9 +1,7 @@
 <docs>
 
-<h3>Data-Only
-<i class="p-1 mb-1 fal fa-xs fa-exclamation-triangle text-info bg-white align-middle"></i>
-</h3>
-<p>used for only displaying data, no interaction (can be dismissed in multiple ways)</p>
+<h3>Read-Only</h3>
+<p>Used for displaying data, with no interaction. It can be dismissed in multiple ways, including by using the ```ESC``` key and by clicking anywhere outside of the lightbox.</p>
 
 ```js
 <template>
@@ -25,7 +23,7 @@
 
     >
       <template v-slot:modal-header>
-        <h5 class="mb-0">Dismissable Lightbox Title</h5>
+        <h4 class="mb-0">Read-Only Lightbox</h4>
         <b-button
           class="close"
           @click="modalShow = !modalShow"
@@ -34,7 +32,23 @@
       </template>
 
       <div class="modal-body text-center">
-
+        <b-table
+          :outlined="true"
+          :striped="false"
+          :fixed="false"
+          :no-border-collapse="true"
+          :no-select-on-click="false"
+          :items="items"
+          :fields="fields"
+          :sticky-header="true"
+          responsive
+        >
+          <template v-slot:head()="scope">
+            <div class="text-nowrap">
+              {{ scope.label }}
+            </div>
+          </template>
+      </b-table>
       </div>
 
 
@@ -51,6 +65,34 @@
         SaveButtonCaption: 'SAVE',
         FuncButtonCaption: 'Press to test',
         modalShow: false,
+        fields: ['first_name', 'middle_name', 'last_name', 'age'],
+        items: [
+          { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+          { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+          { age: 89, first_name: 'Geneva', last_name: 'Wilson' }
+        ],
+        tableVariants: [
+          'primary',
+          'secondary',
+          'info',
+          'danger',
+          'warning',
+          'success',
+          'light',
+          'dark'
+        ],
+        striped: false,
+        bordered: false,
+        borderless: false,
+        outlined: false,
+        small: false,
+        hover: false,
+        dark: false,
+        fixed: false,
+        footClone: false,
+        headVariant: null,
+        tableVariant: '',
+        noCollapse: false
       }
     }
   }

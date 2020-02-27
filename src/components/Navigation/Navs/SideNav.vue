@@ -1,38 +1,32 @@
 <docs>
 
 <h3>Side Nav</h3>
-<p>The Side Nav is used across the application as a sub-menu system. It should only be used to show and hide loaded content or to dynamically load content, but not for a URL change. The <span class="ml-1 edited"></span>pencil icon represents content tabs that have been edited. The nav is typically paired with a Save button, but not required for read-only page instances.
-  <br/>
-  <br/>
-<span class="text-info">
-Note, the sub nav expanding menu isn't fully functioning, and still requires correct Vue integration to support the "tab content" system that standard nav menu items utilize.
-</span>
-</p>
+<p>The Side Nav is used across the application as a sub-menu system. It should only be used to show and hide loaded content or to dynamically load content, but not for a URL change. The <span class="ml-1 edited"></span>pencil icon can be placed next to any menu tab name to represent that is has been edited. The nav is typically paired with a Save button, but isn't required for read-only page instances.</p>
 
 ```js
 <template>
   <div>
 
-    <b-card class="sideNav styleguidistOnlyStyles" no-body>
+    <b-card class="sideNav styleguidistOnlyStyles"  no-body>
       <b-tabs card vertical>
 
-        <b-tab disabled>
+        <b-tab  disabled>
           <template v-slot:title><span>Title of This Group</span></template>
         </b-tab>
 
         <b-tab>
           <template v-slot:title><span>Test Nav Item</span></template>
-          <b-card-text>Tab contents 1</b-card-text>
-        </b-tab>
-
-        <b-tab>
-          <template v-slot:title><span class="edited">Test Nav Item</span></template>
-          <b-card-text>Tab contents 2</b-card-text>
+          <b-card-text class="p-3">Tab contents 1</b-card-text>
         </b-tab>
 
         <b-tab>
           <template v-slot:title><span>Test Nav Item</span></template>
-          <b-card-text>Tab contents 3</b-card-text>
+          <b-card-text class="p-3">Tab contents 2</b-card-text>
+        </b-tab>
+
+        <b-tab>
+          <template v-slot:title><span>Test Nav Item</span></template>
+          <b-card-text class="p-3">Tab contents 3</b-card-text>
         </b-tab>
 
         <b-tab disabled>
@@ -41,7 +35,7 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
 
 
         <!--
-        
+
         <b-tab>
           <template v-slot:title>
             <div variant="-"
@@ -50,7 +44,7 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
               :aria-expanded="visible ? 'true' : 'false'"
               aria-controls="collapse-10"
               @click="visible = !visible">
-              Test Nav Item<i class="iconChevron fa-rotate-90"></i>
+              Test Nav Item<i class="iconCollapseExpand fa-rotate-90"></i>
             </div>
 
           </template>
@@ -75,7 +69,22 @@ Note, the sub nav expanding menu isn't fully functioning, and still requires cor
         </b-tab>
 
         -->
-
+        <template v-slot:tabs-end>
+          <div class="mt-3 mr-4 ml-4">
+            <b-button
+              disabled
+              :pressed="false"
+              variant="-"
+              id="changesBtn"
+              class="btnNavigation btnDisabled w-100"
+              onclick="this.blur();"
+              @click="toastConfirm()"
+              >
+              <i class="iconSave"></i>
+              <div class="btnText">SAVE CHANGES</div>
+            </b-button>
+          </div>
+        </template>
       </b-tabs>
     </b-card>
   </div>

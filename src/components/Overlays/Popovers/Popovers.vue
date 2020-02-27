@@ -1,29 +1,11 @@
 <docs>
 
-```jsx noeditor
-
-<div>
-
-  <b-alert fade show dismissible variant="info" class="customAlert alertInfo">
-    <h5 class="alert-heading">Foster's Task List
-      <i class="p-1 pt-2 mb-1 fal fa-xs fa-exclamation-triangle text-info align-middle"></i>
-    </h5>
-    <hr/>
-      <ul>
-        <li class="alertListItem">- Update JS to properly unfocus icon button after dismiss click</li>
-        <li class="alertListItem">- Distribute components into separate files</li>
-      </ul>
-  </b-alert>
-
-</div>
-```
-
 <h3>Click-Enabled</h3>
-<p></p>
+<p>A popover for situations that require confirmation before resolving.</p>
 
 ```js
 <template>
-  <div class="row" style="margin-top:145px;">
+  <div class="row" style="margin-top:120px;">
     <div style="width: 110px;"></div>
 
     <div>
@@ -294,7 +276,7 @@
 ```
 
 <h3>Info Box</h3>
-<p>...</p>
+<p>Common across the application, and used for longer descriptions.</p>
 
 ```js
 <template>
@@ -311,7 +293,7 @@
       <i  class="iconQuestion text-medium fa-lg"></i>
       <b-popover
         triggers="hover blur"
-        variant="mediumdark"
+        variant="-"
         placement="right"
         target="PopoverHover20"
        >

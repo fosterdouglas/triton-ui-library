@@ -1,8 +1,7 @@
 <docs>
 
-<h3>Same Page</h3>
-<p>Note: if using a system feature that calls more than a few "pages" worth of data, it's highly recommended to pair
-it with filtering functionality.</p>
+<h3>Single View</h3>
+<p>Pagination is used to browse a large set of data without leaving the current page. When data requires more than a few pages to display, it's highly recommended to pair it with filtering functionality found in <a href="../../#Overlays/Popovers">General</a> Inputs.</p>
 
 ```js
 <template>
@@ -16,8 +15,8 @@ it with filtering functionality.</p>
     align="right"
     onclick="this.blur();"
     >
-      <template v-slot:prev-text><i class="iconChevron iconHover fa-rotate-180"></i></template>
-      <template v-slot:next-text><i class="iconChevron iconHover"></i></template>
+      <template v-slot:prev-text><i class="iconCollapseExpand iconHover fa-rotate-180"></i></template>
+      <template v-slot:next-text><i class="iconCollapseExpand iconHover"></i></template>
     </b-pagination>
 
     <div class="col-12 border border-medium p-7 mb-4"></div>
@@ -31,8 +30,8 @@ it with filtering functionality.</p>
     align="right"
     onclick="this.blur();"
     >
-      <template v-slot:prev-text><i class="iconChevron iconHover fa-rotate-180"></i></template>
-      <template v-slot:next-text><i class="iconChevron iconHover"></i></template>
+      <template v-slot:prev-text><i class="iconCollapseExpand iconHover fa-rotate-180"></i></template>
+      <template v-slot:next-text><i class="iconCollapseExpand iconHover"></i></template>
     </b-pagination>
   </div>
 

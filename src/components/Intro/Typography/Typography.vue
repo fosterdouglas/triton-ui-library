@@ -1,7 +1,7 @@
 <docs>
 
-<h3>Page Title</h3>
-<p>Used exclusively for titles of pages, typically to label the top of a <a href="../../#/Navigation/SideNav">Side Nav</a>. Uses the ```<h2>``` tag and is almost always set in Triton Blue color.</p>
+<h3>Jumbo</h3>
+<p>Used rarely, for callouts, massive focus, or unique pages. Uses the ```<h2>``` tag and is almost set in Triton Blue by default.</p>
 
 ```jsx
 <template>
@@ -11,45 +11,44 @@
 </template>
 ```
 
-<h3>Support Title</h3>
-<p>Sometimes found at the top of the main content of a page, a secondary indication of the current page (mirrors the Menu Item). Uses ```<h4>```.</p>
+<h3>Page Title</h3>
+<p>Found at the top of the main content of a page (mirroring the selected item from the Top Nav, or the selected item of the Side Nav if present). Uses ```<h4>``` and is often paired with a "expand/collapse all" button.</p>
 
 ```jsx
-<template>
-  <div>
-    <h4>Transactions</h4>
-  </div>
-</template>
+<b-container class="pageHeader" fluid>
+  <b-row align-v="center">
+    <b-col>
+      <h4>Client Details</h4>
+    </b-col>
+    <b-col sm="auto" align-self="end">
+      <b-button
+        :pressed="false"
+        variant="outline-primaryfade"
+        class="btnSmall cursorDefault expandAll text-dark"
+        onclick="this.blur()"
+       >
+        <i class="iconSort fa-lg iconBorderMini"></i>
+      </b-button>
+
+    </b-col>
+  </b-row>
+</b-container>
 ```
 
 <h3>Sections</h3>
-<p>Section headers are for complex pages that require additional organization or labeling that can't be achieved via other means. Uses a slightly modified version of <a href="../../#/Elements/Rows">Title Row Component</a>.</p>
+<p><span class="text-info">~This needs to be adjusted or removed~</span></p>
 
 ```jsx
 <template>
   <div>
-
-    <b-button
-      block
-      class="rowItem rowGroupTitle cursorDefault"
-      variant="none"
-      onclick="this.blur();"
-    >
-      <div class="rowItemContent">
-        <div class="rowItemText">
-          <p class="mb-0">Address</p>
-        </div>
-        <div class="rowItemSuffix">
-        </div>
-      </div>
-    </b-button>
-
+    <h5>Client Details</h5>
   </div>
 </template>
 ```
 
-<h3>Menu Items</h3>
-<p>Exclusively for menu items. Uses ```<h6>``` and uppercase styling.</p>
+
+<h3>Group Headers / Menu Items</h3>
+<p>For menu items, and used to categorize subsections of like functions (used inside of ```.sectionGroup```). Uses ```<h6>``` and uppercase styling.</p>
 
 ```jsx
 <template>
@@ -86,7 +85,7 @@
 ```
 
 <h3>Tiny Text</h3>
-<p>Reserved for footnotes, email footers, and other optional items, for example for the notification number used in a <a href="../../#/Navigation/Navs">Top Nav</a> component. It can also be used as a badge.</p>
+<p>Reserved for footnotes, email footers, and other optional items, for example for the notification number used in a <a href="../../#/Navigation/Navs">Top Nav</a> component. It's also used inside of the badge component.</p>
 
 ```jsx
 <template>

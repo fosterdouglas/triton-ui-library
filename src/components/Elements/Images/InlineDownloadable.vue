@@ -1,13 +1,13 @@
 <docs>
 
-<h3>Downloadable</h3>
-<p></p>
+<h3>Inline Downloadable</h3>
+<p>Used in instances when a full image needs to be visible as well as include the ability to download the image on click.</p>
 
 ```js
 <template>
-  <div class="p-3 d-inline-flex">
-    <a :href="images.sample" download>
-      <b-img :src="images.sample" draggable="false"></b-img>
+  <div>
+    <a class="imgLink" :href="images.sample" download>
+      <b-img class="img-fluid" :src="images.sample" draggable="false"></b-img>
       <i class="iconDownload imgIcon"></i>
     </a>
   </div>

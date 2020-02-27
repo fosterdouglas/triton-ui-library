@@ -5,22 +5,25 @@
 
 ```js
 <template>
-  <div>
+  <b-container class="containsRowItems" fluid>
+    <b-row>
 
-      <b-button
-        :pressed="false"
-        variant="outline-secondary"
-        id="changesBtn"
-        class="btnNavigation btnFeedback"
-        onclick="this.blur();"
-        @click="toastConfirm()"
-        >
-        <div class="btnText">{{ NavButtonCaption }}</div>
-      </b-button>
+      <b-col class="buttonCol">
+        <b-button
+          :pressed="false"
+          variant="outline-secondary"
+          id="changesBtn"
+          class="btnNavigation btnFeedback"
+          onclick="this.blur();"
+          @click="toastConfirm()"
+          >
+          <div class="btnText">{{ NavButtonCaption }}</div>
+        </b-button>
+      </b-col>
 
-  </div>
+    </b-row>
+  </b-container>
 </template>
-
 <script>
   export default {
     methods: {
