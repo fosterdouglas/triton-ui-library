@@ -28,3 +28,14 @@ Vue.use(BootstrapVue)
 Vue.use(VueQuill)
 Vue.use(VueTheMask)
 Vue.use(AirbnbStyleDatepicker, datepickerOptions)
+
+//this code is showing/hiding the side bar on certain pages
+$(window).on('popstate', function (e) {
+    if( window.location !== '/#/Examples/UI-Test-Environment' || '/#/Examples/UI-Refresh-A' || '/#/Examples/UI-Refresh-B'){
+      $( ".rsg--sidebar-4" ).removeClass( "designReferenceSidebar" );
+      $( ".rsg--root-1" ).addClass( "rsg--hasSidebar-2" );
+    } else {
+      $( ".rsg--sidebar-4" ).addClass( "designReferenceSidebar" );
+      $( ".rsg--root-1" ).removeClass( "rsg--hasSidebar-2" );
+    }
+});

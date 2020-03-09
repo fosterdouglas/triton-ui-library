@@ -1,7 +1,7 @@
 <docs>
 
-<h3>Jumbo</h3>
-<p>Used rarely, for callouts, massive focus, or unique pages. Uses the ```<h2>``` tag and is almost set in Triton Blue by default.</p>
+<h3>Page Header</h3>
+<p>For top-of-page clarity, generally contains the name of the currently selected side bar item. Uses the ```<h2>``` tag.</p>
 
 ```jsx
 <template>
@@ -11,7 +11,18 @@
 </template>
 ```
 
-<h3>Page Title</h3>
+<h3>Support Header</h3>
+<p>Used occassionally, for de-emphasized clarity. Uses the ```<h3>``` tag.</p>
+
+```jsx
+<template>
+  <div>
+    <h3>Edit Client</h3>
+  </div>
+</template>
+```
+
+<h3>Section Title</h3>
 <p>Found at the top of the main content of a page (mirroring the selected item from the Top Nav, or the selected item of the Side Nav if present). Uses ```<h4>``` and is often paired with a "expand/collapse all" button.</p>
 
 ```jsx
@@ -34,18 +45,6 @@
   </b-row>
 </b-container>
 ```
-
-<h3>Sections</h3>
-<p><span class="text-info">~This needs to be adjusted or removed~</span></p>
-
-```jsx
-<template>
-  <div>
-    <h5>Client Details</h5>
-  </div>
-</template>
-```
-
 
 <h3>Group Headers / Menu Items</h3>
 <p>For menu items, and used to categorize subsections of like functions (used inside of ```.sectionGroup```). Uses ```<h6>``` and uppercase styling.</p>

@@ -31,20 +31,7 @@
 
   <h3>Browser Compatibility</h3>
   <div class="pl-4 mb-4 mt-2 text-justify">
-    <p class="mb-0">The chart below details the current overall status of browser compatibility with this set of components. The button below for the "Kitchen Sink" leads to a demo page that showcases every component being used in some context that it may be found in a production environment.</p>
-    <br/>
-    <b-button
-      :pressed="false"
-      variant="outline-primaryfade"
-      class="btnNavigation btnStandard"
-      onclick="this.blur();"
-      style="font-weight:500;"
-      href="../../#/Kitchen%20Sink%20Showcase"
-      >
-        VIEW KITCHEN SINK
-        <i class="iconArrow"></i>
-    </b-button>
-    <br/>
+    <p class="mb-0">The chart below details the current overall status of browser compatibility with this set of components. Links in the side bar under Examples can be found and utilized to test various fully functioning versions of the application.</p>
     <br/>
   <b-table-simple small fixed bordered class="mb-3">
     <b-thead head-variant="dark">
@@ -177,7 +164,7 @@
   <div class="pl-4 mb-4 mt-2 text-justify">
     <p>
       This tool is currently in development.<br/>
-      <strong class="text-dark">v1.0.0</strong> - last updated on February 27th 2020.<br/><br/>
+      <strong class="text-dark">v1.1.0</strong> - last updated on March 9th 2020.<br/><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
     </p>

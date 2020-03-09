@@ -2,7 +2,7 @@
 
 
 <h3>Text</h3>
-<p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling. The labels are built into each form field for styling simplicity, organization, and consistency. <b>Note:</b> the "placeholder" property on the input should include the text "(Required)" for forms more than a few fields in length. The content of the label should remain without the ammendment qualifier.</p>
+<p>Used for basic form text entry. Form fields use a new selector ":placeholder-shown" to keep labels visible during filling. The labels are built into each form field for styling simplicity, organization, and consistency. <b>Note:</b> the "placeholder" text on the input should include "(Required)" for forms more than a few fields in length. The content of the label should remain without the ammendment qualifier.</p>
 
 ```js
 <template>

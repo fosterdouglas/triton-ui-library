@@ -12,55 +12,140 @@
 
 
 
-      <b-container class="containsRowItems bg-primaryfade rounded-lg p-3" style="width:500px;" fluid>
-        <h3>Testing</h3>
+      <b-container class="containsRowItems" fluid>
+
         <b-row>
+          <b-col cols="5" class="formSmallGroup formPrimary">
+            <h3>Address Form</h3>
 
-          <b-col cols="12">
-          <b-form-group class="form-label-group">
-            <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder="Street #"/>
-            <label for="nested-street">Street #</label>
-          </b-form-group>
-          </b-col>
+            <b-container fluid>
+              <b-row>
+                <b-col>
+                  <b-form-group class="form-label-group" description="Provide a fake address because this form is fake. :)">
+                    <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder="Street #"/>
+                    <label for="nested-street">Street #</label>
+                  </b-form-group>
+                </b-col>
+              </b-row>
 
-          <b-col cols="12">
-          <b-form-group class="form-label-group">
-            <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder="Street #"/>
-            <label for="nested-city">City</label>
-          </b-form-group>
-          </b-col>
+              <b-row>
+                <b-col>
+                  <b-form-group class="form-label-group">
+                    <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder="City"/>
+                    <label for="nested-city">City</label>
+                  </b-form-group>
+                </b-col>
+              </b-row>
 
-          <b-col cols="12">
-          <b-form-group class="form-label-group">
-            <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder="Street #"/>
-            <label for="nested-country">Country</label>
-          </b-form-group>
-          </b-col>
+              <b-row>
+                <b-col>
+                  <b-form-group class="form-label-group">
+                    <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder="State"/>
+                    <label for="nested-country">State</label>
+                  </b-form-group>
+                </b-col>
+              </b-row>
 
-          <b-col cols="12">
-          <b-form-group>
-            <label for="radio-group-1">Ship Via:</label>
-            <b-form-radio-group
-              class="pt-2 col-1"
-              :options="['Air', 'Courier', 'Mail']"
-              stacked
-              id="radio-group-1"
-            ></b-form-radio-group>
-          </b-form-group>
-          </b-col>
+              <b-row>
+                <b-col>
 
-          <b-col class="buttonCol">
-            <b-button
-              :pressed="false"
-              variant="primary"
-              class="btnForm"
-              onclick="this.blur();"
-              >
-              <div class="">BUTTON SAMPLE</div>
-            </b-button>
-          </b-col>
+                  <b-form-group>
+                    <p>Please choose an option:</p>
+                    <b-form-radio name="some-radios" value="A">Option A</b-form-radio>
+                    <b-form-radio name="some-radios" value="B">Option B</b-form-radio>
+                  </b-form-group>
+                </b-col>
+              </b-row>
 
-          </b-row>
+              <b-row>
+                <b-col class="buttonForm">
+                  <b-button
+                    :pressed="false"
+                    variant="confirm"
+                    class="btnForm"
+                    onclick="this.blur();"
+                    >
+                    <div class="">SUBMIT FORM</div>
+                  </b-button>
+                </b-col>
+
+                <b-col class="buttonForm">
+                  <b-button
+                    :pressed="false"
+                    variant="medium"
+                    class="btnForm"
+                    onclick="this.blur();"
+                    >
+                    <div class="">CANCEL</div>
+                  </b-button>
+                </b-col>
+
+              </b-row>
+            </b-container>
+
+            </b-col>
+
+            <b-col class="formSmallGroup formDark">
+              <h3>New Account Setup</h3>
+              <p>Welcome to our site! Please set up your new account below.</p>
+              <b-container fluid>
+                <b-row>
+                  <b-col cols="12">
+                    <b-form-group class="form-label-group">
+                      <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder="Street #"/>
+                      <label for="nested-street">First Name</label>
+                    </b-form-group>
+                  </b-col>
+                </b-row>
+
+                <b-row>
+                  <b-col cols="12">
+                    <b-form-group class="form-label-group">
+                      <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder="Street #"/>
+                      <label for="nested-city">Last Name</label>
+                    </b-form-group>
+                  </b-col>
+                </b-row>
+
+                <b-row>
+                  <b-col cols="12">
+                    <b-form-group class="form-label-group">
+                      <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder="Street #"/>
+                      <label for="nested-country">Username</label>
+                    </b-form-group>
+                  </b-col>
+                </b-row>
+
+                <b-row>
+                  <b-col cols="12">
+                    <b-form-group
+                    class="form-label-group"
+                    :valid-feedback="validFeedback"
+                    :state="state"
+                    >
+                      <b-form-input v-model="name" :state="state" type="password" autocomplete="off" id="nested-country" class="form-control" placeholder="Street #"/>
+                      <label for="nested-country">Password</label>
+                    </b-form-group>
+                  </b-col>
+                </b-row>
+
+                <b-row align-h="center">
+                  <b-col class="buttonForm">
+                    <b-button
+                      :pressed="false"
+                      variant="info"
+                      class="btnForm"
+                      onclick="this.blur();"
+                      >
+                      <div class="">CREATE ACCOUNT</div>
+                    </b-button>
+                  </b-col>
+                </b-row>
+
+              </b-container>
+
+                </b-col>
+            </b-row>
         </b-container>
 
 
@@ -69,8 +154,21 @@
 </div>
 </template>
 <script>
-export default {
-}
+  export default {
+    computed: {
+      state() {
+        return this.name.length >= 1 ? true : null
+      },
+      validFeedback() {
+        return this.state === true ? 'Looks good!' : ''
+      }
+    },
+    data() {
+      return {
+        name: ''
+      }
+    }
+  }
 </script>
 ```
 

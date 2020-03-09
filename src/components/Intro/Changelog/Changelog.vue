@@ -18,6 +18,26 @@
       <h3 class="bg-dark text-white py-2 px-3 d-inline-flex mt-4 mb-3" style="width:auto;">Most Recent Update</h3>
 
     <ul>
+      <h4>v1.1.0 - Mar 9 2020</h4>
+<li>- add UI Refresh A and UI Refresh B to Examples side bar (currently just duplicates of Kitchen Sink)</li>
+<li>- rename Kitchen Sink to UI Test Environment</li>
+<li>- update positioning of form field placeholders</li>
+<li>- add a Small Group for form field grouping and styling, with various color options</li>
+<li>- make css rules for buttons inside of small group, centering them when there’s only one and splitting them to Left/Right when there are 2</li>
+<li>- add text-valid and text-invalid beneath form fields</li>
+<li>- colorize upper placeholder on form fields for is-valid and is-invalid</li>
+<li>- add a fourth, dimmed color for form field button, generally for Cancel/Back </li>
+<li>- add Radio Select section for form groups</li>
+<li>- move DOB from general category to text category</li>
+<li>- fixed a styleguidist bug/problem where hitting back button while on a page with side bar removed won’t return the sidebar to visible</li>
+<li>- implement h2 tag in the typography hierarchy as a Page Header (avoided it to prevent redundancy, but will be useful for clarity of pages)</li>
+<li>- experiment with adding a quick user search on the side bar (in ui-test-environment), will be a crowd favorite at Triton I’m guessing!</li>
+<li>- add the name of the current client to the side bar (in ui-test-environment)</li>
+    </ul>
+
+    <h3 class="bg-dark text-white py-2 px-3 d-inline-flex mt-4 mb-3" style="width:auto;">Past Updates</h3>
+
+    <ul>
       <h4>v1.0.0 - Feb 27 2020</h4>
     <li>- updated every single piece of descriptive text of every component </li>
     <li>- remove all "task lists" on all pages</li>
@@ -51,8 +71,6 @@
     <li>- removed Date Range Picker, can probably use the BV one now that it exists</li>
     <li>- a million other tiny updates that were impossible to track</li>
     </ul>
-
-    <h3 class="bg-dark text-white py-2 px-3 d-inline-flex mt-4 mb-3" style="width:auto;">Past Updates</h3>
 
         <ul>
           <h4>v0.9.9 - Feb 3 2020</h4>

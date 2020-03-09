@@ -14,7 +14,7 @@ module.exports = {
 						{src: 'https://code.jquery.com/jquery-3.4.1.js'},
 						{src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'},
 						{src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.js'},
-						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'},
+						{src: 'https://cdn.quilljs.com/1.3.6/quill.js'}
 					],
 				  links: [
 						{
@@ -37,21 +37,12 @@ module.exports = {
       base: '"Montserrat", sans-serif'
     }
   },
-    // set your styleguidist configuration here
+
     title: 'Triton UI Component Library',
 
-    // sections: [
-    //   {
-    //     name: 'First Section',
-    //     components: 'src/components/**/[A-Z]*.vue'
-    //   }
-    // ],
-    // webpackConfig: {
-    //   // custom config goes here
-    // }
     defaultExample: true,
 
-    version: 'v1.0.0',
+    version: 'v1.1.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',
@@ -74,18 +65,6 @@ module.exports = {
 
 		{name: 'Typography', sections: [
       {components: 'src/components/Intro/Typography/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-		{name: 'Design Reference Files', sections: [
-      {components: 'src/components/Intro/DesignReference/*.vue'}
-      ],
-      sectionDepth: 0
-    },
-
-		{name: 'Kitchen Sink Showcase', sections: [
-      {components: 'src/components/Intro/KitchenSinkShowcase/*.vue'}
       ],
       sectionDepth: 0
     },
@@ -199,7 +178,7 @@ module.exports = {
       sectionDepth: 1
     },
 
-    {name: '––––––––––––––', sections: [
+    {name: '–––––––––––––', sections: [
       {components: ''}
       ],
       sectionDepth: 0
@@ -207,14 +186,29 @@ module.exports = {
 
     {name: 'Examples', sections: [
 
-      {name: 'Dynamic Landing Page', sections: [
-          {components: 'src/components/Examples/DynamicLandingPage.vue'}
-        ],
+      {name: 'UI-Refresh-A', sections: [
+          {components: 'src/components/Examples/UIRefreshA.vue', external: true}
+        ]
       },
 
-      {name: 'EIV Flow', sections: [
+      {name: 'UI-Refresh-B', sections: [
+          {components: 'src/components/Examples/UIRefreshB.vue', external: true}
+        ]
+      },
+
+      {name: 'UI-Test-Environment', sections: [
+          {components: 'src/components/Examples/KitchenSinkShowcase.vue', external: true}
+        ]
+      },
+
+      {name: 'Dynamic-Landing-Page', sections: [
+          {components: 'src/components/Examples/DynamicLandingPage.vue'}
+        ]
+      },
+
+      {name: 'EIV-Flow', sections: [
           {components: 'src/components/Examples/EIV.vue'}
-        ],
+        ]
       }
     ],
       sectionDepth: 1

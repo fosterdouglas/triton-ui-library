@@ -48,7 +48,6 @@
               placement="bottom"
               variant="medium"
               target="PopoverDisabled"
-              :show.sync="showDisabled"
              >
              This button is disabled until the form has been completed.
            </b-popover>
