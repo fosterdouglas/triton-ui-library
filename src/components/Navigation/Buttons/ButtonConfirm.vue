@@ -36,7 +36,7 @@
         <b-button
           :pressed="true"
           variant="outline-confirmfade"
-          class="btnNavigation btnConfirmPressed"
+          class="btnNavigation"
           onclick="this.blur();"
           >
           <i>

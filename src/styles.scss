@@ -77,17 +77,19 @@ $fa-font-path: '../node_modules/@fortawesome/fontawesome-pro/webfonts';
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
-html, div, p, h1, h2, h4, h5, button {
+html, div, p, h1, h2, h3, h4, h5, button {
   font-family: 'Montserrat' !important;
   font-weight: 500 !important;
-  -webkit-font-smoothing: antialiased;
-  text-align: left;
+  -moz-osx-font-smoothing: grayscale; //for font-weight issues
+  -webkit-font-smoothing: antialiased; //for font-weight issues
+  font-smoothing: antialiased; //for font-weight issues
 }
 
 h2 {
   @extend .text-dark;
   @extend .mb-0;
   @extend .mt-2;
+  text-align: left;
   text-transform: none;
 }
 
@@ -95,13 +97,14 @@ h3 {
   font-size: 1.25rem;
   color: rgba($mediumdark, .6);
   font-weight: 300;
+  text-align: left;
   @extend .my-0;
-  //@extend .mb-0;
 }
 
 h4 {
   font-size: 1.125rem;
   @extend .mb-0;
+  text-align: left;
 }
 
 h5 {
@@ -112,6 +115,7 @@ h5 {
   background: rgba($dark, 1);
   color: white;
   height: 34px;
+  text-align: left;
 }
 
 h6 {
@@ -125,11 +129,16 @@ h6 {
   text-align: left;
 }
 
+div {
+  text-align: left;
+}
+
 hr {
   @extend .bg-medium;
   @extend .mb-1;
   @extend .mt-2;
 }
+
 
 p {
   text-align: justify;
@@ -200,7 +209,7 @@ p > a[href]:hover {
 
 // CHANGES SELECTION COLOR
 ::-moz-selection { /* for Firefox */
-  color: $light;
+  //color: $light;
   background: $secondary;
 }
 ::selection {
@@ -379,6 +388,10 @@ p > a[href]:hover {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+button {
+  text-align: left;
+}
+
 .btn {
   border: 0px solid transparent;
   vertical-align: initial;
@@ -402,7 +415,6 @@ p > a[href]:hover {
 
 .btnNavigation {
   @extend .border;
-  //@extend .mx-2;
   @extend .px-3;
   @extend .rounded-0;
   @extend .shadow-sm;
@@ -417,20 +429,19 @@ p > a[href]:hover {
   box-shadow: inset 0 0 0 0px white !important;
 }
 
-button:focus, .btnNavigation:focus, .btnSmall:focus {
+button:focus, .btnNavigation:focus, .btnSmall:focus, .btnNavigation:focus-visible, {
    box-shadow: 0 0 0 4px $medium !important; //custom WCAG solution for screen readers
 }
 
 .btnIconRight {
   @extend .ml-1;
   @extend .pr-0;
-  @extend .align-text-bottom;
+  margin-top: -1px;
 }
 
 .btnIconLeft {
   @extend .mr-1;
   @extend .pl-0;
-  @extend .align-text-bottom;
 }
 
 .btnText {
@@ -475,6 +486,15 @@ a.btnStandard:focus {
   @extend .text-white;
 }
 
+.btn-outline-primaryfade {
+  @extend .border-dark;
+}
+
+.btn-outline-primaryfade:hover {
+  background-color: rgba($dark, .1);
+  @extend .border-dark;
+}
+
 //CONFIRM BUTTON
 
 .btnConfirm {
@@ -508,7 +528,6 @@ a.btnConfirm:focus {
 }
 
 //WARN BUTTON
-
 .btnWarning {
   @extend .rounded-0;
   @extend .text-warning;
@@ -542,7 +561,6 @@ a.btnWarning:focus {
 }
 
 //FEEDBACK BUTTON
-
 .btnFeedback {
   @extend .rounded-0;
   @extend .text-secondary;
@@ -577,8 +595,7 @@ button.btnFeedbackPressed:hover {
   background-color: rgba($secondary, .75) !important;
 }
 
-//ICON BUTTON
-
+//PREPEND & APPEND BUTTON
 .btnSmall {
   outline: none;
   font-weight: inherit;
@@ -588,57 +605,41 @@ button.btnFeedbackPressed:hover {
   @extend .align-text-bottom;
 }
 
-:not(.prependButton).col-sm-auto:last-of-type > .btnSmall,
-:not(.prependButton).col-sm-auto:nth-last-of-type(2) > .btnSmall,
-:not(.prependButton).col-sm-auto:nth-last-of-type(3) > .btnSmall,
-:not(.prependButton).col-sm-auto:nth-last-of-type(4) > .btnSmall {
-  //deals with correct spcaing for multiple "appended" buttons
-  //create specific class instead of col-sm-auto, like .appendButton
-  //@extend .mr-0;
-  //@extend .ml-1;
-}
-
 //PREPEND BUTTON
-
 .prependButton {
   @extend .col-sm-auto;
   @extend .p-0;
   @extend .mr-1;
   @extend .ml-0;
   @extend .border;
-  @extend .border-mediumdark;
+  @extend .border-medium;
   height: 34px;
 }
 
-.prependButton > .btnSwitch {
-  //FOR PREPENDED SWITCHES
-  padding-left: .4rem;
-  width: 44px;
-  height: 34px;
-  font-size: 100%;
-}
+    .prependButton > .btnSwitch {
+      //FOR PREPENDED SWITCHES
+      padding-left: .4rem;
+      width: 44px;
+      height: 34px;
+      font-size: 100%;
+    }
 
-.prependButton > .btnCheck {
-  //FOR PREPENDED CHECK BOXES
-  padding-left: .55rem;
-  width: 44px;
-  height: 34px;
-  font-size: 100%;
-}
+    .prependButton > .btnCheck {
+      //FOR PREPENDED CHECK BOXES
+      padding-left: .55rem;
+      width: 44px;
+      height: 34px;
+      font-size: 100%;
+    }
 
-.prependButton > .btnRadio {
-  //FOR PREPENDED RADIOS
-  //margin-top: -3px;
-  //padding-left: 6px;
-  width: 44px;
-  height: 34px;
-  font-size: 100%;
-}
+    .prependButton > .btnRadio {
+      //FOR PREPENDED RADIOS
+      width: 44px;
+      height: 34px;
+      font-size: 100%;
+    }
 
-.prependButton input[type="radio"]:checked + .col button {
-  //@extend .rowHighlightDark;
-}
-
+//APPEND BUTTON
 .appendButton {
   @extend .col-sm-auto;
   @extend .mr-0;
@@ -650,40 +651,73 @@ button.btnFeedbackPressed:hover {
   pointer-events: none !important;
 }
 
-.btnSmall > i {
-  width: 44px;
-}
-
 .btn.btnSmall {
-  border: 0px solid transparent !important; // ?????
-
+  //border: 0px solid transparent !important; // ?????
 }
 
-.btn-outline-primaryfade:hover,
-.btn-outline-primaryfade:active {
-  background-color: rgba($dark, .1) !important;
-  border-color: $dark;
-}
+
+//specifically for Firefox?
+  .btn-outline-primaryfade:not(:disabled):not(.disabled):active,
+  .btn-outline-primaryfade:not(:disabled):not(.disabled).active {
+    background-color: rgba($dark, 1);
+    @extend .border-dark;
+    @extend .text-white;
+  }
+
+  .btn-outline-confirmfade:not(:disabled):not(.disabled):active,
+  .btn-outline-confirmfade:not(:disabled):not(.disabled).active {
+    background-color: rgba($confirm, 1);
+    @extend .border-confirm;
+    @extend .text-white;
+  }
+
+  .btn-outline-warningfade:not(:disabled):not(.disabled):active,
+  .btn-outline-warningfade:not(:disabled):not(.disabled).active {
+    background-color: rgba($warning, 1);
+    @extend .border-warning;
+    @extend .text-white;
+  }
+
+  .btn-outline-secondary:not(:disabled):not(.disabled):active,
+  button.btn-outline-secondary:focus:not(:disabled):not(.disabled):active,
+  .btn-outline-secondary:not(:disabled):not(.disabled).active,
+  button.btn-outline-secondary:focus:not(:disabled):not(.disabled).active {
+    background-color: rgba($secondary, 1);
+    @extend .border-secondary;
+    @extend .text-white;
+  }
+
+  .btn-outline-light:not(:disabled):not(.disabled):active,
+  .btn-outline-light:not(:disabled):not(.disabled).active {
+    background-color: rgba($dark, 1);
+    @extend .border-dark;
+    @extend .text-white;
+  }
 
 .show > .btn-outline-primaryfade.dropdown-toggle {
   @extend .bg-dark;
   @extend .text-white;
 }
 
+.iconBorderStd {
+  border: 1px solid;
+  height: 34px;
+  width: 44px;
+  color: inherit;
+  padding: 11px 11px 11px 11px !important;
+  @extend .rounded-sm;
+  @extend .fa-lg;
+  @extend .rounded-0;
+  vertical-align: unset;
+}
+
 .iconBorderMini {
   border: 1px solid;
   color: inherit;
   @extend .rounded-0;
-}
-
-.iconBorderStd {
-  border: 1px solid;
-  color: inherit;
-  padding: 11px 11px 11px 11px !important;
-  //@extend .p-2;
-  @extend .rounded-sm;
-  @extend .fa-lg;
-  @extend .rounded-0;
+  height: 20px;
+  width: 44px;
+  vertical-align: unset;
 }
 
 .btn-outline-primaryfade:active i.iconBorder,
@@ -1074,7 +1108,10 @@ footer {
 //SPINNER
 .spinner-grow-sm {
   margin-top: 2px !important; //fine tune spinner inline spacing
-  vertical-align: baseline !important;
+  @extend .m-1;
+}
+.spinner-border-sm {
+  @extend .m-1;
 }
 
 //USER
@@ -1218,6 +1255,7 @@ ul.ui-autocomplete {
 // DOB
 .formDOB {
   @extend .col-3;
+  @extend .d-inline;
 }
 
 .formDOB.form-label-group input:not(:placeholder-shown) {
@@ -1285,11 +1323,6 @@ ul.ui-autocomplete {
   @extend .mb-3;
 }
 
-.formSmallGroup .form-group.form-label-group {
-  //adjust padding on text fields inside of a Small Group
-  //@extend .p-0;
-}
-
 .formSmallGroup .form-label-group {
   position: relative;
   @extend .mb-2;
@@ -1316,6 +1349,22 @@ ul.ui-autocomplete {
 
 
 //FORM TEXT FIELDS
+
+.form-control.is-valid {
+  border-color: $confirm !important;
+}
+
+.valid-feedback {
+  color: $confirm !important;
+}
+
+.form-control.is-invalid {
+  border-color: $warning !important;
+}
+
+.invalid-feedback {
+  color: $warning !important;
+}
 
 .form-label-group {
   position: relative;
@@ -1354,7 +1403,7 @@ ul.ui-autocomplete {
 .form-label-group input::-ms-input-placeholder,
 .form-label-group input::-moz-placeholder,
 .form-label-group input::placeholder {
-  color: transparent; //not sure what this does LOL
+  color: transparent !important; //not sure what this does LOL
 }
 
 .form-label-group input:placeholder-shown ~ label { //moves large placeholder
@@ -1395,7 +1444,7 @@ input, textarea, select {
 //
 
 input {
-  color: -internal-light-dark-color($dark, white) !important;
+  //color: -internal-light-dark-color($dark, white) !important;
 }
 
 .b-form-tags-input {
@@ -1480,16 +1529,12 @@ input {
   @extend .pl-1;
 }
 
-::-webkit-input-placeholder {
-  color: $medium;
-}
-
 .form-control::placeholder {
-  color: $medium;
+  opacity: .3; //required for Firefox, can't set the ::placeholder color directly
 }
 
 .form-control.is-valid {
-  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='check' class='svg-inline--fa fa-check fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2328a745' d='M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='check' class='svg-inline--fa fa-check fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%2373a541' d='M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z'%3E%3C/path%3E%3C/svg%3E");
   background-position: 97% calc(.375em + .6875rem) !important;
   transition: position 0s !important; //prevents the "checkmark" from animating wildly on show
 }
@@ -1500,24 +1545,21 @@ input {
   transition: position 0s !important; //prevents the "X" from animating wildly on show
 }
 
-//SEARCH
-
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
+//SEARCH & DATE
 
 input[type="search"]::-webkit-search-cancel-button,
-input[type="date"]::-webkit-clear-button {
+input[type="date"]::-webkit-clear-button { //2nd selector not working on safari
+  -webkit-appearance: none !important;
   background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23dc3545' d='M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z'%3E%3C/path%3E%3C/svg%3E");
-  background-position: 100% 50% !important;
+  background-position: 100%  50% !important;
   height: 20px;
   width: 13px;
 }
 
 input[type="search"]::-webkit-search-cancel-button:hover,
-input[type="date"]::-webkit-clear-button:hover {
+input[type="date"]::-webkit-clear-button:hover { //2nd selector not working on safari
   background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='exclamation-square' class='svg-inline--fa fa-exclamation-square fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'%3E%3Cpath fill='%23dc3545' d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z'%3E%3C/path%3E%3C/svg%3E");
-  background-position: 100% 50% !important;
+  background-position: 100% 50%;
   height: 20px;
   width: 13px;
 }
@@ -1609,11 +1651,6 @@ input[type="date"]::-webkit-clear-button:hover {
   border-color: $dark;
 }
 
-.searchBox[type=text]:focus {
-  border: 1px solid $secondary !important;
-  box-shadow: 0px 0px 0px 0px $secondary !important;
-}
-
 option {
   font-weight: 300;
 }
@@ -1654,16 +1691,16 @@ textarea {
 //DOB
 [type="date"].form-control {
   padding-top: .5em;
-}
-
-input[type="date"]::-webkit-clear-button {
- margin-bottom: 2px;
- -webkit-appearance: none;
+  //caret-color: transparent; //removes cursor from showing on Firefox
 }
 
 //DROPDOWN
 select:first-child {
   color: $dark !important;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
 }
 
 .dropdownGroup .dropdown-toggle {
@@ -1887,7 +1924,7 @@ select[disabled] > option[selected] {
 
 .custom-checkbox > label {
   margin-top: -2px;
-  margin-left: -1px;
+  //margin-left: -1px;
 }
 
 .custom-checkbox > .custom-control-label::before {
@@ -1936,7 +1973,7 @@ select[disabled] > option[selected] {
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
   background: $dark !important; //changes color of Dot on selected radio
-  box-shadow: 0 0 0 3px inset $light !important;
+  box-shadow: 0 0 0 3px $light inset !important;
 }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
@@ -2035,6 +2072,11 @@ select[disabled] > option[selected] {
  //                                                                //
 // // // // // // // // // // // // // // // // // // // // // // //
 
+.img-fluid {
+  height: 100%;
+  vertical-align: top;
+}
+
 .img-fluid:hover {
     transition: .2s ease-out;
     text-decoration: none !important;
@@ -2047,6 +2089,7 @@ select[disabled] > option[selected] {
 .imgLink {
   position: relative;
   width: auto;
+  top: 0 !important;
 }
 
 .imgLink:hover {
@@ -2055,8 +2098,9 @@ select[disabled] > option[selected] {
 
 .imgIcon {
   position: absolute;
-  margin-left: -40px;
-  margin-top: 8px;
+  margin-top: 20px !important;
+  top: 0;
+  right: 20px !important;
   @extend .text-white;
   @extend .fa-2x;
   @extend .fas;
@@ -2308,7 +2352,7 @@ img:hover + .imgIcon {
   transition: border-color 0s ease-in-out;
 }
 
-.nonRowItem {
+.nonRowItem { //still need this?
   @extend .my-3;
 }
 
@@ -2317,7 +2361,7 @@ img:hover + .imgIcon {
 }
 
 .rowItemHover {
-  box-shadow: 0px 0px 0px .5px $mediumdark inset;
+  box-shadow: 0px 0px 0px 1px $medium inset !important;
 }
 
 .rowStandard {
@@ -2466,7 +2510,7 @@ img:hover + .imgIcon {
 .rowGroupTitle.collapsed {
   border: 1px solid $mediumdark;
   @extend .pl-3;
-  transition: all .3s;
+  transition: height .3s;
   height:34px;
 }
 
@@ -2477,7 +2521,7 @@ img:hover + .imgIcon {
   border-color: transparent;
   height:51px;
   padding-left: 1.1rem;
-  transition: all .3s;
+  transition: height .3s;
 }
 
 .rowGroupTitle:not(.collapsed):focus:active {
@@ -2588,6 +2632,11 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .d-block;
 }
 
+.sideNav .nav-item h3 {
+  text-align: right;
+  color: rgba($mediumdark, .6) !important;
+}
+
 .sideNav > .tabs > .col-auto > .nav-tabs { //this is too specific
   background-color: rgba($light, .6);
   @extend .px-0;
@@ -2602,13 +2651,6 @@ button.rowDisabled:hover, button.rowDisabled:focus:active {
   @extend .pr-2;
   @extend .mt-5;
 }
-
-
-
-.sideNav > .tabs > .tab-content > .tab-pane > .tabsNav {
-  //width: 800px; //sets width for tabs that have a subnav
-}
-
 
 .sideNav > .tabs > .col-auto > .nav-tabs > .nav-item > .nav-link {
   text-align: right;
@@ -3031,8 +3073,7 @@ section {
   margin-left: 0.75em;
   margin-top: 2.5em;
   top:0;
-  max-height: 35px;
-  height: -webkit-fill-available;
+  height: 40px;
   border-right-width: 2px;
   border-right-style: dashed;
 }
@@ -3220,14 +3261,10 @@ a.dropdown-item:active {
 }
 
 
-// CUSTOM SCROLL BAR
+// CUSTOM SCROLL BAR (DOES NOT WORK IN FIREFOX, NO CURRENT WAY TO REPLICATE)
 :not(html) ::-webkit-scrollbar {
     width: 10px;
-
-}
-
-:not(html) ::-webkit-scrollbar-track {
-    //-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.85);
+    scrollbar-width: 10px;
 }
 
 :not(html) ::-webkit-scrollbar-thumb {

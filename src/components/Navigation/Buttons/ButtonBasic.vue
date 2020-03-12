@@ -42,7 +42,7 @@
         <b-button
           :pressed="true"
           variant="outline-primaryfade"
-          class="btnNavigation btnStandardPressed"
+          class="btnNavigation"
           onclick="this.blur();"
           >
           <i>

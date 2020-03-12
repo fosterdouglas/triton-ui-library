@@ -9,6 +9,10 @@ import VueQuill from 'vue-quill'
 
 import VueTheMask from 'vue-the-mask'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 import './styles.scss'
 
 const datepickerOptions = {
@@ -22,6 +26,10 @@ const datepickerOptions = {
     hoveredInRange: '#9a9a9a'
   }
 }
+
+library.add(fas)
+
+Vue.component('v-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

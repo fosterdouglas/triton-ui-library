@@ -35,7 +35,7 @@
         <b-button
           :pressed="true"
           variant="outline-warningfade"
-          class="btnNavigation btnWarningPressed"
+          class="btnNavigation"
           onclick="this.blur();"
           >
           <i>

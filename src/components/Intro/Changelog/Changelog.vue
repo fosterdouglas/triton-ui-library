@@ -11,31 +11,57 @@
             <li>- All dropdown selects should have "mediumdark" text displaying the unchosen status, and should change to "dark" when any valid option is selected. It doesn't seem like this is something that can be done using CSS (even the most hacky of solutions), we'll need some simple JS to do it.</li>
             <li>- JQuery UI elements inside of lightboxes will typically not function without some alteration. Currently, the ".sortable()" function is being called when the lightbox is "shown", but a more elegant and sustainable solution is still required.</li>
             <li>- The prepend buttons for Check Box, Switch, and Radio can only be clicked specifically on the element, but don't function if you click elsewhere on the button. Needs a simple JS fix.</li>
+            <li>- Persistent vertical/horizontal scroll bar missing on Firefox (unfortunately, will likely need a JS solution)</li>
+            <li>- The "package" and "plus" icons will shift on hover, but no other icons do (fontawesome bug? might be fixed when switching to svg/v-icon)</li>
           </ul>
         </p>
       </div>
 
       <h3 class="bg-dark text-white py-2 px-3 d-inline-flex mt-4 mb-3" style="width:auto;">Most Recent Update</h3>
 
-    <ul>
-      <h4>v1.1.0 - Mar 9 2020</h4>
-<li>- add UI Refresh A and UI Refresh B to Examples side bar (currently just duplicates of Kitchen Sink)</li>
-<li>- rename Kitchen Sink to UI Test Environment</li>
-<li>- update positioning of form field placeholders</li>
-<li>- add a Small Group for form field grouping and styling, with various color options</li>
-<li>- make css rules for buttons inside of small group, centering them when there’s only one and splitting them to Left/Right when there are 2</li>
-<li>- add text-valid and text-invalid beneath form fields</li>
-<li>- colorize upper placeholder on form fields for is-valid and is-invalid</li>
-<li>- add a fourth, dimmed color for form field button, generally for Cancel/Back </li>
-<li>- add Radio Select section for form groups</li>
-<li>- move DOB from general category to text category</li>
-<li>- fixed a styleguidist bug/problem where hitting back button while on a page with side bar removed won’t return the sidebar to visible</li>
-<li>- implement h2 tag in the typography hierarchy as a Page Header (avoided it to prevent redundancy, but will be useful for clarity of pages)</li>
-<li>- experiment with adding a quick user search on the side bar (in ui-test-environment), will be a crowd favorite at Triton I’m guessing!</li>
-<li>- add the name of the current client to the side bar (in ui-test-environment)</li>
-    </ul>
+      <ul>
+<h4>v1.2.0 - Browser Testing!</h4>
+<li>- update browser compatibility chart</li>
+<li>- fixed font weight discrepencies (by using antialiased font smoothing by default, and -moz-osx-font-smoothing: grayscale for Firefox)</li>
+<li>- update h3 color for styleguide (was conflicting with main css file)</li>
+<li>- fix spinner icon alignment (All browsers)</li>
+<li>- make height of append buttons fixed to 34px (Safari and Firefox)</li>
+<li>- attempted to fix no persistent scrollbar in Firefox, but Firefox doesn’t currently support</li>
+<li>- fix download icon hover position on images (for Firefox and Safari)</li>
+<li>- update height of timeline path (Safari)</li>
+<li>- b-form-input requires a blank space value for placeholder (placeholder=” “) to be fully compliant with the small text design, hoping to find alternative solution in the future (All Browsers, was mostly a Firefox issue though)</li>
+<li>- looked into disabled browser default date picker, will need some JS to do so (Firefox)</li>
+<li>- fixed issues with doubling placeholder text (Firefox)</li>
+<li>- did research on custom input cancel/clear elements, seems only supported on Webkit browsers for now (Firefox)</li>
+<li>- fix weird animation on collapse toggling open, by transition property only on Height (Firefox)</li>
+<li>- update border color/size on row items (All Browsers, to help fix Safari not supporing sub-1px box-shadow sizes)</li>
+<li>- update border color on prepend buttons to match that change ^</li>
+<li>- prepend button border being cut off, fixed with vertical-align being unset (Safari)</li>
+<li>- fiddle with type=“date” to figure out how its working, use “search” type instead for now (Safari)</li>
+<li>- remove outline after clicking an item inside of a dropdown toggle (Safari)</li>
+<li>- remove Quill editor for now (wasn’t doing anything anyway, barely working on Safari/Firefox)</li>
+<li>- fixed User Nav getting cut off in the UI Test Env, was some silly Styleguidist margin issue (Safari)</li>
+</ul>
 
     <h3 class="bg-dark text-white py-2 px-3 d-inline-flex mt-4 mb-3" style="width:auto;">Past Updates</h3>
+
+        <ul>
+          <h4>v1.1.0 - Mar 9 2020</h4>
+    <li>- add UI Refresh A and UI Refresh B to Examples side bar (currently just duplicates of Kitchen Sink)</li>
+    <li>- rename Kitchen Sink to UI Test Environment</li>
+    <li>- update positioning of form field placeholders</li>
+    <li>- add a Small Group for form field grouping and styling, with various color options</li>
+    <li>- make css rules for buttons inside of small group, centering them when there’s only one and splitting them to Left/Right when there are 2</li>
+    <li>- add text-valid and text-invalid beneath form fields</li>
+    <li>- colorize upper placeholder on form fields for is-valid and is-invalid</li>
+    <li>- add a fourth, dimmed color for form field button, generally for Cancel/Back </li>
+    <li>- add Radio Select section for form groups</li>
+    <li>- move DOB from general category to text category</li>
+    <li>- fixed a styleguidist bug/problem where hitting back button while on a page with side bar removed won’t return the sidebar to visible</li>
+    <li>- implement h2 tag in the typography hierarchy as a Page Header (avoided it to prevent redundancy, but will be useful for clarity of pages)</li>
+    <li>- experiment with adding a quick user search on the side bar (in ui-test-environment), will be a crowd favorite at Triton I’m guessing!</li>
+    <li>- add the name of the current client to the side bar (in ui-test-environment)</li>
+        </ul>
 
     <ul>
       <h4>v1.0.0 - Feb 27 2020</h4>

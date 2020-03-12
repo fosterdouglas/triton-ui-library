@@ -15,6 +15,10 @@ a:hover {
   //color: initial !important;
 }
 
+[data-testid="Introduction-examples"] h3 {
+  color: $dark !important;
+}
+
 ul {
   list-style: none !important;
   padding-inline-start: 0px !important;
@@ -103,12 +107,16 @@ div.styleguidistOnlyStyles > i {
 }
 
 .rsg--content-3 {
-  margin: 20px 50px 0px 50px !important;
+  margin: 29px 50px 0px 50px !important;
   max-width: unset !important;
   padding: unset !important;
 }
 .rsg--hasSidebar-2 {
   padding-left: 250px !important;
+}
+
+.rsg--root-1:not(.rsg--hasSidebar-2) .rsg--wrapper-10 {
+  display: none !important; //this is a dumb solution, but it works
 }
 
 //SEARCH BOX VISIBILITY

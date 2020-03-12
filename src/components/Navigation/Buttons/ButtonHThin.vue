@@ -22,7 +22,7 @@
 
       <b-col class="buttonCol">
         <b-button
-          :pressed="false"
+          :pressed="true"
           variant="outline-light"
           size="sm"
           class="btnThin"

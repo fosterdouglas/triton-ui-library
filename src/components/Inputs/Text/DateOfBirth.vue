@@ -5,15 +5,16 @@
 
 ```js
 <template>
-
   <b-container class="containsRowItems" fluid>
+
     <b-row>
       <b-col cols="auto">
         <b-input-group prepend="Date of Birth">
-           <b-form-input type="date" class="custom-form-control"></b-form-input>
+           <b-input type="search" placeholder=" " v-mask="'##/##/####'"></b-input>
          </b-input-group>
       </b-col>
     </b-row>
+
   </b-container>
 
 </template>

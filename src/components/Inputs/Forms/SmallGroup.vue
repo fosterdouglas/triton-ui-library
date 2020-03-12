@@ -22,7 +22,7 @@
               <b-row>
                 <b-col>
                   <b-form-group class="form-label-group" description="Provide a fake address because this form is fake. :)">
-                    <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder="Street #"/>
+                    <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder=" "/>
                     <label for="nested-street">Street #</label>
                   </b-form-group>
                 </b-col>
@@ -31,7 +31,7 @@
               <b-row>
                 <b-col>
                   <b-form-group class="form-label-group">
-                    <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder="City"/>
+                    <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder=" "/>
                     <label for="nested-city">City</label>
                   </b-form-group>
                 </b-col>
@@ -40,7 +40,7 @@
               <b-row>
                 <b-col>
                   <b-form-group class="form-label-group">
-                    <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder="State"/>
+                    <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder=" "/>
                     <label for="nested-country">State</label>
                   </b-form-group>
                 </b-col>
@@ -92,7 +92,7 @@
                 <b-row>
                   <b-col cols="12">
                     <b-form-group class="form-label-group">
-                      <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder="Street #"/>
+                      <b-form-input autocomplete="off" id="nested-street" class="form-control" placeholder=" "/>
                       <label for="nested-street">First Name</label>
                     </b-form-group>
                   </b-col>
@@ -101,7 +101,7 @@
                 <b-row>
                   <b-col cols="12">
                     <b-form-group class="form-label-group">
-                      <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder="Street #"/>
+                      <b-form-input autocomplete="off" id="nested-city" class="form-control" placeholder=" "/>
                       <label for="nested-city">Last Name</label>
                     </b-form-group>
                   </b-col>
@@ -110,7 +110,7 @@
                 <b-row>
                   <b-col cols="12">
                     <b-form-group class="form-label-group">
-                      <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder="Street #"/>
+                      <b-form-input autocomplete="off" id="nested-country" class="form-control" placeholder=" "/>
                       <label for="nested-country">Username</label>
                     </b-form-group>
                   </b-col>
@@ -123,7 +123,7 @@
                     :valid-feedback="validFeedback"
                     :state="state"
                     >
-                      <b-form-input v-model="name" :state="state" type="password" autocomplete="off" id="nested-country" class="form-control" placeholder="Street #"/>
+                      <b-form-input v-model="name" :state="state" type="password" autocomplete="off" id="nested-country" class="form-control" placeholder=" "/>
                       <label for="nested-country">Password</label>
                     </b-form-group>
                   </b-col>

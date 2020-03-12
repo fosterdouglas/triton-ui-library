@@ -6,6 +6,7 @@
 ```js
 <template>
   <b-container class="containsRowItems" fluid>
+
     <b-row>
       <b-col>
        <b-input-group class="prependIcon">
@@ -14,12 +15,11 @@
               <i class="iconSearch far text-dark"></i>
             </b-input-group-text>
           </template>
-          <b-form-input type="search" name="focus" required class="searchBox form-control" placeholder="Search for Users, Clients, or Agents . . .">
-          </b-form-input>
+          <b-input type="search" name="focus" required class="searchBox" placeholder="Search for Users, Clients, or Agents..."></b-input>
         </b-input-group>
       </b-col>
-      <b-col></b-col>
     </b-row>
+    
   </b-container>
 
 </template>

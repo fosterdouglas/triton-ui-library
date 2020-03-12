@@ -42,7 +42,7 @@ module.exports = {
 
     defaultExample: true,
 
-    version: 'v1.1.0',
+    version: 'v1.2.0',
     pagePerSection: true,
     usageMode: 'expand',
     styleguideDir: 'triton-ui-component-library',

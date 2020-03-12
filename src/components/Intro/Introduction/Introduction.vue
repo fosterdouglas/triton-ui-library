@@ -33,77 +33,56 @@
   <div class="pl-4 mb-4 mt-2 text-justify">
     <p class="mb-0">The chart below details the current overall status of browser compatibility with this set of components. Links in the side bar under Examples can be found and utilized to test various fully functioning versions of the application.</p>
     <br/>
-  <b-table-simple small fixed bordered class="mb-3">
-    <b-thead head-variant="dark">
-      <b-tr>
-        <b-th colspan="2" class="text-center">Chrome</b-th>
-        <b-th colspan="2" class="text-center">Edge</b-th>
-        <b-th colspan="2" class="text-center">Firefox</b-th>
-        <b-th colspan="2" class="text-center">IE</b-th>
-        <b-th colspan="2" class="text-center">Opera</b-th>
-        <b-th colspan="2" class="text-center">Safari</b-th>
-      </b-tr>
-    </b-thead>
+  <b-table-simple bordered stacked class="mb-3 w-75">
     <b-tbody>
       <b-tr>
-        <b-td id="PopoverChrome" for="Chrome" colspan="2" class="bg-confirm text-center text-white pl-2"><i class="iconConfirm mr-1"></i>
+        <b-td id="PopoverChrome" for="Chrome" class="bg-confirm text-center text-white pl-2">
+
+          <i class="iconConfirm fas mr-1"></i>
+          <span>Chrome (80.0) / Edge (80.0) / Opera (67.0)</span>
           <b-popover
             triggers="hover blur"
-            placement="bottom"
+            placement="right"
             variant="confirm"
             target="PopoverChrome"
            >
-            Currently being used for testing, and is fully compatible.
+            Currently fully compatible.
           </b-popover>
         </b-td>
-        <b-td id="PopoverEdge" for="Edge" colspan="2" class="bg-mediumdark text-center text-white pl-2"><i class="iconQuestion mr-1"></i>
+        <b-td id="PopoverFirefox" for="Firefox" colspan="3" class="bg-secondary text-center text-white pl-2">
+          <i class="iconExclamation mr-1"></i>
+          <span>Firefox (73.0.1)</span>
           <b-popover
             triggers="hover blur"
-            placement="bottom"
-            variant="mediumdark"
-            target="PopoverEdge"
-           >
-            Currently untested. <br/>Future support planned.
-          </b-popover>
-        </b-td>
-        <b-td id="PopoverFirefox" for="Firefox" colspan="2" class="bg-mediumdark text-center text-white pl-2"><i class="iconQuestion mr-1"></i>
-          <b-popover
-            triggers="hover blur"
-            placement="bottom"
-            variant="mediumdark"
+            placement="right"
+            variant="secondary"
             target="PopoverFirefox"
            >
-            Currently untested. <br/>Future support planned.
+            Various bugs identified,<br/>Fixes currently in progress.
           </b-popover>
         </b-td>
-        <b-td id="PopoverIE" for="IE" colspan="2" class="bg-warning text-center text-white pl-2"><i class="iconRemove mr-1"></i>
+        <b-td id="PopoverSafari" for="Safari" colspan="2" class="bg-secondary text-center text-white pl-2">
+          <i class="iconExclamation mr-1"></i>
+          <span>Safari (13.0.5)</span>
           <b-popover
             triggers="hover blur"
-            placement="bottom"
-            variant="warning"
-            target="PopoverIE"
-           >
-            Currently untested. <br/>Limited future support is reluctantly planned.
-          </b-popover>
-        </b-td>
-        <b-td id="PopoverOpera" for="Opera" colspan="2" class="bg-mediumdark text-center text-white pl-2"><i class="iconQuestion mr-1"></i>
-          <b-popover
-            triggers="hover blur"
-            placement="bottom"
-            variant="mediumdark"
-            target="PopoverOpera"
-           >
-            Currently untested. <br/>Future support planned.
-          </b-popover>
-        </b-td>
-        <b-td id="PopoverSafari" for="Safari" colspan="2" class="bg-secondary text-center text-white pl-2"><i class="iconExclamation mr-1"></i>
-          <b-popover
-            triggers="hover blur"
-            placement="bottom"
+            placement="right"
             variant="secondary"
             target="PopoverSafari"
            >
-            Various major bugs identified.<br/>Fixes and future support planned.
+            Various bugs identified,<br/>Fixes currently in progress.
+          </b-popover>
+        </b-td>
+        <b-td id="PopoverIE" for="IE" colspan="2" class="bg-warning text-center text-white pl-2">
+          <i class="iconRemove fas mr-1"></i>
+          <span>Internet Explorer (11.0)</span>
+          <b-popover
+            triggers="hover blur"
+            placement="right"
+            variant="warning"
+            target="PopoverIE"
+           >
+            Currently untested. <br/>Full support is not likely.
           </b-popover>
         </b-td>
       </b-tr>
@@ -117,7 +96,7 @@
   <h3>Responsive</h3>
   <div class="pl-4 mb-4 mt-2 text-justify">
   <p>
-  The Triton UI Component Library components are <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive, but full compatibility testing is a long term goal.
+  The Triton UI Component Library components are <b>not</b> currently designed and tested for mobile or tablet use. However, many of these components are inherently responsive; full compatibility testing is a long term goal.
   </p>
   </div>
 
@@ -164,7 +143,7 @@
   <div class="pl-4 mb-4 mt-2 text-justify">
     <p>
       This tool is currently in development.<br/>
-      <strong class="text-dark">v1.1.0</strong> - last updated on March 9th 2020.<br/><br/>
+      <strong class="text-dark">v1.2.0</strong> - last updated on March 11th 2020.<br/><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-library-dev" target="_blank">Github Development Repo</a><br/>
       <a class="text-info underline" href="https://github.com/fosterdouglas/triton-ui-component-library" target="_blank">Github Pages Deployment Repo</a><br/>
     </p>

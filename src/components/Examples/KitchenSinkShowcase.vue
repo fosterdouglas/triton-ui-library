@@ -104,8 +104,9 @@
           </b-container>
         </template>
         <b-tab disabled>
-          <template v-slot:title><h3>Bell Canada</h3><hr/></template>
-
+          <template v-slot:title>
+            <h3>Bell Canada</h3><hr/>
+          </template>
         </b-tab>
         <b-tab>
           <h2>Client Details</h2>
@@ -980,7 +981,8 @@
 
 
                     <b-tab>
-                      <h2><h3 class="text-medium mb-1">Packages</h3> Bell Package A1</h2>
+                      <h3>Packages</h3>
+                      <h2> Bell Package A1</h2>
                       <template v-slot:title>
                         <span>Bell Package A1</span>
                       </template>
@@ -1817,13 +1819,15 @@
 
 
                     <b-tab>
-                      <h2>Bell Pacakge C</h2>
+                      <h3>Packages</h3>
+                      <h2>Bell Package C</h2>
                       <template v-slot:title>
                         <span>Bell Package C</span>
                       </template>
                     </b-tab>
 
                     <b-tab>
+                      <h3>Packages</h3>
                       <h2>Bell Base Services</h2>
                       <template v-slot:title>
                         <span>Bell Base Services</span>

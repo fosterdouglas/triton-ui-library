@@ -11,7 +11,7 @@
       <b-col class="buttonCol">
         <b-button
           :pressed="null"
-          variant="outline-primaryfade"
+          variant="-"
           class="btnNavigation btnDisabled cursorDisabled"
           onclick="this.blur();"
           disabled
@@ -23,7 +23,7 @@
       <b-col class="buttonCol">
         <b-button
           :pressed="null"
-          variant="outline-primaryfade"
+          variant="-"
           class="btnNavigation btnDisabled cursorDisabled"
           onclick="this.blur();"
           disabled
@@ -38,7 +38,7 @@
       <b-col id="PopoverDisabled" class="buttonCol disabledButtonContainer">
         <b-button
           :pressed="null"
-          variant="outline-primaryfade"
+          variant="-"
           class="btnNavigation btnDisabled cursorDisabled"
           onclick="this.blur();"
           disabled

@@ -12,7 +12,7 @@
     <b-row>
       <b-col class="form-label-group formDOB">
         <b-form-group>
-          <b-form-input type="date" class="custom-form-control"/>
+          <b-form-input type="date" class="custom-form-input" placeholder=" "/>
           <label>Date of Birth</label>
         </b-form-group>
       </b-col>

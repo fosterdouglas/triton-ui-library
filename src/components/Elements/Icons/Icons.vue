@@ -429,10 +429,10 @@ export default {
 <template>
   <div class="styleguidistOnlyStyles">
     <i>
-      <b-spinner small class="btnIconLeft text-dark" type="grow" label="Spinning"></b-spinner>
+      <b-spinner small class="text-dark" type="grow" label="Spinning"></b-spinner>
     </i>
     <i>
-      <b-spinner small class="btnIconLeft text-dark" label="Spinning"></b-spinner>
+      <b-spinner small class="text-dark" label="Spinning"></b-spinner>
     </i>
   </div>
 </template>

@@ -18,9 +18,10 @@
 
     <b-row>
       <b-col cols="6" class="form-label-group ui-widget">
-        <b-form-input autocomplete="off" id="form-field-1" class="form-control" placeholder="Favourite Fruit (Required)"/>
-        <label for="form-field-1">Favourite Fruit</label>
+        <b-form-input autocomplete="off" id="form-field-1" class="form-control" placeholder=" "/>
+        <label for="form-field-1">Favourite Fruit (Required)</label>
       </b-col>
+    </b-row>
 
   </b-container>
 </template>

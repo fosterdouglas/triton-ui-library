@@ -10,7 +10,7 @@
       <b-row>
         <b-col cols="6" class="form-label-group">
           <b-form-group>
-            <b-form-input :state="true" id="form-field-2" class="form-control" placeholder="Email" value="valid@gmail.com" description="test"/>
+            <b-form-input :state="true" id="form-field-2" class="form-control" placeholder=" " value="valid@gmail.com" description="test"/>
             <label for="form-field-2">Email</label>
             <b-form-valid-feedback>
               Congrats! You did a good job!
@@ -20,7 +20,7 @@
 
         <b-col cols="6" class="form-label-group">
           <b-form-group>
-            <b-form-input :state="false" id="form-field-2" class="form-control" placeholder="Email" value="invalid@gmail.commm"/>
+            <b-form-input :state="false" id="form-field-2" class="form-control" placeholder=" " value="invalid@gmail.commm"/>
             <label for="form-field-2">Email</label>
             <b-form-invalid-feedback>
               Please check the formatting of your email address.

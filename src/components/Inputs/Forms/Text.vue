@@ -11,13 +11,13 @@
 
     <b-row>
       <b-col cols="6" class="form-label-group">
-        <b-form-input autocomplete="off" id="form-field-2" class="form-control" placeholder="First Name (Required)"/>
-        <label for="form-field-2">First Name</label>
+        <b-form-input autocomplete="off" id="form-field-2" class="form-control" placeholder=" "/>
+        <label for="form-field-2">First Name (Required)</label>
       </b-col>
 
       <b-col cols="6" class="form-label-group">
-        <b-form-input autocomplete="off" id="form-field-3" class="form-control" placeholder="Last Name (Optional)"/>
-        <label for="form-field-3">Last Name</label>
+        <b-form-input autocomplete="off" id="form-field-3" class="form-control" placeholder=" "/>
+        <label for="form-field-3">Last Name (Required)</label>
       </b-col>
     </b-row>
 
